@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="About AI Pulse Checker — Learn about our mission to provide honest, unbiased AI tool reviews.">
+<title>About — AI Pulse Checker</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0c0c0c;--paper:#f5f2ec;--cream:#eae6dd;--accent:#d94832;--sage:#3d6b45;--sage-light:#e3eddf;--muted:#7a756c;--border:#d6d1c7;--card:#fff;--font-display:'Playfair Display',Georgia,serif;--font-body:'Outfit',sans-serif;--font-mono:'JetBrains Mono',monospace;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--font-body);background:var(--paper);color:var(--ink);line-height:1.7;}
+a{color:inherit;text-decoration:none;}
+.container{max-width:800px;margin:0 auto;padding:0 24px;}
+.navbar{background:rgba(245,242,236,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1200px;margin:0 auto;}
+.logo{font-family:var(--font-display);font-size:1.4rem;font-weight:700;display:flex;align-items:center;gap:8px;}
+.logo svg{flex-shrink:0;}
+.nav-btn{background:var(--accent);color:#fff !important;padding:7px 18px;border-radius:8px;font-size:.82rem;font-weight:600;transition:background .2s;cursor:pointer;border:none;font-family:var(--font-body);}
+.nav-btn:hover{background:#b83a28;color:#fff !important;}
+.dark-mode{--ink:#e8e6e1;--paper:#1a1a1a;--cream:#252525;--card:#222;--border:#3a3a3a;--muted:#999;}
+.dark-mode .navbar{background:rgba(26,26,26,.92);}
+.dark-toggle{background:none;border:1px solid var(--border);border-radius:8px;padding:6px 12px;cursor:pointer;font-size:.85rem;transition:all .2s;color:var(--muted);font-family:var(--font-body);}
+.dark-toggle:hover{border-color:var(--accent);color:var(--ink);}
+.about-hero{padding:64px 0 40px;text-align:center;}
+.about-hero h1{font-family:var(--font-display);font-size:2.4rem;margin-bottom:12px;}
+.about-hero p{font-size:1.05rem;color:var(--muted);max-width:550px;margin:0 auto;}
+.about-content{max-width:700px;margin:0 auto;padding:0 24px 60px;}
+.about-content h2{font-family:var(--font-display);font-size:1.5rem;margin:36px 0 12px;}
+.about-content p{margin-bottom:16px;color:var(--ink);font-size:.95rem;}
+.about-content .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0;}
+.stat-box{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center;}
+.stat-box .num{font-family:var(--font-mono);font-size:2rem;font-weight:700;color:var(--accent);}
+.stat-box .label{font-size:.8rem;color:var(--muted);margin-top:4px;}
+.methodology-list{list-style:none;padding:0;}
+.methodology-list li{padding:12px 0;border-bottom:1px solid var(--border);font-size:.92rem;display:flex;align-items:center;gap:10px;}
+.methodology-list li:last-child{border-bottom:none;}
+.footer{background:var(--cream);padding:28px 0;text-align:center;font-size:.82rem;color:var(--muted);}
+.footer-inner{max-width:1200px;margin:0 auto;padding:0 24px;}
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <svg width="28" height="28" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#d94832"/><path d="M20 55 Q30 30, 50 50 Q70 70, 80 45" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/></svg>
+      AI Pulse Checker
+    </a>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <a href="index.html" style="font-size:.85rem;color:var(--muted);font-weight:500;">← All Reviews</a>
+      <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+    </div>
+  </div>
+</nav>
+
+<div class="about-hero">
+  <h1>About <em style="font-style:italic;color:var(--accent);">AI Pulse Checker</em></h1>
+  <p>We test AI tools so you don't have to. Honest reviews, real scores, zero BS.</p>
+</div>
+
+<div class="about-content">
+  <div class="stat-grid">
+    <div class="stat-box"><div class="num">153</div><div class="label">Tools Reviewed</div></div>
+    <div class="stat-box"><div class="num">10+</div><div class="label">Categories</div></div>
+    <div class="stat-box"><div class="num">100%</div><div class="label">Independent</div></div>
+  </div>
+
+  <h2>Our Mission</h2>
+  <p>The AI tool landscape is overwhelming. New tools launch every day, each claiming to be "the best." We cut through the noise with thorough, hands-on testing and honest scoring. No paid placements, no inflated ratings — just real experiences from real users.</p>
+
+  <h2>Our Methodology</h2>
+  <p>Every tool we review goes through a rigorous evaluation process:</p>
+  <ul class="methodology-list">
+    <li>✅ <strong>Hands-on Testing</strong> — We actually use every tool for real-world tasks, not just read the marketing page.</li>
+    <li>📊 <strong>Standardized Scoring</strong> — Each tool is rated on a 0-10 scale across multiple dimensions: features, ease of use, value, and output quality.</li>
+    <li>💰 <strong>Pricing Transparency</strong> — We clearly list pricing tiers and note which tools offer free plans or trials.</li>
+    <li>⚖️ <strong>Honest Pros & Cons</strong> — Every review includes genuine strengths and weaknesses. No tool is perfect.</li>
+    <li>🔄 <strong>Regular Updates</strong> — AI tools evolve fast. We revisit and update reviews as tools release major updates.</li>
+  </ul>
+
+  <h2>Affiliate Disclosure</h2>
+  <p>Some links on our site are affiliate links, meaning we may earn a small commission if you sign up through our link. This <strong>never</strong> influences our scores or rankings. Tools with affiliate partnerships are clearly marked with a 💰 tag. Many of our highest-rated tools have no affiliate program at all.</p>
+
+  <h2>Get in Touch</h2>
+  <p>Have a tool you'd like us to review? Found an error in one of our reviews? We'd love to hear from you. Subscribe to our newsletter to stay updated on new reviews and AI industry insights.</p>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>&copy; 2026 AI Pulse Checker &middot; <a href="index.html">Home</a> &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a> &middot; <a href="#">Affiliate Disclosure</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var dm=localStorage.getItem('darkMode')==='true';
+  if(dm)document.body.classList.add('dark-mode');
+  window.toggleDark=function(){
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode',document.body.classList.contains('dark-mode'));
+  };
+})();
+</script>
+</body>
+</html>

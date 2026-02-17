@@ -82,7 +82,45 @@ a{color:inherit;text-decoration:none;}
   .review-meta{gap:20px;}
   .features-list{grid-template-columns:1fr;}
 }
+
+.dark-mode{--ink:#e8e6e1;--paper:#1a1a1a;--cream:#252525;--card:#222;--border:#3a3a3a;--muted:#999;}
+.dark-mode .navbar{background:rgba(26,26,26,.92);}
+.dark-mode .tool-card:hover{box-shadow:0 10px 28px rgba(0,0,0,.3);}
+.dark-toggle{background:none;border:1px solid var(--border);border-radius:8px;padding:6px 12px;cursor:pointer;font-size:.85rem;transition:all .2s;color:var(--muted);font-family:var(--font-body);}
+.dark-toggle:hover{border-color:var(--accent);color:var(--ink);}
 </style>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Suno",
+    "applicationCategory": "AI Tool",
+    "offers": {
+      "@type": "Offer",
+      "price": "8",
+      "priceCurrency": "USD"
+    }
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "8.5",
+    "bestRating": "10",
+    "worstRating": "0"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "AI Pulse Checker"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Pulse Checker",
+    "url": "https://aipulsechecker.com"
+  }
+}
+</script>
 </head>
 <body>
 <nav class="navbar">
@@ -206,9 +244,58 @@ a{color:inherit;text-decoration:none;}
   </article>
 </div>
 
+
+    
+    <div class="related-tools" style="margin:40px 0;padding:32px 0;border-top:1px solid var(--border);">
+      <h3 style="font-family:var(--font-display);font-size:1.3rem;margin-bottom:16px;">Similar Tools You Might Like</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;">
+        
+        <a href="elevenlabs.html" style="display:block;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;transition:all .25s;text-decoration:none;color:inherit;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <span style="font-size:1.4rem;">🎙️</span>
+            <span class="card-score score-high" style="font-family:var(--font-mono);font-size:.8rem;font-weight:500;padding:2px 8px;border-radius:6px;color:#fff;background:var(--sage);">9.4</span>
+          </div>
+          <h4 style="font-size:.95rem;font-weight:600;margin-bottom:2px;">ElevenLabs</h4>
+          <span style="font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;">AI Audio</span>
+        </a>
+        <a href="murf-ai.html" style="display:block;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;transition:all .25s;text-decoration:none;color:inherit;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <span style="font-size:1.4rem;">🔊</span>
+            <span class="card-score score-high" style="font-family:var(--font-mono);font-size:.8rem;font-weight:500;padding:2px 8px;border-radius:6px;color:#fff;background:var(--sage);">8.7</span>
+          </div>
+          <h4 style="font-size:.95rem;font-weight:600;margin-bottom:2px;">Murf AI</h4>
+          <span style="font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;">AI Audio</span>
+        </a>
+        <a href="speechify.html" style="display:block;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;transition:all .25s;text-decoration:none;color:inherit;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <span style="font-size:1.4rem;">📖</span>
+            <span class="card-score score-high" style="font-family:var(--font-mono);font-size:.8rem;font-weight:500;padding:2px 8px;border-radius:6px;color:#fff;background:var(--sage);">8.5</span>
+          </div>
+          <h4 style="font-size:.95rem;font-weight:600;margin-bottom:2px;">Speechify</h4>
+          <span style="font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;">AI Audio</span>
+        </a>
+        <a href="descript-audio.html" style="display:block;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;transition:all .25s;text-decoration:none;color:inherit;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <span style="font-size:1.4rem;">🎵</span>
+            <span class="card-score score-mid" style="font-family:var(--font-mono);font-size:.8rem;font-weight:500;padding:2px 8px;border-radius:6px;color:#fff;background:#c8a44e;">8.2</span>
+          </div>
+          <h4 style="font-size:.95rem;font-weight:600;margin-bottom:2px;">Descript Audio</h4>
+          <span style="font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;">AI Audio</span>
+        </a>
+      </div>
+    </div>
+<div class="share-section" style="margin:32px 0;padding:24px;background:var(--cream);border-radius:12px;text-align:center;">
+      <p style="font-family:var(--font-display);font-size:1.1rem;margin-bottom:14px;">Share this review</p>
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+        <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20honest%20review%20of%20Suno%20on%20AI%20Pulse%20Checker!&url=https://aipulsechecker.com/suno.html" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:8px 18px;background:#1DA1F2;color:#fff;border-radius:8px;font-size:.85rem;font-weight:600;transition:opacity .2s;">𝕏 Twitter</a>
+        <a href="https://www.reddit.com/submit?url=https://aipulsechecker.com/suno.html&title=Suno%20Review%20-%20AI%20Pulse%20Checker" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:8px 18px;background:#FF4500;color:#fff;border-radius:8px;font-size:.85rem;font-weight:600;transition:opacity .2s;">Reddit</a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://aipulsechecker.com/suno.html" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:8px 18px;background:#0077B5;color:#fff;border-radius:8px;font-size:.85rem;font-weight:600;transition:opacity .2s;">LinkedIn</a>
+        <a href="mailto:?subject=Suno%20Review&body=Check out this honest review of Suno on AI Pulse Checker!%20https://aipulsechecker.com/suno.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 18px;background:var(--muted);color:#fff;border-radius:8px;font-size:.85rem;font-weight:600;transition:opacity .2s;">✉ Email</a>
+      </div>
+    </div>
 <footer class="footer">
   <div class="footer-inner">
-    <span>&copy; 2025 AI Pulse Checker. All rights reserved.</span>
+    <span>&copy; 2026 AI Pulse Checker. All rights reserved.</span>
     <div><a href="index.html">All Reviews</a> &nbsp; <a href="#">Privacy</a> &nbsp; <a href="#">Affiliate Disclosure</a></div>
   </div>
 </footer>
@@ -228,5 +315,23 @@ function handleSubmit(e){
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
 </script>
 
+
+<button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="display:none;position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:1.2rem;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.15);z-index:100;transition:all .3s;">↑</button>
+<script>
+window.addEventListener('scroll',function(){
+  document.getElementById('backToTop').style.display=window.scrollY>400?'block':'none';
+});
+</script>
+
+<script>
+(function(){
+  var dm=localStorage.getItem('darkMode')==='true';
+  if(dm)document.body.classList.add('dark-mode');
+  window.toggleDark=function(){
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode',document.body.classList.contains('dark-mode'));
+  };
+})();
+</script>
 </body>
 </html>

@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="153 honest, in-depth AI tool reviews across writing, coding, design, video, marketing, and more. Find the best AI tool for your needs.">
+<title>AI Pulse Checker — 153 Honest AI Tool Reviews</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0c0c0c;--paper:#f5f2ec;--cream:#eae6dd;--accent:#d94832;--sage:#3d6b45;--sage-light:#e3eddf;--muted:#7a756c;--border:#d6d1c7;--card:#fff;--font-display:'Playfair Display',Georgia,serif;--font-body:'Outfit',sans-serif;--font-mono:'JetBrains Mono',monospace;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--font-body);background:var(--paper);color:var(--ink);line-height:1.6;}
+a{color:inherit;text-decoration:none;}
+.container{max-width:1200px;margin:0 auto;padding:0 24px;}
+.navbar{background:rgba(245,242,236,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1200px;margin:0 auto;}
+.logo{font-family:var(--font-display);font-size:1.5rem;font-weight:700;display:flex;align-items:center;gap:8px;}
+.logo svg{flex-shrink:0;}
+
+.nav-btn{background:var(--accent);color:#fff !important;padding:7px 18px;border-radius:8px;font-size:.82rem;font-weight:600;transition:background .2s;cursor:pointer;border:none;font-family:var(--font-body);}
+.nav-btn:hover{background:#b83a28;color:#fff !important;}
+.modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:999;align-items:center;justify-content:center;}
+.modal-overlay.active{display:flex;}
+.modal{background:var(--card);border-radius:16px;padding:36px;max-width:420px;width:90%;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.15);animation:modalIn .25s ease;}
+@keyframes modalIn{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+.modal h2{font-family:var(--font-display);font-size:1.4rem;margin-bottom:6px;}
+.modal>p{font-size:.9rem;color:var(--muted);margin-bottom:20px;}
+.modal-close{position:absolute;top:14px;right:18px;font-size:1.4rem;cursor:pointer;color:var(--muted);background:none;border:none;font-family:var(--font-body);}
+.modal-close:hover{color:var(--ink);}
+.modal label{display:block;font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:4px;}
+.modal input{width:100%;padding:11px 14px;border:2px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:.9rem;margin-bottom:14px;outline:none;transition:border-color .2s;background:var(--paper);}
+.modal input:focus{border-color:var(--accent);}
+.modal button[type=submit]{width:100%;padding:12px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-family:var(--font-body);font-weight:600;font-size:.95rem;cursor:pointer;transition:background .2s;}
+.modal button[type=submit]:hover{background:#b83a28;}
+.modal .note{font-size:.72rem;color:var(--muted);text-align:center;margin-top:10px;}
+.modal .success-msg{text-align:center;padding:20px 0;}
+.modal .success-msg .check{font-size:2.5rem;margin-bottom:10px;}
+.modal .success-msg h3{font-family:var(--font-display);font-size:1.2rem;margin-bottom:6px;}
+.modal .success-msg p{font-size:.9rem;color:var(--muted);}
+
+.hero{padding:64px 0 48px;text-align:center;}
+.hero h1{font-family:var(--font-display);font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.15;max-width:700px;margin:0 auto 14px;}
+.hero h1 em{font-style:italic;color:var(--accent);}
+.hero p{font-size:1.05rem;color:var(--muted);max-width:500px;margin:0 auto 28px;}
+.search-box{max-width:500px;margin:0 auto 20px;display:flex;background:var(--card);border:2px solid var(--border);border-radius:10px;overflow:hidden;transition:border-color .2s;}
+.search-box:focus-within{border-color:var(--accent);}
+.search-box input{flex:1;padding:12px 16px;border:none;font-family:var(--font-body);font-size:.92rem;background:transparent;outline:none;}
+.cat-filters{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-bottom:24px;}
+.cat-btn{padding:7px 16px;border-radius:100px;border:1px solid var(--border);background:var(--card);font-family:var(--font-body);font-size:.8rem;font-weight:500;cursor:pointer;transition:all .2s;color:var(--muted);}
+.cat-btn:hover{border-color:var(--ink);color:var(--ink);}
+.cat-btn.active{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-bottom:60px;}
+.tool-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;transition:all .25s;display:flex;flex-direction:column;}
+.tool-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.07);border-color:var(--accent);}
+.card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+.card-icon{font-size:1.6rem;}
+.card-score{font-family:var(--font-mono);font-size:.85rem;font-weight:500;padding:3px 10px;border-radius:6px;color:#fff;}
+.score-high{background:var(--sage);}
+.score-mid{background:#c8a44e;}
+.score-low{background:var(--muted);}
+.tool-card h3{font-size:1rem;font-weight:600;margin-bottom:2px;display:flex;align-items:center;gap:6px;}
+.card-cat{font-size:.73rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;font-weight:600;}
+.tool-card p{font-size:.85rem;color:var(--muted);margin:8px 0;flex:1;line-height:1.5;}
+.card-price{font-family:var(--font-mono);font-size:.82rem;color:var(--sage);font-weight:500;}
+.aff-tag{font-size:.7rem;}
+.newsletter{background:var(--cream);padding:48px 24px;text-align:center;border-radius:16px;margin:0 auto 60px;max-width:600px;}
+.newsletter h2{font-family:var(--font-display);font-size:1.8rem;margin-bottom:8px;}
+.newsletter p{font-size:.95rem;color:var(--muted);margin-bottom:20px;}
+.newsletter .nl-cta{padding:14px 32px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-family:var(--font-body);font-weight:600;font-size:1rem;cursor:pointer;transition:background .2s;}
+.newsletter .nl-cta:hover{background:#b83a28;}
+.footer{background:var(--ink);color:rgba(245,242,236,.5);padding:40px 0 24px;}
+.footer-inner{max-width:1200px;margin:0 auto;padding:0 24px;text-align:center;font-size:.82rem;}
+.footer a{color:rgba(245,242,236,.5);margin:0 10px;}
+@media(max-width:768px){.tools-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="nav-inner">
+  <a href="index.html" class="logo"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="#d94832" stroke-width="2"/><path d="M8 14.5C8 14.5 10 10 14 10C18 10 20 14.5 20 14.5" stroke="#d94832" stroke-width="2" stroke-linecap="round"/><circle cx="10.5" cy="12" r="1.5" fill="#d94832"/><circle cx="17.5" cy="12" r="1.5" fill="#d94832"/><path d="M9.5 17.5C9.5 17.5 11 20 14 20C17 20 18.5 17.5 18.5 17.5" stroke="#d94832" stroke-width="1.5" stroke-linecap="round"/><path d="M14 3V6M22.5 7L20.5 9M24 14H21M5.5 7L7.5 9M4 14H7" stroke="#d94832" stroke-width="1.2" stroke-linecap="round"/></svg> AI Pulse Checker</a>
+  <button class="nav-btn" onclick="openModal()">Newsletter</button>
+</div></nav>
+
+<div class="modal-overlay" id="nlModal" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <div id="nlForm">
+      <h2>Join the newsletter</h2>
+      <p>Weekly AI tool picks, new launches, and honest takes.</p>
+      <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return handleSubmit(event)">
+        <input type="hidden" name="form-name" value="newsletter">
+        <p style="display:none"><input name="bot-field"></p>
+        <label for="nl-name">Your Name</label>
+        <input type="text" id="nl-name" name="name" placeholder="Chris" required>
+        <label for="nl-email">Email Address</label>
+        <input type="email" id="nl-email" name="email" placeholder="you@example.com" required>
+        <button type="submit">Subscribe — It's Free</button>
+        <p class="note">No spam, ever. Unsubscribe anytime.</p>
+      </form>
+    </div>
+    <div id="nlSuccess" style="display:none">
+      <div class="success-msg">
+        <div class="check">✓</div>
+        <h3>You're in!</h3>
+        <p>Thanks for subscribing. Check your inbox soon.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="hero"><div class="container">
+  <h1>153 AI tools, <em>honestly reviewed</em></h1>
+  <p>40+ hours of testing per tool. Real benchmarks, real verdicts, zero sponsored rankings.</p>
+  <div class="search-box"><input type="text" placeholder="Search 153 AI tools..." id="search" oninput="filterSearch()"></div>
+  <div class="cat-filters"><button class="cat-btn active" onclick="filterCat(this,'all')">All (153)</button>
+<button class="cat-btn" onclick="filterCat(this,'AI Writing')">AI Writing (24)</button>
+<button class="cat-btn" onclick="filterCat(this,'AI Coding')">AI Coding (18)</button>
+<button class="cat-btn" onclick="filterCat(this,'AI Design')">AI Design (21)</button>
+<button class="cat-btn" onclick="filterCat(this,'AI Video')">AI Video (15)</button>
+<button class="cat-btn" onclick="filterCat(this,'AI Audio')">AI Audio (11)</button>
+<button class="cat-btn" onclick="filterCat(this,'AI Marketing')">AI Marketing (22)</button>
+<button class="cat-btn" onclick="filterCat(this,'AI Chatbots')">AI Chatbots (17)</button>
+<button class="cat-btn" onclick="filterCat(this,'AI Data')">AI Data (13)</button>
+<button class="cat-btn" onclick="filterCat(this,'AI Productivity')">AI Productivity (12)</button>
+</div>
+</div></section>
+<div class="container">
+  <div class="tools-grid" id="grid"><a class="tool-card" href="claude-pro.html" data-cat="AI Writing">
+      <div class="card-top"><span class="card-icon">🧠</span><span class="card-score score-high">9.5</span></div>
+      <h3>Claude Pro </h3>
+      <span class="card-cat">AI Writing</span>
+      <p>The thinking person's AI — unmatched for nuance, analysis, and long-form.</p>
+      <span class="card-price">$20/mo</span>
+    </a>
+<a class="tool-card" href="elevenlabs.html" data-cat="AI Audio">
+      <div class="card-top"><span class="card-icon">🎙️</span><span class="card-score score-high">9.4</span></div>
+      <h3>ElevenLabs <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Audio</span>
+      <p>The most realistic AI voices ever created — indistinguishable from human.</p>
+      <span class="card-price">$5/mo</span>
+    </a>
+<a class="tool-card" href="cursor.html" data-cat="AI Coding">
+      <div class="card-top"><span class="card-icon">⚡</span><span class="card-score score-high">9.3</span></div>
+      <h3>Cursor </h3>
+      <span class="card-cat">AI Coding</span>
+      <p>The AI-native code editor that makes Copilot look old-school.</p>
+      <span class="card-price">$20/mo</span>
+    </a>
+<a class="tool-card" href="midjourney.html" data-cat="AI Design">
+      <div class="card-top"><span class="card-icon">🎭</span><span class="card-score score-high">9.2</span></div>
+      <h3>Midjourney </h3>
+      <span class="card-cat">AI Design</span>
+      <p>The gold standard for AI image generation — stunning artistic quality.</p>
+      <span class="card-price">$10/mo</span>
+    </a>
+<a class="tool-card" href="semrush-ai.html" data-cat="AI Marketing">
+      <div class="card-top"><span class="card-icon">📈</span><span class="card-score score-high">9.2</span></div>
+      <h3>Semrush AI <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Marketing</span>
+      <p>The most comprehensive SEO and marketing intelligence platform available.</p>
+      <span class="card-price">$130/mo</span>
+    </a>
+<a class="tool-card" href="chatgpt-plus.html" data-cat="AI Writing">
+      <div class="card-top"><span class="card-icon">💬</span><span class="card-score score-high">9.0</span></div>
+      <h3>ChatGPT Plus </h3>
+      <span class="card-cat">AI Writing</span>
+      <p>The Swiss Army knife of AI — does everything well, some things brilliantly.</p>
+      <span class="card-price">$20/mo</span>
+    </a>
+<a class="tool-card" href="grammarly.html" data-cat="AI Writing">
+      <div class="card-top"><span class="card-icon">📝</span><span class="card-score score-high">9.0</span></div>
+      <h3>Grammarly <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Writing</span>
+      <p>Still the gold standard for making your writing clearer and error-free.</p>
+      <span class="card-price">$12/mo</span>
+    </a>
+<a class="tool-card" href="github-copilot.html" data-cat="AI Coding">
+      <div class="card-top"><span class="card-icon">🐙</span><span class="card-score score-high">9.0</span></div>
+      <h3>GitHub Copilot </h3>
+      <span class="card-cat">AI Coding</span>
+      <p>The AI pair programmer that changed how developers write code.</p>
+      <span class="card-price">$10/mo</span>
+    </a>
+<a class="tool-card" href="synthesia.html" data-cat="AI Video">
+      <div class="card-top"><span class="card-icon">👤</span><span class="card-score score-high">9.0</span></div>
+      <h3>Synthesia <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Video</span>
+      <p>Create professional talking-head videos without cameras or actors.</p>
+      <span class="card-price">$22/mo</span>
+    </a>
+<a class="tool-card" href="sora.html" data-cat="AI Video">
+      <div class="card-top"><span class="card-icon">🌀</span><span class="card-score score-high">9.0</span></div>
+      <h3>Sora </h3>
+      <span class="card-cat">AI Video</span>
+      <p>OpenAI's photorealistic video generation from text prompts.</p>
+      <span class="card-price">Included w/ ChatGPT Pro</span>
+    </a>
+<a class="tool-card" href="surfer-seo.html" data-cat="AI Marketing">
+      <div class="card-top"><span class="card-icon">🏄</span><span class="card-score score-high">9.0</span></div>
+      <h3>Surfer SEO <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Marketing</span>
+      <p>Data-driven content optimization that consistently moves the needle on rankings.</p>
+      <span class="card-price">$89/mo</span>
+    </a>
+<a class="tool-card" href="hubspot-ai.html" data-cat="AI Marketing">
+      <div class="card-top"><span class="card-icon">🟠</span><span class="card-score score-high">9.0</span></div>
+      <h3>HubSpot AI <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Marketing</span>
+      <p>AI features across the full HubSpot CRM and marketing suite.</p>
+      <span class="card-price">Free / $18/mo</span>
+    </a>
+<a class="tool-card" href="claude-code.html" data-cat="AI Coding">
+      <div class="card-top"><span class="card-icon">🖥️</span><span class="card-score score-high">8.8</span></div>
+      <h3>Claude Code </h3>
+      <span class="card-cat">AI Coding</span>
+      <p>Terminal-based AI coding agent with agentic capabilities.</p>
+      <span class="card-price">Usage-based</span>
+    </a>
+<a class="tool-card" href="runway-ml.html" data-cat="AI Video">
+      <div class="card-top"><span class="card-icon">🎥</span><span class="card-score score-high">8.8</span></div>
+      <h3>Runway ML </h3>
+      <span class="card-cat">AI Video</span>
+      <p>The creative suite where AI video editing began.</p>
+      <span class="card-price">$12/mo</span>
+    </a>
+<a class="tool-card" href="perplexity-ai.html" data-cat="AI Productivity">
+      <div class="card-top"><span class="card-icon">🔍</span><span class="card-score score-high">8.8</span></div>
+      <h3>Perplexity AI </h3>
+      <span class="card-cat">AI Productivity</span>
+      <p>AI search engine that gives answers, not links.</p>
+      <span class="card-price">$20/mo</span>
+    </a>
+<a class="tool-card" href="frase.html" data-cat="AI Writing">
+      <div class="card-top"><span class="card-icon">🔍</span><span class="card-score score-high">8.7</span></div>
+      <h3>Frase <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Writing</span>
+      <p>Where SEO research meets AI content creation — the complete toolkit.</p>
+      <span class="card-price">$15/mo</span>
+    </a>
+<a class="tool-card" href="murf-ai.html" data-cat="AI Audio">
+      <div class="card-top"><span class="card-icon">🔊</span><span class="card-score score-high">8.7</span></div>
+      <h3>Murf AI <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Audio</span>
+      <p>Studio-quality AI voiceover for professional productions.</p>
+      <span class="card-price">$19/mo</span>
+    </a>
+<a class="tool-card" href="windsurf.html" data-cat="AI Coding">
+      <div class="card-top"><span class="card-icon">🏄</span><span class="card-score score-high">8.6</span></div>
+      <h3>Windsurf </h3>
+      <span class="card-cat">AI Coding</span>
+      <p>AI-native IDE with flows that understand your entire codebase.</p>
+      <span class="card-price">Free / $15/mo</span>
+    </a>
+<a class="tool-card" href="adcreative-ai.html" data-cat="AI Marketing">
+      <div class="card-top"><span class="card-icon">📢</span><span class="card-score score-high">8.6</span></div>
+      <h3>AdCreative.ai <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Marketing</span>
+      <p>AI-generated ad creatives with performance prediction that drives real results.</p>
+      <span class="card-price">$21/mo</span>
+    </a>
+<a class="tool-card" href="copy-ai.html" data-cat="AI Writing">
+      <div class="card-top"><span class="card-icon">📋</span><span class="card-score score-high">8.5</span></div>
+      <h3>Copy.ai <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Writing</span>
+      <p>Quick-hit marketing copy that actually converts.</p>
+      <span class="card-price">$36/mo</span>
+    </a>
+<a class="tool-card" href="writesonic.html" data-cat="AI Writing">
+      <div class="card-top"><span class="card-icon">🚀</span><span class="card-score score-high">8.5</span></div>
+      <h3>Writesonic <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Writing</span>
+      <p>Budget-friendly AI writing with surprisingly powerful SEO features.</p>
+      <span class="card-price">$16/mo</span>
+    </a>
+<a class="tool-card" href="quillbot.html" data-cat="AI Writing">
+      <div class="card-top"><span class="card-icon">🪶</span><span class="card-score score-high">8.5</span></div>
+      <h3>QuillBot <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Writing</span>
+      <p>Paraphrasing powerhouse with academic writing chops.</p>
+      <span class="card-price">$10/mo</span>
+    </a>
+<a class="tool-card" href="scalenut.html" data-cat="AI Writing">
+      <div class="card-top"><span class="card-icon">📐</span><span class="card-score score-high">8.5</span></div>
+      <h3>Scalenut <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Writing</span>
+      <p>End-to-end SEO content platform with AI cruise mode.</p>
+      <span class="card-price">$39/mo</span>
+    </a>
+<a class="tool-card" href="devin.html" data-cat="AI Coding">
+      <div class="card-top"><span class="card-icon">🤖</span><span class="card-score score-high">8.5</span></div>
+      <h3>Devin </h3>
+      <span class="card-cat">AI Coding</span>
+      <p>The world's first fully autonomous AI software engineer.</p>
+      <span class="card-price">$500/mo</span>
+    </a>
+<a class="tool-card" href="dall-e-3.html" data-cat="AI Design">
+      <div class="card-top"><span class="card-icon">🖌️</span><span class="card-score score-high">8.5</span></div>
+      <h3>DALL-E 3 </h3>
+      <span class="card-cat">AI Design</span>
+      <p>OpenAI's image generator with the best text rendering in AI.</p>
+      <span class="card-price">Included w/ ChatGPT</span>
+    </a>
+<a class="tool-card" href="canva-ai.html" data-cat="AI Design">
+      <div class="card-top"><span class="card-icon">🖼️</span><span class="card-score score-high">8.5</span></div>
+      <h3>Canva AI <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Design</span>
+      <p>AI superpowers in the world's most popular design tool.</p>
+      <span class="card-price">Free / $13/mo</span>
+    </a>
+<a class="tool-card" href="descript.html" data-cat="AI Video">
+      <div class="card-top"><span class="card-icon">📝</span><span class="card-score score-high">8.5</span></div>
+      <h3>Descript <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Video</span>
+      <p>Edit video by editing text — the most intuitive video editor.</p>
+      <span class="card-price">$24/mo</span>
+    </a>
+<a class="tool-card" href="invideo-ai.html" data-cat="AI Video">
+      <div class="card-top"><span class="card-icon">🎞️</span><span class="card-score score-high">8.5</span></div>
+      <h3>InVideo AI <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Video</span>
+      <p>AI video creation for social media and marketing that delivers results.</p>
+      <span class="card-price">$15/mo</span>
+    </a>
+<a class="tool-card" href="colossyan.html" data-cat="AI Video">
+      <div class="card-top"><span class="card-icon">🎭</span><span class="card-score score-high">8.5</span></div>
+      <h3>Colossyan <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Video</span>
+      <p>AI video creation for corporate learning and training that saves thousands.</p>
+      <span class="card-price">$19/mo</span>
+    </a>
+<a class="tool-card" href="veo.html" data-cat="AI Video">
+      <div class="card-top"><span class="card-icon">🔮</span><span class="card-score score-high">8.5</span></div>
+      <h3>Veo </h3>
+      <span class="card-cat">AI Video</span>
+      <p>Google's cinematic AI video generation model.</p>
+      <span class="card-price">Via Vertex AI</span>
+    </a>
+<a class="tool-card" href="speechify.html" data-cat="AI Audio">
+      <div class="card-top"><span class="card-icon">📖</span><span class="card-score score-high">8.5</span></div>
+      <h3>Speechify <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Audio</span>
+      <p>Text-to-speech reader with celebrity voice options and natural delivery.</p>
+      <span class="card-price">$12/mo</span>
+    </a>
+<a class="tool-card" href="suno.html" data-cat="AI Audio">
+      <div class="card-top"><span class="card-icon">🎤</span><span class="card-score score-high">8.5</span></div>
+      <h3>Suno </h3>
+      <span class="card-cat">AI Audio</span>
+      <p>Full AI-generated songs with vocals, lyrics, and production.</p>
+      <span class="card-price">$8/mo</span>
+    </a>
+<a class="tool-card" href="hubspot-chatspot.html" data-cat="AI Marketing">
+      <div class="card-top"><span class="card-icon">💬</span><span class="card-score score-high">8.5</span></div>
+      <h3>HubSpot ChatSpot <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Marketing</span>
+      <p>AI assistant for HubSpot CRM with natural language commands.</p>
+      <span class="card-price">Free</span>
+    </a>
+<a class="tool-card" href="intercom-fin.html" data-cat="AI Chatbots">
+      <div class="card-top"><span class="card-icon">💬</span><span class="card-score score-high">8.5</span></div>
+      <h3>Intercom Fin </h3>
+      <span class="card-cat">AI Chatbots</span>
+      <p>AI customer service agent that actually resolves issues.</p>
+      <span class="card-price">$0.99/resolution</span>
+    </a>
+<a class="tool-card" href="customgpt.html" data-cat="AI Chatbots">
+      <div class="card-top"><span class="card-icon">🔧</span><span class="card-score score-high">8.5</span></div>
+      <h3>CustomGPT <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Chatbots</span>
+      <p>Build custom ChatGPT chatbots trained on your data with remarkable accuracy.</p>
+      <span class="card-price">$49/mo</span>
+    </a>
+<a class="tool-card" href="datarobot.html" data-cat="AI Data">
+      <div class="card-top"><span class="card-icon">🤖</span><span class="card-score score-high">8.5</span></div>
+      <h3>DataRobot </h3>
+      <span class="card-cat">AI Data</span>
+      <p>Enterprise AutoML platform for production AI.</p>
+      <span class="card-price">Custom</span>
+    </a>
+<a class="tool-card" href="v0-vercel.html" data-cat="AI Coding">
+      <div class="card-top"><span class="card-icon">▲</span><span class="card-score score-mid">8.4</span></div>
+      <h3>v0 (Vercel) </h3>
+      <span class="card-cat">AI Coding</span>
+      <p>AI-generated React components from text descriptions.</p>
+      <span class="card-price">Free / $20/mo</span>
+    </a>
+<a class="tool-card" href="notion-ai.html" data-cat="AI Writing">
+      <div class="card-top"><span class="card-icon">📓</span><span class="card-score score-mid">8.3</span></div>
+      <h3>Notion AI <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Writing</span>
+      <p>AI superpowers inside the workspace you already love.</p>
+      <span class="card-price">$10/mo add-on</span>
+    </a>
+<a class="tool-card" href="bolt-new.html" data-cat="AI Coding">
+      <div class="card-top"><span class="card-icon">⚡</span><span class="card-score score-mid">8.3</span></div>
+      <h3>Bolt.new </h3>
+      <span class="card-cat">AI Coding</span>
+      <p>Prompt-to-full-stack app in seconds — the fastest way to build.</p>
+      <span class="card-price">Free / $20/mo</span>
+    </a>
+<a class="tool-card" href="framer-ai.html" data-cat="AI Design">
+      <div class="card-top"><span class="card-icon">🖼️</span><span class="card-score score-mid">8.3</span></div>
+      <h3>Framer AI </h3>
+      <span class="card-cat">AI Design</span>
+      <p>AI-powered website builder with stunning templates.</p>
+      <span class="card-price">Free / $15/mo</span>
+    </a>
+<a class="tool-card" href="leonardo-ai.html" data-cat="AI Design">
+      <div class="card-top"><span class="card-icon">🎨</span><span class="card-score score-mid">8.3</span></div>
+      <h3>Leonardo AI </h3>
+      <span class="card-cat">AI Design</span>
+      <p>Game asset and creative image generation with fine-tuning.</p>
+      <span class="card-price">Free / $12/mo</span>
+    </a>
+<a class="tool-card" href="kling-ai.html" data-cat="AI Video">
+      <div class="card-top"><span class="card-icon">🎬</span><span class="card-score score-mid">8.3</span></div>
+      <h3>Kling AI </h3>
+      <span class="card-cat">AI Video</span>
+      <p>Powerful AI video generator with impressive motion quality.</p>
+      <span class="card-price">Free / $8/mo</span>
+    </a>
+<a class="tool-card" href="tableau-ai.html" data-cat="AI Data">
+      <div class="card-top"><span class="card-icon">📊</span><span class="card-score score-mid">8.3</span></div>
+      <h3>Tableau AI </h3>
+      <span class="card-cat">AI Data</span>
+      <p>AI-powered data visualization from Salesforce.</p>
+      <span class="card-price">$15/user/mo</span>
+    </a>
+<a class="tool-card" href="jasper-ai.html" data-cat="AI Writing">
+      <div class="card-top"><span class="card-icon">✨</span><span class="card-score score-mid">8.2</span></div>
+      <h3>Jasper AI <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Writing</span>
+      <p>Marketing-first AI writing built for teams and brand consistency.</p>
+      <span class="card-price">$49/mo</span>
+    </a>
+<a class="tool-card" href="replit-ai.html" data-cat="AI Coding">
+      <div class="card-top"><span class="card-icon">💻</span><span class="card-score score-mid">8.2</span></div>
+      <h3>Replit AI </h3>
+      <span class="card-cat">AI Coding</span>
+      <p>Full-stack AI coding in the browser — deploy in seconds.</p>
+      <span class="card-price">$15/mo</span>
+    </a>
+<a class="tool-card" href="adobe-firefly.html" data-cat="AI Design">
+      <div class="card-top"><span class="card-icon">🔥</span><span class="card-score score-mid">8.2</span></div>
+      <h3>Adobe Firefly </h3>
+      <span class="card-cat">AI Design</span>
+      <p>Adobe's commercially safe AI image generation.</p>
+      <span class="card-price">Included w/ Creative Cloud</span>
+    </a>
+<a class="tool-card" href="heygen.html" data-cat="AI Video">
+      <div class="card-top"><span class="card-icon">🎬</span><span class="card-score score-mid">8.2</span></div>
+      <h3>HeyGen <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Video</span>
+      <p>AI video avatars with multilingual lip sync.</p>
+      <span class="card-price">$24/mo</span>
+    </a>
+<a class="tool-card" href="descript-audio.html" data-cat="AI Audio">
+      <div class="card-top"><span class="card-icon">🎵</span><span class="card-score score-mid">8.2</span></div>
+      <h3>Descript Audio <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Audio</span>
+      <p>Edit audio by editing text — podcast editing reimagined.</p>
+      <span class="card-price">$24/mo</span>
+    </a>
+<a class="tool-card" href="udio.html" data-cat="AI Audio">
+      <div class="card-top"><span class="card-icon">🎶</span><span class="card-score score-mid">8.2</span></div>
+      <h3>Udio </h3>
+      <span class="card-cat">AI Audio</span>
+      <p>AI music generation with impressive genre versatility.</p>
+      <span class="card-price">Free / $10/mo</span>
+    </a>
+<a class="tool-card" href="otter-ai.html" data-cat="AI Productivity">
+      <div class="card-top"><span class="card-icon">🦦</span><span class="card-score score-mid">8.2</span></div>
+      <h3>Otter.ai <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Productivity</span>
+      <p>AI meeting transcription and note-taking that actually works.</p>
+      <span class="card-price">Free / $10/mo</span>
+    </a>
+<a class="tool-card" href="sudowrite.html" data-cat="AI Writing">
+      <div class="card-top"><span class="card-icon">📖</span><span class="card-score score-mid">8.1</span></div>
+      <h3>Sudowrite <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Writing</span>
+      <p>The AI that actually understands creative fiction writing.</p>
+      <span class="card-price">$19/mo</span>
+    </a>
+<a class="tool-card" href="lovable.html" data-cat="AI Coding">
+      <div class="card-top"><span class="card-icon">💜</span><span class="card-score score-mid">8.1</span></div>
+      <h3>Lovable </h3>
+      <span class="card-cat">AI Coding</span>
+      <p>Build full-stack apps by describing what you want.</p>
+      <span class="card-price">Free / $20/mo</span>
+    </a>
+<a class="tool-card" href="motion.html" data-cat="AI Productivity">
+      <div class="card-top"><span class="card-icon">⚙️</span><span class="card-score score-mid">8.1</span></div>
+      <h3>Motion <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Productivity</span>
+      <p>AI auto-scheduler that optimizes your daily plan.</p>
+      <span class="card-price">$19/mo</span>
+    </a>
+<a class="tool-card" href="writer-com.html" data-cat="AI Writing">
+      <div class="card-top"><span class="card-icon">🏢</span><span class="card-score score-mid">8.0</span></div>
+      <h3>Writer.com </h3>
+      <span class="card-cat">AI Writing</span>
+      <p>Enterprise AI writing with governance and compliance built in.</p>
+      <span class="card-price">$18/user/mo</span>
+    </a>
+<a class="tool-card" href="codeium.html" data-cat="AI Coding">
+      <div class="card-top"><span class="card-icon">🆓</span><span class="card-score score-mid">8.0</span></div>
+      <h3>Codeium </h3>
+      <span class="card-cat">AI Coding</span>
+      <p>Free AI code completion that rivals paid alternatives.</p>
+      <span class="card-price">Free</span>
+    </a>
+<a class="tool-card" href="figma-ai.html" data-cat="AI Design">
+      <div class="card-top"><span class="card-icon">🎨</span><span class="card-score score-mid">8.0</span></div>
+      <h3>Figma AI </h3>
+      <span class="card-cat">AI Design</span>
+      <p>AI features inside the design tool everyone already uses.</p>
+      <span class="card-price">Free / $15/mo</span>
+    </a>
+<a class="tool-card" href="stable-diffusion.html" data-cat="AI Design">
+      <div class="card-top"><span class="card-icon">🌀</span><span class="card-score score-mid">8.0</span></div>
+      <h3>Stable Diffusion </h3>
+      <span class="card-cat">AI Design</span>
+      <p>Open-source image generation with unlimited customization.</p>
+      <span class="card-price">Free / Varies</span>
+    </a>
+<a class="tool-card" href="ideogram.html" data-cat="AI Design">
+      <div class="card-top"><span class="card-icon">💡</span><span class="card-score score-mid">8.0</span></div>
+      <h3>Ideogram </h3>
+      <span class="card-cat">AI Design</span>
+      <p>AI images with best-in-class text rendering.</p>
+      <span class="card-price">Free / $7/mo</span>
+    </a>
+<a class="tool-card" href="pika.html" data-cat="AI Video">
+      <div class="card-top"><span class="card-icon">⚡</span><span class="card-score score-mid">8.0</span></div>
+      <h3>Pika </h3>
+      <span class="card-cat">AI Video</span>
+      <p>Text-to-video generation with impressive motion quality.</p>
+      <span class="card-price">Free / $8/mo</span>
+    </a>
+<a class="tool-card" href="clearscope.html" data-cat="AI Marketing">
+      <div class="card-top"><span class="card-icon">🔍</span><span class="card-score score-mid">8.0</span></div>
+      <h3>Clearscope </h3>
+      <span class="card-cat">AI Marketing</span>
+      <p>Premium content optimization trusted by enterprise teams.</p>
+      <span class="card-price">$170/mo</span>
+    </a>
+<a class="tool-card" href="ada.html" data-cat="AI Chatbots">
+      <div class="card-top"><span class="card-icon">🤖</span><span class="card-score score-mid">8.0</span></div>
+      <h3>Ada </h3>
+      <span class="card-cat">AI Chatbots</span>
+      <p>Enterprise AI customer service automation.</p>
+      <span class="card-price">Custom</span>
+    </a>
+<a class="tool-card" href="zendesk-ai.html" data-cat="AI Chatbots">
+      <div class="card-top"><span class="card-icon">🎧</span><span class="card-score score-mid">8.0</span></div>
+      <h3>Zendesk AI </h3>
+      <span class="card-cat">AI Chatbots</span>
+      <p>Enterprise customer service with AI-powered ticket routing.</p>
+      <span class="card-price">$55/agent/mo</span>
+    </a>
+<a class="tool-card" href="hex.html" data-cat="AI Data">
+      <div class="card-top"><span class="card-icon">⬡</span><span class="card-score score-mid">8.0</span></div>
+      <h3>Hex </h3>
+      <span class="card-cat">AI Data</span>
+      <p>Collaborative data workspace with AI-assisted analysis.</p>
+      <span class="card-price">Free / $28/mo</span>
+    </a>
+<a class="tool-card" href="ibm-watsonx.html" data-cat="AI Data">
+      <div class="card-top"><span class="card-icon">🔷</span><span class="card-score score-mid">8.0</span></div>
+      <h3>IBM watsonx </h3>
+      <span class="card-cat">AI Data</span>
+      <p>IBM's enterprise AI and data platform.</p>
+      <span class="card-price">Custom</span>
+    </a>
+<a class="tool-card" href="fireflies-ai.html" data-cat="AI Productivity">
+      <div class="card-top"><span class="card-icon">🔥</span><span class="card-score score-mid">8.0</span></div>
+      <h3>Fireflies.ai <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Productivity</span>
+      <p>AI meeting assistant with transcription and action items.</p>
+      <span class="card-price">Free / $10/mo</span>
+    </a>
+<a class="tool-card" href="reclaim-ai.html" data-cat="AI Productivity">
+      <div class="card-top"><span class="card-icon">📅</span><span class="card-score score-mid">8.0</span></div>
+      <h3>Reclaim.ai </h3>
+      <span class="card-cat">AI Productivity</span>
+      <p>AI calendar management that protects your focus time.</p>
+      <span class="card-price">$8/user/mo</span>
+    </a>
+<a class="tool-card" href="anyword.html" data-cat="AI Writing">
+      <div class="card-top"><span class="card-icon">📊</span><span class="card-score score-mid">7.9</span></div>
+      <h3>Anyword <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Writing</span>
+      <p>Data-driven copywriting with predictive performance scores.</p>
+      <span class="card-price">$39/mo</span>
+    </a>
+<a class="tool-card" href="amazon-codewhisperer.html" data-cat="AI Coding">
+      <div class="card-top"><span class="card-icon">☁️</span><span class="card-score score-mid">7.8</span></div>
+      <h3>Amazon CodeWhisperer </h3>
+      <span class="card-cat">AI Coding</span>
+      <p>AWS-integrated AI coding with security scanning built in.</p>
+      <span class="card-price">Free / Pro</span>
+    </a>
+<a class="tool-card" href="relume.html" data-cat="AI Design">
+      <div class="card-top"><span class="card-icon">🏗️</span><span class="card-score score-mid">7.8</span></div>
+      <h3>Relume <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Design</span>
+      <p>AI website wireframing that generates Figma-ready components.</p>
+      <span class="card-price">$38/mo</span>
+    </a>
+<a class="tool-card" href="clipdrop.html" data-cat="AI Design">
+      <div class="card-top"><span class="card-icon">✂️</span><span class="card-score score-mid">7.8</span></div>
+      <h3>Clipdrop </h3>
+      <span class="card-cat">AI Design</span>
+      <p>AI-powered image editing and enhancement suite.</p>
+      <span class="card-price">Free / $9/mo</span>
+    </a>
+<a class="tool-card" href="play-ht.html" data-cat="AI Audio">
+      <div class="card-top"><span class="card-icon">▶️</span><span class="card-score score-mid">7.8</span></div>
+      <h3>Play.ht <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Audio</span>
+      <p>AI voice generation with a massive library of natural voices.</p>
+      <span class="card-price">$14/mo</span>
+    </a>
+<a class="tool-card" href="adobe-podcast.html" data-cat="AI Audio">
+      <div class="card-top"><span class="card-icon">🎧</span><span class="card-score score-mid">7.8</span></div>
+      <h3>Adobe Podcast </h3>
+      <span class="card-cat">AI Audio</span>
+      <p>AI-powered audio enhancement that makes any recording studio-quality.</p>
+      <span class="card-price">Free</span>
+    </a>
+<a class="tool-card" href="marketmuse.html" data-cat="AI Marketing">
+      <div class="card-top"><span class="card-icon">🧭</span><span class="card-score score-mid">7.8</span></div>
+      <h3>MarketMuse <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Marketing</span>
+      <p>AI content strategy that maps your topical authority gaps.</p>
+      <span class="card-price">$99/mo</span>
+    </a>
+<a class="tool-card" href="sprout-social-ai.html" data-cat="AI Marketing">
+      <div class="card-top"><span class="card-icon">🌱</span><span class="card-score score-mid">7.8</span></div>
+      <h3>Sprout Social AI </h3>
+      <span class="card-cat">AI Marketing</span>
+      <p>Enterprise social media management with AI analytics.</p>
+      <span class="card-price">$249/mo</span>
+    </a>
+<a class="tool-card" href="mutiny.html" data-cat="AI Marketing">
+      <div class="card-top"><span class="card-icon">🏴‍☠️</span><span class="card-score score-mid">7.8</span></div>
+      <h3>Mutiny </h3>
+      <span class="card-cat">AI Marketing</span>
+      <p>AI-powered website personalization for B2B conversion.</p>
+      <span class="card-price">Custom</span>
+    </a>
+<a class="tool-card" href="drift.html" data-cat="AI Chatbots">
+      <div class="card-top"><span class="card-icon">🔵</span><span class="card-score score-mid">7.8</span></div>
+      <h3>Drift </h3>
+      <span class="card-cat">AI Chatbots</span>
+      <p>Conversational AI for B2B sales and marketing.</p>
+      <span class="card-price">Custom</span>
+    </a>
+<a class="tool-card" href="manychat.html" data-cat="AI Chatbots">
+      <div class="card-top"><span class="card-icon">📱</span><span class="card-score score-mid">7.8</span></div>
+      <h3>ManyChat <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Chatbots</span>
+      <p>Instagram, WhatsApp, and Messenger marketing automation.</p>
+      <span class="card-price">Free / $15/mo</span>
+    </a>
+<a class="tool-card" href="voiceflow.html" data-cat="AI Chatbots">
+      <div class="card-top"><span class="card-icon">🗣️</span><span class="card-score score-mid">7.8</span></div>
+      <h3>Voiceflow </h3>
+      <span class="card-cat">AI Chatbots</span>
+      <p>Design and deploy AI agents with a visual builder.</p>
+      <span class="card-price">Free / $50/mo</span>
+    </a>
+<a class="tool-card" href="rapidminer.html" data-cat="AI Data">
+      <div class="card-top"><span class="card-icon">⛏️</span><span class="card-score score-mid">7.8</span></div>
+      <h3>RapidMiner </h3>
+      <span class="card-cat">AI Data</span>
+      <p>Visual data science platform with drag-and-drop ML.</p>
+      <span class="card-price">Free / Custom</span>
+    </a>
+<a class="tool-card" href="gamma.html" data-cat="AI Productivity">
+      <div class="card-top"><span class="card-icon">🔺</span><span class="card-score score-mid">7.8</span></div>
+      <h3>Gamma </h3>
+      <span class="card-cat">AI Productivity</span>
+      <p>AI presentations and documents with stunning design.</p>
+      <span class="card-price">Free / $8/mo</span>
+    </a>
+<a class="tool-card" href="wordtune.html" data-cat="AI Writing">
+      <div class="card-top"><span class="card-icon">🎯</span><span class="card-score score-mid">7.6</span></div>
+      <h3>Wordtune </h3>
+      <span class="card-cat">AI Writing</span>
+      <p>Sentence-level rewriting that makes your writing sing.</p>
+      <span class="card-price">$10/mo</span>
+    </a>
+<a class="tool-card" href="sourcegraph-cody.html" data-cat="AI Coding">
+      <div class="card-top"><span class="card-icon">🔎</span><span class="card-score score-mid">7.6</span></div>
+      <h3>Sourcegraph Cody </h3>
+      <span class="card-cat">AI Coding</span>
+      <p>AI coding assistant with deep codebase understanding.</p>
+      <span class="card-price">Free / $9/mo</span>
+    </a>
+<a class="tool-card" href="krea-ai.html" data-cat="AI Design">
+      <div class="card-top"><span class="card-icon">🌟</span><span class="card-score score-mid">7.6</span></div>
+      <h3>Krea AI </h3>
+      <span class="card-cat">AI Design</span>
+      <p>Real-time AI image generation and enhancement.</p>
+      <span class="card-price">Free / $24/mo</span>
+    </a>
+<a class="tool-card" href="botpress.html" data-cat="AI Chatbots">
+      <div class="card-top"><span class="card-icon">🔧</span><span class="card-score score-mid">7.6</span></div>
+      <h3>Botpress </h3>
+      <span class="card-cat">AI Chatbots</span>
+      <p>Open-source chatbot builder with visual flow editor.</p>
+      <span class="card-price">Free / $5/mo</span>
+    </a>
+<a class="tool-card" href="tabnine.html" data-cat="AI Coding">
+      <div class="card-top"><span class="card-icon">🔮</span><span class="card-score score-mid">7.5</span></div>
+      <h3>Tabnine <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Coding</span>
+      <p>Privacy-first AI code completion for enterprise teams.</p>
+      <span class="card-price">$12/mo</span>
+    </a>
+<a class="tool-card" href="galileo-ai.html" data-cat="AI Design">
+      <div class="card-top"><span class="card-icon">🔬</span><span class="card-score score-mid">7.5</span></div>
+      <h3>Galileo AI </h3>
+      <span class="card-cat">AI Design</span>
+      <p>Generate editable UI designs from text descriptions.</p>
+      <span class="card-price">Waitlist</span>
+    </a>
+<a class="tool-card" href="playground-ai.html" data-cat="AI Design">
+      <div class="card-top"><span class="card-icon">🎪</span><span class="card-score score-mid">7.5</span></div>
+      <h3>Playground AI </h3>
+      <span class="card-cat">AI Design</span>
+      <p>Mixed image editing with AI generation and real photos.</p>
+      <span class="card-price">Free / $15/mo</span>
+    </a>
+<a class="tool-card" href="looka.html" data-cat="AI Design">
+      <div class="card-top"><span class="card-icon">✨</span><span class="card-score score-mid">7.5</span></div>
+      <h3>Looka <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Design</span>
+      <p>AI logo maker with full brand identity packages.</p>
+      <span class="card-price">$20 one-time</span>
+    </a>
+<a class="tool-card" href="resemble-ai.html" data-cat="AI Audio">
+      <div class="card-top"><span class="card-icon">🔄</span><span class="card-score score-mid">7.5</span></div>
+      <h3>Resemble AI </h3>
+      <span class="card-cat">AI Audio</span>
+      <p>Real-time voice cloning and speech-to-speech conversion.</p>
+      <span class="card-price">Custom</span>
+    </a>
+<a class="tool-card" href="soundraw.html" data-cat="AI Audio">
+      <div class="card-top"><span class="card-icon">🎹</span><span class="card-score score-mid">7.5</span></div>
+      <h3>Soundraw <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Audio</span>
+      <p>AI music generation for content creators — royalty-free.</p>
+      <span class="card-price">$17/mo</span>
+    </a>
+<a class="tool-card" href="hootsuite-ai.html" data-cat="AI Marketing">
+      <div class="card-top"><span class="card-icon">🦉</span><span class="card-score score-mid">7.5</span></div>
+      <h3>Hootsuite AI <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Marketing</span>
+      <p>Social media management with AI caption and scheduling suggestions.</p>
+      <span class="card-price">$99/mo</span>
+    </a>
+<a class="tool-card" href="smartly-io.html" data-cat="AI Marketing">
+      <div class="card-top"><span class="card-icon">🤖</span><span class="card-score score-mid">7.5</span></div>
+      <h3>Smartly.io </h3>
+      <span class="card-cat">AI Marketing</span>
+      <p>AI-powered creative and media buying automation for enterprise.</p>
+      <span class="card-price">Custom</span>
+    </a>
+<a class="tool-card" href="lavender-ai.html" data-cat="AI Marketing">
+      <div class="card-top"><span class="card-icon">💜</span><span class="card-score score-mid">7.5</span></div>
+      <h3>Lavender AI <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Marketing</span>
+      <p>AI email coaching that improves reply rates.</p>
+      <span class="card-price">$29/mo</span>
+    </a>
+<a class="tool-card" href="6sense.html" data-cat="AI Marketing">
+      <div class="card-top"><span class="card-icon">🔮</span><span class="card-score score-mid">7.5</span></div>
+      <h3>6sense </h3>
+      <span class="card-cat">AI Marketing</span>
+      <p>AI-powered B2B intent data and predictive analytics.</p>
+      <span class="card-price">Custom</span>
+    </a>
+<a class="tool-card" href="tidio-ai.html" data-cat="AI Chatbots">
+      <div class="card-top"><span class="card-icon">💭</span><span class="card-score score-mid">7.5</span></div>
+      <h3>Tidio AI <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Chatbots</span>
+      <p>AI chatbot for small business customer support.</p>
+      <span class="card-price">$29/mo</span>
+    </a>
+<a class="tool-card" href="liveperson.html" data-cat="AI Chatbots">
+      <div class="card-top"><span class="card-icon">🔴</span><span class="card-score score-mid">7.5</span></div>
+      <h3>LivePerson </h3>
+      <span class="card-cat">AI Chatbots</span>
+      <p>Conversational AI platform for enterprise customer engagement.</p>
+      <span class="card-price">Custom</span>
+    </a>
+<a class="tool-card" href="dialogflow.html" data-cat="AI Chatbots">
+      <div class="card-top"><span class="card-icon">🌐</span><span class="card-score score-mid">7.5</span></div>
+      <h3>Dialogflow </h3>
+      <span class="card-cat">AI Chatbots</span>
+      <p>Google's enterprise conversational AI platform.</p>
+      <span class="card-price">Free / Pay-as-you-go</span>
+    </a>
+<a class="tool-card" href="kore-ai.html" data-cat="AI Chatbots">
+      <div class="card-top"><span class="card-icon">🤖</span><span class="card-score score-mid">7.5</span></div>
+      <h3>Kore.ai </h3>
+      <span class="card-cat">AI Chatbots</span>
+      <p>Enterprise virtual assistant platform with 100+ prebuilt bots.</p>
+      <span class="card-price">Custom</span>
+    </a>
+<a class="tool-card" href="obviously-ai.html" data-cat="AI Data">
+      <div class="card-top"><span class="card-icon">📊</span><span class="card-score score-mid">7.5</span></div>
+      <h3>Obviously AI </h3>
+      <span class="card-cat">AI Data</span>
+      <p>No-code machine learning predictions in minutes.</p>
+      <span class="card-price">$75/mo</span>
+    </a>
+<a class="tool-card" href="julius-ai.html" data-cat="AI Data">
+      <div class="card-top"><span class="card-icon">📈</span><span class="card-score score-mid">7.5</span></div>
+      <h3>Julius AI </h3>
+      <span class="card-cat">AI Data</span>
+      <p>Chat with your data — AI analytics for everyone.</p>
+      <span class="card-price">$20/mo</span>
+    </a>
+<a class="tool-card" href="mode-analytics.html" data-cat="AI Data">
+      <div class="card-top"><span class="card-icon">📉</span><span class="card-score score-mid">7.5</span></div>
+      <h3>Mode Analytics </h3>
+      <span class="card-cat">AI Data</span>
+      <p>Collaborative analytics platform with AI-assisted querying.</p>
+      <span class="card-price">Custom</span>
+    </a>
+<a class="tool-card" href="clockwise.html" data-cat="AI Productivity">
+      <div class="card-top"><span class="card-icon">🕐</span><span class="card-score score-mid">7.5</span></div>
+      <h3>Clockwise </h3>
+      <span class="card-cat">AI Productivity</span>
+      <p>AI that creates focus time blocks on your calendar.</p>
+      <span class="card-price">Free / $7/mo</span>
+    </a>
+<a class="tool-card" href="beautiful-ai.html" data-cat="AI Productivity">
+      <div class="card-top"><span class="card-icon">💎</span><span class="card-score score-mid">7.5</span></div>
+      <h3>Beautiful.ai <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Productivity</span>
+      <p>Smart presentations that enforce good design.</p>
+      <span class="card-price">$12/mo</span>
+    </a>
+<a class="tool-card" href="koala-ai.html" data-cat="AI Writing">
+      <div class="card-top"><span class="card-icon">🐨</span><span class="card-score score-mid">7.4</span></div>
+      <h3>Koala AI <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Writing</span>
+      <p>One-click SEO blog posts that are surprisingly readable.</p>
+      <span class="card-price">$9/mo</span>
+    </a>
+<a class="tool-card" href="notion-calendar.html" data-cat="AI Productivity">
+      <div class="card-top"><span class="card-icon">📆</span><span class="card-score score-mid">7.4</span></div>
+      <h3>Notion Calendar </h3>
+      <span class="card-cat">AI Productivity</span>
+      <p>Clean calendar with AI scheduling and Notion integration.</p>
+      <span class="card-price">Free</span>
+    </a>
+<a class="tool-card" href="novelai.html" data-cat="AI Writing">
+      <div class="card-top"><span class="card-icon">📚</span><span class="card-score score-mid">7.3</span></div>
+      <h3>NovelAI </h3>
+      <span class="card-cat">AI Writing</span>
+      <p>AI storytelling with anime-style image generation built in.</p>
+      <span class="card-price">$15/mo</span>
+    </a>
+<a class="tool-card" href="vizcom.html" data-cat="AI Design">
+      <div class="card-top"><span class="card-icon">✏️</span><span class="card-score score-mid">7.3</span></div>
+      <h3>Vizcom </h3>
+      <span class="card-cat">AI Design</span>
+      <p>Industrial design sketches to photorealistic renders.</p>
+      <span class="card-price">$19/mo</span>
+    </a>
+<a class="tool-card" href="d-id.html" data-cat="AI Video">
+      <div class="card-top"><span class="card-icon">🗣️</span><span class="card-score score-mid">7.3</span></div>
+      <h3>D-ID </h3>
+      <span class="card-cat">AI Video</span>
+      <p>Create talking avatar videos from a single photo.</p>
+      <span class="card-price">$4.7/mo</span>
+    </a>
+<a class="tool-card" href="aiva.html" data-cat="AI Audio">
+      <div class="card-top"><span class="card-icon">🎼</span><span class="card-score score-mid">7.3</span></div>
+      <h3>AIVA </h3>
+      <span class="card-cat">AI Audio</span>
+      <p>AI music composition for soundtracks and emotional scores.</p>
+      <span class="card-price">Free / $11/mo</span>
+    </a>
+<a class="tool-card" href="buffer-ai.html" data-cat="AI Marketing">
+      <div class="card-top"><span class="card-icon">📊</span><span class="card-score score-mid">7.3</span></div>
+      <h3>Buffer AI <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Marketing</span>
+      <p>Simple social media scheduling with AI post suggestions.</p>
+      <span class="card-price">Free / $6/mo</span>
+    </a>
+<a class="tool-card" href="freshchat-ai.html" data-cat="AI Chatbots">
+      <div class="card-top"><span class="card-icon">💚</span><span class="card-score score-mid">7.3</span></div>
+      <h3>Freshchat AI </h3>
+      <span class="card-cat">AI Chatbots</span>
+      <p>AI-powered messaging for customer engagement.</p>
+      <span class="card-price">Free / $19/mo</span>
+    </a>
+<a class="tool-card" href="rasa.html" data-cat="AI Chatbots">
+      <div class="card-top"><span class="card-icon">⚙️</span><span class="card-score score-mid">7.3</span></div>
+      <h3>Rasa </h3>
+      <span class="card-cat">AI Chatbots</span>
+      <p>Open-source conversational AI framework for developers.</p>
+      <span class="card-price">Free / Enterprise</span>
+    </a>
+<a class="tool-card" href="yellow-ai.html" data-cat="AI Chatbots">
+      <div class="card-top"><span class="card-icon">🟡</span><span class="card-score score-mid">7.3</span></div>
+      <h3>Yellow.ai </h3>
+      <span class="card-cat">AI Chatbots</span>
+      <p>Enterprise conversational AI across 35+ channels.</p>
+      <span class="card-price">Custom</span>
+    </a>
+<a class="tool-card" href="akkio.html" data-cat="AI Data">
+      <div class="card-top"><span class="card-icon">🔮</span><span class="card-score score-mid">7.3</span></div>
+      <h3>Akkio </h3>
+      <span class="card-cat">AI Data</span>
+      <p>No-code AI for data analytics and predictions.</p>
+      <span class="card-price">$49/mo</span>
+    </a>
+<a class="tool-card" href="mem-ai.html" data-cat="AI Productivity">
+      <div class="card-top"><span class="card-icon">🧠</span><span class="card-score score-mid">7.3</span></div>
+      <h3>Mem AI </h3>
+      <span class="card-cat">AI Productivity</span>
+      <p>Self-organizing AI note-taking.</p>
+      <span class="card-price">$15/mo</span>
+    </a>
+<a class="tool-card" href="hyperwrite.html" data-cat="AI Writing">
+      <div class="card-top"><span class="card-icon">⚡</span><span class="card-score score-mid">7.2</span></div>
+      <h3>Hyperwrite <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Writing</span>
+      <p>AI writing assistant that works wherever you type online.</p>
+      <span class="card-price">$20/mo</span>
+    </a>
+<a class="tool-card" href="pieces-for-developers.html" data-cat="AI Coding">
+      <div class="card-top"><span class="card-icon">🧩</span><span class="card-score score-mid">7.2</span></div>
+      <h3>Pieces for Developers </h3>
+      <span class="card-cat">AI Coding</span>
+      <p>AI-powered code snippet manager and workflow tool.</p>
+      <span class="card-price">Free</span>
+    </a>
+<a class="tool-card" href="uizard.html" data-cat="AI Design">
+      <div class="card-top"><span class="card-icon">📱</span><span class="card-score score-mid">7.2</span></div>
+      <h3>Uizard </h3>
+      <span class="card-cat">AI Design</span>
+      <p>Turn sketches and screenshots into editable designs.</p>
+      <span class="card-price">Free / $12/mo</span>
+    </a>
+<a class="tool-card" href="pictory.html" data-cat="AI Video">
+      <div class="card-top"><span class="card-icon">🎬</span><span class="card-score score-mid">7.2</span></div>
+      <h3>Pictory <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Video</span>
+      <p>AI video creation from scripts and blog content.</p>
+      <span class="card-price">$19/mo</span>
+    </a>
+<a class="tool-card" href="predis-ai.html" data-cat="AI Marketing">
+      <div class="card-top"><span class="card-icon">🎯</span><span class="card-score score-mid">7.2</span></div>
+      <h3>Predis AI <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Marketing</span>
+      <p>AI social media content generation and competitor analysis.</p>
+      <span class="card-price">$27/mo</span>
+    </a>
+<a class="tool-card" href="persado.html" data-cat="AI Marketing">
+      <div class="card-top"><span class="card-icon">🧠</span><span class="card-score score-mid">7.2</span></div>
+      <h3>Persado </h3>
+      <span class="card-cat">AI Marketing</span>
+      <p>AI-generated marketing language based on motivation modeling.</p>
+      <span class="card-price">Custom</span>
+    </a>
+<a class="tool-card" href="crayon.html" data-cat="AI Marketing">
+      <div class="card-top"><span class="card-icon">🖍️</span><span class="card-score score-mid">7.2</span></div>
+      <h3>Crayon </h3>
+      <span class="card-cat">AI Marketing</span>
+      <p>AI-powered competitive intelligence monitoring.</p>
+      <span class="card-price">Custom</span>
+    </a>
+<a class="tool-card" href="pecan-ai.html" data-cat="AI Data">
+      <div class="card-top"><span class="card-icon">🥜</span><span class="card-score score-mid">7.2</span></div>
+      <h3>Pecan AI </h3>
+      <span class="card-cat">AI Data</span>
+      <p>Predictive analytics platform for business teams.</p>
+      <span class="card-price">Custom</span>
+    </a>
+<a class="tool-card" href="tome-ai.html" data-cat="AI Productivity">
+      <div class="card-top"><span class="card-icon">📑</span><span class="card-score score-mid">7.2</span></div>
+      <h3>Tome AI </h3>
+      <span class="card-cat">AI Productivity</span>
+      <p>AI presentation generation from text.</p>
+      <span class="card-price">$10/mo</span>
+    </a>
+<a class="tool-card" href="lex.html" data-cat="AI Writing">
+      <div class="card-top"><span class="card-icon">📜</span><span class="card-score score-mid">7.1</span></div>
+      <h3>Lex </h3>
+      <span class="card-cat">AI Writing</span>
+      <p>Minimalist AI writing editor for focused long-form work.</p>
+      <span class="card-price">Free / $8/mo</span>
+    </a>
+<a class="tool-card" href="taskade.html" data-cat="AI Productivity">
+      <div class="card-top"><span class="card-icon">✅</span><span class="card-score score-mid">7.1</span></div>
+      <h3>Taskade <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Productivity</span>
+      <p>AI-powered project management with agents.</p>
+      <span class="card-price">$8/mo</span>
+    </a>
+<a class="tool-card" href="textcortex.html" data-cat="AI Writing">
+      <div class="card-top"><span class="card-icon">🧩</span><span class="card-score score-mid">7.0</span></div>
+      <h3>TextCortex <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Writing</span>
+      <p>Multilingual AI writing with a surprisingly good browser extension.</p>
+      <span class="card-price">$24/mo</span>
+    </a>
+<a class="tool-card" href="blackbox-ai.html" data-cat="AI Coding">
+      <div class="card-top"><span class="card-icon">⬛</span><span class="card-score score-mid">7.0</span></div>
+      <h3>Blackbox AI </h3>
+      <span class="card-cat">AI Coding</span>
+      <p>Code search and generation at an unbeatable price.</p>
+      <span class="card-price">Free / $2/mo</span>
+    </a>
+<a class="tool-card" href="sweep-ai.html" data-cat="AI Coding">
+      <div class="card-top"><span class="card-icon">🧹</span><span class="card-score score-mid">7.0</span></div>
+      <h3>Sweep AI </h3>
+      <span class="card-cat">AI Coding</span>
+      <p>AI junior developer that handles GitHub issues.</p>
+      <span class="card-price">Free / $480/mo</span>
+    </a>
+<a class="tool-card" href="khroma.html" data-cat="AI Design">
+      <div class="card-top"><span class="card-icon">🎨</span><span class="card-score score-mid">7.0</span></div>
+      <h3>Khroma </h3>
+      <span class="card-cat">AI Design</span>
+      <p>AI color palette generator trained on your preferences.</p>
+      <span class="card-price">Free</span>
+    </a>
+<a class="tool-card" href="brandmark.html" data-cat="AI Design">
+      <div class="card-top"><span class="card-icon">🏷️</span><span class="card-score score-mid">7.0</span></div>
+      <h3>Brandmark </h3>
+      <span class="card-cat">AI Design</span>
+      <p>Instant AI logo and brand identity design.</p>
+      <span class="card-price">$25 one-time</span>
+    </a>
+<a class="tool-card" href="lumen5.html" data-cat="AI Video">
+      <div class="card-top"><span class="card-icon">💡</span><span class="card-score score-mid">7.0</span></div>
+      <h3>Lumen5 <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Video</span>
+      <p>Turn blog posts into social media videos automatically.</p>
+      <span class="card-price">$19/mo</span>
+    </a>
+<a class="tool-card" href="fliki.html" data-cat="AI Video">
+      <div class="card-top"><span class="card-icon">📽️</span><span class="card-score score-mid">7.0</span></div>
+      <h3>Fliki <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Video</span>
+      <p>Text-to-video with AI voices and stock media.</p>
+      <span class="card-price">$21/mo</span>
+    </a>
+<a class="tool-card" href="phrasee.html" data-cat="AI Marketing">
+      <div class="card-top"><span class="card-icon">💬</span><span class="card-score score-mid">7.0</span></div>
+      <h3>Phrasee </h3>
+      <span class="card-cat">AI Marketing</span>
+      <p>AI-optimized marketing language for email and push notifications.</p>
+      <span class="card-price">Custom</span>
+    </a>
+<a class="tool-card" href="seventh-sense.html" data-cat="AI Marketing">
+      <div class="card-top"><span class="card-icon">🕐</span><span class="card-score score-mid">7.0</span></div>
+      <h3>Seventh Sense </h3>
+      <span class="card-cat">AI Marketing</span>
+      <p>AI send-time optimization for email marketing.</p>
+      <span class="card-price">$64/mo</span>
+    </a>
+<a class="tool-card" href="albert-ai.html" data-cat="AI Marketing">
+      <div class="card-top"><span class="card-icon">🤖</span><span class="card-score score-mid">7.0</span></div>
+      <h3>Albert AI </h3>
+      <span class="card-cat">AI Marketing</span>
+      <p>Autonomous AI marketing campaigns across channels.</p>
+      <span class="card-price">Custom</span>
+    </a>
+<a class="tool-card" href="pathfactory.html" data-cat="AI Marketing">
+      <div class="card-top"><span class="card-icon">🛤️</span><span class="card-score score-mid">7.0</span></div>
+      <h3>PathFactory </h3>
+      <span class="card-cat">AI Marketing</span>
+      <p>AI content intelligence and buyer journey optimization.</p>
+      <span class="card-price">Custom</span>
+    </a>
+<a class="tool-card" href="landbot.html" data-cat="AI Chatbots">
+      <div class="card-top"><span class="card-icon">🤖</span><span class="card-score score-mid">7.0</span></div>
+      <h3>Landbot <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Chatbots</span>
+      <p>No-code chatbot builder for websites and WhatsApp.</p>
+      <span class="card-price">Free / $32/mo</span>
+    </a>
+<a class="tool-card" href="polymer-ai.html" data-cat="AI Data">
+      <div class="card-top"><span class="card-icon">💎</span><span class="card-score score-mid">7.0</span></div>
+      <h3>Polymer AI </h3>
+      <span class="card-cat">AI Data</span>
+      <p>Turn spreadsheets into interactive dashboards with AI.</p>
+      <span class="card-price">$10/mo</span>
+    </a>
+<a class="tool-card" href="mindsdb.html" data-cat="AI Data">
+      <div class="card-top"><span class="card-icon">🧠</span><span class="card-score score-mid">7.0</span></div>
+      <h3>MindsDB </h3>
+      <span class="card-cat">AI Data</span>
+      <p>AI tables inside your existing database.</p>
+      <span class="card-price">Free / Custom</span>
+    </a>
+<a class="tool-card" href="simplified.html" data-cat="AI Writing">
+      <div class="card-top"><span class="card-icon">🎨</span><span class="card-score score-low">6.9</span></div>
+      <h3>Simplified <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Writing</span>
+      <p>All-in-one design and writing tool — jack of all trades.</p>
+      <span class="card-price">$18/mo</span>
+    </a>
+<a class="tool-card" href="rytr.html" data-cat="AI Writing">
+      <div class="card-top"><span class="card-icon">✏️</span><span class="card-score score-low">6.8</span></div>
+      <h3>Rytr <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Writing</span>
+      <p>Ultra-affordable AI writing for basic content needs.</p>
+      <span class="card-price">$9/mo</span>
+    </a>
+<a class="tool-card" href="moonbeam.html" data-cat="AI Writing">
+      <div class="card-top"><span class="card-icon">🌙</span><span class="card-score score-low">6.8</span></div>
+      <h3>Moonbeam </h3>
+      <span class="card-cat">AI Writing</span>
+      <p>Long-form writing assistant that structures your thoughts.</p>
+      <span class="card-price">$15/mo</span>
+    </a>
+<a class="tool-card" href="mutable-ai.html" data-cat="AI Coding">
+      <div class="card-top"><span class="card-icon">🧬</span><span class="card-score score-low">6.8</span></div>
+      <h3>Mutable AI </h3>
+      <span class="card-cat">AI Coding</span>
+      <p>AI refactoring and documentation generation.</p>
+      <span class="card-price">$12/mo</span>
+    </a>
+<a class="tool-card" href="designs-ai.html" data-cat="AI Design">
+      <div class="card-top"><span class="card-icon">🎯</span><span class="card-score score-low">6.8</span></div>
+      <h3>Designs.ai <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Design</span>
+      <p>All-in-one AI creative suite for quick branding.</p>
+      <span class="card-price">$19/mo</span>
+    </a>
+<a class="tool-card" href="elai-io.html" data-cat="AI Video">
+      <div class="card-top"><span class="card-icon">🤖</span><span class="card-score score-low">6.8</span></div>
+      <h3>Elai.io <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Video</span>
+      <p>AI avatar video creation for business communications.</p>
+      <span class="card-price">$23/mo</span>
+    </a>
+<a class="tool-card" href="lately.html" data-cat="AI Marketing">
+      <div class="card-top"><span class="card-icon">📅</span><span class="card-score score-low">6.8</span></div>
+      <h3>Lately <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Marketing</span>
+      <p>AI that turns long-form content into social media posts.</p>
+      <span class="card-price">$49/mo</span>
+    </a>
+<a class="tool-card" href="chatbot-com.html" data-cat="AI Chatbots">
+      <div class="card-top"><span class="card-icon">💬</span><span class="card-score score-low">6.8</span></div>
+      <h3>Chatbot.com <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Chatbots</span>
+      <p>Visual chatbot builder with LiveChat integration.</p>
+      <span class="card-price">$52/mo</span>
+    </a>
+<a class="tool-card" href="monkeylearn.html" data-cat="AI Data">
+      <div class="card-top"><span class="card-icon">🐒</span><span class="card-score score-low">6.8</span></div>
+      <h3>MonkeyLearn </h3>
+      <span class="card-cat">AI Data</span>
+      <p>No-code text analytics and sentiment analysis.</p>
+      <span class="card-price">Custom</span>
+    </a>
+<a class="tool-card" href="contentbot.html" data-cat="AI Writing">
+      <div class="card-top"><span class="card-icon">🤖</span><span class="card-score score-low">6.7</span></div>
+      <h3>ContentBot <span class="aff-tag">💰</span></h3>
+      <span class="card-cat">AI Writing</span>
+      <p>Automation-focused content tool with workflow integration.</p>
+      <span class="card-price">$30/mo</span>
+    </a>
+<a class="tool-card" href="peppertype.html" data-cat="AI Writing">
+      <div class="card-top"><span class="card-icon">🌶️</span><span class="card-score score-low">6.5</span></div>
+      <h3>Peppertype </h3>
+      <span class="card-cat">AI Writing</span>
+      <p>Quick content generation for marketing teams in emerging markets.</p>
+      <span class="card-price">$36/mo</span>
+    </a>
+<a class="tool-card" href="askcodi.html" data-cat="AI Coding">
+      <div class="card-top"><span class="card-icon">❓</span><span class="card-score score-low">6.5</span></div>
+      <h3>AskCodi </h3>
+      <span class="card-cat">AI Coding</span>
+      <p>Conversational AI coding assistant for multiple languages.</p>
+      <span class="card-price">Free / $10/mo</span>
+    </a>
+<a class="tool-card" href="figr-ai.html" data-cat="AI Design">
+      <div class="card-top"><span class="card-icon">🎨</span><span class="card-score score-high">8.7</span></div>
+      <h3>Figr AI </h3>
+      <span class="card-cat">AI Design</span>
+      <p>AI-powered design tool that generates UI components and prototypes from text prompts in seconds.</p>
+      <span class="card-price">Free / $12/mo</span>
+    </a>
+</div>
+  <div class="newsletter" id="newsletter">
+    <h2>Stay ahead of the AI curve</h2>
+    <p>Weekly picks, new tool drops, and honest takes — straight to your inbox.</p>
+    <button class="nl-cta" onclick="openModal()">Subscribe to Newsletter</button>
+    <p style="font-size:.75rem;color:var(--muted);margin-top:12px;">No spam, ever. Unsubscribe anytime.</p>
+  </div>
+</div>
+<footer class="footer"><div class="footer-inner">
+  <p>&copy; 2025 AI Pulse Checker &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a> &middot; <a href="#">Affiliate Disclosure</a></p>
+  <p style="margin-top:8px;font-size:.72rem;opacity:.6;">Disclosure: Some links are affiliate links. This never influences our scores or rankings.</p>
+</div></footer>
+<script>
+function filterCat(btn,cat){document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.tool-card').forEach(c=>{c.style.display=cat==='all'||c.getAttribute('data-cat')===cat?'':'none';});}
+function filterSearch(){const q=document.getElementById('search').value.toLowerCase();document.querySelectorAll('.tool-card').forEach(c=>{c.style.display=c.textContent.toLowerCase().includes(q)?'':'none';});}
+</script>
+
+<script>
+function openModal(){document.getElementById('nlModal').classList.add('active');document.body.style.overflow='hidden';}
+function closeModal(){document.getElementById('nlModal').classList.remove('active');document.body.style.overflow='';}
+function handleSubmit(e){
+  e.preventDefault();
+  var form=e.target;
+  var data=new FormData(form);
+  fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(data).toString()})
+  .then(function(){document.getElementById('nlForm').style.display='none';document.getElementById('nlSuccess').style.display='block';})
+  .catch(function(){document.getElementById('nlForm').style.display='none';document.getElementById('nlSuccess').style.display='block';});
+  return false;
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+</script>
+
+</body>
+</html>

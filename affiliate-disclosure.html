@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Affiliate Disclosure for AI Pulse Checker — Full transparency about how we earn revenue and how it affects (or doesn't affect) our reviews.">
+<title>Affiliate Disclosure — AI Pulse Checker</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+:root{
+  --ink:#e8e6e1;
+  --paper:#0d0f12;
+  --cream:#161921;
+  --card:rgba(22,25,33,.7);
+  --card-solid:#161921;
+  --border:rgba(255,255,255,.08);
+  --accent:#e05a47;
+  --accent-glow:rgba(224,90,71,.25);
+  --accent-dark:#c44433;
+  --sage:#4ade80;
+  --sage-glow:rgba(74,222,128,.2);
+  --sage-light:rgba(74,222,128,.08);
+  --muted:rgba(255,255,255,.5);
+  --font-display:'Playfair Display',Georgia,serif;
+  --font-body:'Outfit',sans-serif;
+  --font-mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);background:var(--paper);color:var(--ink);line-height:1.6;overflow-x:hidden;}
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;z-index:-1;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 20%, rgba(224,90,71,.06) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(74,222,128,.04) 0%, transparent 60%);
+  pointer-events:none;
+}
+a{color:inherit;text-decoration:none;}
+/* Navbar */
+.navbar{
+  background:rgba(13,15,18,.85);
+  backdrop-filter:blur(20px) saturate(1.5);
+  border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:200;
+}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;}
+.logo{font-family:var(--font-display);font-size:1.5rem;font-weight:700;display:flex;align-items:center;gap:8px;}
+.logo:hover{opacity:.8;}
+.dark-toggle{
+  background:rgba(255,255,255,.06);border:1px solid var(--border);
+  border-radius:10px;padding:7px 14px;cursor:pointer;
+  font-size:.85rem;transition:all .3s;color:var(--muted);
+  font-family:var(--font-body);
+}
+.dark-toggle:hover{border-color:rgba(255,255,255,.2);color:var(--ink);}
+/* Page hero */
+.page-hero{
+  max-width:800px;margin:0 auto;padding:60px 24px 40px;
+  border-bottom:1px solid var(--border);
+  position:relative;
+}
+.page-hero::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity:.3;
+}
+.page-hero h1{
+  font-family:var(--font-display);font-size:2.4rem;font-weight:700;
+  margin-bottom:10px;
+  background:linear-gradient(135deg, var(--ink) 0%, rgba(232,230,225,.7) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.page-hero p{color:var(--muted);font-size:1rem;}
+.page-hero .updated{font-size:.82rem;color:var(--muted);margin-top:8px;opacity:.7;}
+/* Content */
+.legal-content{
+  max-width:800px;margin:0 auto;padding:40px 24px 60px;
+}
+.legal-content h2{
+  font-family:var(--font-display);font-size:1.5rem;font-weight:700;
+  margin:40px 0 16px;padding-bottom:10px;
+  border-bottom:1px solid var(--border);
+  color:var(--ink);
+}
+.legal-content h2:first-child{margin-top:0;}
+.legal-content h3{
+  font-family:var(--font-body);font-size:1.1rem;font-weight:600;
+  margin:24px 0 10px;color:var(--ink);
+}
+.legal-content p{
+  color:rgba(232,230,225,.8);font-size:.95rem;line-height:1.8;
+  margin-bottom:16px;
+}
+.legal-content ul,.legal-content ol{
+  margin:12px 0 20px 24px;
+}
+.legal-content li{
+  color:rgba(232,230,225,.8);font-size:.95rem;line-height:1.8;
+  margin-bottom:8px;
+}
+.legal-content a{color:var(--accent);text-decoration:underline;text-underline-offset:2px;}
+.legal-content a:hover{opacity:.8;}
+.legal-content strong{color:var(--ink);font-weight:600;}
+.info-box{
+  background:var(--sage-light);border:1px solid rgba(74,222,128,.12);
+  border-radius:14px;padding:20px 24px;margin:24px 0;
+}
+.info-box p{color:var(--ink);margin:0;}
+.highlight-box{
+  background:rgba(224,90,71,.06);border-left:4px solid var(--accent);
+  border-radius:0 14px 14px 0;padding:20px 24px;margin:24px 0;
+}
+.highlight-box p{color:var(--ink);margin:0;}
+/* Principles grid */
+.principles-grid{
+  display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  gap:16px;margin:24px 0;
+}
+.principle-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:14px;padding:20px;text-align:center;
+  transition:all .3s;
+}
+.principle-card:hover{border-color:rgba(255,255,255,.15);transform:translateY(-2px);}
+.principle-card .icon{font-size:1.8rem;margin-bottom:8px;}
+.principle-card h4{font-size:.95rem;font-weight:600;margin-bottom:6px;color:var(--ink);}
+.principle-card p{font-size:.82rem;color:var(--muted);margin:0;line-height:1.5;}
+/* Footer */
+.footer{
+  background:rgba(13,15,18,.8);
+  border-top:1px solid var(--border);
+  color:var(--muted);padding:48px 0 28px;margin-top:0;
+  position:relative;
+}
+.footer::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg, transparent 0%, var(--accent) 50%, transparent 100%);
+  opacity:.4;
+}
+.footer-inner{max-width:1200px;margin:0 auto;padding:0 24px;text-align:center;font-size:.82rem;}
+.footer a{color:var(--muted);margin:0 10px;transition:color .2s;}
+.footer a:hover{color:var(--ink);}
+/* Light mode */
+.light-mode{
+  --ink:#0c0c0c;--paper:#f5f2ec;--cream:#eae6dd;
+  --card:rgba(255,255,255,.9);--card-solid:#fff;
+  --border:rgba(0,0,0,.08);--muted:#7a756c;
+  --accent-glow:rgba(224,90,71,.15);
+  --sage-light:rgba(61,107,69,.08);
+}
+.light-mode body::before{display:none;}
+.light-mode .navbar{background:rgba(245,242,236,.92);}
+.light-mode .page-hero h1{background:linear-gradient(135deg, #0c0c0c 0%, #333 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.light-mode .legal-content p,.light-mode .legal-content li{color:#444;}
+.light-mode .principle-card{background:rgba(0,0,0,.03);}
+.light-mode .footer{background:var(--ink);color:rgba(245,242,236,.5);}
+.light-mode .footer a{color:rgba(245,242,236,.5);}
+@media(max-width:768px){
+  .page-hero h1{font-size:1.8rem;}
+  .legal-content{padding:30px 20px 40px;}
+  .principles-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <svg width="28" height="28" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#d94832"/><path d="M20 55 Q30 30, 50 50 Q70 70, 80 45" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/></svg>
+      AI Pulse Checker
+    </a>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <a href="index.html" style="font-size:.85rem;color:var(--muted);font-weight:500;">← All Reviews</a>
+      <button class="dark-toggle" onclick="toggleDark()">☀️</button>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <h1>Affiliate Disclosure</h1>
+  <p>Full transparency about how we earn revenue and how it affects our reviews.</p>
+  <p class="updated">Last updated: February 17, 2026</p>
+</div>
+
+<div class="legal-content">
+
+  <h2>The Short Version</h2>
+  <div class="highlight-box">
+    <p>Some links on AI Pulse Checker are affiliate links. If you click one and sign up for a paid plan, we may earn a small commission — at <strong>no extra cost to you</strong>. This revenue helps us keep the site running and continue producing honest, in-depth reviews. Affiliate partnerships <strong>never</strong> influence our scores, rankings, or editorial decisions.</p>
+  </div>
+
+  <h2>Our Core Principles</h2>
+  <div class="principles-grid">
+    <div class="principle-card">
+      <div class="icon">⚖️</div>
+      <h4>Editorial Independence</h4>
+      <p>Reviews are written before any affiliate relationship is considered. Scores are based solely on testing quality.</p>
+    </div>
+    <div class="principle-card">
+      <div class="icon">🏷️</div>
+      <h4>Clear Labeling</h4>
+      <p>Every tool with an affiliate link is marked with a 💰 tag so you always know which links earn us a commission.</p>
+    </div>
+    <div class="principle-card">
+      <div class="icon">🔬</div>
+      <h4>Testing First</h4>
+      <p>We spend 40+ hours testing each tool before writing a single word. No shortcuts, no exceptions.</p>
+    </div>
+    <div class="principle-card">
+      <div class="icon">💯</div>
+      <h4>Honest Scoring</h4>
+      <p>Many of our highest-rated tools have no affiliate program. Many affiliate partners receive average or low scores.</p>
+    </div>
+  </div>
+
+  <h2>What Are Affiliate Links?</h2>
+  <p>Affiliate links are special tracking URLs provided by companies or affiliate networks. When you click an affiliate link on our site and subsequently make a purchase or sign up for a service, the company knows the referral came from us and pays us a small commission. This is a standard practice across the internet and is how many independent review sites sustain themselves.</p>
+  <p>Importantly, using an affiliate link <strong>does not cost you anything extra</strong>. The price you pay is exactly the same whether you use our link or go directly to the company's website. In some cases, affiliate links may even include special discounts or extended trial periods.</p>
+
+  <h2>How We Identify Affiliate Links</h2>
+  <p>We believe in complete transparency. On AI Pulse Checker, affiliate links are identified in the following ways:</p>
+  <ul>
+    <li><strong>💰 Tag:</strong> Tools with affiliate partnerships display a 💰 icon next to their name on the homepage and in their review</li>
+    <li><strong>Footer Disclosure:</strong> Every page on our site includes a disclosure notice in the footer</li>
+    <li><strong>This Page:</strong> This dedicated Affiliate Disclosure page provides complete details about our affiliate relationships</li>
+    <li><strong>Review Disclosures:</strong> Individual review pages include relevant disclosures where applicable</li>
+  </ul>
+
+  <h2>How Affiliate Revenue Supports Our Work</h2>
+  <p>Running an independent review site requires significant time and resources. Affiliate commissions help us cover:</p>
+  <ul>
+    <li><strong>Subscription Costs:</strong> We pay for premium plans of the tools we review to provide thorough, hands-on evaluations</li>
+    <li><strong>Hosting and Infrastructure:</strong> Server costs, domain registration, CDN services, and security measures</li>
+    <li><strong>Research Time:</strong> Each review involves 40+ hours of testing, comparison, and writing</li>
+    <li><strong>Site Development:</strong> Ongoing improvements to our website's design, performance, and user experience</li>
+    <li><strong>Content Updates:</strong> Regularly revisiting and updating reviews as tools release new features</li>
+  </ul>
+
+  <div class="info-box">
+    <p><strong>Without affiliate revenue</strong>, we would need to either charge readers for access, accept paid placements (which would compromise our independence), or shut down entirely. Affiliate links allow us to keep our content free and unbiased.</p>
+  </div>
+
+  <h2>What Affiliate Partnerships Do NOT Influence</h2>
+  <p>To be absolutely clear, affiliate relationships have <strong>zero impact</strong> on:</p>
+  <ul>
+    <li><strong>Review Scores:</strong> Scores are determined by our standardized testing methodology, not by commercial relationships</li>
+    <li><strong>Rankings:</strong> Tools are ranked by score, not by affiliate status. Our homepage sorts tools from highest to lowest rated</li>
+    <li><strong>Review Content:</strong> Pros, cons, and editorial commentary are based entirely on our testing experience</li>
+    <li><strong>Which Tools We Review:</strong> We review tools based on popularity, user demand, and market relevance — not affiliate availability</li>
+    <li><strong>Recommendation Priority:</strong> We recommend the best tool for each use case, regardless of whether it has an affiliate program</li>
+  </ul>
+
+  <h2>Proof of Independence</h2>
+  <p>Actions speak louder than words. Here are concrete examples of our editorial independence:</p>
+  <ul>
+    <li>Several tools with <strong>no affiliate program</strong> rank among our highest-rated reviews (scores of 9.0+)</li>
+    <li>Some tools with affiliate partnerships have received <strong>below-average scores</strong> (under 7.0) when our testing revealed significant shortcomings</li>
+    <li>We have <strong>declined affiliate partnerships</strong> from tools that asked us to guarantee a minimum score or favorable review</li>
+    <li>Our review methodology is <strong>publicly documented</strong> on our <a href="about.html">About page</a></li>
+  </ul>
+
+  <h2>FTC Compliance</h2>
+  <p>This disclosure is provided in compliance with the Federal Trade Commission's (FTC) guidelines on endorsements and testimonials. The FTC requires that material connections between endorsers and advertisers be clearly disclosed. We take this obligation seriously and strive to exceed the minimum requirements for transparency.</p>
+
+  <h2>Your Choices</h2>
+  <p>You are never obligated to use our affiliate links. If you prefer not to:</p>
+  <ul>
+    <li>You can navigate directly to any tool's website by typing their URL into your browser</li>
+    <li>You can use a search engine to find the tool independently</li>
+    <li>Our reviews provide the same valuable information regardless of whether you use our links</li>
+  </ul>
+  <p>If you do choose to use our affiliate links, know that you are directly supporting independent, honest AI tool reviews — and we genuinely appreciate it.</p>
+
+  <h2>Questions?</h2>
+  <p>If you have any questions about our affiliate relationships or this disclosure, please don't hesitate to reach out:</p>
+  <ul>
+    <li><strong>Website:</strong> <a href="index.html">aipulsechecker.com</a></li>
+    <li><strong>Email:</strong> disclosure@aipulsechecker.com</li>
+  </ul>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>&copy; 2026 AI Pulse Checker &middot; <a href="index.html">Home</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="affiliate-disclosure.html">Affiliate Disclosure</a></p>
+    <p style="margin-top:8px;font-size:.72rem;opacity:.6;">Disclosure: Some links are affiliate links. This never influences our scores or rankings.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var mode = localStorage.getItem('siteMode');
+  if(mode === 'light') {
+    document.body.classList.add('light-mode');
+  }
+  window.toggleDark = function(){
+    document.body.classList.toggle('light-mode');
+    localStorage.setItem('siteMode', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+    var btn = document.querySelector('.dark-toggle');
+    if(btn) btn.textContent = document.body.classList.contains('light-mode') ? '🌙' : '☀️';
+  };
+  var btn = document.querySelector('.dark-toggle');
+  if(btn) btn.textContent = document.body.classList.contains('light-mode') ? '🌙' : '☀️';
+})();
+</script>
+</body>
+</html>

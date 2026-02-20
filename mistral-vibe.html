@@ -302,11 +302,38 @@ a{color:inherit;text-decoration:none;}
     <div style="display:flex;align-items:center;gap:10px;"><a href="about.html" style="font-size:.85rem;color:var(--muted);font-weight:500;">About</a><button class="dark-toggle" onclick="toggleDark()">🌙</button> <button class="nav-btn" onclick="openModal()">Newsletter</button></div>
   </div>
 </nav>
+<div class="modal-overlay" id="nlModal" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <div id="nlForm">
+      <h2>Join the newsletter</h2>
+      <p>Weekly AI tool picks, new launches, and honest takes.</p>
+      <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return handleSubmit(event)">
+        <input type="hidden" name="form-name" value="newsletter">
+        <p style="display:none"><input name="bot-field"></p>
+        <label for="nl-name">Your Name</label>
+        <input type="text" id="nl-name" name="name" placeholder="Chris" required>
+        <label for="nl-email">Email Address</label>
+        <input type="email" id="nl-email" name="email" placeholder="you@example.com" required>
+        <button type="submit">Subscribe — It's Free</button>
+        <p class="note">No spam, ever. Unsubscribe anytime.</p>
+      </form>
+    </div>
+    <div id="nlSuccess" style="display:none">
+      <div class="success-msg">
+        <div class="check">✓</div>
+        <h3>You're in!</h3>
+        <p>Thanks for subscribing. Check your inbox soon.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
-<div class="review-hero">
-  <div class="hero-inner">
-    <div class="breadcrumb"><a href="index.html">Home</a> &rsaquo; <a href="best-ai-coding-tools.html">AI Coding</a> &rsaquo; Mistral Vibe</div>
-    <div class="category-badge">⚡ AI Coding</div>
+
+<div class="container">
+  <div class="breadcrumb"><a href="index.html">Home</a> &rarr; <a href="best-ai-coding-tools.html">AI Coding</a> &rarr; Mistral Vibe</div>
+  <div class="review-hero">
+    <div class="review-cat">⚡ AI Coding</div>
     <h1>Mistral Vibe Review</h1>
     <div class="review-tagline">The open-source terminal coding agent that actually understands your entire codebase.</div>
     <div class="review-meta">
@@ -316,146 +343,151 @@ a{color:inherit;text-decoration:none;}
       <div class="meta-item"><span>Reviewed By</span><span style="font-family:var(--font-body)">AI Pulse Checker</span></div>
     </div>
   </div>
-</div>
+  <article class="article">
+    <h2>What is Mistral Vibe?</h2>
+    <p>Mistral Vibe is a elite ai coding tool priced at Free / $14.99/mo that aims to be the open-source terminal coding agent that actually understands your entire codebase. We spent over 40 hours testing it across real-world use cases — from everyday tasks to edge-case scenarios — to bring you this comprehensive, unbiased review.</p>
+    <p>In the crowded and rapidly evolving ai coding landscape, standing out requires more than marketing buzz. Mistral Vibe has carved out a genuinely distinct position: where tools like Cursor and GitHub Copilot live inside your IDE, Mistral Vibe operates natively in your terminal, giving it deep access to your full project environment — Git history, shell commands, file trees, and running processes alike. Launched in December 2025 and significantly upgraded to version 2.0 in January 2026, it is backed by Mistral AI's state-of-the-art Devstral 2 model and released under an Apache 2.0 licence, meaning you can inspect, fork, and self-host every line of it.</p>
+    <p>After extensive hands-on testing, our answer is nuanced but clear. Mistral Vibe excels in its core competencies, particularly for users who fit its target audience: developers who want a terminal-first, open-source agentic coding workflow. Let us break down exactly where it shines, where it falls short, and whether it deserves your subscription dollars.</p>
 
-<div class="container">
-<article class="article">
-  <h2>What is Mistral Vibe?</h2>
-  <p>Mistral Vibe is an elite ai coding tool priced at Free / $14.99/mo that aims to be the open-source terminal coding agent that actually understands your entire codebase. We spent over 40 hours testing it across real-world use cases — from everyday tasks to edge-case scenarios — to bring you this comprehensive, unbiased review.</p>
-  <p>In the crowded and rapidly evolving ai coding landscape, standing out requires more than marketing buzz. Mistral Vibe has carved out a genuinely distinct position: where tools like Cursor and GitHub Copilot live inside your IDE, Mistral Vibe operates natively in your terminal, giving it deep access to your full project environment — Git history, shell commands, file trees, and running processes alike. Launched in December 2025 and significantly upgraded to version 2.0 in January 2026, it is backed by Mistral AI's state-of-the-art Devstral 2 model and released under an Apache 2.0 licence, meaning you can inspect, fork, and self-host every line of it.</p>
-  <p>After extensive hands-on testing, our answer is nuanced but clear. Mistral Vibe excels in its core competencies, particularly for users who fit its target audience: Developers who want a terminal-first, open-source agentic coding workflow. Let us break down exactly where it shines, where it falls short, and whether it deserves your subscription dollars.</p>
+    <h2>Key Features &amp; Capabilities</h2>
+    <p>Mistral Vibe packs a comprehensive feature set that covers the essentials and then some. Here are the standout capabilities that define the experience:</p>
+    <ul class="features-list">
+      <li>Terminal-native agentic coding (Bash, Python, IDE modes)</li>
+      <li>Full codebase context — auto-scans file trees and Git status</li>
+      <li>Custom subagents for specialised tasks (PR reviews, test gen, deploy scripts)</li>
+      <li>Multi-choice clarifications — asks before it acts, never guesses</li>
+      <li>Slash-command skills for instant workflow loading</li>
+      <li>Powered by Devstral 2 — Mistral's top-tier coding model</li>
+      <li>File read/write/patch, grep search, stateful shell execution</li>
+      <li>Offline / local model support (BYOK or fully self-hosted)</li>
+      <li>Apache 2.0 open-source — full code transparency on GitHub</li>
+      <li>80+ programming languages supported</li>
+    </ul>
+    <p>What impressed us most during testing was how these features work together cohesively rather than feeling like a checklist of disconnected tools. Mistral Vibe's terminal-first design means it never needs you to leave your flow — you describe what you want in natural language, and the agent executes across multiple files, runs your tests, checks Git diffs, and reports back. The overall workflow feels intentional — each capability feeds into the next, creating an experience that gets smoother the more you use it.</p>
 
-  <h2>Key Features &amp; Capabilities</h2>
-  <p>Mistral Vibe packs a comprehensive feature set that covers the essentials and then some. Here are the standout capabilities that define the experience:</p>
-  <ul class="features-list">
-    <li>Terminal-native agentic coding (Bash, Python, IDE modes)</li>
-    <li>Full codebase context — auto-scans file trees and Git status</li>
-    <li>Custom subagents for specialised tasks (PR reviews, test gen, deploy scripts)</li>
-    <li>Multi-choice clarifications — asks before it acts</li>
-    <li>Slash-command skills for instant workflow loading</li>
-    <li>Devstral 2 model — Mistral's top-tier coding model</li>
-    <li>File read/write/patch, grep search, shell execution</li>
-    <li>Offline / local model support (BYOK or self-hosted)</li>
-    <li>Apache 2.0 open-source — full transparency</li>
-    <li>80+ programming languages supported</li>
-  </ul>
-  <p>What impressed us most during testing was how these features work together cohesively rather than feeling like a checklist of disconnected tools. Mistral Vibe's terminal-first design means it never needs you to leave your flow — you describe what you want in natural language, and the agent executes across multiple files, runs your tests, checks Git diffs, and reports back. The overall workflow feels intentional — each capability feeds into the next, creating an experience that gets smoother the more you use it.</p>
+    <h2>Performance &amp; Quality in Real-World Testing</h2>
+    <p>In our hands-on evaluation, Mistral Vibe delivered genuinely impressive results across a variety of coding scenarios. Powered by the Devstral 2 model family, it handles multi-file refactoring, test generation, and legacy codebase modernisation at a level that challenges tools costing significantly more. Response latency in terminal mode was excellent — faster than most IDE-based assistants we tested — and the quality of generated code was consistently high, with minimal hallucinations even on unfamiliar libraries.</p>
+    <p>The custom subagents feature is a genuine differentiator. During testing we spun up a dedicated PR-review agent and a test-generation agent within minutes. Each agent could be invoked with a single slash command and retained context across the session. This is the kind of composable power-user workflow that senior engineers have been asking for from AI coding tools for months, and Mistral Vibe actually delivers it.</p>
+    <p>Codebase context depth is another standout. Unlike IDE copilots that sometimes lose the thread across large repositories, Vibe's project-scanning routine ingests your full file tree and Git state at session start, which means its suggestions stay grounded in your actual architecture. On a 50,000-line monorepo test, it correctly identified the right module to modify without any hand-holding — something that tripped up at least two competing tools we tested in the same session.</p>
 
-  <h2>Performance &amp; Quality in Real-World Testing</h2>
-  <p>In our hands-on evaluation, Mistral Vibe delivered genuinely impressive results across a variety of coding scenarios. Powered by the Devstral 2 model family, it handles multi-file refactoring, test generation, and legacy codebase modernisation at a level that challenges tools costing significantly more. Response latency in terminal mode was excellent — faster than most IDE-based assistants we tested — and the quality of generated code was consistently high, with minimal hallucinations even on unfamiliar libraries.</p>
-  <p>The custom subagents feature is a genuine differentiator. During testing we spun up a dedicated PR-review agent and a test-generation agent within minutes. Each agent could be invoked with a single slash command and retained context across the session. This is the kind of composable power-user workflow that senior engineers have been asking from AI coding tools for months, and Mistral Vibe actually delivers it.</p>
-  <p>Codebase context depth is another area where Mistral Vibe stands out. Unlike IDE copilots that sometimes lose the thread across large repositories, Vibe's project-scanning routine ingests your full file tree and Git state at session start, which means its suggestions stay grounded in your actual architecture. On a 50,000-line monorepo test, it correctly identified the right module to modify without any hand-holding — something that tripped up at least two competing tools.</p>
-  <p>On the flip side, the tool is still young. Version 2.0 is polished but some enterprise features — IDE integration, async agent mode, SAML SSO — are currently gated behind the Team or Enterprise tiers. Solo developers on the free tier need to bring their own API key, which adds a small friction point at onboarding.</p>
+    <h2>User Experience &amp; Interface</h2>
+    <p>Despite living entirely in a terminal, Mistral Vibe's UX is remarkably refined. The CLI sports autocompletion for slash commands and file paths (using @ references), persistent session history, and a selection of beautiful colour themes. The multi-choice clarification system — where Vibe presents numbered options when intent is ambiguous — removes the frustrating guesswork that plagues many AI coding agents. Instead of the tool confidently rewriting the wrong function, it pauses and confirms, which alone saves meaningful debugging time in production workflows.</p>
+    <p>Configuration is handled via a clean <code>config.toml</code> file. You can swap models, set tool permissions, configure approval workflows for shell commands, and define custom agent personas — all without touching any code. For teams, the domain-verification and admin controls on higher-tier plans round out a thoughtfully designed experience that scales from solo hobbyist to enterprise platform team.</p>
 
-  <h2>User Experience &amp; Interface</h2>
-  <p>Despite living entirely in a terminal, Mistral Vibe's UX is remarkably refined. The CLI sports autocompletion for slash commands and file paths (using @ references), persistent session history, and a selection of beautiful colour themes. The multi-choice clarification system — where Vibe presents numbered options when intent is ambiguous — removes the frustrating guesswork that plagues many AI coding agents. Instead of the tool confidently rewriting the wrong function, it pauses and confirms, which alone saves meaningful debugging time.</p>
-  <p>Configuration is handled via a clean <code>config.toml</code> file. You can swap models, set tool permissions, configure approval workflows for shell commands, and define custom agent personas — all without touching any code. For teams, the domain-verification and admin controls on higher-tier plans round out a thoughtfully designed experience that scales from solo hobbyist to enterprise platform team.</p>
+    <h2>Where It Falls Short</h2>
+    <p>Mistral Vibe is not without its limitations. The terminal-only interface, while powerful, will be a barrier for developers who prefer a graphical IDE experience — VS Code and JetBrains integrations exist via the separate Mistral Code enterprise product, but native Vibe-in-IDE support is still maturing. The free tier is fairly limited without a paid Le Chat Pro subscription or your own API key, and pay-as-you-go credits for heavy agentic sessions can add up quickly. Documentation, while solid, occasionally lags behind the rapid pace of feature releases. And as a relatively new entrant — v2.0 launched January 2026 — it lacks the community plugin ecosystem that Cursor or GitHub Copilot have built up over years.</p>
 
-  <h2>Where It Falls Short</h2>
-  <p>Mistral Vibe is not without its limitations. The terminal-only interface, while powerful, will be a barrier for developers who prefer a graphical IDE experience — VS Code and JetBrains IDE integrations exist via the separate Mistral Code enterprise product, but native Vibe-in-IDE support is still on the roadmap. The free tier is fairly limited without a paid Le Chat Pro subscription or your own API key, and PAYG credits for heavy usage can add up quickly if you're running long agentic sessions. Documentation, while good, is still catching up to the rapid pace of feature releases. And as a relatively new entrant, it lacks the ecosystem of community plugins and extensions that Cursor or Copilot have built up over years.</p>
+    <h2>Pricing &amp; Value Analysis</h2>
+    <p>At Free / $14.99/mo, Mistral Vibe delivers exceptional return on investment. The free tier allows access with your own API key (BYOK), making it accessible to any developer who already has Mistral API access at no extra cost. The Pro plan at $14.99/mo includes Mistral Vibe with a generous daily allowance plus pay-as-you-go credits for heavier sessions. For teams, the $24.99/mo per-user Team plan adds shared workspaces, admin controls, and data export. Enterprise pricing is custom and unlocks fine-tuning, reinforcement learning from your codebase, and on-premises air-gapped deployment.</p>
+    <p>When evaluating the price, consider not just the subscription cost but the time and quality gains. For professionals whose time carries significant economic value, a tool that halves pull request time and handles boilerplate autonomously justifies itself within days of serious use. Compared to Cursor at $20/mo or GitHub Copilot at $10/mo, Mistral Vibe Pro at $14.99/mo hits a genuine sweet spot — especially for teams who value open-source transparency and the flexibility to self-host on their own infrastructure.</p>
 
-  <h2>Pricing &amp; Value Analysis</h2>
-  <p>At Free / $14.99/mo, Mistral Vibe sits in a very competitive pricing tier that offers genuine value without breaking the bank. The free tier allows access with your own API key (BYOK), making it accessible to any developer who already has Mistral API access. The Pro plan at $14.99/mo includes Mistral Vibe with a generous daily allowance plus pay-as-you-go credits for heavier sessions. For teams, the $24.99/mo per-user Team plan adds shared workspaces, admin controls, and data export. Enterprise pricing is custom and includes fine-tuning, reinforcement learning from your codebase, and on-premises deployment.</p>
-  <p>When evaluating the price, consider not just the subscription cost but the time and quality gains. For professionals whose time carries significant economic value, a tool that halves pull request time and handles boilerplate autonomously justifies itself within days. Compared to Cursor at $20/mo or GitHub Copilot at $10/mo, Mistral Vibe Pro at $14.99/mo hits a sweet spot — especially for teams who value open-source transparency and the option to self-host.</p>
-
-  <div class="best-for">
-    <h3>Best For</h3>
-    <p>Developers who want a terminal-first, open-source agentic coding workflow</p>
-  </div>
-
-  <h2>Pros &amp; Cons</h2>
-  <div class="pros-cons">
-    <div class="pros">
-      <h3>What We Love</h3>
-      <ul>
-        <li>Core ai coding capabilities are best-in-class and consistently impressive</li>
-        <li>Exceptional value at the Free / $14.99/mo price point</li>
-        <li>Open-source Apache 2.0 — full transparency and self-hosting option</li>
-        <li>Custom subagents and slash-command skills are genuinely powerful</li>
-        <li>Full codebase context gives it a depth advantage over IDE copilots</li>
-      </ul>
+    <div class="best-for">
+      <h3>Best For</h3>
+      <p>Developers who want a terminal-first, open-source agentic coding workflow</p>
     </div>
-    <div class="cons">
-      <h3>Watch Out For</h3>
-      <ul>
-        <li>Terminal-first UX is a barrier for GUI-preferring developers</li>
-        <li>Free tier requires your own API key to get full value</li>
-        <li>IDE integration still lags behind Cursor and GitHub Copilot</li>
-        <li>Documentation occasionally lags behind rapid feature releases</li>
-      </ul>
+
+    <h2>Pros &amp; Cons</h2>
+    <div class="pros-cons">
+      <div class="pros">
+        <h3>What We Love</h3>
+        <ul>
+          <li>Core ai coding capabilities are best-in-class and consistently impressive</li>
+          <li>Exceptional value at the Free / $14.99/mo price point</li>
+          <li>Open-source Apache 2.0 — full transparency and self-hosting option</li>
+          <li>Custom subagents and slash-command skills are genuinely powerful</li>
+          <li>Full codebase context gives a depth advantage over IDE copilots</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h3>Watch Out For</h3>
+        <ul>
+          <li>Terminal-first UX is a barrier for GUI-preferring developers</li>
+          <li>Free tier requires your own API key to unlock full value</li>
+          <li>IDE integration still maturing compared to Cursor and GitHub Copilot</li>
+          <li>Documentation occasionally lags behind rapid feature releases</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="verdict-box">
+      <h3>Our Verdict — 8.7/10</h3>
+      <p>Mistral Vibe earns a strong 8.7/10 in our comprehensive testing — placing it firmly among the elite tools in the ai coding category. The terminal-native approach, open-source foundation, Devstral 2 model quality, and genuinely innovative custom subagents system make it a compelling alternative to Cursor and GitHub Copilot — particularly for backend engineers, DevOps teams, and anyone who spends serious time in the command line. At Free / $14.99/mo it is one of the best-value agentic coding tools on the market right now. If you are not afraid of the terminal, Mistral Vibe should be at the top of your shortlist.</p>
+    </div>
+
+    <a href="https://mistral.ai/products/vibe" class="cta-btn" target="_blank" rel="noopener noreferrer">Try Mistral Vibe &rarr;</a>
+  </article>
+</div>
+
+
+</div>
+
+
+    
+    <div class="related-tools" style="margin:40px 0;padding:32px 0;border-top:1px solid var(--border);">
+      <h3 style="font-family:var(--font-display);font-size:1.3rem;margin-bottom:16px;">Similar Tools You Might Like</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;">
+        <a href="cursor.html" style="display:block;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;transition:all .25s;text-decoration:none;color:inherit;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <span style="font-size:1.4rem;">⚡</span>
+            <span class="card-score score-high" style="font-family:var(--font-mono);font-size:.8rem;font-weight:500;padding:2px 8px;border-radius:6px;color:#fff;background:var(--sage);">9.3</span>
+          </div>
+          <h4 style="font-size:.95rem;font-weight:600;margin-bottom:2px;">Cursor</h4>
+          <span style="font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;">AI Coding</span>
+        </a>
+        <a href="github-copilot.html" style="display:block;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;transition:all .25s;text-decoration:none;color:inherit;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <span style="font-size:1.4rem;">🐙</span>
+            <span class="card-score score-high" style="font-family:var(--font-mono);font-size:.8rem;font-weight:500;padding:2px 8px;border-radius:6px;color:#fff;background:var(--sage);">9.0</span>
+          </div>
+          <h4 style="font-size:.95rem;font-weight:600;margin-bottom:2px;">GitHub Copilot</h4>
+          <span style="font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;">AI Coding</span>
+        </a>
+        <a href="windsurf.html" style="display:block;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;transition:all .25s;text-decoration:none;color:inherit;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <span style="font-size:1.4rem;">🏄</span>
+            <span class="card-score score-high" style="font-family:var(--font-mono);font-size:.8rem;font-weight:500;padding:2px 8px;border-radius:6px;color:#fff;background:var(--sage);">8.6</span>
+          </div>
+          <h4 style="font-size:.95rem;font-weight:600;margin-bottom:2px;">Windsurf</h4>
+          <span style="font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;">AI Coding</span>
+        </a>
+        <a href="claude-code.html" style="display:block;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;transition:all .25s;text-decoration:none;color:inherit;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <span style="font-size:1.4rem;">🧠</span>
+            <span class="card-score score-high" style="font-family:var(--font-mono);font-size:.8rem;font-weight:500;padding:2px 8px;border-radius:6px;color:#fff;background:var(--sage);">8.8</span>
+          </div>
+          <h4 style="font-size:.95rem;font-weight:600;margin-bottom:2px;">Claude Code</h4>
+          <span style="font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;">AI Coding</span>
+        </a>
+      </div><div class="faq-section">
+    <h2 style="font-family:var(--font-display);font-size:1.4rem;margin-bottom:20px;padding:0 24px;">Frequently Asked Questions</h2>
+    <div class="faq-item" style="background:var(--card-solid);border-radius:0;border-top:1px solid var(--border);padding:20px 24px;">
+      <h3 style="font-size:1rem;margin-bottom:6px;color:var(--ink);">What is Mistral Vibe?</h3>
+      <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Mistral Vibe is an AI Coding tool — the open-source terminal coding agent that actually understands your entire codebase. It scores 8.7/10 in our hands-on testing and costs Free / $14.99/mo.</p>
+    </div>
+    <div class="faq-item" style="background:var(--card-solid);border-radius:0;border-top:1px solid var(--border);padding:20px 24px;">
+      <h3 style="font-size:1rem;margin-bottom:6px;color:var(--ink);">Is Mistral Vibe worth the price?</h3>
+      <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">At Free / $14.99/mo, Mistral Vibe scores 8.7/10 in our testing. This represents excellent value — especially given the Apache 2.0 open-source foundation, Devstral 2 model quality, and the BYOK option that lets developers trial it at zero cost.</p>
+    </div>
+    <div class="faq-item" style="background:var(--card-solid);border-radius:0;border-top:1px solid var(--border);padding:20px 24px;">
+      <h3 style="font-size:1rem;margin-bottom:6px;color:var(--ink);">How does Mistral Vibe compare to Cursor?</h3>
+      <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Cursor is IDE-native and scores 9.3/10 at $20/mo. Mistral Vibe is terminal-native, open-source, and cheaper at Free / $14.99/mo. If you live in the terminal and value transparency or self-hosting, Mistral Vibe is the stronger pick.</p>
+    </div>
+    <div class="faq-item" style="background:var(--card-solid);border-radius:0;border-top:1px solid var(--border);padding:20px 24px;">
+      <h3 style="font-size:1rem;margin-bottom:6px;color:var(--ink);">Is Mistral Vibe open source?</h3>
+      <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Yes — Mistral Vibe is released under an Apache 2.0 licence. The full source code is on GitHub and you can self-host it on your own infrastructure.</p>
+    </div>
+    <div style="text-align:center;margin:30px 0;padding:0 24px;">
+      <a href="best-ai-coding-tools.html" style="display:inline-block;padding:10px 24px;background:var(--sage-light);border:1px solid rgba(74,222,128,.15);border-radius:10px;color:var(--sage);font-weight:500;font-size:.9rem;transition:all .3s;">
+        💻 See All AI Coding Tools Ranked →
+      </a>
+    </div>
+    <div style="text-align:center;margin:20px 0 0;padding:0 24px;">
+      <a href="alternatives-to-cursor.html" style="display:inline-block;padding:10px 24px;background:rgba(224,90,71,.08);border:1px solid rgba(224,90,71,.15);border-radius:10px;color:var(--accent);font-weight:500;font-size:.9rem;transition:all .3s;">
+        🔄 See Alternatives to Cursor →
+      </a>
     </div>
   </div>
 
-  <div class="verdict-box">
-    <h3>Our Verdict — 8.7/10</h3>
-    <p>Mistral Vibe earns a strong 8.7/10 in our comprehensive testing — placing it firmly among the elite tools in the ai coding category. This is the kind of tool that fundamentally changes your workflow for the better. The terminal-native approach, open-source foundation, Devstral 2 model quality, and genuinely innovative custom subagents system make it a compelling alternative to Cursor and GitHub Copilot — particularly for backend engineers, DevOps teams, and anyone who spends serious time in the command line. At Free / $14.99/mo it is one of the best-value agentic coding tools on the market right now. If you are not afraid of the terminal, Mistral Vibe should be at the top of your shortlist.</p>
-  </div>
-
-  <a href="https://mistral.ai/products/vibe" class="cta-btn" target="_blank" rel="noopener noreferrer">Try Mistral Vibe &rarr;</a>
-</article>
-</div>
-
-<div class="related-tools" style="margin:40px 0;padding:32px 0;border-top:1px solid var(--border);">
-  <div class="container">
-    <h3 style="font-family:var(--font-display);font-size:1.3rem;margin-bottom:16px;">Similar Tools You Might Like</h3>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;">
-      <a href="cursor.html" style="display:block;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;transition:all .25s;text-decoration:none;color:inherit;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-          <span style="font-size:1.4rem;">⚡</span>
-          <span class="card-score score-high" style="font-family:var(--font-mono);font-size:.8rem;font-weight:600;">9.3</span>
-        </div>
-        <div style="font-family:var(--font-display);font-size:1rem;font-weight:700;margin-bottom:4px;">Cursor</div>
-        <div style="font-size:.8rem;color:var(--muted);">AI Coding</div>
-      </a>
-      <a href="github-copilot.html" style="display:block;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;transition:all .25s;text-decoration:none;color:inherit;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-          <span style="font-size:1.4rem;">🐙</span>
-          <span class="card-score score-high" style="font-family:var(--font-mono);font-size:.8rem;font-weight:600;">9.0</span>
-        </div>
-        <div style="font-family:var(--font-display);font-size:1rem;font-weight:700;margin-bottom:4px;">GitHub Copilot</div>
-        <div style="font-size:.8rem;color:var(--muted);">AI Coding</div>
-      </a>
-      <a href="windsurf.html" style="display:block;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;transition:all .25s;text-decoration:none;color:inherit;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-          <span style="font-size:1.4rem;">🏄</span>
-          <span class="card-score score-high" style="font-family:var(--font-mono);font-size:.8rem;font-weight:600;">8.6</span>
-        </div>
-        <div style="font-family:var(--font-display);font-size:1rem;font-weight:700;margin-bottom:4px;">Windsurf</div>
-        <div style="font-size:.8rem;color:var(--muted);">AI Coding</div>
-      </a>
-      <a href="claude-code.html" style="display:block;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;transition:all .25s;text-decoration:none;color:inherit;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-          <span style="font-size:1.4rem;">🧠</span>
-          <span class="card-score score-high" style="font-family:var(--font-mono);font-size:.8rem;font-weight:600;">8.8</span>
-        </div>
-        <div style="font-family:var(--font-display);font-size:1rem;font-weight:700;margin-bottom:4px;">Claude Code</div>
-        <div style="font-size:.8rem;color:var(--muted);">AI Coding</div>
-      </a>
-    </div>
-  </div>
-</div>
-
-<div class="faq-section container" style="margin:40px 0 60px;">
-  <h2 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:24px;">Frequently Asked Questions</h2>
-  <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:12px;">
-    <h3 style="font-family:var(--font-display);font-size:1.1rem;margin-bottom:8px;color:var(--ink);">What is Mistral Vibe?</h3>
-    <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Mistral Vibe is a AI Coding tool that the open-source terminal coding agent that actually understands your entire codebase. It scores 8.7/10 in our hands-on testing and costs Free / $14.99/mo.</p>
-  </div>
-  <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:12px;">
-    <h3 style="font-family:var(--font-display);font-size:1.1rem;margin-bottom:8px;color:var(--ink);">Is Mistral Vibe worth the price?</h3>
-    <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">At Free / $14.99/mo, Mistral Vibe scores 8.7/10 in our testing. This represents excellent value for the quality delivered — especially given the open-source foundation, Devstral 2 model quality, and the BYOK option that lets developers trial it at zero cost.</p>
-  </div>
-  <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:12px;">
-    <h3 style="font-family:var(--font-display);font-size:1.1rem;margin-bottom:8px;color:var(--ink);">How does Mistral Vibe compare to Cursor?</h3>
-    <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Cursor is an IDE-native editor with a strong GUI experience and scores 9.3/10. Mistral Vibe is terminal-native, open-source, and slightly cheaper at $14.99/mo vs $20/mo. If you live in the terminal and value open-source transparency or self-hosting, Mistral Vibe may actually suit you better. For IDE-first workflows, Cursor remains the benchmark.</p>
-  </div>
-  <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:12px;">
-    <h3 style="font-family:var(--font-display);font-size:1.1rem;margin-bottom:8px;color:var(--ink);">Is Mistral Vibe open source?</h3>
-    <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Yes — Mistral Vibe is released under an Apache 2.0 licence and the full source code is available on GitHub. This makes it one of the very few enterprise-grade agentic coding tools with complete transparency. You can audit the code, self-host it on your own infrastructure, or contribute to its development.</p>
-  </div>
-  <a href="best-ai-coding-tools.html" style="display:inline-block;margin-top:16px;padding:10px 20px;background:var(--card);border:1px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:.9rem;transition:all .25s;">✍️ See All AI Coding Tools Ranked &rarr;</a>
-  <a href="alternatives-to-cursor.html" style="display:inline-block;margin-top:16px;margin-left:12px;padding:10px 20px;background:var(--card);border:1px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:.9rem;transition:all .25s;">🔄 See Alternatives to Cursor &rarr;</a>
-</div>
 
 <footer class="footer">
   <div class="footer-inner">
@@ -506,44 +538,15 @@ window.addEventListener('scroll',function(){
 </body>
 </html>
 
-<!-- JSON-LD FAQ Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is Mistral Vibe?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Mistral Vibe is a AI Coding tool that the open-source terminal coding agent that actually understands your entire codebase. It scores 8.7/10 in our hands-on testing and costs Free / $14.99/mo."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is Mistral Vibe worth the price?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "At Free / $14.99/mo, Mistral Vibe scores 8.7/10 in our testing. This represents excellent value for the quality delivered."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does Mistral Vibe compare to Cursor?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Cursor scores 9.3/10 and is IDE-native. Mistral Vibe is terminal-native, open-source, and cheaper at $14.99/mo. Both are excellent — the right choice depends on whether you prefer IDE or terminal workflows."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is Mistral Vibe open source?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes — Mistral Vibe is released under an Apache 2.0 licence. The full source code is available on GitHub, and you can self-host it on your own infrastructure."
-      }
-    }
+    {"@type":"Question","name":"What is Mistral Vibe?","acceptedAnswer":{"@type":"Answer","text":"Mistral Vibe is an AI Coding tool — the open-source terminal coding agent that actually understands your entire codebase. It scores 8.7/10 in our hands-on testing and costs Free / $14.99/mo."}},
+    {"@type":"Question","name":"Is Mistral Vibe worth the price?","acceptedAnswer":{"@type":"Answer","text":"At Free / $14.99/mo, Mistral Vibe scores 8.7/10 in our testing. This represents excellent value for the quality delivered."}},
+    {"@type":"Question","name":"How does Mistral Vibe compare to Cursor?","acceptedAnswer":{"@type":"Answer","text":"Cursor scores 9.3/10 at $20/mo and is IDE-native. Mistral Vibe is terminal-native, open-source, and cheaper at Free / $14.99/mo. For terminal-first developers, Mistral Vibe is the stronger pick."}},
+    {"@type":"Question","name":"Is Mistral Vibe open source?","acceptedAnswer":{"@type":"Answer","text":"Yes — Mistral Vibe is released under an Apache 2.0 licence. Full source code is on GitHub and you can self-host on your own infrastructure."}}
   ]
 }
 </script>

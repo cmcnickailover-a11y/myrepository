@@ -145,6 +145,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://aipulsechecker.com/deepseek.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://aipulsechecker.com/descript-audio.html</loc>
     <priority>0.8</priority>
   </url>
@@ -210,6 +214,10 @@
   </url>
   <url>
     <loc>https://aipulsechecker.com/github-copilot.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aipulsechecker.com/google-gemini.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
@@ -378,6 +386,10 @@
   </url>
   <url>
     <loc>https://aipulsechecker.com/n8n.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aipulsechecker.com/napkin-ai.html</loc>
     <priority>0.8</priority>
   </url>
   <url>

@@ -217,6 +217,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://aipulsechecker.com/grok.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://aipulsechecker.com/hex.html</loc>
     <priority>0.8</priority>
   </url>
@@ -373,6 +377,14 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://aipulsechecker.com/n8n.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aipulsechecker.com/notebooklm.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://aipulsechecker.com/notion-ai.html</loc>
     <priority>0.8</priority>
   </url>
@@ -502,6 +514,10 @@
   </url>
   <url>
     <loc>https://aipulsechecker.com/smartly-io.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aipulsechecker.com/seedance.html</loc>
     <priority>0.8</priority>
   </url>
   <url>

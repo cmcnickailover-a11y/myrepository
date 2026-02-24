@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Compare any two AI tools side-by-side — scores, pricing, features, and strengths. Pick any two from 166 expert-reviewed tools.">
+<title>Head-to-Head AI Tool Comparison | AI Pulse Checker</title>
+<link rel="canonical" href="https://aipulsechecker.com/head-to-head.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23d94832'/></svg>">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+:root{--ink:#e8e6e1;--paper:#0d0f12;--cream:#161921;--card:rgba(22,25,33,.7);--card-solid:#161921;--border:rgba(255,255,255,.08);--accent:#e05a47;--accent-glow:rgba(224,90,71,.25);--sage:#4ade80;--sage-glow:rgba(74,222,128,.2);--muted:rgba(255,255,255,.5);--font-display:'Playfair Display',Georgia,serif;--font-body:'Outfit',sans-serif;--font-mono:'JetBrains Mono',monospace;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--font-body);background:var(--paper);color:var(--ink);line-height:1.6;overflow-x:hidden;}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;z-index:-1;background:radial-gradient(ellipse 80% 50% at 20% 20%,rgba(224,90,71,.06) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 80% 80%,rgba(74,222,128,.04) 0%,transparent 60%);}
+a{color:inherit;text-decoration:none;}
+.navbar{background:rgba(13,15,18,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200;}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;}
+.logo{font-family:var(--font-display);font-size:1.5rem;font-weight:700;display:flex;align-items:center;gap:8px;}
+.back-link{font-size:.85rem;color:var(--muted);font-weight:500;}.back-link:hover{color:var(--ink);}
+
+.page{max-width:900px;margin:0 auto;padding:48px 24px 80px;}
+.page-header{text-align:center;margin-bottom:40px;}
+.page-header h1{font-family:var(--font-display);font-size:2.2rem;margin-bottom:8px;}
+.page-header p{color:var(--muted);font-size:1rem;}
+
+/* Selectors */
+.selectors{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:start;margin-bottom:40px;}
+.selector{position:relative;}
+.selector label{display:block;font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px;}
+.search-input{width:100%;padding:12px 16px;background:var(--card);border:1px solid var(--border);border-radius:12px;color:var(--ink);font-family:var(--font-body);font-size:.9rem;outline:none;transition:all .2s;}
+.search-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-glow);}
+.search-input::placeholder{color:rgba(255,255,255,.3);}
+.dropdown{position:absolute;top:100%;left:0;right:0;background:var(--card-solid);border:1px solid var(--border);border-radius:12px;max-height:280px;overflow-y:auto;z-index:50;display:none;margin-top:4px;box-shadow:0 12px 40px rgba(0,0,0,.5);}
+.dropdown.open{display:block;}
+.dropdown-item{padding:10px 16px;cursor:pointer;display:flex;align-items:center;gap:10px;transition:background .15s;font-size:.88rem;}
+.dropdown-item:hover{background:rgba(255,255,255,.06);}
+.dropdown-item .di-icon{font-size:1.1rem;}
+.dropdown-item .di-name{font-weight:500;}
+.dropdown-item .di-score{font-family:var(--font-mono);font-size:.75rem;color:var(--sage);margin-left:auto;}
+.dropdown-item .di-cat{font-size:.72rem;color:var(--muted);}
+.vs-badge{display:flex;align-items:center;justify-content:center;padding-top:24px;}
+.vs-badge span{font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--accent);background:rgba(224,90,71,.1);border:1px solid rgba(224,90,71,.2);border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;}
+
+/* Selected cards */
+.selected-preview{margin-top:12px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;display:none;align-items:center;gap:12px;}
+.selected-preview.show{display:flex;}
+.sp-icon{font-size:1.6rem;}
+.sp-info{flex:1;}
+.sp-info .sp-name{font-weight:600;font-size:.95rem;}
+.sp-info .sp-meta{font-size:.78rem;color:var(--muted);}
+.sp-score{font-family:var(--font-mono);font-size:1.2rem;font-weight:700;color:var(--sage);}
+.sp-clear{background:none;border:none;color:var(--muted);cursor:pointer;font-size:1.1rem;padding:4px;transition:color .2s;}
+.sp-clear:hover{color:var(--ink);}
+
+/* Comparison Table */
+.comparison{display:none;animation:fadeUp .5s ease;}
+.comparison.show{display:block;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+
+.comp-header{display:grid;grid-template-columns:140px 1fr 1fr;gap:0;margin-bottom:0;background:var(--card);border:1px solid var(--border);border-radius:16px 16px 0 0;overflow:hidden;}
+.comp-header .ch-label{padding:20px;font-size:.8rem;color:var(--muted);display:flex;align-items:center;}
+.comp-header .ch-tool{padding:20px;text-align:center;border-left:1px solid var(--border);}
+.comp-header .ch-tool .cht-icon{font-size:2rem;display:block;margin-bottom:6px;}
+.comp-header .ch-tool .cht-name{font-weight:600;font-size:1rem;display:block;margin-bottom:2px;}
+.comp-header .ch-tool .cht-cat{font-size:.75rem;color:var(--muted);}
+
+.comp-row{display:grid;grid-template-columns:140px 1fr 1fr;gap:0;border-left:1px solid var(--border);border-right:1px solid var(--border);border-bottom:1px solid var(--border);}
+.comp-row:last-child{border-radius:0 0 16px 16px;overflow:hidden;}
+.comp-row .cr-label{padding:14px 16px;font-size:.82rem;font-weight:500;color:var(--muted);display:flex;align-items:center;background:rgba(22,25,33,.3);}
+.comp-row .cr-val{padding:14px 16px;text-align:center;font-size:.9rem;border-left:1px solid var(--border);display:flex;align-items:center;justify-content:center;}
+.cr-val.winner{background:rgba(74,222,128,.06);}
+.cr-val .score-big{font-family:var(--font-mono);font-size:1.4rem;font-weight:700;}
+.cr-val .score-big.green{color:var(--sage);}
+.cr-val .score-big.dim{color:var(--muted);}
+
+.score-bar-wrap{width:100%;max-width:160px;}
+.score-bar-bg{height:8px;background:rgba(255,255,255,.06);border-radius:4px;overflow:hidden;}
+.score-bar-fill{height:100%;border-radius:4px;transition:width .6s ease;}
+
+/* CTA */
+.comp-ctas{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;}
+.comp-cta{display:block;padding:14px;text-align:center;border-radius:12px;font-weight:600;font-size:.9rem;transition:all .3s;}
+.comp-cta.primary{background:linear-gradient(135deg,var(--accent),#ff6b5a);color:#fff;box-shadow:0 2px 12px var(--accent-glow);}
+.comp-cta.primary:hover{transform:translateY(-2px);box-shadow:0 4px 20px var(--accent-glow);}
+.comp-cta.secondary{background:var(--card);border:1px solid var(--border);color:var(--ink);}
+.comp-cta.secondary:hover{border-color:rgba(255,255,255,.2);}
+
+/* Popular matchups */
+.popular{margin-top:48px;}
+.popular h2{font-family:var(--font-display);font-size:1.3rem;margin-bottom:16px;}
+.matchups{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;}
+.matchup{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;cursor:pointer;transition:all .25s;display:flex;align-items:center;gap:12px;}
+.matchup:hover{border-color:rgba(255,255,255,.15);transform:translateY(-2px);}
+.matchup .mu-icons{font-size:1.3rem;display:flex;gap:2px;}
+.matchup .mu-vs{font-family:var(--font-mono);font-size:.7rem;color:var(--accent);margin:0 4px;}
+.matchup .mu-names{font-weight:500;font-size:.88rem;flex:1;}
+.matchup .mu-arrow{color:var(--muted);font-size:.9rem;}
+
+.footer{text-align:center;padding:32px 24px;font-size:.78rem;color:var(--muted);border-top:1px solid var(--border);margin-top:48px;}
+.footer a{color:var(--muted);text-decoration:underline;}
+
+@media(max-width:650px){
+  .selectors{grid-template-columns:1fr;gap:8px;}
+  .vs-badge{padding:8px 0;}
+  .comp-header,.comp-row{grid-template-columns:100px 1fr 1fr;}
+  .comp-header .ch-tool{padding:12px 8px;}
+  .comp-ctas{grid-template-columns:1fr;}
+  .page-header h1{font-size:1.7rem;}
+}
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="nav-inner"><a class="logo" href="index.html"><svg width="28" height="28" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#d94832"/><path d="M20 55 Q30 30, 50 50 Q70 70, 80 45" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/></svg> AI Pulse Checker</a><a href="index.html" class="back-link">← All Reviews</a></div></nav>
+
+<div class="page">
+  <div class="page-header">
+    <h1>Head-to-Head Comparison</h1>
+    <p>Pick any two AI tools and compare them side by side.</p>
+  </div>
+
+  <div class="selectors">
+    <div class="selector">
+      <label>Tool A</label>
+      <input class="search-input" id="searchA" placeholder="Search tools..." autocomplete="off" onfocus="openDrop('A')" oninput="filterDrop('A')">
+      <div class="dropdown" id="dropA"></div>
+      <div class="selected-preview" id="previewA">
+        <span class="sp-icon" id="spIconA"></span>
+        <div class="sp-info"><span class="sp-name" id="spNameA"></span><span class="sp-meta" id="spMetaA"></span></div>
+        <span class="sp-score" id="spScoreA"></span>
+        <button class="sp-clear" onclick="clearSel('A')" title="Clear">✕</button>
+      </div>
+    </div>
+    <div class="vs-badge"><span>VS</span></div>
+    <div class="selector">
+      <label>Tool B</label>
+      <input class="search-input" id="searchB" placeholder="Search tools..." autocomplete="off" onfocus="openDrop('B')" oninput="filterDrop('B')">
+      <div class="dropdown" id="dropB"></div>
+      <div class="selected-preview" id="previewB">
+        <span class="sp-icon" id="spIconB"></span>
+        <div class="sp-info"><span class="sp-name" id="spNameB"></span><span class="sp-meta" id="spMetaB"></span></div>
+        <span class="sp-score" id="spScoreB"></span>
+        <button class="sp-clear" onclick="clearSel('B')" title="Clear">✕</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="comparison" id="comparison"></div>
+
+  <div class="popular">
+    <h2>Popular Matchups</h2>
+    <div class="matchups" id="matchups"></div>
+  </div>
+</div>
+
+<footer class="footer"><p>&copy; 2026 AI Pulse Checker &middot; <a href="index.html">Home</a> &middot; <a href="compare.html">Chart View</a> &middot; <a href="quiz.html">Tool Finder</a> &middot; <a href="methodology.html">Methodology</a></p></footer>
+
+<script>
+const TOOLS=[
+{href:'claude-pro.html',cat:'AI Writing',icon:'🧠',score:9.5,name:'Claude Pro',desc:'The thinking person\'s AI — unmatched for nuance, analysis, and long-form.',price:'$20/mo'},
+{href:'elevenlabs.html',cat:'AI Audio',icon:'🎙️',score:9.4,name:'ElevenLabs',desc:'The most realistic AI voices ever created.',price:'$5/mo'},
+{href:'moda.html',cat:'AI Design',icon:'🎨',score:9.3,name:'Moda',desc:'AI designs you can edit on a real canvas.',price:'Free / $30/mo'},
+{href:'cursor.html',cat:'AI Coding',icon:'⚡',score:9.3,name:'Cursor',desc:'The AI-native code editor.',price:'$20/mo'},
+{href:'semrush-ai.html',cat:'AI Marketing',icon:'📈',score:9.2,name:'Semrush AI',desc:'Most comprehensive SEO and marketing intelligence.',price:'$130/mo'},
+{href:'midjourney.html',cat:'AI Design',icon:'🎭',score:9.2,name:'Midjourney',desc:'Gold standard for AI image generation.',price:'$10/mo'},
+{href:'seedance.html',cat:'AI Video',icon:'🎬',score:9.2,name:'Seedance 2.0',desc:'Cinematic AI video with native audio.',price:'Free / $18/mo'},
+{href:'google-gemini.html',cat:'AI Writing',icon:'💎',score:9.1,name:'Google Gemini',desc:'Multimodal AI with Deep Research.',price:'Free / $19.99/mo'},
+{href:'chatgpt-plus.html',cat:'AI Writing',icon:'💬',score:9.0,name:'ChatGPT Plus',desc:'The Swiss Army knife of AI.',price:'$20/mo'},
+{href:'grammarly.html',cat:'AI Writing',icon:'📝',score:9.0,name:'Grammarly',desc:'Gold standard for writing clarity.',price:'$12/mo'},
+{href:'github-copilot.html',cat:'AI Coding',icon:'🐙',score:9.0,name:'GitHub Copilot',desc:'The AI pair programmer.',price:'$10/mo'},
+{href:'synthesia.html',cat:'AI Video',icon:'👤',score:9.0,name:'Synthesia',desc:'Professional AI talking-head videos.',price:'$22/mo'},
+{href:'sora.html',cat:'AI Video',icon:'🌀',score:9.0,name:'Sora',desc:'OpenAI\'s photorealistic video generation.',price:'$200/mo'},
+{href:'notebooklm.html',cat:'AI Productivity',icon:'📓',score:9.0,name:'NotebookLM',desc:'AI research assistant grounded in your sources.',price:'Free / $19.99/mo'},
+{href:'surfer-seo.html',cat:'AI Marketing',icon:'🏄',score:9.0,name:'Surfer SEO',desc:'Data-driven content optimization.',price:'$89/mo'},
+{href:'hubspot-ai.html',cat:'AI Marketing',icon:'🟠',score:9.0,name:'HubSpot AI',desc:'AI across the full HubSpot CRM suite.',price:'Free / $18/mo'},
+{href:'pomelli.html',cat:'AI Marketing',icon:'🎯',score:8.9,name:'Pomelli',desc:'Google\'s AI marketing campaign builder.',price:'Free'},
+{href:'n8n.html',cat:'AI Productivity',icon:'⚡',score:8.9,name:'n8n',desc:'Open-source AI workflow automation.',price:'Free / €24/mo'},
+{href:'capcut.html',cat:'AI Video',icon:'🎬',score:8.8,name:'CapCut',desc:'AI video editor with 1B+ downloads.',price:'Free / $19.99/mo'},
+{href:'runway-ml.html',cat:'AI Video',icon:'🎥',score:8.8,name:'Runway ML',desc:'Where AI video editing began.',price:'$12/mo'},
+{href:'claude-code.html',cat:'AI Coding',icon:'🖥️',score:8.8,name:'Claude Code',desc:'Terminal-based AI coding agent.',price:'Usage-based'},
+{href:'perplexity-ai.html',cat:'AI Productivity',icon:'🔍',score:8.8,name:'Perplexity AI',desc:'AI search with answers, not links.',price:'$20/mo'},
+{href:'figr-ai.html',cat:'AI Design',icon:'🎨',score:8.7,name:'Figr AI',desc:'AI UI components from text prompts.',price:'Free / $12/mo'},
+{href:'mistral-vibe.html',cat:'AI Coding',icon:'⚡',score:8.7,name:'Mistral Vibe',desc:'Open-source terminal coding agent.',price:'Free / $14.99/mo'},
+{href:'microsoft-copilot.html',cat:'AI Productivity',icon:'🧠',score:8.7,name:'Microsoft Copilot',desc:'AI in Word, Excel, PowerPoint, Outlook.',price:'Free / $20/mo'},
+{href:'frase.html',cat:'AI Writing',icon:'🔍',score:8.7,name:'Frase',desc:'SEO research meets AI content creation.',price:'$15/mo'},
+{href:'murf-ai.html',cat:'AI Audio',icon:'🔊',score:8.7,name:'Murf AI',desc:'Studio-quality AI voiceover.',price:'$19/mo'},
+{href:'windsurf.html',cat:'AI Coding',icon:'🏄',score:8.6,name:'Windsurf',desc:'AI-native IDE with codebase flows.',price:'Free / $15/mo'},
+{href:'adcreative-ai.html',cat:'AI Marketing',icon:'📢',score:8.6,name:'AdCreative.ai',desc:'AI ad creatives with performance prediction.',price:'$21/mo'},
+{href:'deepseek.html',cat:'AI Writing',icon:'🔬',score:8.5,name:'DeepSeek',desc:'Open-source AI at 95% lower cost.',price:'Free'},
+{href:'dall-e-3.html',cat:'AI Design',icon:'🖌️',score:8.5,name:'DALL-E 3',desc:'Best text rendering in AI images.',price:'$20/mo'},
+{href:'canva-ai.html',cat:'AI Design',icon:'🖼️',score:8.5,name:'Canva AI',desc:'AI in the world\'s most popular design tool.',price:'Free / $13/mo'},
+{href:'descript.html',cat:'AI Video',icon:'📝',score:8.5,name:'Descript',desc:'Edit video by editing text.',price:'$24/mo'},
+{href:'suno.html',cat:'AI Audio',icon:'🎤',score:8.5,name:'Suno',desc:'Full AI-generated songs.',price:'$8/mo'},
+{href:'devin.html',cat:'AI Coding',icon:'🤖',score:8.5,name:'Devin',desc:'First fully autonomous AI engineer.',price:'$500/mo'},
+{href:'napkin-ai.html',cat:'AI Design',icon:'✏️',score:8.4,name:'Napkin AI',desc:'Text into diagrams and infographics.',price:'Free / $12/mo'},
+{href:'tableau-ai.html',cat:'AI Data',icon:'📊',score:8.3,name:'Tableau AI',desc:'AI-powered data visualization.',price:'$15/mo'},
+{href:'bolt-new.html',cat:'AI Coding',icon:'⚡',score:8.3,name:'Bolt.new',desc:'Prompt-to-full-stack app in seconds.',price:'Free / $20/mo'},
+{href:'opus-clip.html',cat:'AI Video',icon:'✂️',score:8.1,name:'Opus Clip',desc:'Long videos into viral short clips.',price:'Free / $15/mo'},
+{href:'grok.html',cat:'AI Chatbots',icon:'⚡',score:7.9,name:'Grok',desc:'xAI chatbot with live X data.',price:'Free / $30/mo'},
+{href:'intercom-fin.html',cat:'AI Chatbots',icon:'💬',score:8.5,name:'Intercom Fin',desc:'AI agent that resolves issues.',price:'$0.99/resolution'},
+{href:'datarobot.html',cat:'AI Data',icon:'🤖',score:8.5,name:'DataRobot',desc:'Enterprise AutoML platform.',price:'Custom'},
+{href:'hex.html',cat:'AI Data',icon:'⬡',score:8.0,name:'Hex',desc:'Collaborative data workspace with AI.',price:'Free / $28/mo'}
+];
+
+let selA = null, selB = null;
+
+function openDrop(side) {
+  const drop = document.getElementById('drop'+side);
+  filterDrop(side);
+  drop.classList.add('open');
+}
+
+function filterDrop(side) {
+  const input = document.getElementById('search'+side);
+  const drop = document.getElementById('drop'+side);
+  const q = input.value.toLowerCase();
+  const other = side === 'A' ? selB : selA;
+  const filtered = TOOLS.filter(t => {
+    if (other && t.name === other.name) return false;
+    if (!q) return true;
+    return t.name.toLowerCase().includes(q) || t.cat.toLowerCase().includes(q);
+  });
+  drop.innerHTML = filtered.slice(0, 15).map((t, i) =>
+    `<div class="dropdown-item" onmousedown="selectTool('${side}',${TOOLS.indexOf(t)})">
+      <span class="di-icon">${t.icon}</span>
+      <span class="di-name">${t.name}</span>
+      <span class="di-cat">${t.cat.replace('AI ','')}</span>
+      <span class="di-score">${t.score}</span>
+    </div>`
+  ).join('') || '<div class="dropdown-item" style="color:var(--muted)">No results</div>';
+  drop.classList.add('open');
+}
+
+function selectTool(side, idx) {
+  const t = TOOLS[idx];
+  if (side === 'A') selA = t; else selB = t;
+  const input = document.getElementById('search'+side);
+  const drop = document.getElementById('drop'+side);
+  const preview = document.getElementById('preview'+side);
+  input.value = '';
+  input.style.display = 'none';
+  drop.classList.remove('open');
+  preview.classList.add('show');
+  document.getElementById('spIcon'+side).textContent = t.icon;
+  document.getElementById('spName'+side).textContent = t.name;
+  document.getElementById('spMeta'+side).textContent = t.cat + ' · ' + t.price;
+  document.getElementById('spScore'+side).textContent = t.score + '/10';
+  if (selA && selB) buildComparison();
+}
+
+function clearSel(side) {
+  if (side === 'A') selA = null; else selB = null;
+  document.getElementById('search'+side).style.display = '';
+  document.getElementById('preview'+side).classList.remove('show');
+  document.getElementById('comparison').classList.remove('show');
+  document.getElementById('comparison').innerHTML = '';
+}
+
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.selector')) {
+    document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+  }
+});
+
+function extractP(s){const m=s.match(/\$([0-9,.]+)/);return m?parseFloat(m[1].replace(',','')):0;}
+
+function buildComparison() {
+  const a = selA, b = selB;
+  const comp = document.getElementById('comparison');
+  const aPrice = extractP(a.price), bPrice = extractP(b.price);
+  const scoreWinA = a.score > b.score, scoreWinB = b.score > a.score;
+  const priceWinA = aPrice < bPrice || (aPrice===0 && bPrice>0), priceWinB = bPrice < aPrice || (bPrice===0 && aPrice>0);
+
+  let html = `
+  <div class="comp-header">
+    <div class="ch-label"></div>
+    <div class="ch-tool"><span class="cht-icon">${a.icon}</span><span class="cht-name">${a.name}</span><span class="cht-cat">${a.cat}</span></div>
+    <div class="ch-tool"><span class="cht-icon">${b.icon}</span><span class="cht-name">${b.name}</span><span class="cht-cat">${b.cat}</span></div>
+  </div>`;
+
+  // Score row
+  html += `<div class="comp-row">
+    <div class="cr-label">Score</div>
+    <div class="cr-val${scoreWinA?' winner':''}"><span class="score-big ${scoreWinA?'green':'dim'}">${a.score}</span>/10</div>
+    <div class="cr-val${scoreWinB?' winner':''}"><span class="score-big ${scoreWinB?'green':'dim'}">${b.score}</span>/10</div>
+  </div>`;
+
+  // Score bar visual
+  html += `<div class="comp-row">
+    <div class="cr-label">Rating</div>
+    <div class="cr-val"><div class="score-bar-wrap"><div class="score-bar-bg"><div class="score-bar-fill" style="width:${a.score*10}%;background:${scoreWinA?'#4ade80':'#888'};"></div></div></div></div>
+    <div class="cr-val"><div class="score-bar-wrap"><div class="score-bar-bg"><div class="score-bar-fill" style="width:${b.score*10}%;background:${scoreWinB?'#4ade80':'#888'};"></div></div></div></div>
+  </div>`;
+
+  // Price
+  html += `<div class="comp-row">
+    <div class="cr-label">Price</div>
+    <div class="cr-val${priceWinA?' winner':''}">${a.price}</div>
+    <div class="cr-val${priceWinB?' winner':''}">${b.price}</div>
+  </div>`;
+
+  // Category
+  html += `<div class="comp-row">
+    <div class="cr-label">Category</div>
+    <div class="cr-val">${a.cat}</div>
+    <div class="cr-val">${b.cat}</div>
+  </div>`;
+
+  // Description
+  html += `<div class="comp-row">
+    <div class="cr-label">Summary</div>
+    <div class="cr-val" style="text-align:left;font-size:.84rem;color:var(--muted);line-height:1.5;padding:16px;">${a.desc}</div>
+    <div class="cr-val" style="text-align:left;font-size:.84rem;color:var(--muted);line-height:1.5;padding:16px;">${b.desc}</div>
+  </div>`;
+
+  // Verdict
+  const winner = a.score > b.score ? a : b.score > a.score ? b : null;
+  const verdictText = winner
+    ? `${winner.icon} <strong>${winner.name}</strong> leads with a <strong>${winner.score}/10</strong> score. Read both full reviews to see which fits your specific needs.`
+    : `It's a tie at <strong>${a.score}/10</strong>! Both are excellent — your choice depends on your specific workflow and budget.`;
+
+  html += `<div class="comp-row">
+    <div class="cr-label">Verdict</div>
+    <div class="cr-val" style="grid-column:span 2;text-align:center;padding:20px;font-size:.9rem;line-height:1.6;">${verdictText}</div>
+  </div>`;
+
+  // CTAs
+  html += `<div class="comp-ctas">
+    <a href="${a.href}" class="comp-cta primary">${a.icon} Read ${a.name} Review</a>
+    <a href="${b.href}" class="comp-cta secondary">${b.icon} Read ${b.name} Review</a>
+  </div>`;
+
+  comp.innerHTML = html;
+  comp.classList.add('show');
+  comp.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+// Popular matchups
+const MATCHUPS = [
+  ['ChatGPT Plus','Claude Pro'],
+  ['Cursor','GitHub Copilot'],
+  ['Midjourney','DALL-E 3'],
+  ['Sora','Seedance 2.0'],
+  ['Grammarly','ChatGPT Plus'],
+  ['Perplexity AI','Google Gemini'],
+  ['CapCut','Descript'],
+  ['Canva AI','Figr AI'],
+  ['ElevenLabs','Murf AI']
+];
+
+document.getElementById('matchups').innerHTML = MATCHUPS.map(([na, nb]) => {
+  const a = TOOLS.find(t => t.name === na);
+  const b = TOOLS.find(t => t.name === nb);
+  if (!a || !b) return '';
+  return `<div class="matchup" onclick="loadMatchup('${na}','${nb}')">
+    <span class="mu-icons">${a.icon}<span class="mu-vs">vs</span>${b.icon}</span>
+    <span class="mu-names">${na} vs ${nb}</span>
+    <span class="mu-arrow">→</span>
+  </div>`;
+}).join('');
+
+function loadMatchup(na, nb) {
+  const ai = TOOLS.findIndex(t => t.name === na);
+  const bi = TOOLS.findIndex(t => t.name === nb);
+  if (ai >= 0 && bi >= 0) {
+    selectTool('A', ai);
+    selectTool('B', bi);
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+}
+</script>
+</body>
+</html>

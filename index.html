@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="163 honest, in-depth AI tool reviews across writing, coding, design, video, marketing, and more. Find the best AI tool for your needs.">
-<title>AI Pulse Checker — 163 Honest AI Tool Reviews</title>
+<meta name="description" content="166 honest, in-depth AI tool reviews across writing, coding, design, video, marketing, and more. Find the best AI tool for your needs.">
+<title>AI Pulse Checker — 166 Honest AI Tool Reviews</title>
     <link rel="canonical" href="https://aipulsechecker.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -302,9 +302,11 @@ body::before{
     <div id="nlForm">
       <h2>Join the newsletter</h2>
       <p>Weekly AI tool picks, new launches, and honest takes.</p>
-      <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return handleSubmit(event)">
-        <input type="hidden" name="form-name" value="newsletter">
-        <p style="display:none"><input name="bot-field"></p>
+      <form method="POST" action="https://api.web3forms.com/submit" onsubmit="return handleSubmit(event)">
+        <input type="hidden" name="access_key" value="4d7ec604-df22-414e-95f0-e5c6aa1ec01b">
+        <input type="hidden" name="subject" value="New Newsletter Signup — AI Pulse Checker">
+        <input type="hidden" name="from_name" value="AI Pulse Checker">
+        <input type="checkbox" name="botcheck" style="display:none">
         <label for="nl-name">Your Name</label>
         <input type="text" id="nl-name" name="name" placeholder="Chris" required>
         <label for="nl-email">Email Address</label>
@@ -324,22 +326,34 @@ body::before{
 </div>
 
 <section class="hero"><div class="container">
-  <h1>163 AI tools, <em>honestly reviewed</em></h1>
+  <h1>166 AI tools, <em>honestly reviewed</em></h1>
   <p>40+ hours of testing per tool. Real benchmarks, real verdicts, zero sponsored rankings.</p>
   <p style="font-size:.82rem;color:var(--accent);font-weight:500;margin:-18px auto 28px;max-width:520px;letter-spacing:.02em;">🔄 New reviews added weekly — prices re-verified monthly. Every tool gets the full 40+ hours.</p>
-  <div class="search-box"><input id="search" type="text" placeholder="Search 163 AI tools..." oninput="filterSearch()"></div>
-  <div class="cat-filters"><button class="cat-btn active" onclick="filterCat(this,'all')">All (163)</button>
+  <div class="search-box"><input id="search" type="text" placeholder="Search 166 AI tools..." oninput="filterSearch()"></div>
+  <div class="cat-filters"><button class="cat-btn active" onclick="filterCat(this,'all')">All (166)</button>
 <button class="cat-btn" onclick="filterCat(this,'AI Writing')">AI Writing (26)</button>
 <button class="cat-btn" onclick="filterCat(this,'AI Coding')">AI Coding (19)</button>
 <button class="cat-btn" onclick="filterCat(this,'AI Design')">AI Design (23)</button>
-<button class="cat-btn" onclick="filterCat(this,'AI Video')">AI Video (16)</button>
+<button class="cat-btn" onclick="filterCat(this,'AI Video')">AI Video (18)</button>
 <button class="cat-btn" onclick="filterCat(this,'AI Audio')">AI Audio (11)</button>
 <button class="cat-btn" onclick="filterCat(this,'AI Marketing')">AI Marketing (23)</button>
 <button class="cat-btn" onclick="filterCat(this,'AI Chatbots')">AI Chatbots (18)</button>
 <button class="cat-btn" onclick="filterCat(this,'AI Data')">AI Data (13)</button>
-<button class="cat-btn" onclick="filterCat(this,'AI Productivity')">AI Productivity (14)</button>
+<button class="cat-btn" onclick="filterCat(this,'AI Productivity')">AI Productivity (15)</button>
 </div>
 </div></section>
+
+<!-- Explore Features Bar -->
+<div class="container" style="margin-bottom:12px;">
+<div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:20px 0 8px;">
+  <a href="quiz.html" style="display:flex;align-items:center;gap:8px;padding:10px 20px;background:var(--card);border:1px solid var(--border);border-radius:12px;font-size:.85rem;font-weight:500;transition:all .25s;color:var(--ink);text-decoration:none;" onmouseover="this.style.borderColor='rgba(255,255,255,.2)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'"><span>🎯</span> Find My Perfect Tool</a>
+  <a href="compare.html" style="display:flex;align-items:center;gap:8px;padding:10px 20px;background:var(--card);border:1px solid var(--border);border-radius:12px;font-size:.85rem;font-weight:500;transition:all .25s;color:var(--ink);text-decoration:none;" onmouseover="this.style.borderColor='rgba(255,255,255,.2)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'"><span>📊</span> Score vs Price Chart</a>
+  <a href="head-to-head.html" style="display:flex;align-items:center;gap:8px;padding:10px 20px;background:var(--card);border:1px solid var(--border);border-radius:12px;font-size:.85rem;font-weight:500;transition:all .25s;color:var(--ink);text-decoration:none;" onmouseover="this.style.borderColor='rgba(255,255,255,.2)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'"><span>⚔️</span> Head-to-Head</a>
+  <a href="trends.html" style="display:flex;align-items:center;gap:8px;padding:10px 20px;background:var(--card);border:1px solid var(--border);border-radius:12px;font-size:.85rem;font-weight:500;transition:all .25s;color:var(--ink);text-decoration:none;" onmouseover="this.style.borderColor='rgba(255,255,255,.2)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'"><span>📈</span> 2026 Trends</a>
+  <a href="methodology.html" style="display:flex;align-items:center;gap:8px;padding:10px 20px;background:var(--card);border:1px solid var(--border);border-radius:12px;font-size:.85rem;font-weight:500;transition:all .25s;color:var(--ink);text-decoration:none;" onmouseover="this.style.borderColor='rgba(255,255,255,.2)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'"><span>⚖️</span> How We Score</a>
+</div>
+</div>
+
 <div class="container">
   <div class="tools-grid" id="grid"><a class="tool-card" href="pomelli.html" data-cat="AI Marketing">
       <div class="card-top"><span class="card-icon">🎯</span><span class="card-score score-high">8.9</span></div>
@@ -466,6 +480,13 @@ body::before{
       <p>The creative suite where AI video editing began.</p>
       <span class="card-price">$12/mo</span>
     </a>
+    <a class="tool-card" href="capcut.html" data-cat="AI Video">
+      <div class="card-top"><span class="card-icon">🎬</span><span class="card-score score-high">8.8</span></div>
+      <h3>CapCut</h3>
+      <span class="card-cat">AI Video</span>
+      <p>The AI video editor with 1B+ downloads — auto-captions, trending templates, and TikTok-native editing.</p>
+      <span class="card-price">Free / $19.99/mo</span>
+    </a>
 <a class="tool-card" href="n8n.html" data-cat="AI Productivity">
       <div class="card-top"><span class="card-icon">⚡</span><span class="card-score score-high">8.9</span></div>
       <h3>n8n</h3>
@@ -486,6 +507,13 @@ body::before{
       <span class="card-cat">AI Productivity</span>
       <p>AI search engine that gives answers, not links.</p>
       <span class="card-price">$20/mo</span>
+    </a>
+    <a class="tool-card" href="microsoft-copilot.html" data-cat="AI Productivity">
+      <div class="card-top"><span class="card-icon">🧠</span><span class="card-score score-high">8.7</span></div>
+      <h3>Microsoft Copilot</h3>
+      <span class="card-cat">AI Productivity</span>
+      <p>AI embedded in Word, Excel, PowerPoint, and Outlook for 430M+ Microsoft 365 users.</p>
+      <span class="card-price">Free / $20/mo</span>
     </a>
 <a class="tool-card" href="frase.html" data-cat="AI Writing">
       <div class="card-top"><span class="card-icon">🔍</span><span class="card-score score-high">8.7</span></div>
@@ -731,6 +759,13 @@ body::before{
       <span class="card-cat">AI Video</span>
       <p>AI video avatars with multilingual lip sync.</p>
       <span class="card-price">$24/mo</span>
+    </a>
+    <a class="tool-card" href="opus-clip.html" data-cat="AI Video">
+      <div class="card-top"><span class="card-icon">✂️</span><span class="card-score score-mid">8.1</span></div>
+      <h3>Opus Clip</h3>
+      <span class="card-cat">AI Video</span>
+      <p>AI turns long videos into viral short clips for TikTok, Reels, and Shorts in minutes.</p>
+      <span class="card-price">Free / $15/mo</span>
     </a>
 <a class="tool-card" href="descript-audio.html" data-cat="AI Audio">
       <div class="card-top"><span class="card-icon">🎵</span><span class="card-score score-mid">8.2</span></div>
@@ -1601,6 +1636,7 @@ body::before{
   </div>
 
 <footer class="footer"><div class="footer-inner">
+  <p style="margin-bottom:8px;"><a href="quiz.html">Tool Finder</a> &middot; <a href="compare.html">Comparison Chart</a> &middot; <a href="head-to-head.html">Head-to-Head</a> &middot; <a href="trends.html">AI Trends</a> &middot; <a href="methodology.html">How We Score</a> &middot; <a href="about.html">About</a></p>
   <p>&copy; 2026 AI Pulse Checker &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="affiliate-disclosure.html">Affiliate Disclosure</a></p>
   <p style="margin-top:8px;font-size:.72rem;opacity:.6;">Disclosure: Some links are affiliate links. This never influences our scores or rankings.</p>
 </div></footer>
@@ -1612,15 +1648,7 @@ function filterSearch(){const q=document.getElementById('search').value.toLowerC
 <script>
 function openModal(){document.getElementById('nlModal').classList.add('active');document.body.style.overflow='hidden';}
 function closeModal(){document.getElementById('nlModal').classList.remove('active');document.body.style.overflow='';}
-function handleSubmit(e){
-  e.preventDefault();
-  var form=e.target;
-  var data=new FormData(form);
-  fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(data).toString()})
-  .then(function(){document.getElementById('nlForm').style.display='none';document.getElementById('nlSuccess').style.display='block';})
-  .catch(function(){document.getElementById('nlForm').style.display='none';document.getElementById('nlSuccess').style.display='block';});
-  return false;
-}
+function handleSubmit(e){e.preventDefault();var form=e.target;var data=new FormData(form);var btn=form.querySelector('button[type=submit]');btn.textContent='Sending...';btn.disabled=true;fetch('https://api.web3forms.com/submit',{method:'POST',body:data}).then(function(r){return r.json();}).then(function(d){if(d.success){document.getElementById('nlForm').style.display='none';document.getElementById('nlSuccess').style.display='block';}else{btn.textContent='Try Again';btn.disabled=false;}}).catch(function(){btn.textContent='Try Again';btn.disabled=false;});return false;}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
 </script>
 

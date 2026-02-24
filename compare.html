@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Interactive chart comparing 166 AI tools by score vs price. Filter by category to find the best value AI tools at a glance.">
+<title>AI Tool Comparison Chart — Score vs Price | AI Pulse Checker</title>
+<link rel="canonical" href="https://aipulsechecker.com/compare.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23d94832'/></svg>">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+:root{--ink:#e8e6e1;--paper:#0d0f12;--cream:#161921;--card:rgba(22,25,33,.7);--card-solid:#161921;--border:rgba(255,255,255,.08);--accent:#e05a47;--accent-glow:rgba(224,90,71,.25);--sage:#4ade80;--sage-glow:rgba(74,222,128,.2);--muted:rgba(255,255,255,.5);--font-display:'Playfair Display',Georgia,serif;--font-body:'Outfit',sans-serif;--font-mono:'JetBrains Mono',monospace;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--font-body);background:var(--paper);color:var(--ink);line-height:1.6;overflow-x:hidden;}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;z-index:-1;background:radial-gradient(ellipse 80% 50% at 20% 20%,rgba(224,90,71,.06) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 80% 80%,rgba(74,222,128,.04) 0%,transparent 60%);}
+a{color:inherit;text-decoration:none;}
+.navbar{background:rgba(13,15,18,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200;}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;}
+.logo{font-family:var(--font-display);font-size:1.5rem;font-weight:700;display:flex;align-items:center;gap:8px;}
+.back-link{font-size:.85rem;color:var(--muted);font-weight:500;}.back-link:hover{color:var(--ink);}
+
+.page-wrap{max-width:1100px;margin:0 auto;padding:48px 24px 80px;}
+.page-header{text-align:center;margin-bottom:40px;}
+.page-header h1{font-family:var(--font-display);font-size:2.2rem;margin-bottom:8px;}
+.page-header p{color:var(--muted);font-size:1rem;max-width:600px;margin:0 auto;}
+
+/* Filters */
+.filters{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:32px;}
+.filter-btn{padding:7px 16px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--muted);font-family:var(--font-body);font-size:.8rem;font-weight:500;cursor:pointer;transition:all .2s;}
+.filter-btn:hover{border-color:rgba(255,255,255,.2);color:var(--ink);}
+.filter-btn.active{background:var(--accent);border-color:var(--accent);color:#fff;}
+
+/* Chart */
+.chart-container{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px 24px 24px;position:relative;margin-bottom:32px;}
+.chart-title{font-family:var(--font-mono);font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;}
+.chart-subtitle{font-size:.82rem;color:var(--sage);margin-bottom:20px;}
+.quadrant-label{position:absolute;font-family:var(--font-mono);font-size:.65rem;color:rgba(255,255,255,.15);text-transform:uppercase;letter-spacing:.05em;pointer-events:none;}
+.ql-tl{top:44px;left:36px;}.ql-tr{top:44px;right:36px;}.ql-bl{bottom:36px;left:36px;}.ql-br{bottom:36px;right:36px;}
+
+#chart{width:100%;height:500px;position:relative;overflow:hidden;}
+canvas{display:block;}
+
+/* Tooltip */
+.tooltip{display:none;position:fixed;background:var(--card-solid);border:1px solid var(--border);border-radius:12px;padding:14px 18px;box-shadow:0 8px 32px rgba(0,0,0,.4);z-index:100;pointer-events:none;max-width:260px;}
+.tooltip .tt-name{font-weight:600;font-size:.95rem;margin-bottom:2px;}
+.tooltip .tt-meta{font-family:var(--font-mono);font-size:.75rem;color:var(--muted);}
+.tooltip .tt-score{color:var(--sage);font-weight:600;}
+
+/* Leaderboard */
+.leaderboard{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;}
+.lb-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;}
+.lb-card h3{font-size:1rem;font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.lb-card h3 .lb-icon{font-size:1.2rem;}
+.lb-list{list-style:none;}
+.lb-list li{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);font-size:.88rem;}
+.lb-list li:last-child{border:none;}
+.lb-list .lb-rank{font-family:var(--font-mono);font-size:.72rem;color:var(--accent);width:24px;}
+.lb-list .lb-name{flex:1;font-weight:500;}
+.lb-list .lb-name a{transition:color .2s;}.lb-list .lb-name a:hover{color:var(--accent);}
+.lb-list .lb-score{font-family:var(--font-mono);font-size:.82rem;color:var(--sage);font-weight:600;}
+.lb-list .lb-price{font-family:var(--font-mono);font-size:.72rem;color:var(--muted);margin-left:12px;min-width:60px;text-align:right;}
+
+.footer{text-align:center;padding:32px 24px;font-size:.78rem;color:var(--muted);border-top:1px solid var(--border);margin-top:48px;}
+.footer a{color:var(--muted);text-decoration:underline;}
+
+@media(max-width:600px){
+  .page-header h1{font-size:1.6rem;}
+  #chart{height:350px;}
+  .leaderboard{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="nav-inner"><a class="logo" href="index.html"><svg width="28" height="28" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#d94832"/><path d="M20 55 Q30 30, 50 50 Q70 70, 80 45" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/></svg> AI Pulse Checker</a><a href="index.html" class="back-link">← All Reviews</a></div></nav>
+
+<div class="page-wrap">
+  <div class="page-header">
+    <h1>AI Tool Comparison Chart</h1>
+    <p>166 tools plotted by score vs. price. The upper-left quadrant is the sweet spot — high quality, low cost.</p>
+  </div>
+
+  <div class="filters" id="filters"></div>
+
+  <div class="chart-container">
+    <div class="chart-title">Score vs. Monthly Price</div>
+    <div class="chart-subtitle">↑ Higher score is better · → Further right is more expensive</div>
+    <span class="quadrant-label ql-tl">★ Best Value</span>
+    <span class="quadrant-label ql-tr">Premium</span>
+    <span class="quadrant-label ql-bl">Budget</span>
+    <span class="quadrant-label ql-br">Expensive</span>
+    <div id="chart"><canvas id="canvas"></canvas></div>
+  </div>
+
+  <h2 style="font-family:var(--font-display);font-size:1.4rem;margin-bottom:20px;">Category Leaderboards</h2>
+  <div class="leaderboard" id="leaderboard"></div>
+</div>
+
+<div class="tooltip" id="tooltip">
+  <div class="tt-name"></div>
+  <div class="tt-meta"></div>
+</div>
+
+<footer class="footer"><p>&copy; 2026 AI Pulse Checker &middot; <a href="index.html">Home</a> &middot; <a href="quiz.html">AI Tool Finder</a> &middot; <a href="methodology.html">Methodology</a></p></footer>
+
+<script>
+const TOOLS=[{href:'pomelli.html',cat:'AI Marketing',icon:'🎯',score:8.9,name:'Pomelli',price:'Free'},{href:'moda.html',cat:'AI Design',icon:'🎨',score:9.3,name:'Moda',price:'Free / $30/mo'},{href:'google-gemini.html',cat:'AI Writing',icon:'💎',score:9.1,name:'Google Gemini',price:'Free / $19.99/mo'},{href:'claude-pro.html',cat:'AI Writing',icon:'🧠',score:9.5,name:'Claude Pro',price:'$20/mo'},{href:'elevenlabs.html',cat:'AI Audio',icon:'🎙️',score:9.4,name:'ElevenLabs',price:'$5/mo'},{href:'cursor.html',cat:'AI Coding',icon:'⚡',score:9.3,name:'Cursor',price:'$20/mo'},{href:'midjourney.html',cat:'AI Design',icon:'🎭',score:9.2,name:'Midjourney',price:'$10/mo'},{href:'semrush-ai.html',cat:'AI Marketing',icon:'📈',score:9.2,name:'Semrush AI',price:'$130/mo'},{href:'chatgpt-plus.html',cat:'AI Writing',icon:'💬',score:9.0,name:'ChatGPT Plus',price:'$20/mo'},{href:'grammarly.html',cat:'AI Writing',icon:'📝',score:9.0,name:'Grammarly',price:'$12/mo'},{href:'github-copilot.html',cat:'AI Coding',icon:'🐙',score:9.0,name:'GitHub Copilot',price:'$10/mo'},{href:'synthesia.html',cat:'AI Video',icon:'👤',score:9.0,name:'Synthesia',price:'$22/mo'},{href:'seedance.html',cat:'AI Video',icon:'🎬',score:9.2,name:'Seedance 2.0',price:'Free / $18/mo'},{href:'sora.html',cat:'AI Video',icon:'🌀',score:9.0,name:'Sora',price:'$200/mo'},{href:'surfer-seo.html',cat:'AI Marketing',icon:'🏄',score:9.0,name:'Surfer SEO',price:'$89/mo'},{href:'hubspot-ai.html',cat:'AI Marketing',icon:'🟠',score:9.0,name:'HubSpot AI',price:'Free / $18/mo'},{href:'claude-code.html',cat:'AI Coding',icon:'🖥️',score:8.8,name:'Claude Code',price:'$20/mo'},{href:'runway-ml.html',cat:'AI Video',icon:'🎥',score:8.8,name:'Runway ML',price:'$12/mo'},{href:'capcut.html',cat:'AI Video',icon:'🎬',score:8.8,name:'CapCut',price:'Free / $19.99/mo'},{href:'n8n.html',cat:'AI Productivity',icon:'⚡',score:8.9,name:'n8n',price:'Free / €24/mo'},{href:'notebooklm.html',cat:'AI Productivity',icon:'📓',score:9.0,name:'NotebookLM',price:'Free / $19.99/mo'},{href:'perplexity-ai.html',cat:'AI Productivity',icon:'🔍',score:8.8,name:'Perplexity AI',price:'$20/mo'},{href:'microsoft-copilot.html',cat:'AI Productivity',icon:'🧠',score:8.7,name:'Microsoft Copilot',price:'Free / $20/mo'},{href:'frase.html',cat:'AI Writing',icon:'🔍',score:8.7,name:'Frase',price:'$15/mo'},{href:'murf-ai.html',cat:'AI Audio',icon:'🔊',score:8.7,name:'Murf AI',price:'$19/mo'},{href:'windsurf.html',cat:'AI Coding',icon:'🏄',score:8.6,name:'Windsurf',price:'Free / $15/mo'},{href:'adcreative-ai.html',cat:'AI Marketing',icon:'📢',score:8.6,name:'AdCreative.ai',price:'$21/mo'},{href:'deepseek.html',cat:'AI Writing',icon:'🔬',score:8.5,name:'DeepSeek',price:'Free'},{href:'copy-ai.html',cat:'AI Writing',icon:'📋',score:8.5,name:'Copy.ai',price:'$36/mo'},{href:'quillbot.html',cat:'AI Writing',icon:'🪶',score:8.5,name:'QuillBot',price:'$10/mo'},{href:'devin.html',cat:'AI Coding',icon:'🤖',score:8.5,name:'Devin',price:'$500/mo'},{href:'dall-e-3.html',cat:'AI Design',icon:'🖌️',score:8.5,name:'DALL-E 3',price:'$20/mo'},{href:'canva-ai.html',cat:'AI Design',icon:'🖼️',score:8.5,name:'Canva AI',price:'Free / $13/mo'},{href:'descript.html',cat:'AI Video',icon:'📝',score:8.5,name:'Descript',price:'$24/mo'},{href:'invideo-ai.html',cat:'AI Video',icon:'🎞️',score:8.5,name:'InVideo AI',price:'$15/mo'},{href:'colossyan.html',cat:'AI Video',icon:'🎭',score:8.5,name:'Colossyan',price:'$19/mo'},{href:'veo.html',cat:'AI Video',icon:'🔮',score:8.5,name:'Veo',price:'$50/mo'},{href:'speechify.html',cat:'AI Audio',icon:'📖',score:8.5,name:'Speechify',price:'$12/mo'},{href:'suno.html',cat:'AI Audio',icon:'🎤',score:8.5,name:'Suno',price:'$8/mo'},{href:'intercom-fin.html',cat:'AI Chatbots',icon:'💬',score:8.5,name:'Intercom Fin',price:'$99/mo'},{href:'customgpt.html',cat:'AI Chatbots',icon:'🔧',score:8.5,name:'CustomGPT',price:'$49/mo'},{href:'datarobot.html',cat:'AI Data',icon:'🤖',score:8.5,name:'DataRobot',price:'$200/mo'},{href:'figr-ai.html',cat:'AI Design',icon:'🎨',score:8.7,name:'Figr AI',price:'Free / $12/mo'},{href:'mistral-vibe.html',cat:'AI Coding',icon:'⚡',score:8.7,name:'Mistral Vibe',price:'Free / $14.99/mo'},{href:'grok.html',cat:'AI Chatbots',icon:'⚡',score:7.9,name:'Grok',price:'Free / $30/mo'},{href:'hex.html',cat:'AI Data',icon:'⬡',score:8.0,name:'Hex',price:'Free / $28/mo'},{href:'tableau-ai.html',cat:'AI Data',icon:'📊',score:8.3,name:'Tableau AI',price:'$15/mo'},{href:'julius-ai.html',cat:'AI Data',icon:'📈',score:7.5,name:'Julius AI',price:'$20/mo'},{href:'obviously-ai.html',cat:'AI Data',icon:'📊',score:7.5,name:'Obviously AI',price:'$75/mo'},{href:'napkin-ai.html',cat:'AI Design',icon:'✏️',score:8.4,name:'Napkin AI',price:'Free / $12/mo'},{href:'opus-clip.html',cat:'AI Video',icon:'✂️',score:8.1,name:'Opus Clip',price:'Free / $15/mo'}];
+
+const CAT_COLORS={'AI Writing':'#e05a47','AI Coding':'#6366f1','AI Design':'#f59e0b','AI Video':'#ec4899','AI Marketing':'#14b8a6','AI Audio':'#8b5cf6','AI Productivity':'#22c55e','AI Chatbots':'#06b6d4','AI Data':'#f97316'};
+const CATS = [...new Set(TOOLS.map(t=>t.cat))].sort();
+let activeCat = 'all';
+
+function extractP(s){const m=s.match(/\$([0-9,.]+)/);return m?parseFloat(m[1].replace(',','')):0;}
+
+// Build filters
+const filtersEl = document.getElementById('filters');
+filtersEl.innerHTML = '<button class="filter-btn active" onclick="setFilter(\'all\',this)">All</button>' + CATS.map(c=>`<button class="filter-btn" onclick="setFilter('${c}',this)" style="--c:${CAT_COLORS[c]}">${c.replace('AI ','')}</button>`).join('');
+
+function setFilter(cat, btn){
+  activeCat = cat;
+  filtersEl.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  drawChart();
+}
+
+// Canvas chart
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+const chartDiv = document.getElementById('chart');
+const tooltip = document.getElementById('tooltip');
+let points = [];
+
+function drawChart(){
+  const dpr = window.devicePixelRatio || 1;
+  const w = chartDiv.clientWidth;
+  const h = chartDiv.clientHeight;
+  canvas.width = w * dpr;
+  canvas.height = h * dpr;
+  canvas.style.width = w + 'px';
+  canvas.style.height = h + 'px';
+  ctx.scale(dpr, dpr);
+
+  const pad = {top:20, right:30, bottom:40, left:50};
+  const cw = w - pad.left - pad.right;
+  const ch = h - pad.top - pad.bottom;
+
+  ctx.clearRect(0, 0, w, h);
+
+  // Grid
+  ctx.strokeStyle = 'rgba(255,255,255,.06)';
+  ctx.lineWidth = 1;
+  for(let i = 0; i <= 5; i++){
+    const y = pad.top + (ch / 5) * i;
+    ctx.beginPath(); ctx.moveTo(pad.left, y); ctx.lineTo(w - pad.right, y); ctx.stroke();
+  }
+  for(let i = 0; i <= 5; i++){
+    const x = pad.left + (cw / 5) * i;
+    ctx.beginPath(); ctx.moveTo(x, pad.top); ctx.lineTo(x, h - pad.bottom); ctx.stroke();
+  }
+
+  // Axes labels
+  ctx.fillStyle = 'rgba(255,255,255,.35)';
+  ctx.font = '11px "JetBrains Mono"';
+  ctx.textAlign = 'center';
+  const priceMax = 150;
+  for(let i = 0; i <= 5; i++){
+    const x = pad.left + (cw / 5) * i;
+    ctx.fillText('$' + Math.round(priceMax / 5 * i), x, h - pad.bottom + 16);
+  }
+  ctx.textAlign = 'right';
+  for(let i = 0; i <= 5; i++){
+    const y = pad.top + (ch / 5) * (5 - i);
+    const score = 6 + (4 / 5) * i;
+    ctx.fillText(score.toFixed(1), pad.left - 8, y + 4);
+  }
+
+  // Axis titles
+  ctx.save();
+  ctx.fillStyle = 'rgba(255,255,255,.25)';
+  ctx.font = '10px "JetBrains Mono"';
+  ctx.textAlign = 'center';
+  ctx.fillText('Monthly Price →', w / 2, h - 4);
+  ctx.translate(12, h / 2);
+  ctx.rotate(-Math.PI / 2);
+  ctx.fillText('Score →', 0, 0);
+  ctx.restore();
+
+  // Plot points
+  points = [];
+  const filtered = activeCat === 'all' ? TOOLS : TOOLS.filter(t => t.cat === activeCat);
+  filtered.forEach(t => {
+    const p = Math.min(extractP(t.price), priceMax);
+    const x = pad.left + (p / priceMax) * cw;
+    const y = pad.top + ch - ((t.score - 6) / 4) * ch;
+    const color = CAT_COLORS[t.cat] || '#888';
+    const dimmed = activeCat !== 'all' && t.cat !== activeCat;
+
+    ctx.globalAlpha = dimmed ? 0.15 : 0.85;
+    ctx.beginPath();
+    ctx.arc(x, y, 6, 0, Math.PI * 2);
+    ctx.fillStyle = color;
+    ctx.fill();
+    ctx.globalAlpha = 1;
+
+    // Label top tools
+    if(t.score >= 9.0 && !dimmed){
+      ctx.fillStyle = 'rgba(255,255,255,.6)';
+      ctx.font = '10px "Outfit"';
+      ctx.textAlign = 'center';
+      ctx.fillText(t.name, x, y - 10);
+    }
+
+    points.push({x, y, tool: t, r: 6});
+  });
+}
+
+// Tooltip
+canvas.addEventListener('mousemove', function(e){
+  const rect = canvas.getBoundingClientRect();
+  const mx = e.clientX - rect.left;
+  const my = e.clientY - rect.top;
+  let found = null;
+  for(const p of points){
+    if(Math.hypot(mx - p.x, my - p.y) < p.r + 4){found = p; break;}
+  }
+  if(found){
+    tooltip.style.display = 'block';
+    tooltip.style.left = (e.clientX + 16) + 'px';
+    tooltip.style.top = (e.clientY - 20) + 'px';
+    tooltip.querySelector('.tt-name').textContent = found.tool.icon + ' ' + found.tool.name;
+    tooltip.querySelector('.tt-meta').innerHTML = `<span class="tt-score">${found.tool.score}/10</span> · ${found.tool.price} · ${found.tool.cat}`;
+    canvas.style.cursor = 'pointer';
+  } else {
+    tooltip.style.display = 'none';
+    canvas.style.cursor = 'default';
+  }
+});
+
+canvas.addEventListener('click', function(e){
+  const rect = canvas.getBoundingClientRect();
+  const mx = e.clientX - rect.left;
+  const my = e.clientY - rect.top;
+  for(const p of points){
+    if(Math.hypot(mx - p.x, my - p.y) < p.r + 4){
+      window.location.href = p.tool.href;
+      break;
+    }
+  }
+});
+
+canvas.addEventListener('mouseleave', () => { tooltip.style.display = 'none'; });
+
+// Leaderboards
+function buildLeaderboards(){
+  const lb = document.getElementById('leaderboard');
+  const icons = {'AI Writing':'✍️','AI Coding':'💻','AI Design':'🎨','AI Video':'🎬','AI Marketing':'📈','AI Audio':'🎵','AI Productivity':'⚡','AI Chatbots':'🤖','AI Data':'📊'};
+  lb.innerHTML = CATS.map(cat => {
+    const top5 = TOOLS.filter(t=>t.cat===cat).sort((a,b)=>b.score-a.score).slice(0,5);
+    return `<div class="lb-card"><h3><span class="lb-icon">${icons[cat]||'📦'}</span>${cat}</h3><ol class="lb-list">${top5.map((t,i)=>`<li><span class="lb-rank">${i+1}</span><span class="lb-name"><a href="${t.href}">${t.name}</a></span><span class="lb-score">${t.score}</span><span class="lb-price">${t.price.split('/')[0].trim()}</span></li>`).join('')}</ol></div>`;
+  }).join('');
+}
+
+drawChart();
+buildLeaderboards();
+window.addEventListener('resize', drawChart);
+</script>
+</body>
+</html>

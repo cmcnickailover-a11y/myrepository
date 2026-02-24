@@ -344,9 +344,11 @@ a{color:inherit;text-decoration:none;}
     <div id="nlForm">
       <h2>Join the newsletter</h2>
       <p>Weekly AI tool picks, new launches, and honest takes.</p>
-      <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return handleSubmit(event)">
-        <input type="hidden" name="form-name" value="newsletter">
-        <p style="display:none"><input name="bot-field"></p>
+      <form method="POST" action="https://api.web3forms.com/submit" onsubmit="return handleSubmit(event)">
+        <input type="hidden" name="access_key" value="4d7ec604-df22-414e-95f0-e5c6aa1ec01b">
+        <input type="hidden" name="subject" value="New Newsletter Signup — AI Pulse Checker">
+        <input type="hidden" name="from_name" value="AI Pulse Checker">
+        <input type="checkbox" name="botcheck" style="display:none">
         <label for="nl-name">Your Name</label>
         <input type="text" id="nl-name" name="name" placeholder="Chris" required>
         <label for="nl-email">Email Address</label>
@@ -549,15 +551,7 @@ a{color:inherit;text-decoration:none;}
 <script>
 function openModal(){document.getElementById('nlModal').classList.add('active');document.body.style.overflow='hidden';}
 function closeModal(){document.getElementById('nlModal').classList.remove('active');document.body.style.overflow='';}
-function handleSubmit(e){
-  e.preventDefault();
-  var form=e.target;
-  var data=new FormData(form);
-  fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(data).toString()})
-  .then(function(){document.getElementById('nlForm').style.display='none';document.getElementById('nlSuccess').style.display='block';})
-  .catch(function(){document.getElementById('nlForm').style.display='none';document.getElementById('nlSuccess').style.display='block';});
-  return false;
-}
+function handleSubmit(e){e.preventDefault();var form=e.target;var data=new FormData(form);var btn=form.querySelector('button[type=submit]');btn.textContent='Sending...';btn.disabled=true;fetch('https://api.web3forms.com/submit',{method:'POST',body:data}).then(function(r){return r.json();}).then(function(d){if(d.success){document.getElementById('nlForm').style.display='none';document.getElementById('nlSuccess').style.display='block';}else{btn.textContent='Try Again';btn.disabled=false;}}).catch(function(){btn.textContent='Try Again';btn.disabled=false;});return false;}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
 </script>
 

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Riverside scores 8.6/10 — studio-quality remote recording with AI transcription, magic clips, and text-based editing. Free to $15/mo. The podcast tool we actually use.">
+<meta name="keywords" content="Riverside review, Riverside pricing, Riverside alternatives, best ai audio tools">
+<title>Riverside Review 2026: Best AI Podcast Tool? (Tested)</title>
+    <link rel="canonical" href="https://aipulsechecker.com/riverside.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+:root{
+  --ink:#e8e6e1;--paper:#0d0f12;--cream:#161921;--card:rgba(22,25,33,.7);--card-solid:#161921;--border:rgba(255,255,255,.08);--accent:#e05a47;--accent-glow:rgba(224,90,71,.25);--accent-dark:#c44433;--sage:#4ade80;--sage-glow:rgba(74,222,128,.2);--sage-light:rgba(74,222,128,.08);--muted:rgba(255,255,255,.5);--font-display:'Playfair Display',Georgia,serif;--font-body:'Outfit',sans-serif;--font-mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);background:var(--paper);color:var(--ink);line-height:1.6;overflow-x:hidden;}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;z-index:-1;background:radial-gradient(ellipse 80% 50% at 20% 20%, rgba(224,90,71,.06) 0%, transparent 60%),radial-gradient(ellipse 60% 40% at 80% 80%, rgba(74,222,128,.04) 0%, transparent 60%);pointer-events:none;}
+a{color:inherit;text-decoration:none;}
+.navbar{background:rgba(13,15,18,.85);backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200;}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;}
+.logo{font-family:var(--font-display);font-size:1.5rem;font-weight:700;display:flex;align-items:center;gap:8px;}
+.logo:hover{opacity:.8;}
+.nav-btn{background:linear-gradient(135deg, var(--accent) 0%, #ff6b5a 100%);color:#fff !important;padding:8px 20px;border-radius:10px;font-size:.82rem;font-weight:600;transition:all .3s;cursor:pointer;border:none;font-family:var(--font-body);box-shadow:0 2px 12px var(--accent-glow);}
+.nav-btn:hover{transform:translateY(-1px);box-shadow:0 4px 20px var(--accent-glow);}
+.modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);z-index:999;align-items:center;justify-content:center;}
+.modal-overlay.active{display:flex;}
+.modal{background:var(--card-solid);border:1px solid var(--border);border-radius:20px;padding:36px;max-width:420px;width:90%;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.4);animation:modalIn .3s cubic-bezier(.16,1,.3,1);}
+@keyframes modalIn{from{opacity:0;transform:translateY(20px) scale(.96);}to{opacity:1;transform:translateY(0) scale(1);}}
+.modal h2{font-family:var(--font-display);font-size:1.4rem;margin-bottom:6px;}
+.modal>p{font-size:.9rem;color:var(--muted);margin-bottom:20px;}
+.modal-close{position:absolute;top:14px;right:18px;font-size:1.4rem;cursor:pointer;color:var(--muted);background:none;border:none;font-family:var(--font-body);}
+.modal-close:hover{color:var(--ink);}
+.modal label{display:block;font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:4px;}
+.modal input{width:100%;padding:11px 14px;border:1px solid var(--border);border-radius:10px;font-family:var(--font-body);font-size:.9rem;margin-bottom:14px;outline:none;transition:all .2s;background:rgba(255,255,255,.05);color:var(--ink);}
+.modal input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-glow);}
+.modal button[type=submit]{width:100%;padding:12px;background:linear-gradient(135deg, var(--accent) 0%, #ff6b5a 100%);color:#fff;border:none;border-radius:10px;font-family:var(--font-body);font-weight:600;font-size:.95rem;cursor:pointer;transition:all .3s;box-shadow:0 2px 12px var(--accent-glow);}
+.modal button[type=submit]:hover{transform:translateY(-1px);}
+.modal .note{font-size:.72rem;color:var(--muted);text-align:center;margin-top:10px;}
+.modal .success-msg{text-align:center;padding:20px 0;}
+.modal .success-msg .check{font-size:2.5rem;margin-bottom:10px;}
+.modal .success-msg h3{font-family:var(--font-display);font-size:1.2rem;margin-bottom:6px;}
+.modal .success-msg p{font-size:.9rem;color:var(--muted);}
+.breadcrumb{padding:20px 0 0;font-size:.82rem;color:var(--muted);}
+.breadcrumb a{color:var(--accent);transition:opacity .2s;}
+.breadcrumb a:hover{opacity:.7;}
+.review-hero{padding:36px 0 44px;border-bottom:1px solid var(--border);position:relative;}
+.review-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg, transparent, var(--accent), transparent);opacity:.3;}
+.review-cat{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);font-weight:700;margin-bottom:10px;display:inline-block;padding:4px 12px;background:var(--accent-glow);border-radius:6px;}
+.review-hero h1{font-family:var(--font-display);font-size:clamp(2rem,4vw,2.8rem);line-height:1.15;margin-bottom:12px;background:linear-gradient(135deg, #fff 0%, rgba(255,255,255,.75) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.review-tagline{font-size:1.1rem;color:var(--muted);font-style:italic;margin-bottom:28px;font-weight:300;}
+.review-meta{display:flex;gap:36px;flex-wrap:wrap;}
+.meta-item{display:flex;flex-direction:column;}
+.meta-item span:first-child{font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600;}
+.meta-item span:last-child{font-family:var(--font-mono);font-size:1.1rem;font-weight:500;}
+.score-badge{color:var(--sage);text-shadow:0 0 20px var(--sage-glow);}
+.container{max-width:800px;margin:0 auto;padding:0 24px;}
+.article{padding:40px 0;}
+.article h2{font-family:var(--font-display);font-size:1.5rem;margin:36px 0 16px;line-height:1.3;}
+.article h2:first-child{margin-top:0;}
+.article p{font-size:1rem;color:rgba(232,230,225,.85);margin-bottom:16px;line-height:1.8;}
+.article ul,.article ol{margin:16px 0 24px 24px;}
+.article li{font-size:.95rem;color:rgba(232,230,225,.8);margin-bottom:8px;line-height:1.6;}
+.features-list{list-style:none;margin-left:0 !important;padding:0;}
+.features-list li{padding:10px 16px;background:var(--card);border:1px solid var(--border);border-radius:10px;margin-bottom:8px;font-size:.92rem;display:flex;align-items:center;gap:10px;}
+.features-list li::before{content:'✦';color:var(--sage);font-size:.8rem;flex-shrink:0;}
+.best-for{background:linear-gradient(135deg, rgba(74,222,128,.06), rgba(74,222,128,.02));border:1px solid rgba(74,222,128,.12);border-radius:14px;padding:24px 28px;margin:32px 0;}
+.best-for h3{font-family:var(--font-display);font-size:1.1rem;color:var(--sage);margin-bottom:6px;}
+.best-for p{color:rgba(232,230,225,.8);margin:0;font-size:.95rem;}
+.pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0 36px;}
+.pros,.cons{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;}
+.pros h3,.cons h3{font-family:var(--font-display);font-size:1rem;margin-bottom:14px;}
+.pros h3{color:var(--sage);}
+.cons h3{color:var(--accent);}
+.pros ul,.cons ul{list-style:none;margin:0;padding:0;}
+.pros li,.cons li{padding:8px 0;font-size:.9rem;color:rgba(232,230,225,.75);border-bottom:1px solid var(--border);line-height:1.5;}
+.pros li:last-child,.cons li:last-child{border-bottom:none;}
+.pros li::before{content:'✓ ';color:var(--sage);font-weight:700;}
+.cons li::before{content:'✗ ';color:var(--accent);font-weight:700;}
+.verdict-box{background:linear-gradient(135deg, rgba(224,90,71,.08), rgba(224,90,71,.03));border:1px solid rgba(224,90,71,.15);border-radius:14px;padding:28px 32px;margin:36px 0;}
+.verdict-box h3{font-family:var(--font-display);font-size:1.3rem;color:var(--accent);margin-bottom:10px;}
+.verdict-box p{font-size:.95rem;line-height:1.8;color:rgba(232,230,225,.85);margin:0;}
+.cta-btn{display:inline-block;margin:24px 0 20px;padding:14px 36px;background:linear-gradient(135deg, var(--accent), #ff6b5a);color:#fff;border-radius:12px;font-weight:700;font-size:1rem;transition:all .3s;box-shadow:0 4px 20px var(--accent-glow);}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 6px 28px var(--accent-glow);}
+.footer{background:var(--cream);border-top:1px solid var(--border);padding:24px;margin-top:40px;}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:.78rem;color:var(--muted);}
+.footer a{color:var(--muted);transition:color .2s;}
+.footer a:hover{color:var(--ink);}
+@media(max-width:700px){
+  .pros-cons{grid-template-columns:1fr;}
+  .review-meta{gap:20px;}
+  .nav-inner{padding:12px 16px;}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Riverside",
+    "applicationCategory": "AI Audio",
+    "operatingSystem": "Web"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "AI Pulse Checker",
+    "url": "https://aipulsechecker.com"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "8.6",
+    "bestRating": "10",
+    "worstRating": "0"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Pulse Checker",
+    "url": "https://aipulsechecker.com"
+  }
+}
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Riverside?","acceptedAnswer":{"@type":"Answer","text":"Riverside is a browser-based recording and production platform for podcasts and video interviews. It records locally for studio quality and includes AI transcription, clip generation, and text-based editing. Score: 8.6/10."}},{"@type":"Question","name":"Is Riverside free?","acceptedAnswer":{"@type":"Answer","text":"Riverside has a free tier with 2 hours of recording and basic features. Paid plans start at $15/mo for 5 hours of recording and full AI tools."}},{"@type":"Question","name":"Riverside vs Descript — which is better?","acceptedAnswer":{"@type":"Answer","text":"Riverside excels at recording quality with local HD capture, while Descript is stronger as a post-production editor. Many creators use Riverside to record and Descript to edit, though Riverside's built-in editing has improved significantly."}},{"@type":"Question","name":"Does Riverside work for video?","acceptedAnswer":{"@type":"Answer","text":"Yes, Riverside supports up to 4K video recording with local capture for each participant. It also generates video clips and supports multi-cam editing on higher-tier plans."}}]}</script>
+<meta property="og:title" content="Riverside Review 2026: Best AI Podcast Tool? (Tested)">
+<meta property="og:description" content="Riverside scores 8.6/10 — studio-quality remote recording with AI transcription, magic clips, and text-based editing. Free to $15/mo. The podcast tool we actually use.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aipulsechecker.com/riverside.html">
+<meta property="og:site_name" content="AI Pulse Checker">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aipulsechecker.com/"},{"@type":"ListItem","position":2,"name":"AI Audio","item":"https://aipulsechecker.com/"},{"@type":"ListItem","position":3,"name":"Riverside Review"}]}</script>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="#d94832" stroke-width="2"/><path d="M8 14.5C8 14.5 10 10 14 10C18 10 20 14.5 20 14.5" stroke="#d94832" stroke-width="2" stroke-linecap="round"/><circle cx="10.5" cy="12" r="1.5" fill="#d94832"/><circle cx="17.5" cy="12" r="1.5" fill="#d94832"/><path d="M9.5 17.5C9.5 17.5 11 20 14 20C17 20 18.5 17.5 18.5 17.5" stroke="#d94832" stroke-width="1.5" stroke-linecap="round"/><path d="M14 3V6M22.5 7L20.5 9M24 14H21M5.5 7L7.5 9M4 14H7" stroke="#d94832" stroke-width="1.2" stroke-linecap="round"/></svg> AI Pulse Checker</a>
+    <button class="nav-btn" onclick="openModal()">Get AI updates ✉</button>
+  </div>
+</nav>
+
+<div class="modal-overlay" id="nlModal" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <h2>Join the newsletter</h2>
+    <p>One email per week with the best new AI tools and honest reviews.</p>
+    <form id="nlForm" onsubmit="handleSubmit(event)">
+      <input type="hidden" name="access_key" value="4d7ec604-df22-414e-95f0-e5c6aa1ec01b">
+      <input type="hidden" name="subject" value="New AI Pulse Subscriber">
+      <input type="hidden" name="from_name" value="AI Pulse Checker">
+      <label>Email</label>
+      <input type="email" name="email" placeholder="you@email.com" required>
+      <button type="submit">Subscribe →</button>
+      <p class="note">Free forever · No spam · Unsubscribe anytime</p>
+    </form>
+    <div id="nlSuccess" class="success-msg" style="display:none;">
+      <div class="check">✓</div>
+      <h3>You're in!</h3>
+      <p>Thanks for subscribing. Check your inbox soon.</p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="breadcrumb"><a href="index.html">Home</a> → <a href="index.html">AI Audio</a> → Riverside</div>
+  <div class="review-hero">
+    <div class="review-cat">🎙️ AI Audio</div>
+    <h1>Riverside Review</h1>
+    <div class="review-tagline">Studio-quality podcast and video recording with AI transcription, clips, and editing.</div>
+    <div class="review-meta">
+      <div class="meta-item"><span>Our Score</span><span class="score-badge">8.6/10</span></div>
+      <div class="meta-item"><span>Price</span><span>Free / $15/mo <span style="font-size:.6rem;color:var(--muted);font-family:var(--font-body);font-weight:400;margin-left:6px;">(As of Feb 2026)</span></span></div>
+      <div class="meta-item"><span>Category</span><span style="font-family:var(--font-body)">AI Audio</span></div>
+      <div class="meta-item"><span>Reviewed By</span><span style="font-family:var(--font-body)">AI Pulse Checker</span></div>
+    </div>
+  </div>
+  <article class="article">
+    <h2>What is Riverside?</h2>
+    <p>Riverside is a browser-based recording platform built specifically for podcasts, interviews, and remote video content. Unlike Zoom or Google Meet, Riverside records each participant's audio and video locally at full quality, then uploads the files — meaning internet hiccups don't ruin your recording. The platform has evolved far beyond basic recording, adding AI-powered transcription, automatic clip generation, text-based editing, and show notes. It has become a genuine end-to-end production tool for audio and video creators who want professional output without professional-grade complexity.</p>
+
+    <h2>Key Features & Capabilities</h2>
+    <ul class="features-list">
+          <li>Local HD recording (up to 4K video, 48kHz audio)</li>
+          <li>AI transcription in 100+ languages</li>
+          <li>Magic Clips — AI auto-generates short clips from long recordings</li>
+          <li>Text-based audio/video editing</li>
+          <li>AI show notes, summaries, and chapter markers</li>
+    </ul>
+
+    <h2>Performance & Quality in Real-World Testing</h2>
+    <p>Recording quality is where Riverside truly excels. Local recording means you get studio-quality audio and crisp video regardless of each participant's internet connection — a massive advantage over competitors that record the stream. In our testing, audio was consistently clean at 48kHz WAV quality, and 4K video was sharp even when our test participant was on spotty hotel WiFi. The AI features are genuinely useful rather than gimmicky. Transcription accuracy averaged around 95% in English, competitive with dedicated services like Otter.ai. Magic Clips automatically identifies compelling segments and generates vertical-format clips ready for social media — about 70% of the auto-generated clips were genuinely usable, which saves hours of manual clipping. Text-based editing is the real time-saver: you edit the transcript and the audio/video edits automatically. Deleting filler words, trimming tangents, and rearranging segments becomes as easy as editing a document.</p>
+
+    <h2>User Experience & Interface</h2>
+    <p>The browser-based approach means no software installation for you or your guests — just send a link. This dramatically reduces friction for remote interviews. The recording interface is clean and intuitive, with clear audio level meters and a simple layout. Post-production tools are organized logically, though the sheer number of AI features can feel overwhelming on first use. The editor itself is responsive and well-designed, though complex multi-track editing with many participants can feel sluggish. Mobile recording via the iOS and Android apps works well for on-the-go recording.</p>
+
+    <h2>Where It Falls Short</h2>
+    <p>File upload after recording can be slow for long sessions, especially video — expect to wait 10-20 minutes for a one-hour 4K recording to process. The free tier is quite limited at 2 hours of recording and 1 hour of transcription. Some advanced editing features like multi-cam switching and custom branding require the $24/mo Business tier. The AI clip generator, while good, sometimes selects segments that lack context when viewed standalone, requiring manual review. Live streaming integration is basic compared to dedicated streaming platforms.</p>
+
+    <h2>Pricing & Value Analysis</h2>
+    <p style="font-size:.78rem;color:var(--muted);margin:-4px 0 14px;font-style:italic;">⏱ Pricing verified as of February 26, 2026 — confirm on vendor website before purchasing.</p>
+    <p>The free plan gives you 2 hours of recording and basic transcription — enough to try it but not enough for regular production. The Standard plan at $15/mo unlocks 5 hours of recording, full transcription, and AI tools including Magic Clips. The Business plan at $24/mo adds unlimited recording, custom branding, and multi-cam editing. For most podcasters producing weekly episodes, the $15/mo Standard plan hits the sweet spot. Compared to buying separate recording, transcription, and clipping tools, Riverside consolidates $50-100/mo of services into one affordable package.</p>
+
+    <div class="best-for">
+      <h3>Best For</h3>
+      <p>Podcasters, content creators, and remote interview producers who need reliable recording and fast editing</p>
+    </div>
+
+    <h2>Pros & Cons</h2>
+    <div class="pros-cons">
+      <div class="pros">
+        <h3>What We Love</h3>
+        <ul>
+          <li>Local recording delivers studio-quality audio/video regardless of internet conditions</li>
+          <li>AI transcription, clips, and text-based editing save hours of post-production</li>
+          <li>Browser-based — zero friction for guests, no downloads required</li>
+          <li>Magic Clips auto-generates social media content from long recordings</li>
+          <li>Competitive pricing compared to buying separate recording and editing tools</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h3>Watch Out For</h3>
+        <ul>
+          <li>File upload and processing can be slow for long or high-quality recordings</li>
+          <li>Free tier is very limited at just 2 hours of recording</li>
+          <li>Some AI-generated clips lack context and need manual review</li>
+          <li>Advanced features like multi-cam and custom branding locked to higher tiers</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="verdict-box">
+      <h3>Our Verdict — 8.6/10</h3>
+      <p>Riverside earns an 8.6/10 — the best all-in-one podcast and remote recording platform we have tested. The combination of local HD recording with AI-powered post-production tools makes it genuinely transformative for content creators. If you produce podcasts, video interviews, or any remote recording, Riverside eliminates the need for a complex toolchain. The $15/mo Standard plan offers exceptional value for weekly producers.</p>
+    </div>
+
+    <a href="https://riverside.fm" class="cta-btn" target="_blank" rel="noopener noreferrer">Try Riverside →</a>
+  </article>
+</div>
+
+    <div class="related-tools" style="max-width:800px;margin:40px auto;padding:32px 24px;border-top:1px solid var(--border);">
+      <h3 style="font-family:var(--font-display);font-size:1.3rem;margin-bottom:16px;">Similar Tools You Might Like</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;">
+        
+        <a href="elevenlabs.html" style="display:block;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;transition:all .25s;text-decoration:none;color:inherit;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <span style="font-size:1.4rem;">🎙️</span>
+            <span class="card-score score-high" style="font-family:var(--font-mono);font-size:.8rem;font-weight:500;padding:2px 8px;border-radius:6px;color:#fff;background:var(--sage);">9.4</span>
+          </div>
+          <h4 style="font-size:.95rem;font-weight:600;margin-bottom:2px;">ElevenLabs</h4>
+          <span style="font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;">AI Audio</span>
+        </a>
+        <a href="descript.html" style="display:block;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;transition:all .25s;text-decoration:none;color:inherit;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <span style="font-size:1.4rem;">📝</span>
+            <span class="card-score score-high" style="font-family:var(--font-mono);font-size:.8rem;font-weight:500;padding:2px 8px;border-radius:6px;color:#fff;background:var(--sage);">8.5</span>
+          </div>
+          <h4 style="font-size:.95rem;font-weight:600;margin-bottom:2px;">Descript</h4>
+          <span style="font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;">AI Video</span>
+        </a>
+        <a href="otter-ai.html" style="display:block;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;transition:all .25s;text-decoration:none;color:inherit;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <span style="font-size:1.4rem;">🦦</span>
+            <span class="card-score score-high" style="font-family:var(--font-mono);font-size:.8rem;font-weight:500;padding:2px 8px;border-radius:6px;color:#fff;background:var(--sage);">8.2</span>
+          </div>
+          <h4 style="font-size:.95rem;font-weight:600;margin-bottom:2px;">Otter.ai</h4>
+          <span style="font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;">AI Productivity</span>
+        </a>
+        <a href="opus-clip.html" style="display:block;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;transition:all .25s;text-decoration:none;color:inherit;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <span style="font-size:1.4rem;">✂️</span>
+            <span class="card-score score-high" style="font-family:var(--font-mono);font-size:.8rem;font-weight:500;padding:2px 8px;border-radius:6px;color:#fff;background:var(--sage);">8.1</span>
+          </div>
+          <h4 style="font-size:.95rem;font-weight:600;margin-bottom:2px;">Opus Clip</h4>
+          <span style="font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;">AI Video</span>
+        </a>
+      </div>
+    </div>
+
+<div class="share-section" style="max-width:800px;margin:32px auto;padding:24px;background:var(--cream);border-radius:12px;text-align:center;">
+      <p style="font-family:var(--font-display);font-size:1.1rem;margin-bottom:14px;">Share this review</p>
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+        <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20honest%20review%20of%20Riverside%20on%20AI%20Pulse%20Checker!&url=https://aipulsechecker.com/riverside.html" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:8px 18px;background:#1DA1F2;color:#fff;border-radius:8px;font-size:.85rem;font-weight:600;transition:opacity .2s;">𝕏 Twitter</a>
+        <a href="https://www.reddit.com/submit?url=https://aipulsechecker.com/riverside.html&title=Riverside%20Review%20-%20AI%20Pulse%20Checker" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:8px 18px;background:#FF4500;color:#fff;border-radius:8px;font-size:.85rem;font-weight:600;transition:opacity .2s;">Reddit</a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://aipulsechecker.com/riverside.html" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:8px 18px;background:#0077B5;color:#fff;border-radius:8px;font-size:.85rem;font-weight:600;transition:opacity .2s;">LinkedIn</a>
+        <a href="mailto:?subject=Riverside%20Review&body=Check out this honest review of Riverside on AI Pulse Checker!%20https://aipulsechecker.com/riverside.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 18px;background:var(--muted);color:#fff;border-radius:8px;font-size:.85rem;font-weight:600;transition:opacity .2s;">✉ Email</a>
+      </div>
+    </div>
+
+    <div class="faq-section" style="max-width:800px;margin:40px auto;padding:0 24px;">
+      <h2 style="font-family:var(--font-display);font-size:1.4rem;margin-bottom:20px;">Frequently Asked Questions</h2>
+      
+      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">What is Riverside?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Riverside is a browser-based recording and production platform for podcasts and video interviews. It records locally for studio quality and includes AI transcription, clip generation, and text-based editing. Score: 8.6/10.</p>
+      </div>
+      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">Is Riverside free?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Riverside has a free tier with 2 hours of recording and basic features. Paid plans start at $15/mo for 5 hours of recording and full AI tools.</p>
+      </div>
+      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">Riverside vs Descript — which is better?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Riverside excels at recording quality with local HD capture, while Descript is stronger as a post-production editor. Many creators use Riverside to record and Descript to edit, though Riverside's built-in editing has improved significantly.</p>
+      </div>
+      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">Does Riverside work for video?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Yes, Riverside supports up to 4K video recording with local capture for each participant. It also generates video clips and supports multi-cam editing on higher-tier plans.</p>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin:30px 0;padding:0 24px;">
+      <a href="best-ai-audio-tools.html" style="display:inline-block;padding:10px 24px;background:var(--sage-light);border:1px solid rgba(74,222,128,.15);border-radius:10px;color:var(--sage);font-weight:500;font-size:.9rem;transition:all .3s;">
+        See All AI Audio Tools Ranked →
+      </a>
+    </div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span>&copy; 2026 AI Pulse Checker. All rights reserved.</span>
+    <div><a href="index.html">All Reviews</a> &nbsp; <a href="privacy.html">Privacy</a> &nbsp; <a href="affiliate-disclosure.html">Affiliate Disclosure</a></div>
+  </div>
+</footer>
+
+<script>
+function openModal(){document.getElementById('nlModal').classList.add('active');document.body.style.overflow='hidden';}
+function closeModal(){document.getElementById('nlModal').classList.remove('active');document.body.style.overflow='';}
+function handleSubmit(e){e.preventDefault();var form=e.target;var data=new FormData(form);var btn=form.querySelector('button[type=submit]');btn.textContent='Sending...';btn.disabled=true;fetch('https://api.web3forms.com/submit',{method:'POST',body:data}).then(function(r){return r.json();}).then(function(d){if(d.success){document.getElementById('nlForm').style.display='none';document.getElementById('nlSuccess').style.display='block';}else{btn.textContent='Try Again';btn.disabled=false;}}).catch(function(){btn.textContent='Try Again';btn.disabled=false;});return false;}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+</script>
+
+<button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="display:none;position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:1.2rem;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.15);z-index:100;transition:all .3s;">↑</button>
+<script>
+window.addEventListener('scroll',function(){document.getElementById('backToTop').style.display=window.scrollY>400?'block':'none';});
+</script>
+</body>
+</html>

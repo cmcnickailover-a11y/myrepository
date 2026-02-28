@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GHTPP0BB2J"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GHTPP0BB2J" fetchpriority="low"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -16,9 +16,9 @@
 <title>AI Pulse Checker — 176 Honest AI Tool Reviews</title>
     <link rel="canonical" href="https://aipulsechecker.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 :root{
   --ink:#e8e6e1;
   --paper:#0d0f12;
@@ -1730,7 +1730,6 @@ function closeModal(){document.getElementById('nlModal').classList.remove('activ
 function handleSubmit(e){e.preventDefault();var form=e.target;var data=new FormData(form);var btn=form.querySelector('button[type=submit]');btn.textContent='Sending...';btn.disabled=true;fetch('https://api.web3forms.com/submit',{method:'POST',body:data}).then(function(r){return r.json();}).then(function(d){if(d.success){document.getElementById('nlForm').style.display='none';document.getElementById('nlSuccess').style.display='block';}else{btn.textContent='Try Again';btn.disabled=false;}}).catch(function(){btn.textContent='Try Again';btn.disabled=false;});return false;}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
 </script>
-
 
 <script>
 // Sort tool cards by score (descending) on page load

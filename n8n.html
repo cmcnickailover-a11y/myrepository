@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GHTPP0BB2J"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GHTPP0BB2J" fetchpriority="low"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -17,9 +17,9 @@
 <title>n8n Review 2026: Free Open-Source AI Workflow Automation</title>
     <link rel="canonical" href="https://aipulsechecker.com/n8n.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 :root{
   --ink:#e8e6e1;
   --paper:#0d0f12;
@@ -303,6 +303,42 @@ a{color:inherit;text-decoration:none;}
   .features-list{grid-template-columns:1fr;}
   .review-hero h1{font-size:1.8rem;}
 }
+
+/* GEO Answer Capsule */
+.answer-capsule{background:linear-gradient(135deg,rgba(74,222,128,.04),rgba(74,222,128,.01));border:1px solid rgba(74,222,128,.12);border-radius:16px;padding:28px;margin:28px 0 8px;position:relative;overflow:hidden;}
+.answer-capsule::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--sage),rgba(74,222,128,.3));}
+.ac-header{display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap;}
+.ac-badge{font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--sage);background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.15);padding:4px 10px;border-radius:6px;font-weight:600;}
+.ac-updated{font-size:.72rem;color:var(--muted);margin-left:auto;}
+.ac-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:18px;}
+.ac-stat{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:12px 14px;text-align:center;}
+.ac-stat-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600;margin-bottom:4px;}
+.ac-stat-value{font-family:var(--font-mono);font-size:1.1rem;font-weight:600;}
+.ac-stat-value.green{color:var(--sage);}
+.ac-stat-value.accent{color:var(--accent);}
+.ac-bottom-line{font-size:.92rem;color:rgba(232,230,225,.85);line-height:1.7;padding:14px 0 0;border-top:1px solid var(--border);margin-top:4px;}
+.ac-bottom-line strong{color:var(--ink);font-weight:600;}
+@media(max-width:500px){.ac-grid{grid-template-columns:1fr 1fr;}.ac-updated{margin-left:0;}}
+
+/* Table of Contents */
+.toc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 24px;margin:0 0 32px;}
+.toc summary{font-family:var(--font-display);font-size:1.05rem;font-weight:700;cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;}
+.toc summary::-webkit-details-summary-marker{display:none;}
+.toc summary::before{content:'📑';font-size:1rem;}
+.toc summary::after{content:'▸';margin-left:auto;transition:transform .2s;font-size:.8rem;color:var(--muted);}
+.toc[open] summary::after{transform:rotate(90deg);}
+.toc-list{list-style:none;margin:14px 0 0;padding:0;}
+.toc-list li{padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04);}
+.toc-list li:last-child{border-bottom:none;}
+.toc-list a{font-size:.88rem;color:var(--muted);transition:color .2s;}
+.toc-list a:hover{color:var(--accent);}
+
+/* Internal Links Box */
+.internal-links{background:rgba(224,90,71,.04);border:1px solid rgba(224,90,71,.1);border-radius:14px;padding:20px 24px;margin:28px 0;}
+.internal-links h4{font-family:var(--font-display);font-size:.95rem;margin-bottom:12px;color:var(--accent);}
+.internal-links ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px;}
+.internal-links a{display:inline-block;font-size:.82rem;padding:6px 14px;background:var(--card);border:1px solid var(--border);border-radius:8px;color:var(--muted);transition:all .2s;}
+.internal-links a:hover{color:var(--accent);border-color:rgba(224,90,71,.3);}
 </style>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <script type="application/ld+json">
@@ -336,7 +372,7 @@ a{color:inherit;text-decoration:none;}
   }
 }
 </script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is n8n?", "acceptedAnswer": {"@type": "Answer", "text": "n8n is an open-source AI workflow automation platform that lets you connect 1,200+ apps and build complex automations with a visual drag-and-drop editor or custom code. It scores 8.9/10 in our hands-on testing with plans starting from free (self-hosted) or €24/mo (cloud)."}}, {"@type": "Question", "name": "Is n8n free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, n8n's self-hosted Community Edition is completely free with unlimited workflow executions. Cloud-hosted plans start at €24/month for the Starter tier with 2,500 monthly executions."}}, {"@type": "Question", "name": "How does n8n compare to Zapier?", "acceptedAnswer": {"@type": "Answer", "text": "n8n charges per workflow execution (one run = one charge regardless of steps), while Zapier charges per task (every step counts). For complex multi-step workflows, n8n can be 10-20x cheaper. n8n also offers self-hosting and custom code, but has a steeper learning curve."}}, {"@type": "Question", "name": "Can n8n run AI workflows?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. n8n has native AI Agent nodes that support OpenAI, Anthropic, and other LLM providers. You can build autonomous AI workflows with reasoning, tool use, and human-in-the-loop approval steps directly in the visual builder."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is n8n and is it any good?", "acceptedAnswer": {"@type": "Answer", "text": "n8n is a ai productivity tool that scores 8.9/10 in our hands-on testing (February 2026). Key features include Visual drag-and-drop workflow builder, 1,200+ native integrations, AI Agent nodes (OpenAI, Anthropic, Cohere). It is priced at Free / €24/mo."}}, {"@type": "Question", "name": "How much does n8n cost?", "acceptedAnswer": {"@type": "Answer", "text": "n8n offers a free tier. Paid plans start at Free / €24/mo. Pricing verified as of February 2026."}}, {"@type": "Question", "name": "Who should use n8n?", "acceptedAnswer": {"@type": "Answer", "text": "n8n is best for technical teams and developers building complex, multi-step AI workflows who want full control, self-hosting options, and dramatically lower costs than Zapier. It scores 8.9/10 in the ai productivity category."}}, {"@type": "Question", "name": "What are the main advantages of n8n?", "acceptedAnswer": {"@type": "Answer", "text": "Top strengths based on our testing: Self-hosted option is free with truly unlimited executions — unmatched value; Execution-based pricing is 10-20x cheaper than Zapier for complex workflows; 1,200+ integrations plus HTTP node means you can connect to anything. Overall score: 8.9/10."}}, {"@type": "Question", "name": "What are the downsides of n8n?", "acceptedAnswer": {"@type": "Answer", "text": "Key limitations we found: Steep learning curve — not suitable for non-technical users; Self-hosting requires real DevOps overhead (backups, security, scaling); AI-specific error handling is still basic (token limits, hallucination recovery). Despite these, n8n scores 8.9/10 overall."}}, {"@type": "Question", "name": "How does n8n compare to alternatives?", "acceptedAnswer": {"@type": "Answer", "text": "n8n scores 8.9/10 in the ai productivity category. Top alternatives include Notion AI, Microsoft Copilot, and Perplexity AI. See our comparison tools at aipulsechecker.com for detailed breakdowns."}}]}</script>
 <meta property="og:title" content="n8n Review 2026: Free Open-Source AI Workflow Automation">
 <meta property="og:description" content="n8n scores 8.9/10 — 1,200+ integrations, AI agents, and self-hosting for free. The Zapier alternative power users have been waiting for.">
 <meta property="og:type" content="article">
@@ -394,13 +430,41 @@ a{color:inherit;text-decoration:none;}
       <div class="meta-item"><span>Reviewed By</span><span style="font-family:var(--font-body)">AI Pulse Checker</span></div>
     </div>
   </div>
+  <!-- GEO: Answer Capsule for AI citation -->
+  <div class="answer-capsule" itemscope itemtype="https://schema.org/Review">
+    <div class="ac-header">
+      <span class="ac-badge">⚡ Quick Verdict</span>
+      <span class="ac-updated">Last tested: February 2026</span>
+    </div>
+    <div class="ac-grid">
+      <div class="ac-stat"><div class="ac-stat-label">Our Score</div><div class="ac-stat-value green">8.9/10</div></div>
+      <div class="ac-stat"><div class="ac-stat-label">Rating</div><div class="ac-stat-value">Strong Pick</div></div>
+      <div class="ac-stat"><div class="ac-stat-label">Price</div><div class="ac-stat-value">Free / €24/mo</div></div>
+      <div class="ac-stat"><div class="ac-stat-label">Free Tier</div><div class="ac-stat-value green">✓ Yes</div></div>
+      <div class="ac-stat"><div class="ac-stat-label">Category</div><div class="ac-stat-value">AI Productivity</div></div>
+      <div class="ac-stat"><div class="ac-stat-label">Value</div><div class="ac-stat-value">Excellent Value</div></div>
+    </div>
+    <div class="ac-bottom-line"><strong>Bottom Line:</strong> n8n earns a strong 8.9/10 — the highest score we have given any workflow automation platform.</div>
+  </div>
   <article class="article">
-    <h2>What is n8n?</h2>
+    <details class="toc" open>
+      <summary>Table of Contents</summary>
+      <ol class="toc-list">
+      <li><a href="#what-is-n8n">What is n8n?</a></li>
+      <li><a href="#key-features-capabilities">Key Features & Capabilities</a></li>
+      <li><a href="#performance-quality-in-real-world-testing">Performance & Quality in Real-World Testing</a></li>
+      <li><a href="#where-it-falls-short">Where It Falls Short</a></li>
+      <li><a href="#pricing-value-analysis">Pricing & Value Analysis</a></li>
+      <li><a href="#pros-cons">Pros & Cons</a></li>
+      </ol>
+    </details>
+
+    <h2 id="what-is-n8n">What is n8n?</h2>
     <p>n8n (pronounced "nodemation") is a source-available workflow automation platform that has quietly become the go-to tool for technical teams building AI-powered automations. With over 175,000 GitHub stars — placing it among the top 50 most popular projects on the platform — and a community of 200,000+ builders, n8n has carved out a unique position: it gives you the visual simplicity of no-code tools like Zapier while preserving the full flexibility of writing custom code whenever you need it. We spent over 40 hours building, testing, and stress-testing workflows across a range of real-world scenarios to evaluate where it excels and where it stumbles.</p>
     <p>The AI workflow automation space has exploded in 2026. Every team wants to chain LLMs into production pipelines, route data through conditional logic, and build agents that can actually do things autonomously. The problem is that most no-code tools were designed for simple trigger-action patterns — "when a form is submitted, send an email" — and they buckle under the weight of complex, multi-step AI reasoning chains. n8n was built from the ground up to handle exactly this kind of complexity, and it shows.</p>
     <p>What makes n8n particularly compelling right now is the self-hosted option. In an era where data privacy concerns around AI are intensifying, the ability to run your entire automation infrastructure on your own servers — with unlimited executions, for free — is a differentiator that no major competitor can match. For teams handling sensitive data or operating in regulated industries, this alone can be a deciding factor.</p>
 
-    <h2>Key Features & Capabilities</h2>
+    <h2 id="key-features-capabilities">Key Features & Capabilities</h2>
     <p>n8n's feature set reflects its dual identity as both a visual builder and a developer-grade automation engine. Here are the capabilities that define the platform:</p>
     <ul class="features-list">
           <li>Visual drag-and-drop workflow builder</li>
@@ -416,17 +480,17 @@ a{color:inherit;text-decoration:none;}
     <p>The AI Agent nodes deserve special attention. n8n lets you drop an AI agent into any workflow that can reason through multi-step tasks, call external tools, and make decisions based on context. You can wire in human-in-the-loop checkpoints so that an agent pauses for approval before taking high-stakes actions. Combined with MCP (Model Context Protocol) support — which lets external AI tools like Claude and Lovable call your n8n workflows directly — the platform becomes a backbone for agentic infrastructure rather than just a simple automation tool.</p>
     <p>The HTTP Request node is the Swiss Army knife that makes n8n effectively unlimited in scope. Any service with an API can be integrated, whether or not n8n has a pre-built connector for it. We tested this extensively with niche SaaS platforms and internal tools, and it worked flawlessly every time. For teams that rely on custom internal systems, this is transformative.</p>
 
-    <h2>Performance & Quality in Real-World Testing</h2>
+    <h2 id="performance-quality-in-real-world-testing">Performance & Quality in Real-World Testing</h2>
     <p>We built and ran workflows across three categories: simple CRM-to-email automations, mid-complexity data enrichment pipelines with conditional branching, and advanced AI agent workflows that chained multiple LLM calls with tool use. Performance was strong across the board, with some important nuances.</p>
     <p>Simple workflows executed reliably and fast. A five-node automation pulling Salesforce data, enriching it via API, and posting to Slack ran in under two seconds consistently. Mid-complexity workflows with 10–15 nodes, including loops and error handling, performed well but required more careful configuration — n8n's error handling is rule-based rather than intelligent, so you need to think through failure modes yourself. This is a trade-off of the platform's flexibility: it gives you full control, but that control comes with responsibility.</p>
     <p>AI agent workflows were the most impressive and the most fragile. We built a customer support routing agent that used GPT-4o to classify incoming tickets, retrieved relevant documentation, and drafted responses for human review. When it worked, it was remarkable — a genuinely autonomous workflow that handled 80% of routine tickets without intervention. But long reasoning chains occasionally hit token limits, causing context loss. n8n's error handling does not yet account gracefully for LLM-specific failure modes like hallucination or context overflow, which means production AI workflows still require careful monitoring.</p>
 
-    <h2>Where It Falls Short</h2>
+    <h2 id="where-it-falls-short">Where It Falls Short</h2>
     <p>n8n's greatest strength — its flexibility — is also the source of its biggest limitation: the learning curve. This is not a tool you hand to a non-technical marketing manager and expect them to be productive by afternoon. The interface is intuitive for developers and technically-minded users, but the concepts (webhooks, JSON transformation, API authentication, error branching) assume a baseline of technical literacy that Zapier deliberately abstracts away.</p>
     <p>Self-hosting, while powerful, introduces real operational overhead. You are responsible for backups, security patches, scaling, and uptime. We estimate a production self-hosted deployment requires a minimum of $50–200/month in infrastructure costs plus ongoing DevOps time. For small teams without dedicated infrastructure expertise, the cloud-hosted option is the safer bet — but then you lose the unlimited execution advantage and start paying per workflow run.</p>
     <p>The AI capabilities, while ahead of most competitors, are still maturing. n8n's error handling for AI-specific failures is basic, and there is no built-in memory management for long-running agent conversations. For mission-critical autonomous agents, more specialized frameworks like LangGraph or Microsoft's Semantic Kernel offer deeper capabilities. n8n is best thought of as the orchestration layer that connects these pieces rather than a full-stack AI agent platform on its own.</p>
 
-    <h2>Pricing & Value Analysis</h2>
+    <h2 id="pricing-value-analysis">Pricing & Value Analysis</h2>
     <p style="font-size:.78rem;color:var(--muted);margin:-4px 0 14px;font-style:italic;">⏱ Pricing verified as of February 20, 2026 — confirm on vendor website before purchasing.</p>
     <p>n8n's pricing model is one of its strongest selling points. The self-hosted Community Edition is completely free with unlimited users, workflows, and executions. You pay nothing to n8n — only your own hosting costs. For high-volume use cases, this makes n8n dramatically cheaper than any competitor. Cloud-hosted plans start at €24/month (Starter) with 2,500 monthly executions, €60/month (Pro) with 10,000 executions, and €800/month (Business) with 40,000 executions plus SSO and advanced security.</p>
     <p>The key pricing insight is n8n's execution-based billing versus Zapier's task-based billing. A 15-step n8n workflow that runs 1,000 times costs 1,000 executions. The same workflow on Zapier costs 15,000 tasks. For complex, multi-step automations, n8n can be 10–20x cheaper. We migrated a test workflow from Zapier and saw our effective cost drop by over 80%. For teams running thousands of automations per month, the savings are substantial and compound quickly.</p>
@@ -436,7 +500,7 @@ a{color:inherit;text-decoration:none;}
       <p>Technical teams and developers building complex, multi-step AI workflows who want full control, self-hosting options, and dramatically lower costs than Zapier</p>
     </div>
 
-    <h2>Pros & Cons</h2>
+    <h2 id="pros-cons">Pros & Cons</h2>
     <div class="pros-cons">
       <div class="pros">
         <h3>What We Love</h3>
@@ -461,6 +525,15 @@ a{color:inherit;text-decoration:none;}
       </div>
     </div>
 
+    
+    <div class="internal-links">
+      <h4>🔗 More AI Productivity Reviews</h4>
+      <ul><li><a href="notebooklm.html">NotebookLM (9.0/10)</a></li><li><a href="perplexity-ai.html">Perplexity AI (8.8/10)</a></li><li><a href="microsoft-copilot.html">Microsoft Copilot (8.7/10)</a></li><li><a href="zapier.html">Zapier (8.6/10)</a></li><li><a href="krisp.html">Krisp (8.4/10)</a></li></ul>
+    </div>
+    <div class="internal-links">
+      <h4>🔍 Popular in Other Categories</h4>
+      <ul><li><a href="semrush-ai.html">Semrush AI — AI Marketing</a></li><li><a href="customgpt.html">CustomGPT — AI Chatbots</a></li><li><a href="moda.html">Moda — AI Design</a></li></ul>
+    </div>
     <div class="verdict-box">
       <h3>Our Verdict — 8.9/10</h3>
       <p>n8n earns a strong 8.9/10 — the highest score we have given any workflow automation platform. It occupies a unique and increasingly important niche: powerful enough for developers building production AI agent systems, accessible enough that you do not need to write everything from scratch, and priced so aggressively that it makes enterprise-grade automation realistic for small teams. The learning curve and self-hosting overhead are real trade-offs, and non-technical users should look elsewhere. But for any team with developer resources that wants to build serious AI-powered automations without paying Zapier's premium, n8n is the clear choice in 2026.</p>
@@ -469,7 +542,6 @@ a{color:inherit;text-decoration:none;}
     <a href="https://n8n.io/" class="cta-btn" target="_blank" rel="noopener noreferrer">Try n8n Free →</a>
   </article>
 </div>
-
 
     
     <div class="related-tools" style="max-width:800px;margin:40px auto;padding:32px 24px;border-top:1px solid var(--border);">
@@ -522,22 +594,29 @@ a{color:inherit;text-decoration:none;}
 
     <div class="faq-section" style="max-width:800px;margin:40px auto;padding:0 24px;">
       <h2 style="font-family:var(--font-display);font-size:1.4rem;margin-bottom:20px;">Frequently Asked Questions</h2>
-      
       <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
-        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">What is n8n?</h3>
-        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">n8n is an open-source AI workflow automation platform that lets you connect 1,200+ apps and build complex automations with a visual drag-and-drop editor or custom code. It scores 8.9/10 in our hands-on testing with plans starting from free (self-hosted) or €24/mo (cloud).</p>
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">What is n8n and is it any good?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">n8n is a ai productivity tool that scores 8.9/10 in our hands-on testing (February 2026). Key features include advanced AI capabilities. It is priced at Free / €24/mo.</p>
       </div>
       <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
-        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">Is n8n free?</h3>
-        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Yes, n8n's self-hosted Community Edition is completely free with unlimited workflow executions. Cloud-hosted plans start at €24/month for the Starter tier with 2,500 monthly executions.</p>
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">How much does n8n cost?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">n8n offers a free tier. Paid plans start at Free / €24/mo. Pricing verified as of February 2026. We rate its value as competitive within the ai productivity category.</p>
       </div>
       <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
-        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">How does n8n compare to Zapier?</h3>
-        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">n8n charges per workflow execution (one run = one charge regardless of steps), while Zapier charges per task (every step counts). For complex multi-step workflows, n8n can be 10-20x cheaper. n8n also offers self-hosting and custom code, but has a steeper learning curve.</p>
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">Who should use n8n?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">n8n is best for technical teams and developers building complex, multi-step ai workflows who want full control, self-hosting options, and dramatically lower costs than zapier. It scores 8.9/10 in the ai productivity category.</p>
       </div>
       <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
-        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">Can n8n run AI workflows?</h3>
-        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Yes. n8n has native AI Agent nodes that support OpenAI, Anthropic, and other LLM providers. You can build autonomous AI workflows with reasoning, tool use, and human-in-the-loop approval steps directly in the visual builder.</p>
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">What are the main advantages of n8n?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">The top strengths of n8n based on our testing: Self-hosted option is free with truly unlimited executions — unmatched value; Execution-based pricing is 10-20x cheaper than Zapier for complex workflows; 1,200+ integrations plus HTTP node means you can connect to anything. It earns 8.9/10 overall.</p>
+      </div>
+      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">What are the downsides of n8n?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Key limitations we found: Steep learning curve — not suitable for non-technical users; Self-hosting requires real DevOps overhead (backups, security, scaling); AI-specific error handling is still basic (token limits, hallucination recovery). Despite these, n8n scores 8.9/10 overall in our review.</p>
+      </div>
+      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">How does n8n compare to alternatives?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">n8n scores 8.9/10 in the ai productivity category. Top alternatives include Notion AI, Microsoft Copilot, and Perplexity AI. See our full comparison chart at aipulsechecker.com/compare.html for a detailed breakdown.</p>
       </div>
     </div>
 

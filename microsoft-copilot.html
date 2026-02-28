@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GHTPP0BB2J"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GHTPP0BB2J" fetchpriority="low"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -17,9 +17,9 @@
 <title>Microsoft Copilot Review 2026: AI in Office — Worth It?</title>
     <link rel="canonical" href="https://aipulsechecker.com/microsoft-copilot.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 :root{--ink:#e8e6e1;--paper:#0d0f12;--cream:#161921;--card:rgba(22,25,33,.7);--card-solid:#161921;--border:rgba(255,255,255,.08);--accent:#e05a47;--accent-glow:rgba(224,90,71,.25);--accent-dark:#c44433;--sage:#4ade80;--sage-glow:rgba(74,222,128,.2);--sage-light:rgba(74,222,128,.08);--muted:rgba(255,255,255,.5);--font-display:'Playfair Display',Georgia,serif;--font-body:'Outfit',sans-serif;--font-mono:'JetBrains Mono',monospace;}
 *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{font-family:var(--font-body);background:var(--paper);color:var(--ink);line-height:1.6;overflow-x:hidden;}body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;z-index:-1;background:radial-gradient(ellipse 80% 50% at 20% 20%, rgba(224,90,71,.06) 0%, transparent 60%),radial-gradient(ellipse 60% 40% at 80% 80%, rgba(74,222,128,.04) 0%, transparent 60%);pointer-events:none;}a{color:inherit;text-decoration:none;}
 .navbar{background:rgba(13,15,18,.85);backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200;}.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;}.logo{font-family:var(--font-display);font-size:1.5rem;font-weight:700;display:flex;align-items:center;gap:8px;}.logo:hover{opacity:.8;}.nav-btn{background:linear-gradient(135deg, var(--accent) 0%, #ff6b5a 100%);color:#fff !important;padding:8px 20px;border-radius:10px;font-size:.82rem;font-weight:600;transition:all .3s;cursor:pointer;border:none;font-family:var(--font-body);box-shadow:0 2px 12px var(--accent-glow);}.nav-btn:hover{transform:translateY(-1px);box-shadow:0 4px 20px var(--accent-glow);}
@@ -35,6 +35,42 @@
 .dark-toggle{background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:10px;padding:7px 14px;cursor:pointer;font-size:.85rem;transition:all .3s;color:var(--muted);font-family:var(--font-body);}.dark-toggle:hover{border-color:rgba(255,255,255,.2);color:var(--ink);}
 .light-mode{--ink:#0c0c0c;--paper:#f5f2ec;--cream:#eae6dd;--card:rgba(255,255,255,.9);--card-solid:#fff;--border:rgba(0,0,0,.08);--muted:#7a756c;--accent-glow:rgba(224,90,71,.15);--sage-light:rgba(61,107,69,.08);}.light-mode body::before{display:none;}.light-mode .navbar{background:rgba(245,242,236,.92);}.light-mode .review-hero h1{background:linear-gradient(135deg, #0c0c0c 0%, #333 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}.light-mode .article p,.light-mode .pros li,.light-mode .cons li,.light-mode .features-list li{color:#444;}.light-mode .pros,.light-mode .cons{background:rgba(0,0,0,.02);}.light-mode .verdict-box{background:linear-gradient(135deg, rgba(224,90,71,.06) 0%, rgba(224,90,71,.01) 100%);}.light-mode .related-tools{background:rgba(0,0,0,.02);max-width:800px;}.light-mode .related-tools a{background:rgba(0,0,0,.03);}.light-mode .share-section a{background:rgba(0,0,0,.03);}.light-mode .modal{background:#fff;}.light-mode .modal input{background:var(--cream);color:var(--ink);}.light-mode .footer{background:var(--ink);color:rgba(245,242,236,.5);}.light-mode .footer a{color:rgba(245,242,236,.5);}.light-mode .score-badge{color:#3d6b45;text-shadow:none;}
 @media(max-width:768px){.pros-cons{grid-template-columns:1fr;}.features-list{grid-template-columns:1fr;}.review-hero h1{font-size:1.8rem;}}
+
+/* GEO Answer Capsule */
+.answer-capsule{background:linear-gradient(135deg,rgba(74,222,128,.04),rgba(74,222,128,.01));border:1px solid rgba(74,222,128,.12);border-radius:16px;padding:28px;margin:28px 0 8px;position:relative;overflow:hidden;}
+.answer-capsule::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--sage),rgba(74,222,128,.3));}
+.ac-header{display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap;}
+.ac-badge{font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--sage);background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.15);padding:4px 10px;border-radius:6px;font-weight:600;}
+.ac-updated{font-size:.72rem;color:var(--muted);margin-left:auto;}
+.ac-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:18px;}
+.ac-stat{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:12px 14px;text-align:center;}
+.ac-stat-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600;margin-bottom:4px;}
+.ac-stat-value{font-family:var(--font-mono);font-size:1.1rem;font-weight:600;}
+.ac-stat-value.green{color:var(--sage);}
+.ac-stat-value.accent{color:var(--accent);}
+.ac-bottom-line{font-size:.92rem;color:rgba(232,230,225,.85);line-height:1.7;padding:14px 0 0;border-top:1px solid var(--border);margin-top:4px;}
+.ac-bottom-line strong{color:var(--ink);font-weight:600;}
+@media(max-width:500px){.ac-grid{grid-template-columns:1fr 1fr;}.ac-updated{margin-left:0;}}
+
+/* Table of Contents */
+.toc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 24px;margin:0 0 32px;}
+.toc summary{font-family:var(--font-display);font-size:1.05rem;font-weight:700;cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;}
+.toc summary::-webkit-details-summary-marker{display:none;}
+.toc summary::before{content:'📑';font-size:1rem;}
+.toc summary::after{content:'▸';margin-left:auto;transition:transform .2s;font-size:.8rem;color:var(--muted);}
+.toc[open] summary::after{transform:rotate(90deg);}
+.toc-list{list-style:none;margin:14px 0 0;padding:0;}
+.toc-list li{padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04);}
+.toc-list li:last-child{border-bottom:none;}
+.toc-list a{font-size:.88rem;color:var(--muted);transition:color .2s;}
+.toc-list a:hover{color:var(--accent);}
+
+/* Internal Links Box */
+.internal-links{background:rgba(224,90,71,.04);border:1px solid rgba(224,90,71,.1);border-radius:14px;padding:20px 24px;margin:28px 0;}
+.internal-links h4{font-family:var(--font-display);font-size:.95rem;margin-bottom:12px;color:var(--accent);}
+.internal-links ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px;}
+.internal-links a{display:inline-block;font-size:.82rem;padding:6px 14px;background:var(--card);border:1px solid var(--border);border-radius:8px;color:var(--muted);transition:all .2s;}
+.internal-links a:hover{color:var(--accent);border-color:rgba(224,90,71,.3);}
 </style>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <script type="application/ld+json">
@@ -68,7 +104,7 @@
   }
 }
 </script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is Microsoft Copilot?", "acceptedAnswer": {"@type": "Answer", "text": "Microsoft Copilot is an AI assistant embedded across Windows and Microsoft 365. It drafts documents in Word, analyzes data in Excel, creates presentations in PowerPoint, and summarizes meetings in Teams. Score: 8.7/10."}}, {"@type": "Question", "name": "How much does Microsoft Copilot cost?", "acceptedAnswer": {"@type": "Answer", "text": "Free basic chatbot. Copilot Pro is $20/mo for consumers (requires M365 subscription). Microsoft 365 Copilot for business is $30/user/month as an add-on to eligible plans."}}, {"@type": "Question", "name": "Is Copilot better than ChatGPT?", "acceptedAnswer": {"@type": "Answer", "text": "For Microsoft 365 integration, yes — no other AI can draft in Word, analyze in Excel, and summarize Teams meetings. As a standalone chatbot, ChatGPT is more capable and polished."}}, {"@type": "Question", "name": "Do I need Microsoft 365 for Copilot?", "acceptedAnswer": {"@type": "Answer", "text": "The free chatbot works without M365. But Copilot Pro features in Word, Excel, PowerPoint, and Outlook require a separate Microsoft 365 Personal or Family subscription."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is Microsoft Copilot and is it any good?", "acceptedAnswer": {"@type": "Answer", "text": "Microsoft Copilot is a ai productivity tool that scores 8.7/10 in our hands-on testing (February 2026). Key features include GPT-4 Turbo powered chatbot (free), AI in Word, Excel, PowerPoint, Outlook, Meeting summarization in Teams. It is priced at Free / $20/mo."}}, {"@type": "Question", "name": "How much does Microsoft Copilot cost?", "acceptedAnswer": {"@type": "Answer", "text": "Microsoft Copilot offers a free tier. Paid plans start at Free / $20/mo. Pricing verified as of February 2026."}}, {"@type": "Question", "name": "Who should use Microsoft Copilot?", "acceptedAnswer": {"@type": "Answer", "text": "Microsoft Copilot is best for microsoft 365 power users who want AI seamlessly embedded in Word, Excel, PowerPoint, Outlook, and Teams — especially enterprise teams already invested in the Microsoft ecosystem. It scores 8.7/10 in the ai productivity category."}}, {"@type": "Question", "name": "What are the main advantages of Microsoft Copilot?", "acceptedAnswer": {"@type": "Answer", "text": "Top strengths based on our testing: Deepest Office integration of any AI — drafts, analyzes, and presents inside apps you already use; Excel data analysis in plain English is genuinely transformative; Teams meeting summarization saves hours per week. Overall score: 8.7/10."}}, {"@type": "Question", "name": "What are the downsides of Microsoft Copilot?", "acceptedAnswer": {"@type": "Answer", "text": "Key limitations we found: Requires existing Microsoft 365 subscription — layered pricing creates sticker shock; Free chatbot tier is underpowered vs ChatGPT, Gemini, and Claude; Occasional hallucinations in Excel formulas and data analysis. Despite these, Microsoft Copilot scores 8.7/10 overall."}}, {"@type": "Question", "name": "How does Microsoft Copilot compare to alternatives?", "acceptedAnswer": {"@type": "Answer", "text": "Microsoft Copilot scores 8.7/10 in the ai productivity category. Top alternatives include Notion AI, Microsoft Copilot, and Perplexity AI. See our comparison tools at aipulsechecker.com for detailed breakdowns."}}]}</script>
 <meta property="og:title" content="Microsoft Copilot Review 2026: AI in Office — Worth It?">
 <meta property="og:description" content="Microsoft Copilot scores 8.7/10 — AI in Word, Excel, PowerPoint, and Teams. Free chatbot to $30/user/mo. We decoded the confusing pricing tiers.">
 <meta property="og:type" content="article">
@@ -126,13 +162,41 @@
       <div class="meta-item"><span>Reviewed By</span><span style="font-family:var(--font-body)">AI Pulse Checker</span></div>
     </div>
   </div>
+  <!-- GEO: Answer Capsule for AI citation -->
+  <div class="answer-capsule" itemscope itemtype="https://schema.org/Review">
+    <div class="ac-header">
+      <span class="ac-badge">⚡ Quick Verdict</span>
+      <span class="ac-updated">Last tested: February 2026</span>
+    </div>
+    <div class="ac-grid">
+      <div class="ac-stat"><div class="ac-stat-label">Our Score</div><div class="ac-stat-value green">8.7/10</div></div>
+      <div class="ac-stat"><div class="ac-stat-label">Rating</div><div class="ac-stat-value">Strong Pick</div></div>
+      <div class="ac-stat"><div class="ac-stat-label">Price</div><div class="ac-stat-value">Free / $20/mo</div></div>
+      <div class="ac-stat"><div class="ac-stat-label">Free Tier</div><div class="ac-stat-value green">✓ Yes</div></div>
+      <div class="ac-stat"><div class="ac-stat-label">Category</div><div class="ac-stat-value">AI Productivity</div></div>
+      <div class="ac-stat"><div class="ac-stat-label">Value</div><div class="ac-stat-value">Excellent Value</div></div>
+    </div>
+    <div class="ac-bottom-line"><strong>Bottom Line:</strong> Microsoft Copilot earns an 8.7/10 — a powerful AI assistant that is best understood as an upgrade to Microsoft 365 rather than a standalone chatbot.</div>
+  </div>
   <article class="article">
-    <h2>What is Microsoft Copilot?</h2>
+    <details class="toc" open>
+      <summary>Table of Contents</summary>
+      <ol class="toc-list">
+      <li><a href="#what-is-microsoft-copilot">What is Microsoft Copilot?</a></li>
+      <li><a href="#key-features-capabilities">Key Features & Capabilities</a></li>
+      <li><a href="#performance-quality-in-real-world-testing">Performance & Quality in Real-World Testing</a></li>
+      <li><a href="#where-it-falls-short">Where It Falls Short</a></li>
+      <li><a href="#pricing-value-analysis">Pricing & Value Analysis</a></li>
+      <li><a href="#pros-cons">Pros & Cons</a></li>
+      </ol>
+    </details>
+
+    <h2 id="what-is-microsoft-copilot">What is Microsoft Copilot?</h2>
     <p>Microsoft Copilot is Microsoft's AI assistant, deeply embedded across the Windows and Microsoft 365 ecosystem. Free in its basic form as a chatbot accessible through Bing, Edge, and Windows 11, Copilot becomes genuinely transformative as a paid add-on for Microsoft 365 — where it drafts documents in Word, analyzes data in Excel, creates presentations in PowerPoint, and summarizes email threads in Outlook. With over 430 million Microsoft 365 users and 90% of Fortune 500 companies now using Microsoft 365 Copilot, it is the most widely deployed enterprise AI assistant in the world.</p>
     <p>We spent over 40 hours testing Copilot across its free tier, the $20/month Copilot Pro consumer plan, and the $30/user/month Microsoft 365 Copilot business add-on. The experience is split: the free chatbot is competent but unremarkable, while the Microsoft 365 integration genuinely changes how you work with Office documents. If you live in the Microsoft ecosystem, Copilot is the most frictionless way to bring AI into your daily workflow.</p>
     <p>Powered by OpenAI's GPT-4 Turbo, Copilot inherits strong reasoning and generation capabilities. But what sets it apart is not the underlying model — it is the integration. Copilot understands your emails, your calendar, your documents, your Teams conversations. It can draft a presentation based on a Word document, summarize a meeting you missed, or pull insights from a spreadsheet without you ever leaving the app you are already working in.</p>
 
-    <h2>Key Features & Capabilities</h2>
+    <h2 id="key-features-capabilities">Key Features & Capabilities</h2>
     <p>Copilot's capabilities vary significantly by tier:</p>
     <ul class="features-list">
           <li>GPT-4 Turbo powered chatbot (free)</li>
@@ -148,18 +212,18 @@
     <p>Excel integration is genuinely powerful for data workers. Describe what you want to analyze in plain English — "show me quarterly revenue trends by region" — and Copilot generates formulas, pivot tables, and charts. For people who know what they want from their data but struggle with Excel's formula syntax, this is transformative. It also handles data cleanup tasks that would otherwise require manual work or VBA scripting.</p>
     <p>PowerPoint generation from existing content is a standout feature. Point Copilot at a Word document or outline and it creates a complete slide deck with appropriate layouts, formatting, and even suggested images. The results need refinement, but they provide a dramatically better starting point than a blank slide. For the millions of professionals who dread building presentations from scratch, this alone can justify the subscription.</p>
 
-    <h2>Performance & Quality in Real-World Testing</h2>
+    <h2 id="performance-quality-in-real-world-testing">Performance & Quality in Real-World Testing</h2>
     <p>We tested Copilot across five scenarios: document drafting, data analysis, presentation creation, email management, and general chatbot use. Performance was strong in the Office integration tier and merely adequate as a standalone chatbot.</p>
     <p>Document drafting in Word produced consistently good results. Business communications, reports, and proposals came out well-structured and professionally toned. Copilot's awareness of organizational context — referencing relevant documents in OneDrive and SharePoint — gives it an edge over standalone chatbots that lack this context. Creative writing and more nuanced content still benefit from Claude or ChatGPT, but for professional document creation, Copilot is excellent.</p>
     <p>The standalone chatbot experience (free tier) is less impressive. Compared to ChatGPT, Claude, or Gemini, free Copilot feels like a second-tier experience — responses are adequate but rarely surprising, the interface is cluttered with Bing search integration, and the personality is bland. Microsoft is clearly investing more in the enterprise integration than in competing head-to-head as a consumer chatbot.</p>
     <p>Teams meeting summarization is a quiet killer feature for enterprise users. Miss a meeting? Copilot provides a structured summary with action items, key decisions, and who said what. For organizations drowning in meetings, this feature alone saves hours per week and ensures nothing falls through the cracks.</p>
 
-    <h2>Where It Falls Short</h2>
+    <h2 id="where-it-falls-short">Where It Falls Short</h2>
     <p>The biggest frustration is the pricing and licensing complexity. To get Copilot in your Office apps, you need an existing Microsoft 365 subscription plus the Copilot add-on. For consumers, that means Microsoft 365 Personal ($9.99/mo) plus Copilot Pro ($20/mo) — nearly $30/month total. For businesses, it is $30/user/month on top of your existing Microsoft 365 license. The value is real, but the layered cost structure creates sticker shock and confusion.</p>
     <p>The free chatbot tier is underpowered compared to competitors. ChatGPT Free, Gemini Free, and even Grok Free all offer more generous free experiences. Microsoft seems content to let the free Copilot serve as a funnel to paid Microsoft 365 subscriptions rather than competing on the merits of the chatbot itself.</p>
     <p>Copilot's hallucination rate in data analysis is a concern. When working with Excel data, it occasionally generates formulas that look correct but produce wrong results, or creates charts that misrepresent the underlying data. For any data work, you need to verify Copilot's output carefully — which somewhat undermines the time-saving promise.</p>
 
-    <h2>Pricing & Value Analysis</h2>
+    <h2 id="pricing-value-analysis">Pricing & Value Analysis</h2>
     <p style="font-size:.78rem;color:var(--muted);margin:-4px 0 14px;font-style:italic;">⏱ Pricing verified as of February 20, 2026 — confirm on vendor website before purchasing.</p>
     <p>The free tier provides basic chatbot access through Bing, Edge, and Windows. Copilot Pro at $20/month adds priority GPT-4 Turbo access, 100 daily Designer image boosts, and Copilot in Word, Excel, PowerPoint, Outlook, and OneNote (requires a separate Microsoft 365 subscription). Microsoft 365 Copilot for business is $30/user/month as an add-on to eligible Microsoft 365 plans, adding enterprise features including Teams integration, Microsoft Graph, and Copilot Studio.</p>
     <p>The value proposition depends entirely on how deeply you use Microsoft 365. If Word, Excel, PowerPoint, and Outlook are your daily tools, the $20-30/month for Copilot integration is easy to justify — it genuinely saves hours per week. If you primarily need a chatbot for general questions and creative tasks, ChatGPT Plus or Claude Pro at $20/month deliver a better standalone experience. Copilot is not the best AI assistant; it is the best AI assistant for Microsoft 365.</p>
@@ -169,7 +233,7 @@
       <p>Microsoft 365 power users who want AI seamlessly embedded in Word, Excel, PowerPoint, Outlook, and Teams — especially enterprise teams already invested in the Microsoft ecosystem</p>
     </div>
 
-    <h2>Pros & Cons</h2>
+    <h2 id="pros-cons">Pros & Cons</h2>
     <div class="pros-cons">
       <div class="pros">
         <h3>What We Love</h3>
@@ -193,6 +257,15 @@
       </div>
     </div>
 
+    
+    <div class="internal-links">
+      <h4>🔗 More AI Productivity Reviews</h4>
+      <ul><li><a href="notebooklm.html">NotebookLM (9.0/10)</a></li><li><a href="n8n.html">n8n (8.9/10)</a></li><li><a href="perplexity-ai.html">Perplexity AI (8.8/10)</a></li><li><a href="zapier.html">Zapier (8.6/10)</a></li><li><a href="krisp.html">Krisp (8.4/10)</a></li></ul>
+    </div>
+    <div class="internal-links">
+      <h4>🔍 Popular in Other Categories</h4>
+      <ul><li><a href="semrush-ai.html">Semrush AI — AI Marketing</a></li><li><a href="customgpt.html">CustomGPT — AI Chatbots</a></li><li><a href="moda.html">Moda — AI Design</a></li></ul>
+    </div>
     <div class="verdict-box">
       <h3>Our Verdict — 8.7/10</h3>
       <p>Microsoft Copilot earns an 8.7/10 — a powerful AI assistant that is best understood as an upgrade to Microsoft 365 rather than a standalone chatbot. The Office integration is unmatched: drafting in Word, analyzing in Excel, presenting in PowerPoint, and summarizing in Teams all work remarkably well. The standalone chatbot experience is less competitive, and the layered pricing is confusing. But for the hundreds of millions of people who live in Microsoft 365 daily, Copilot is the most natural and productive way to bring AI into their existing workflow. If Microsoft is your ecosystem, Copilot is your AI.</p>
@@ -225,12 +298,30 @@
 
     <div class="faq-section" style="max-width:800px;margin:40px auto;padding:0 24px;">
       <h2 style="font-family:var(--font-display);font-size:1.4rem;margin-bottom:20px;">Frequently Asked Questions</h2>
-      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;"><h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">What is Microsoft Copilot?</h3><p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">An AI assistant embedded across Windows and Microsoft 365. It drafts in Word, analyzes in Excel, creates in PowerPoint, and summarizes in Teams. Score: 8.7/10.</p></div>
-      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;"><h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">How much does Copilot cost?</h3><p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Free chatbot. Copilot Pro $20/mo (needs M365 sub). Business: $30/user/month add-on to eligible Microsoft 365 plans.</p></div>
-      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;"><h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">Do I need Microsoft 365?</h3><p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">For the free chatbot, no. For Copilot in Word, Excel, PowerPoint, and Outlook, yes — a separate Microsoft 365 subscription is required.</p></div>
-      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;"><h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">Is Copilot better than ChatGPT?</h3><p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">For Office integration, yes. As a standalone chatbot, ChatGPT is more capable. Choose based on where you spend your time.</p></div>
-    </div>
-</div>
+      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">What is Microsoft Copilot and is it any good?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Microsoft Copilot is a ai productivity tool that scores 8.7/10 in our hands-on testing (February 2026). Key features include advanced AI capabilities. It is priced at Free / $20/mo.</p>
+      </div>
+      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">How much does Microsoft Copilot cost?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Microsoft Copilot offers a free tier. Paid plans start at Free / $20/mo. Pricing verified as of February 2026. We rate its value as competitive within the ai productivity category.</p>
+      </div>
+      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">Who should use Microsoft Copilot?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Microsoft Copilot is best for microsoft 365 power users who want ai seamlessly embedded in word, excel, powerpoint, outlook, and teams — especially enterprise teams already invested in the microsoft ecosystem. It scores 8.7/10 in the ai productivity category.</p>
+      </div>
+      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">What are the main advantages of Microsoft Copilot?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">The top strengths of Microsoft Copilot based on our testing: Deepest Office integration of any AI — drafts, analyzes, and presents inside apps you already use; Excel data analysis in plain English is genuinely transformative; Teams meeting summarization saves hours per week. It earns 8.7/10 overall.</p>
+      </div>
+      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">What are the downsides of Microsoft Copilot?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Key limitations we found: Requires existing Microsoft 365 subscription — layered pricing creates sticker shock; Free chatbot tier is underpowered vs ChatGPT, Gemini, and Claude; Occasional hallucinations in Excel formulas and data analysis. Despite these, Microsoft Copilot scores 8.7/10 overall in our review.</p>
+      </div>
+      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">How does Microsoft Copilot compare to alternatives?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Microsoft Copilot scores 8.7/10 in the ai productivity category. Top alternatives include Notion AI, Microsoft Copilot, and Perplexity AI. See our full comparison chart at aipulsechecker.com/compare.html for a detailed breakdown.</p>
+      </div>
     </div>
 
 <footer class="footer">

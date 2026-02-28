@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GHTPP0BB2J"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GHTPP0BB2J" fetchpriority="low"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -17,9 +17,9 @@
 <title>Opus Clip Review 2026: AI Short Clips From Long Videos</title>
     <link rel="canonical" href="https://aipulsechecker.com/opus-clip.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 :root{--ink:#e8e6e1;--paper:#0d0f12;--cream:#161921;--card:rgba(22,25,33,.7);--card-solid:#161921;--border:rgba(255,255,255,.08);--accent:#e05a47;--accent-glow:rgba(224,90,71,.25);--accent-dark:#c44433;--sage:#4ade80;--sage-glow:rgba(74,222,128,.2);--sage-light:rgba(74,222,128,.08);--muted:rgba(255,255,255,.5);--font-display:'Playfair Display',Georgia,serif;--font-body:'Outfit',sans-serif;--font-mono:'JetBrains Mono',monospace;}
 *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{font-family:var(--font-body);background:var(--paper);color:var(--ink);line-height:1.6;overflow-x:hidden;}body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;z-index:-1;background:radial-gradient(ellipse 80% 50% at 20% 20%, rgba(224,90,71,.06) 0%, transparent 60%),radial-gradient(ellipse 60% 40% at 80% 80%, rgba(74,222,128,.04) 0%, transparent 60%);pointer-events:none;}a{color:inherit;text-decoration:none;}
 .navbar{background:rgba(13,15,18,.85);backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200;}.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;}.logo{font-family:var(--font-display);font-size:1.5rem;font-weight:700;display:flex;align-items:center;gap:8px;}.logo:hover{opacity:.8;}.nav-btn{background:linear-gradient(135deg, var(--accent) 0%, #ff6b5a 100%);color:#fff !important;padding:8px 20px;border-radius:10px;font-size:.82rem;font-weight:600;transition:all .3s;cursor:pointer;border:none;font-family:var(--font-body);box-shadow:0 2px 12px var(--accent-glow);}.nav-btn:hover{transform:translateY(-1px);box-shadow:0 4px 20px var(--accent-glow);}
@@ -35,6 +35,42 @@
 .dark-toggle{background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:10px;padding:7px 14px;cursor:pointer;font-size:.85rem;transition:all .3s;color:var(--muted);font-family:var(--font-body);}.dark-toggle:hover{border-color:rgba(255,255,255,.2);color:var(--ink);}
 .light-mode{--ink:#0c0c0c;--paper:#f5f2ec;--cream:#eae6dd;--card:rgba(255,255,255,.9);--card-solid:#fff;--border:rgba(0,0,0,.08);--muted:#7a756c;--accent-glow:rgba(224,90,71,.15);--sage-light:rgba(61,107,69,.08);}.light-mode body::before{display:none;}.light-mode .navbar{background:rgba(245,242,236,.92);}.light-mode .review-hero h1{background:linear-gradient(135deg, #0c0c0c 0%, #333 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}.light-mode .article p,.light-mode .pros li,.light-mode .cons li,.light-mode .features-list li{color:#444;}.light-mode .pros,.light-mode .cons{background:rgba(0,0,0,.02);}.light-mode .verdict-box{background:linear-gradient(135deg, rgba(224,90,71,.06) 0%, rgba(224,90,71,.01) 100%);}.light-mode .related-tools{background:rgba(0,0,0,.02);max-width:800px;}.light-mode .related-tools a{background:rgba(0,0,0,.03);}.light-mode .share-section a{background:rgba(0,0,0,.03);}.light-mode .modal{background:#fff;}.light-mode .modal input{background:var(--cream);color:var(--ink);}.light-mode .footer{background:var(--ink);color:rgba(245,242,236,.5);}.light-mode .footer a{color:rgba(245,242,236,.5);}.light-mode .score-badge{color:#3d6b45;text-shadow:none;}
 @media(max-width:768px){.pros-cons{grid-template-columns:1fr;}.features-list{grid-template-columns:1fr;}.review-hero h1{font-size:1.8rem;}}
+
+/* GEO Answer Capsule */
+.answer-capsule{background:linear-gradient(135deg,rgba(74,222,128,.04),rgba(74,222,128,.01));border:1px solid rgba(74,222,128,.12);border-radius:16px;padding:28px;margin:28px 0 8px;position:relative;overflow:hidden;}
+.answer-capsule::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--sage),rgba(74,222,128,.3));}
+.ac-header{display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap;}
+.ac-badge{font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--sage);background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.15);padding:4px 10px;border-radius:6px;font-weight:600;}
+.ac-updated{font-size:.72rem;color:var(--muted);margin-left:auto;}
+.ac-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:18px;}
+.ac-stat{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:12px 14px;text-align:center;}
+.ac-stat-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600;margin-bottom:4px;}
+.ac-stat-value{font-family:var(--font-mono);font-size:1.1rem;font-weight:600;}
+.ac-stat-value.green{color:var(--sage);}
+.ac-stat-value.accent{color:var(--accent);}
+.ac-bottom-line{font-size:.92rem;color:rgba(232,230,225,.85);line-height:1.7;padding:14px 0 0;border-top:1px solid var(--border);margin-top:4px;}
+.ac-bottom-line strong{color:var(--ink);font-weight:600;}
+@media(max-width:500px){.ac-grid{grid-template-columns:1fr 1fr;}.ac-updated{margin-left:0;}}
+
+/* Table of Contents */
+.toc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 24px;margin:0 0 32px;}
+.toc summary{font-family:var(--font-display);font-size:1.05rem;font-weight:700;cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;}
+.toc summary::-webkit-details-summary-marker{display:none;}
+.toc summary::before{content:'📑';font-size:1rem;}
+.toc summary::after{content:'▸';margin-left:auto;transition:transform .2s;font-size:.8rem;color:var(--muted);}
+.toc[open] summary::after{transform:rotate(90deg);}
+.toc-list{list-style:none;margin:14px 0 0;padding:0;}
+.toc-list li{padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04);}
+.toc-list li:last-child{border-bottom:none;}
+.toc-list a{font-size:.88rem;color:var(--muted);transition:color .2s;}
+.toc-list a:hover{color:var(--accent);}
+
+/* Internal Links Box */
+.internal-links{background:rgba(224,90,71,.04);border:1px solid rgba(224,90,71,.1);border-radius:14px;padding:20px 24px;margin:28px 0;}
+.internal-links h4{font-family:var(--font-display);font-size:.95rem;margin-bottom:12px;color:var(--accent);}
+.internal-links ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px;}
+.internal-links a{display:inline-block;font-size:.82rem;padding:6px 14px;background:var(--card);border:1px solid var(--border);border-radius:8px;color:var(--muted);transition:all .2s;}
+.internal-links a:hover{color:var(--accent);border-color:rgba(224,90,71,.3);}
 </style>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <script type="application/ld+json">
@@ -68,7 +104,7 @@
   }
 }
 </script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is Opus Clip?", "acceptedAnswer": {"@type": "Answer", "text": "Opus Clip is an AI tool that automatically repurposes long-form videos into short-form clips for TikTok, Reels, and Shorts with captions, reframing, and virality scoring. Score: 8.1/10."}}, {"@type": "Question", "name": "How much does Opus Clip cost?", "acceptedAnswer": {"@type": "Answer", "text": "Free (60 credits/month, watermarked). Starter $15/month (150 credits). Pro $29/month (300 credits, AI B-roll, scheduling, team features)."}}, {"@type": "Question", "name": "Is Opus Clip worth it?", "acceptedAnswer": {"@type": "Answer", "text": "For podcasters and interview creators producing weekly content, yes. The time savings over manual clipping justifies the cost. For occasional use, the free or Starter plan may suffice."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is Opus Clip and is it any good?", "acceptedAnswer": {"@type": "Answer", "text": "Opus Clip is a ai video tool that scores 8.1/10 in our hands-on testing (February 2026). Key features include AI-powered highlight detection and clipping, Automatic vertical reframing (9:16), One-click captions with styling. It is priced at Free / $15/mo."}}, {"@type": "Question", "name": "How much does Opus Clip cost?", "acceptedAnswer": {"@type": "Answer", "text": "Opus Clip offers a free tier. Paid plans start at Free / $15/mo. Pricing verified as of February 2026."}}, {"@type": "Question", "name": "Who should use Opus Clip?", "acceptedAnswer": {"@type": "Answer", "text": "Opus Clip is best for podcasters, YouTubers, and content marketers who want to repurpose long-form videos into short-form clips at scale — especially interview and conversation-based content. It scores 8.1/10 in the ai video category."}}, {"@type": "Question", "name": "What are the main advantages of Opus Clip?", "acceptedAnswer": {"@type": "Answer", "text": "Top strengths based on our testing: Genuinely saves hours of manual clipping and reformatting work; AI highlight detection works well for interview and podcast content; One-click workflow from YouTube URL to ready-to-post clips. Overall score: 8.1/10."}}, {"@type": "Question", "name": "What are the downsides of Opus Clip?", "acceptedAnswer": {"@type": "Answer", "text": "Key limitations we found: 30-40% of generated clips need discarding — human curation still required; Credit system creates ongoing cost pressure for high-volume users; Free plan is too restricted for real use (watermarks, 3-day deletion). Despite these, Opus Clip scores 8.1/10 overall."}}, {"@type": "Question", "name": "How does Opus Clip compare to alternatives?", "acceptedAnswer": {"@type": "Answer", "text": "Opus Clip scores 8.1/10 in the ai video category. Top alternatives include Runway ML, Sora, and Synthesia. See our comparison tools at aipulsechecker.com for detailed breakdowns."}}]}</script>
 <meta property="og:title" content="Opus Clip Review 2026: AI Short Clips From Long Videos">
 <meta property="og:description" content="Opus Clip scores 8.1/10 for turning podcasts and webinars into viral short clips. Free to $29/mo. 60-70% of clips were immediately usable.">
 <meta property="og:type" content="article">
@@ -126,13 +162,41 @@
       <div class="meta-item"><span>Reviewed By</span><span style="font-family:var(--font-body)">AI Pulse Checker</span></div>
     </div>
   </div>
+  <!-- GEO: Answer Capsule for AI citation -->
+  <div class="answer-capsule" itemscope itemtype="https://schema.org/Review">
+    <div class="ac-header">
+      <span class="ac-badge">⚡ Quick Verdict</span>
+      <span class="ac-updated">Last tested: February 2026</span>
+    </div>
+    <div class="ac-grid">
+      <div class="ac-stat"><div class="ac-stat-label">Our Score</div><div class="ac-stat-value green">8.1/10</div></div>
+      <div class="ac-stat"><div class="ac-stat-label">Rating</div><div class="ac-stat-value">Strong Pick</div></div>
+      <div class="ac-stat"><div class="ac-stat-label">Price</div><div class="ac-stat-value">Free / $15/mo</div></div>
+      <div class="ac-stat"><div class="ac-stat-label">Free Tier</div><div class="ac-stat-value green">✓ Yes</div></div>
+      <div class="ac-stat"><div class="ac-stat-label">Category</div><div class="ac-stat-value">AI Video</div></div>
+      <div class="ac-stat"><div class="ac-stat-label">Value</div><div class="ac-stat-value">Good Value</div></div>
+    </div>
+    <div class="ac-bottom-line"><strong>Bottom Line:</strong> Opus Clip earns an 8.1/10 — a genuinely useful AI tool that solves a real pain point for content creators drowning in repurposing work.</div>
+  </div>
   <article class="article">
-    <h2>What is Opus Clip?</h2>
+    <details class="toc" open>
+      <summary>Table of Contents</summary>
+      <ol class="toc-list">
+      <li><a href="#what-is-opus-clip">What is Opus Clip?</a></li>
+      <li><a href="#key-features-capabilities">Key Features & Capabilities</a></li>
+      <li><a href="#performance-quality-in-real-world-testing">Performance & Quality in Real-World Testing</a></li>
+      <li><a href="#where-it-falls-short">Where It Falls Short</a></li>
+      <li><a href="#pricing-value-analysis">Pricing & Value Analysis</a></li>
+      <li><a href="#pros-cons">Pros & Cons</a></li>
+      </ol>
+    </details>
+
+    <h2 id="what-is-opus-clip">What is Opus Clip?</h2>
     <p>Opus Clip is an AI-powered video repurposing tool that takes long-form videos — podcasts, webinars, interviews, YouTube videos — and automatically transforms them into multiple short-form clips optimized for TikTok, Instagram Reels, and YouTube Shorts. Upload a 45-minute video, and Opus Clip's AI identifies the most engaging moments, reframes them to vertical format, adds captions, and even assigns a "virality score" predicting each clip's social media potential. We tested it across 20+ hours of source content to evaluate whether AI can truly replace a human editor for content repurposing.</p>
     <p>The promise is compelling: turn one long video into ten shareable clips in minutes instead of hours. For podcasters, YouTubers, and content marketers sitting on libraries of long-form content, the manual process of finding highlights, trimming clips, adding captions, and reformatting for vertical platforms is enormously time-consuming. Opus Clip aims to automate this entire workflow, and in our testing, it succeeds more often than it fails — with important caveats about quality expectations.</p>
     <p>Opus Clip works best with talking-head content: interviews, podcasts, vlogs, and presentations where clear speech drives the narrative. The AI analyzes dialogue, identifies topic transitions, and selects moments that represent complete thoughts with strong hooks. For this content type, the results are genuinely impressive — coherent clips that capture key points and feel intentionally edited rather than randomly chopped.</p>
 
-    <h2>Key Features & Capabilities</h2>
+    <h2 id="key-features-capabilities">Key Features & Capabilities</h2>
     <ul class="features-list">
           <li>AI-powered highlight detection and clipping</li>
           <li>Automatic vertical reframing (9:16)</li>
@@ -147,18 +211,18 @@
     <p>The virality score is an interesting but imperfect feature. Opus Clip rates each generated clip from 0-100 based on its predicted social media engagement potential. In our testing, clips rated above 80 did tend to perform better than lower-rated ones, but the score should be treated as a rough guide rather than a reliable predictor. The AI is making educated guesses based on content patterns, not guaranteeing results.</p>
     <p>Social media scheduling and direct posting streamline the distribution workflow. Connect your TikTok, YouTube, Instagram, LinkedIn, Facebook, and X accounts, schedule clips across platforms, and manage your entire short-form content calendar from one interface. For content teams managing multiple social channels, this eliminates several steps from the publishing workflow.</p>
 
-    <h2>Performance & Quality in Real-World Testing</h2>
+    <h2 id="performance-quality-in-real-world-testing">Performance & Quality in Real-World Testing</h2>
     <p>We tested Opus Clip with podcast episodes, YouTube interviews, conference talks, and product demonstrations. Results varied significantly by content type.</p>
     <p>Podcast and interview content produced the best results. The AI accurately identified compelling moments, maintained conversational context, and created clips that felt like intentional edits. Captions were accurate (roughly 95-97% in our English testing), and the vertical reframing kept speakers properly centered. About 60-70% of generated clips were immediately usable with minimal editing — a meaningful time savings over manual clipping.</p>
     <p>Less structured content — vlogs, product demos, tutorials with screen shares — produced more mixed results. The AI struggled to identify natural clip boundaries in content without clear conversational beats, sometimes cutting mid-thought or including awkward transitions. For these content types, expect to use Opus Clip as a starting point that saves time rather than a complete replacement for manual editing.</p>
     <p>The AI B-roll feature (Pro only) automatically adds relevant stock footage and images to enhance clips. Results were hit-or-miss — sometimes the added visuals genuinely improved the clip, other times they felt random or distracting. It is a nice-to-have feature but not a reliable replacement for intentional B-roll selection.</p>
 
-    <h2>Where It Falls Short</h2>
+    <h2 id="where-it-falls-short">Where It Falls Short</h2>
     <p>The credit system creates ongoing cost pressure. Credits are consumed based on video length (1 credit per minute of source video), and the free plan's 60 monthly credits disappear quickly if you are processing multiple long videos. The Starter plan's 150 credits and Pro's 300 credits per month may not be enough for agencies or prolific creators, requiring additional credit packs at extra cost.</p>
     <p>Clip quality requires human curation. While the AI generates multiple clips per video, not all are gems. Expect to review and discard 30-40% of generated clips that lack context, cut awkwardly, or simply are not interesting enough. Opus Clip accelerates the workflow but does not eliminate the need for human judgment about what constitutes good content.</p>
     <p>Free plan clips are watermarked and deleted after 3 days. The editing tools are locked behind paid plans. These restrictions make the free tier useful only for evaluation, not for production work. The gap between free and usable is wider than with most AI tools.</p>
 
-    <h2>Pricing & Value Analysis</h2>
+    <h2 id="pricing-value-analysis">Pricing & Value Analysis</h2>
     <p style="font-size:.78rem;color:var(--muted);margin:-4px 0 14px;font-style:italic;">⏱ Pricing verified as of February 20, 2026 — confirm on vendor website before purchasing.</p>
     <p>The free plan provides 60 monthly credits, AI clipping and captions with watermark, and 3-day clip retention. The Starter plan at $15/month offers 150 credits, watermark-free export, and basic editing tools. The Pro plan at $29/month includes 300 credits, AI B-roll, social scheduling, brand templates, team collaboration (2 seats), 100GB cloud storage, and Premiere Pro export. Additional packs are available for higher volume needs.</p>
     <p>For podcasters and interview-based creators producing weekly long-form content, Pro at $29/month is reasonable — the time savings over manual clipping easily justifies the cost. For occasional users or those with lower volume, the Starter plan provides enough credits for a few videos per month. The ROI depends on how much long-form content you produce and how aggressively you distribute short-form clips.</p>
@@ -168,7 +232,7 @@
       <p>Podcasters, YouTubers, and content marketers who want to repurpose long-form videos into short-form clips at scale — especially interview and conversation-based content</p>
     </div>
 
-    <h2>Pros & Cons</h2>
+    <h2 id="pros-cons">Pros & Cons</h2>
     <div class="pros-cons">
       <div class="pros">
         <h3>What We Love</h3>
@@ -192,6 +256,15 @@
       </div>
     </div>
 
+    
+    <div class="internal-links">
+      <h4>🔗 More AI Video Reviews</h4>
+      <ul><li><a href="seedance.html">Seedance 2.0 (9.2/10)</a></li><li><a href="sora.html">Sora (9.0/10)</a></li><li><a href="synthesia.html">Synthesia (9.0/10)</a></li><li><a href="capcut.html">CapCut (8.8/10)</a></li><li><a href="runway-ml.html">Runway ML (8.8/10)</a></li></ul>
+    </div>
+    <div class="internal-links">
+      <h4>🔍 Popular in Other Categories</h4>
+      <ul><li><a href="semrush-ai.html">Semrush AI — AI Marketing</a></li><li><a href="customgpt.html">CustomGPT — AI Chatbots</a></li><li><a href="moda.html">Moda — AI Design</a></li></ul>
+    </div>
     <div class="verdict-box">
       <h3>Our Verdict — 8.1/10</h3>
       <p>Opus Clip earns an 8.1/10 — a genuinely useful AI tool that solves a real pain point for content creators drowning in repurposing work. For podcast and interview-based content, it reliably produces usable clips that save hours of manual editing. The limitations are real: the credit system gets expensive at scale, a significant percentage of clips need discarding, and non-conversational content produces weaker results. But for its target use case — turning long-form conversations into short-form social content — Opus Clip is the best dedicated tool available and a meaningful workflow upgrade for regular content producers.</p>
@@ -224,11 +297,30 @@
 
     <div class="faq-section" style="max-width:800px;margin:40px auto;padding:0 24px;">
       <h2 style="font-family:var(--font-display);font-size:1.4rem;margin-bottom:20px;">Frequently Asked Questions</h2>
-      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;"><h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">What is Opus Clip?</h3><p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">AI tool that repurposes long videos into short clips for TikTok, Reels, and Shorts with auto-clipping, captions, and virality scoring. Score: 8.1/10.</p></div>
-      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;"><h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">Is Opus Clip free?</h3><p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Free plan: 60 credits/month with watermarks. Starter $15/mo. Pro $29/mo with AI B-roll, scheduling, and team features.</p></div>
-      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;"><h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">What content works best?</h3><p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Podcasts, interviews, and talking-head videos produce the best results. Less structured content like vlogs and tutorials gives more mixed output.</p></div>
-    </div>
-</div>
+      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">What is Opus Clip and is it any good?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Opus Clip is a ai video tool that scores 8.1/10 in our hands-on testing (February 2026). Key features include advanced AI capabilities. It is priced at Free / $15/mo.</p>
+      </div>
+      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">How much does Opus Clip cost?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Opus Clip offers a free tier. Paid plans start at Free / $15/mo. Pricing verified as of February 2026. We rate its value as competitive within the ai video category.</p>
+      </div>
+      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">Who should use Opus Clip?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Opus Clip is best for podcasters, youtubers, and content marketers who want to repurpose long-form videos into short-form clips at scale — especially interview and conversation-based content. It scores 8.1/10 in the ai video category.</p>
+      </div>
+      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">What are the main advantages of Opus Clip?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">The top strengths of Opus Clip based on our testing: Genuinely saves hours of manual clipping and reformatting work; AI highlight detection works well for interview and podcast content; One-click workflow from YouTube URL to ready-to-post clips. It earns 8.1/10 overall.</p>
+      </div>
+      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">What are the downsides of Opus Clip?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Key limitations we found: 30-40% of generated clips need discarding — human curation still required; Credit system creates ongoing cost pressure for high-volume users; Free plan is too restricted for real use (watermarks, 3-day deletion). Despite these, Opus Clip scores 8.1/10 overall in our review.</p>
+      </div>
+      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">How does Opus Clip compare to alternatives?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Opus Clip scores 8.1/10 in the ai video category. Top alternatives include Runway ML, Sora, and Synthesia. See our full comparison chart at aipulsechecker.com/compare.html for a detailed breakdown.</p>
+      </div>
     </div>
 
 <footer class="footer">

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GHTPP0BB2J"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GHTPP0BB2J" fetchpriority="low"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -17,9 +17,9 @@
 <title>Luma AI Review 2026: Dream Machine Video Gen (Tested)</title>
     <link rel="canonical" href="https://aipulsechecker.com/luma-ai.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 :root{--ink:#e8e6e1;--paper:#0d0f12;--cream:#161921;--card:rgba(22,25,33,.7);--card-solid:#161921;--border:rgba(255,255,255,.08);--accent:#e05a47;--accent-glow:rgba(224,90,71,.25);--accent-dark:#c44433;--sage:#4ade80;--sage-glow:rgba(74,222,128,.2);--sage-light:rgba(74,222,128,.08);--muted:rgba(255,255,255,.5);--font-display:'Playfair Display',Georgia,serif;--font-body:'Outfit',sans-serif;--font-mono:'JetBrains Mono',monospace;}
 *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{font-family:var(--font-body);background:var(--paper);color:var(--ink);line-height:1.6;overflow-x:hidden;}body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;z-index:-1;background:radial-gradient(ellipse 80% 50% at 20% 20%, rgba(224,90,71,.06) 0%, transparent 60%),radial-gradient(ellipse 60% 40% at 80% 80%, rgba(74,222,128,.04) 0%, transparent 60%);pointer-events:none;}a{color:inherit;text-decoration:none;}
 .navbar{background:rgba(13,15,18,.85);backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200;}.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;}.logo{font-family:var(--font-display);font-size:1.5rem;font-weight:700;display:flex;align-items:center;gap:8px;}.logo:hover{opacity:.8;}.nav-btn{background:linear-gradient(135deg, var(--accent) 0%, #ff6b5a 100%);color:#fff !important;padding:8px 20px;border-radius:10px;font-size:.82rem;font-weight:600;transition:all .3s;cursor:pointer;border:none;font-family:var(--font-body);box-shadow:0 2px 12px var(--accent-glow);}.nav-btn:hover{transform:translateY(-1px);box-shadow:0 4px 20px var(--accent-glow);}
@@ -35,6 +35,42 @@
 .dark-toggle{background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:10px;padding:7px 14px;cursor:pointer;font-size:.85rem;transition:all .3s;color:var(--muted);font-family:var(--font-body);}.dark-toggle:hover{border-color:rgba(255,255,255,.2);color:var(--ink);}
 .light-mode{--ink:#0c0c0c;--paper:#f5f2ec;--cream:#eae6dd;--card:rgba(255,255,255,.9);--card-solid:#fff;--border:rgba(0,0,0,.08);--muted:#7a756c;--accent-glow:rgba(224,90,71,.15);--sage-light:rgba(61,107,69,.08);}.light-mode body::before{display:none;}.light-mode .navbar{background:rgba(245,242,236,.92);}.light-mode .review-hero h1{background:linear-gradient(135deg, #0c0c0c 0%, #333 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}.light-mode .article p,.light-mode .pros li,.light-mode .cons li,.light-mode .features-list li{color:#444;}.light-mode .pros,.light-mode .cons{background:rgba(0,0,0,.02);}.light-mode .verdict-box{background:linear-gradient(135deg, rgba(224,90,71,.06) 0%, rgba(224,90,71,.01) 100%);}.light-mode .related-tools{background:rgba(0,0,0,.02);max-width:800px;}.light-mode .related-tools a{background:rgba(0,0,0,.03);}.light-mode .share-section a{background:rgba(0,0,0,.03);}.light-mode .modal{background:#fff;}.light-mode .modal input{background:var(--cream);color:var(--ink);}.light-mode .footer{background:var(--ink);color:rgba(245,242,236,.5);}.light-mode .footer a{color:rgba(245,242,236,.5);}.light-mode .score-badge{color:#3d6b45;text-shadow:none;}
 @media(max-width:768px){.pros-cons{grid-template-columns:1fr;}.features-list{grid-template-columns:1fr;}.review-hero h1{font-size:1.8rem;}}
+
+/* GEO Answer Capsule */
+.answer-capsule{background:linear-gradient(135deg,rgba(74,222,128,.04),rgba(74,222,128,.01));border:1px solid rgba(74,222,128,.12);border-radius:16px;padding:28px;margin:28px 0 8px;position:relative;overflow:hidden;}
+.answer-capsule::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--sage),rgba(74,222,128,.3));}
+.ac-header{display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap;}
+.ac-badge{font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--sage);background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.15);padding:4px 10px;border-radius:6px;font-weight:600;}
+.ac-updated{font-size:.72rem;color:var(--muted);margin-left:auto;}
+.ac-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:18px;}
+.ac-stat{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:12px 14px;text-align:center;}
+.ac-stat-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600;margin-bottom:4px;}
+.ac-stat-value{font-family:var(--font-mono);font-size:1.1rem;font-weight:600;}
+.ac-stat-value.green{color:var(--sage);}
+.ac-stat-value.accent{color:var(--accent);}
+.ac-bottom-line{font-size:.92rem;color:rgba(232,230,225,.85);line-height:1.7;padding:14px 0 0;border-top:1px solid var(--border);margin-top:4px;}
+.ac-bottom-line strong{color:var(--ink);font-weight:600;}
+@media(max-width:500px){.ac-grid{grid-template-columns:1fr 1fr;}.ac-updated{margin-left:0;}}
+
+/* Table of Contents */
+.toc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 24px;margin:0 0 32px;}
+.toc summary{font-family:var(--font-display);font-size:1.05rem;font-weight:700;cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;}
+.toc summary::-webkit-details-summary-marker{display:none;}
+.toc summary::before{content:'📑';font-size:1rem;}
+.toc summary::after{content:'▸';margin-left:auto;transition:transform .2s;font-size:.8rem;color:var(--muted);}
+.toc[open] summary::after{transform:rotate(90deg);}
+.toc-list{list-style:none;margin:14px 0 0;padding:0;}
+.toc-list li{padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04);}
+.toc-list li:last-child{border-bottom:none;}
+.toc-list a{font-size:.88rem;color:var(--muted);transition:color .2s;}
+.toc-list a:hover{color:var(--accent);}
+
+/* Internal Links Box */
+.internal-links{background:rgba(224,90,71,.04);border:1px solid rgba(224,90,71,.1);border-radius:14px;padding:20px 24px;margin:28px 0;}
+.internal-links h4{font-family:var(--font-display);font-size:.95rem;margin-bottom:12px;color:var(--accent);}
+.internal-links ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px;}
+.internal-links a{display:inline-block;font-size:.82rem;padding:6px 14px;background:var(--card);border:1px solid var(--border);border-radius:8px;color:var(--muted);transition:all .2s;}
+.internal-links a:hover{color:var(--accent);border-color:rgba(224,90,71,.3);}
 </style>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <script type="application/ld+json">
@@ -68,7 +104,7 @@
   }
 }
 </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Luma AI?","acceptedAnswer":{"@type":"Answer","text":"Dream Machine generates cinematic video from text/images with the most natural motion physics in AI video. Free to $23.99/mo. Score: 8.4/10."}},{"@type":"Question","name":"Is Luma AI free?","acceptedAnswer":{"@type":"Answer","text":"Yes. 30 generations/month with watermarks. Standard $23.99/mo adds 400 generations, no watermarks, commercial rights."}},{"@type":"Question","name":"Luma AI vs Sora?","acceptedAnswer":{"@type":"Answer","text":"Sora is more photorealistic ($200/mo via ChatGPT Pro). Luma has better motion physics and a free tier. Choose Sora for realism, Luma for natural motion."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is Luma AI and is it any good?", "acceptedAnswer": {"@type": "Answer", "text": "Luma AI is a ai video tool that scores 8.4/10 in our hands-on testing (February 2026). Key features include Text-to-video with natural motion physics, Image-to-video animation from reference photos, Camera control (pan, zoom, orbit, tracking shots). It is priced at Free / $23.99/mo."}}, {"@type": "Question", "name": "How much does Luma AI cost?", "acceptedAnswer": {"@type": "Answer", "text": "Luma AI offers a free tier. Paid plans start at Free / $23.99/mo. Pricing verified as of February 2026."}}, {"@type": "Question", "name": "Who should use Luma AI?", "acceptedAnswer": {"@type": "Answer", "text": "Luma AI is best for video creators and marketers who need short cinematic clips with natural motion physics — product animations, social media content, and visual storytelling. It scores 8.4/10 in the ai video category."}}, {"@type": "Question", "name": "What are the main advantages of Luma AI?", "acceptedAnswer": {"@type": "Answer", "text": "Top strengths based on our testing: Best motion physics in AI video — realistic weight and momentum; Image-to-video preserves source material with exceptional fidelity; Camera controls produce cinematic, intentional movement. Overall score: 8.4/10."}}, {"@type": "Question", "name": "What are the downsides of Luma AI?", "acceptedAnswer": {"@type": "Answer", "text": "Key limitations we found: Human faces and bodies produce inconsistent, uncanny results; 5-second clip limit restricts longer-form content use; High prompt sensitivity — minor wording changes yield different results. Despite these, Luma AI scores 8.4/10 overall."}}, {"@type": "Question", "name": "How does Luma AI compare to alternatives?", "acceptedAnswer": {"@type": "Answer", "text": "Luma AI scores 8.4/10 in the ai video category. Top alternatives include Runway ML, Sora, and Synthesia. See our comparison tools at aipulsechecker.com for detailed breakdowns."}}]}</script>
 <meta property="og:title" content="Luma AI Review 2026: Dream Machine Video Gen (Tested)">
 <meta property="og:description" content="Luma AI scores 8.4/10 — Dream Machine creates cinematic video from text/images with stunning motion. Free to $23.99/mo. How it compares to Sora and Runway.">
 <meta property="og:type" content="article">
@@ -126,11 +162,39 @@
       <div class="meta-item"><span>Reviewed By</span><span style="font-family:var(--font-body)">AI Pulse Checker</span></div>
     </div>
   </div>
+  <!-- GEO: Answer Capsule for AI citation -->
+  <div class="answer-capsule" itemscope itemtype="https://schema.org/Review">
+    <div class="ac-header">
+      <span class="ac-badge">⚡ Quick Verdict</span>
+      <span class="ac-updated">Last tested: February 2026</span>
+    </div>
+    <div class="ac-grid">
+      <div class="ac-stat"><div class="ac-stat-label">Our Score</div><div class="ac-stat-value green">8.4/10</div></div>
+      <div class="ac-stat"><div class="ac-stat-label">Rating</div><div class="ac-stat-value">Strong Pick</div></div>
+      <div class="ac-stat"><div class="ac-stat-label">Price</div><div class="ac-stat-value">Free / $23.99/mo</div></div>
+      <div class="ac-stat"><div class="ac-stat-label">Free Tier</div><div class="ac-stat-value green">✓ Yes</div></div>
+      <div class="ac-stat"><div class="ac-stat-label">Category</div><div class="ac-stat-value">AI Video</div></div>
+      <div class="ac-stat"><div class="ac-stat-label">Value</div><div class="ac-stat-value">Good Value</div></div>
+    </div>
+    <div class="ac-bottom-line"><strong>Bottom Line:</strong> Luma AI earns an 8.4/10 — the AI video generator with the most convincing motion physics.</div>
+  </div>
   <article class="article">
-    <h2>What is Luma AI?</h2>
+    <details class="toc" open>
+      <summary>Table of Contents</summary>
+      <ol class="toc-list">
+      <li><a href="#what-is-luma-ai">What is Luma AI?</a></li>
+      <li><a href="#key-features-amp-capabilities">Key Features &amp; Capabilities</a></li>
+      <li><a href="#performance-amp-quality">Performance &amp; Quality</a></li>
+      <li><a href="#where-it-falls-short">Where It Falls Short</a></li>
+      <li><a href="#pricing-amp-value">Pricing &amp; Value</a></li>
+      <li><a href="#pros-cons">Pros & Cons</a></li>
+      </ol>
+    </details>
+
+    <h2 id="what-is-luma-ai">What is Luma AI?</h2>
     <p>Luma AI's Dream Machine is an AI video generation model that turns text prompts and reference images into cinematic video clips with some of the most natural motion physics in the AI video space. While Sora emphasizes photorealism and Runway focuses on creative control, Luma has carved a niche for physically coherent motion — objects move with realistic weight, momentum, and interaction.</p><p>We generated hundreds of clips across diverse prompts. The results are impressive: camera movements feel cinematic, characters walk with natural gait, and physical interactions (pouring liquid, wind blowing fabric, objects colliding) look convincingly real. The model understands physics in ways that produce more believable motion than most competitors.</p><p>Luma offers a generous free tier with 30 generations per month. Standard at $23.99/month provides 400 generations and higher priority. Pro at $95.99/month unlocks 2,000 generations and commercial licensing. For creators who need natural-looking motion in 5-10 second clips, Dream Machine delivers exceptional quality.</p>
 
-    <h2>Key Features &amp; Capabilities</h2>
+    <h2 id="key-features-amp-capabilities">Key Features &amp; Capabilities</h2>
     <ul class="features-list">
           <li>Text-to-video with natural motion physics</li>
           <li>Image-to-video animation from reference photos</li>
@@ -143,19 +207,19 @@
     </ul>
     <p>Text-to-video is the core offering. The Ray2 model shows marked improvement in temporal consistency — elements maintain shape and color across frames without morphing artifacts. Usable output on roughly 70% of prompts, with best results on concrete physical scenes rather than abstract concepts.</p><p>Image-to-video is where Luma truly shines. Upload a photo, describe the motion, and Dream Machine animates it with remarkable fidelity. Product photos gain rotating camera angles. Landscapes get flowing water and swaying trees. Source image preservation is among the industry's best.</p><p>Camera controls produce cinematic movement — pan, zoom, orbit, tracking shots feel deliberate rather than the floating-camera effect common in AI video. Combined with natural physics, footage resembles drone shots or steadicam work.</p>
 
-    <h2>Performance &amp; Quality</h2>
+    <h2 id="performance-amp-quality">Performance &amp; Quality</h2>
     <p>A 5-second clip takes 60-120 seconds on Standard. Quality varies significantly with prompt quality — detailed physical descriptions produce dramatically better results than vague prompts.</p><p>In side-by-side comparisons, Luma produced more physically believable motion than Runway Gen-3, comparable quality to Seedance 2.0, and less photorealistic output than Sora. Where Luma excels: water splashing, fabric flowing, objects falling — physics simulation that creates convincing results competitors often get wrong.</p><p>Clip duration is the main limitation. Most generations are 5 seconds, extendable to about 10. Longer shots require stitching multiple generations, which can introduce consistency issues.</p>
 
-    <h2>Where It Falls Short</h2>
+    <h2 id="where-it-falls-short">Where It Falls Short</h2>
     <p>Human generation remains inconsistent. Faces distort, hands occasionally have wrong finger counts, and full-body motion sometimes falls into uncanny valley. Objects, landscapes, and animals produce significantly higher quality.</p><p>Prompt sensitivity is high. Minor wording changes produce dramatically different results, and optimal prompt structure isn't always intuitive. There's a learning curve with limited official documentation.</p><p>Pro tier at $95.99/month is steep for individuals. Competitors like Kling AI offer similar quality at lower prices for casual users, though Luma's motion advantage justifies the premium for professional use.</p>
 
-    <h2>Pricing &amp; Value</h2>
+    <h2 id="pricing-amp-value">Pricing &amp; Value</h2>
     <p style="font-size:.78rem;color:var(--muted);margin:-4px 0 14px;font-style:italic;">⏱ Pricing verified as of February 2026 — confirm on vendor website.</p>
     <p>Free includes 30 generations/month with watermarks. Standard at $23.99/month provides 400 generations, faster processing, no watermarks, and commercial rights. Pro at $95.99/month unlocks 2,000 generations, highest priority, API, and 4K. Premier at $399.99/month offers 10,000 generations for studios.</p><p>Free is generous enough to evaluate and produce a handful of clips monthly. Standard is the sweet spot — at roughly $0.06 per generation, it's cost-effective compared to stock video.</p>
 
     <div class="best-for"><h3>Best For</h3><p>Video creators and marketers who need short cinematic clips with natural motion physics — product animations, social media content, and visual storytelling</p></div>
 
-    <h2>Pros & Cons</h2>
+    <h2 id="pros-cons">Pros & Cons</h2>
     <div class="pros-cons">
       <div class="pros">
         <h3>What We Love</h3>
@@ -179,6 +243,15 @@
       </div>
     </div>
 
+    
+    <div class="internal-links">
+      <h4>🔗 More AI Video Reviews</h4>
+      <ul><li><a href="seedance.html">Seedance 2.0 (9.2/10)</a></li><li><a href="sora.html">Sora (9.0/10)</a></li><li><a href="synthesia.html">Synthesia (9.0/10)</a></li><li><a href="capcut.html">CapCut (8.8/10)</a></li><li><a href="runway-ml.html">Runway ML (8.8/10)</a></li></ul>
+    </div>
+    <div class="internal-links">
+      <h4>🔍 Popular in Other Categories</h4>
+      <ul><li><a href="semrush-ai.html">Semrush AI — AI Marketing</a></li><li><a href="customgpt.html">CustomGPT — AI Chatbots</a></li><li><a href="moda.html">Moda — AI Design</a></li></ul>
+    </div>
     <div class="verdict-box">
       <h3>Our Verdict — 8.4/10</h3>
       <p>Luma AI earns an 8.4/10 — the AI video generator with the most convincing motion physics. Dream Machine's understanding of physical interactions and camera movement produces footage that feels grounded and cinematic. Image-to-video is particularly impressive. The 5-second limit, inconsistent humans, and steep Pro pricing are constraints, but for natural-looking motion over raw photorealism, Dream Machine is the tool to beat.</p>
@@ -211,11 +284,30 @@
 
     <div class="faq-section" style="max-width:800px;margin:40px auto;padding:0 24px;">
       <h2 style="font-family:var(--font-display);font-size:1.4rem;margin-bottom:20px;">Frequently Asked Questions</h2>
-      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;"><h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">What is Luma AI?</h3><p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Dream Machine generates cinematic video from text/images with the most natural motion physics in AI video. Free to $23.99/mo. Score: 8.4/10.</p></div>
-      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;"><h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">Is Luma AI free?</h3><p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Yes. 30 generations/month with watermarks. Standard $23.99/mo adds 400 generations, no watermarks, commercial rights.</p></div>
-      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;"><h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">Luma AI vs Sora?</h3><p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Sora is more photorealistic ($200/mo via ChatGPT Pro). Luma has better motion physics and a free tier. Choose Sora for realism, Luma for natural motion.</p></div>
-    </div>
-</div>
+      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">What is Luma AI and is it any good?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Luma AI is a ai video tool that scores 8.4/10 in our hands-on testing (February 2026). Key features include advanced AI capabilities. It is priced at Free / $23.99/mo.</p>
+      </div>
+      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">How much does Luma AI cost?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Luma AI offers a free tier. Paid plans start at Free / $23.99/mo. Pricing verified as of February 2026. We rate its value as competitive within the ai video category.</p>
+      </div>
+      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">Who should use Luma AI?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Luma AI is best for video creators and marketers who need short cinematic clips with natural motion physics — product animations, social media content, and visual storytelling. It scores 8.4/10 in the ai video category.</p>
+      </div>
+      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">What are the main advantages of Luma AI?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">The top strengths of Luma AI based on our testing: Best motion physics in AI video — realistic weight and momentum; Image-to-video preserves source material with exceptional fidelity; Camera controls produce cinematic, intentional movement. It earns 8.4/10 overall.</p>
+      </div>
+      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">What are the downsides of Luma AI?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Key limitations we found: Human faces and bodies produce inconsistent, uncanny results; 5-second clip limit restricts longer-form content use; High prompt sensitivity — minor wording changes yield different results. Despite these, Luma AI scores 8.4/10 overall in our review.</p>
+      </div>
+      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">How does Luma AI compare to alternatives?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Luma AI scores 8.4/10 in the ai video category. Top alternatives include Runway ML, Sora, and Synthesia. See our full comparison chart at aipulsechecker.com/compare.html for a detailed breakdown.</p>
+      </div>
     </div>
 
 <footer class="footer">

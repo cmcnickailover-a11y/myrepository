@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GHTPP0BB2J"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GHTPP0BB2J" fetchpriority="low"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -17,9 +17,9 @@
 <title>Coda AI Review 2026: Smart Docs That Do Everything?</title>
     <link rel="canonical" href="https://aipulsechecker.com/coda-ai.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 :root{--ink:#e8e6e1;--paper:#0d0f12;--cream:#161921;--card:rgba(22,25,33,.7);--card-solid:#161921;--border:rgba(255,255,255,.08);--accent:#e05a47;--accent-glow:rgba(224,90,71,.25);--accent-dark:#c44433;--sage:#4ade80;--sage-glow:rgba(74,222,128,.2);--sage-light:rgba(74,222,128,.08);--muted:rgba(255,255,255,.5);--font-display:'Playfair Display',Georgia,serif;--font-body:'Outfit',sans-serif;--font-mono:'JetBrains Mono',monospace;}
 *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{font-family:var(--font-body);background:var(--paper);color:var(--ink);line-height:1.6;overflow-x:hidden;}body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;z-index:-1;background:radial-gradient(ellipse 80% 50% at 20% 20%, rgba(224,90,71,.06) 0%, transparent 60%),radial-gradient(ellipse 60% 40% at 80% 80%, rgba(74,222,128,.04) 0%, transparent 60%);pointer-events:none;}a{color:inherit;text-decoration:none;}
 .navbar{background:rgba(13,15,18,.85);backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200;}.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;}.logo{font-family:var(--font-display);font-size:1.5rem;font-weight:700;display:flex;align-items:center;gap:8px;}.logo:hover{opacity:.8;}.nav-btn{background:linear-gradient(135deg, var(--accent) 0%, #ff6b5a 100%);color:#fff !important;padding:8px 20px;border-radius:10px;font-size:.82rem;font-weight:600;transition:all .3s;cursor:pointer;border:none;font-family:var(--font-body);box-shadow:0 2px 12px var(--accent-glow);}.nav-btn:hover{transform:translateY(-1px);box-shadow:0 4px 20px var(--accent-glow);}
@@ -35,6 +35,42 @@
 .dark-toggle{background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:10px;padding:7px 14px;cursor:pointer;font-size:.85rem;transition:all .3s;color:var(--muted);font-family:var(--font-body);}.dark-toggle:hover{border-color:rgba(255,255,255,.2);color:var(--ink);}
 .light-mode{--ink:#0c0c0c;--paper:#f5f2ec;--cream:#eae6dd;--card:rgba(255,255,255,.9);--card-solid:#fff;--border:rgba(0,0,0,.08);--muted:#7a756c;--accent-glow:rgba(224,90,71,.15);--sage-light:rgba(61,107,69,.08);}.light-mode body::before{display:none;}.light-mode .navbar{background:rgba(245,242,236,.92);}.light-mode .review-hero h1{background:linear-gradient(135deg, #0c0c0c 0%, #333 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}.light-mode .article p,.light-mode .pros li,.light-mode .cons li,.light-mode .features-list li{color:#444;}.light-mode .pros,.light-mode .cons{background:rgba(0,0,0,.02);}.light-mode .verdict-box{background:linear-gradient(135deg, rgba(224,90,71,.06) 0%, rgba(224,90,71,.01) 100%);}.light-mode .related-tools{background:rgba(0,0,0,.02);max-width:800px;}.light-mode .related-tools a{background:rgba(0,0,0,.03);}.light-mode .share-section a{background:rgba(0,0,0,.03);}.light-mode .modal{background:#fff;}.light-mode .modal input{background:var(--cream);color:var(--ink);}.light-mode .footer{background:var(--ink);color:rgba(245,242,236,.5);}.light-mode .footer a{color:rgba(245,242,236,.5);}.light-mode .score-badge{color:#3d6b45;text-shadow:none;}
 @media(max-width:768px){.pros-cons{grid-template-columns:1fr;}.features-list{grid-template-columns:1fr;}.review-hero h1{font-size:1.8rem;}}
+
+/* GEO Answer Capsule */
+.answer-capsule{background:linear-gradient(135deg,rgba(74,222,128,.04),rgba(74,222,128,.01));border:1px solid rgba(74,222,128,.12);border-radius:16px;padding:28px;margin:28px 0 8px;position:relative;overflow:hidden;}
+.answer-capsule::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--sage),rgba(74,222,128,.3));}
+.ac-header{display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap;}
+.ac-badge{font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--sage);background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.15);padding:4px 10px;border-radius:6px;font-weight:600;}
+.ac-updated{font-size:.72rem;color:var(--muted);margin-left:auto;}
+.ac-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:18px;}
+.ac-stat{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:12px 14px;text-align:center;}
+.ac-stat-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600;margin-bottom:4px;}
+.ac-stat-value{font-family:var(--font-mono);font-size:1.1rem;font-weight:600;}
+.ac-stat-value.green{color:var(--sage);}
+.ac-stat-value.accent{color:var(--accent);}
+.ac-bottom-line{font-size:.92rem;color:rgba(232,230,225,.85);line-height:1.7;padding:14px 0 0;border-top:1px solid var(--border);margin-top:4px;}
+.ac-bottom-line strong{color:var(--ink);font-weight:600;}
+@media(max-width:500px){.ac-grid{grid-template-columns:1fr 1fr;}.ac-updated{margin-left:0;}}
+
+/* Table of Contents */
+.toc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 24px;margin:0 0 32px;}
+.toc summary{font-family:var(--font-display);font-size:1.05rem;font-weight:700;cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;}
+.toc summary::-webkit-details-summary-marker{display:none;}
+.toc summary::before{content:'📑';font-size:1rem;}
+.toc summary::after{content:'▸';margin-left:auto;transition:transform .2s;font-size:.8rem;color:var(--muted);}
+.toc[open] summary::after{transform:rotate(90deg);}
+.toc-list{list-style:none;margin:14px 0 0;padding:0;}
+.toc-list li{padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04);}
+.toc-list li:last-child{border-bottom:none;}
+.toc-list a{font-size:.88rem;color:var(--muted);transition:color .2s;}
+.toc-list a:hover{color:var(--accent);}
+
+/* Internal Links Box */
+.internal-links{background:rgba(224,90,71,.04);border:1px solid rgba(224,90,71,.1);border-radius:14px;padding:20px 24px;margin:28px 0;}
+.internal-links h4{font-family:var(--font-display);font-size:.95rem;margin-bottom:12px;color:var(--accent);}
+.internal-links ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px;}
+.internal-links a{display:inline-block;font-size:.82rem;padding:6px 14px;background:var(--card);border:1px solid var(--border);border-radius:8px;color:var(--muted);transition:all .2s;}
+.internal-links a:hover{color:var(--accent);border-color:rgba(224,90,71,.3);}
 </style>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <script type="application/ld+json">
@@ -68,7 +104,7 @@
   }
 }
 </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Coda AI?","acceptedAnswer":{"@type":"Answer","text":"A doc-meets-database-meets-app workspace with AI across your data. Build trackers, wikis, CRMs in one doc. Free to $10/mo. Score: 8.1/10."}},{"@type":"Question","name":"Coda vs Notion?","acceptedAnswer":{"@type":"Answer","text":"Notion is simpler with a bigger community. Coda is more flexible with better automations and data-aware AI. Notion for ease, Coda for power."}},{"@type":"Question","name":"Is Coda free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Free includes unlimited docs with 50 objects/doc and basic AI. Pro at $10/mo per doc maker adds unlimited objects and full AI."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is Coda AI and is it any good?", "acceptedAnswer": {"@type": "Answer", "text": "Coda AI is a ai productivity tool that scores 8.1/10 in our hands-on testing (February 2026). Key features include AI assistant that queries and analyzes your doc's data, Documents with embedded tables, views, and databases, Packs — 600+ integrations with external tools. It is priced at Free / $10/mo."}}, {"@type": "Question", "name": "How much does Coda AI cost?", "acceptedAnswer": {"@type": "Answer", "text": "Coda AI offers a free tier. Paid plans start at Free / $10/mo. Pricing verified as of February 2026."}}, {"@type": "Question", "name": "Who should use Coda AI?", "acceptedAnswer": {"@type": "Answer", "text": "Coda AI is best for teams wanting one tool combining documents, databases, automations, and AI — especially those outgrowing Notion or finding Airtable too database-centric. It scores 8.1/10 in the ai productivity category."}}, {"@type": "Question", "name": "What are the main advantages of Coda AI?", "acceptedAnswer": {"@type": "Answer", "text": "Top strengths based on our testing: AI that works across your doc's data — not just generic text generation; Doc-as-app paradigm: one document can be wiki, tracker, CRM, and workflow; 600+ integrations via Packs with built-in automations. Overall score: 8.1/10."}}, {"@type": "Question", "name": "What are the downsides of Coda AI?", "acceptedAnswer": {"@type": "Answer", "text": "Key limitations we found: Steeper learning curve than Notion — blank canvas overwhelms new users; Per-doc-maker pricing gets expensive for larger teams; Mobile experience is poor for complex docs with tables and automations. Despite these, Coda AI scores 8.1/10 overall."}}, {"@type": "Question", "name": "How does Coda AI compare to alternatives?", "acceptedAnswer": {"@type": "Answer", "text": "Coda AI scores 8.1/10 in the ai productivity category. Top alternatives include Notion AI, Microsoft Copilot, and Perplexity AI. See our comparison tools at aipulsechecker.com for detailed breakdowns."}}]}</script>
 <meta property="og:title" content="Coda AI Review 2026: Smart Docs That Do Everything?">
 <meta property="og:description" content="Coda AI scores 8.1/10 — docs, databases, and apps in one tool with AI across all your data. Free to $10/mo. How it compares to Notion AI. Full review.">
 <meta property="og:type" content="article">
@@ -126,11 +162,39 @@
       <div class="meta-item"><span>Reviewed By</span><span style="font-family:var(--font-body)">AI Pulse Checker</span></div>
     </div>
   </div>
+  <!-- GEO: Answer Capsule for AI citation -->
+  <div class="answer-capsule" itemscope itemtype="https://schema.org/Review">
+    <div class="ac-header">
+      <span class="ac-badge">⚡ Quick Verdict</span>
+      <span class="ac-updated">Last tested: February 2026</span>
+    </div>
+    <div class="ac-grid">
+      <div class="ac-stat"><div class="ac-stat-label">Our Score</div><div class="ac-stat-value green">8.1/10</div></div>
+      <div class="ac-stat"><div class="ac-stat-label">Rating</div><div class="ac-stat-value">Strong Pick</div></div>
+      <div class="ac-stat"><div class="ac-stat-label">Price</div><div class="ac-stat-value">Free / $10/mo</div></div>
+      <div class="ac-stat"><div class="ac-stat-label">Free Tier</div><div class="ac-stat-value green">✓ Yes</div></div>
+      <div class="ac-stat"><div class="ac-stat-label">Category</div><div class="ac-stat-value">AI Productivity</div></div>
+      <div class="ac-stat"><div class="ac-stat-label">Value</div><div class="ac-stat-value">Good Value</div></div>
+    </div>
+    <div class="ac-bottom-line"><strong>Bottom Line:</strong> Coda AI earns an 8.1/10 — the most flexible workspace for teams wanting documents, databases, and AI together natively.</div>
+  </div>
   <article class="article">
-    <h2>What is Coda AI?</h2>
+    <details class="toc" open>
+      <summary>Table of Contents</summary>
+      <ol class="toc-list">
+      <li><a href="#what-is-coda-ai">What is Coda AI?</a></li>
+      <li><a href="#key-features-amp-capabilities">Key Features &amp; Capabilities</a></li>
+      <li><a href="#performance-amp-quality">Performance &amp; Quality</a></li>
+      <li><a href="#where-it-falls-short">Where It Falls Short</a></li>
+      <li><a href="#pricing-amp-value">Pricing &amp; Value</a></li>
+      <li><a href="#pros-cons">Pros & Cons</a></li>
+      </ol>
+    </details>
+
+    <h2 id="what-is-coda-ai">What is Coda AI?</h2>
     <p>Coda is the doc-meets-database-meets-app platform that has been quietly gaining ground against Notion, Airtable, and Google Docs by doing something none of them do well: building genuinely interactive documents with database-powered tables, buttons, automations, and now AI — all within a single surface. We spent 40+ hours testing Coda AI across project management, content planning, sales tracking, and team documentation.</p><p>Unlike Notion AI, which bolts AI writing onto an existing workspace, Coda AI works across your entire doc — querying tables, summarizing data, generating content from database entries, and automating workflows with natural language. Ask "which projects are overdue and who's responsible?" and it pulls answers from your project tracker. Ask it to "draft a status update from this week's completed tasks" and it generates content grounded in your actual data.</p><p>Free includes unlimited docs with 50 objects per doc and basic AI. Pro at $10/month per doc maker lifts limits, adds automations, and provides full AI access. For teams wanting documents, data, and AI working together natively, Coda offers a genuinely differentiated approach.</p>
 
-    <h2>Key Features &amp; Capabilities</h2>
+    <h2 id="key-features-amp-capabilities">Key Features &amp; Capabilities</h2>
     <ul class="features-list">
           <li>AI assistant that queries and analyzes your doc's data</li>
           <li>Documents with embedded tables, views, and databases</li>
@@ -143,19 +207,19 @@
     </ul>
     <p>Coda AI's data-aware capabilities are the killer feature. In a typical doc with project tables, team tables, and timeline views, the AI references all simultaneously — generating reports from project status and assignments, flagging risks from deadline proximity, drafting client updates from progress entries. This feels meaningfully more useful than generic AI assistants lacking context.</p><p>Packs connect 600+ services — Slack, Gmail, GitHub, Jira, Salesforce. Combined with automations: when a row status changes to "approved," post to Slack, create a calendar event, update the Google Sheet. Automations live inside your doc, keeping everything visible.</p><p>The doc-as-app paradigm is unique. One doc can be a project tracker, CRM, content calendar, wiki, and automated workflow system. More flexible than Notion, more accessible than Airtable.</p>
 
-    <h2>Performance &amp; Quality</h2>
+    <h2 id="performance-amp-quality">Performance &amp; Quality</h2>
     <p>AI quality is strong with structured data — summaries are accurate, queries return correct results, generated content reflects your actual information. For general writing without data context, it's capable but not differentiated from ChatGPT or Claude.</p><p>Performance holds well for docs under 200 tables and 10,000 rows. Beyond that, loading times increase. Enterprise teams with massive datasets may find Airtable more performant.</p><p>The learning curve is moderate. More complex than Google Docs and Notion because of formulas, automations, and table relationships. Users comfortable with spreadsheet formulas adapt quickly. The template library helps — starting from a template is dramatically easier than building from scratch.</p>
 
-    <h2>Where It Falls Short</h2>
+    <h2 id="where-it-falls-short">Where It Falls Short</h2>
     <p>The learning curve is real. Building from scratch requires understanding tables, views, formulas, buttons, and automations — concepts that take time. Notion's simpler model is more approachable for most teams.</p><p>Per-doc-maker pricing means a 20-person team needing edit access pays $200/month — comparable to Notion Team at $8/user but less predictable.</p><p>Mobile experience lags behind Notion and Google Docs. Complex docs with tables, buttons, and automations don't translate well to small screens. The app works for viewing but not building.</p>
 
-    <h2>Pricing &amp; Value</h2>
+    <h2 id="pricing-amp-value">Pricing &amp; Value</h2>
     <p style="font-size:.78rem;color:var(--muted);margin:-4px 0 14px;font-style:italic;">⏱ Pricing verified as of February 2026 — confirm on vendor website.</p>
     <p>Free includes unlimited docs with 50 objects/doc, basic AI, and 3 Packs. Pro at $10/month per doc maker adds unlimited objects, full AI, unlimited Packs, cross-doc sync, and version history. Team at $30/month adds admin controls and doc locking. Enterprise is custom with SSO and audit logs.</p><p>Free is functional for personal use. The 50-object limit hits faster than expected with interconnected tables. Pro at $10/month is the practical minimum. Per-doc-maker pricing benefits teams with many viewers but few builders.</p>
 
     <div class="best-for"><h3>Best For</h3><p>Teams wanting one tool combining documents, databases, automations, and AI — especially those outgrowing Notion or finding Airtable too database-centric</p></div>
 
-    <h2>Pros & Cons</h2>
+    <h2 id="pros-cons">Pros & Cons</h2>
     <div class="pros-cons">
       <div class="pros">
         <h3>What We Love</h3>
@@ -179,6 +243,15 @@
       </div>
     </div>
 
+    
+    <div class="internal-links">
+      <h4>🔗 More AI Productivity Reviews</h4>
+      <ul><li><a href="notebooklm.html">NotebookLM (9.0/10)</a></li><li><a href="n8n.html">n8n (8.9/10)</a></li><li><a href="perplexity-ai.html">Perplexity AI (8.8/10)</a></li><li><a href="microsoft-copilot.html">Microsoft Copilot (8.7/10)</a></li><li><a href="zapier.html">Zapier (8.6/10)</a></li></ul>
+    </div>
+    <div class="internal-links">
+      <h4>🔍 Popular in Other Categories</h4>
+      <ul><li><a href="semrush-ai.html">Semrush AI — AI Marketing</a></li><li><a href="customgpt.html">CustomGPT — AI Chatbots</a></li><li><a href="moda.html">Moda — AI Design</a></li></ul>
+    </div>
     <div class="verdict-box">
       <h3>Our Verdict — 8.1/10</h3>
       <p>Coda AI earns an 8.1/10 — the most flexible workspace for teams wanting documents, databases, and AI together natively. Data-aware AI is genuinely differentiated, and the doc-as-app paradigm is powerful once mastered. The learning curve, mobile limitations, and per-doc-maker pricing prevent it from being the default over Notion, but for teams who've outgrown simpler tools, Coda delivers.</p>
@@ -211,11 +284,30 @@
 
     <div class="faq-section" style="max-width:800px;margin:40px auto;padding:0 24px;">
       <h2 style="font-family:var(--font-display);font-size:1.4rem;margin-bottom:20px;">Frequently Asked Questions</h2>
-      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;"><h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">What is Coda AI?</h3><p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">A doc-meets-database-meets-app workspace with AI across your data. Build trackers, wikis, CRMs in one doc. Free to $10/mo. Score: 8.1/10.</p></div>
-      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;"><h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">Coda vs Notion?</h3><p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Notion is simpler with a bigger community. Coda is more flexible with better automations and data-aware AI. Notion for ease, Coda for power.</p></div>
-      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;"><h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">Is Coda free?</h3><p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Yes. Free includes unlimited docs with 50 objects/doc and basic AI. Pro at $10/mo per doc maker adds unlimited objects and full AI.</p></div>
-    </div>
-</div>
+      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">What is Coda AI and is it any good?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Coda AI is a ai productivity tool that scores 8.1/10 in our hands-on testing (February 2026). Key features include advanced AI capabilities. It is priced at Free / $10/mo.</p>
+      </div>
+      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">How much does Coda AI cost?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Coda AI offers a free tier. Paid plans start at Free / $10/mo. Pricing verified as of February 2026. We rate its value as competitive within the ai productivity category.</p>
+      </div>
+      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">Who should use Coda AI?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Coda AI is best for teams wanting one tool combining documents, databases, automations, and ai — especially those outgrowing notion or finding airtable too database-centric. It scores 8.1/10 in the ai productivity category.</p>
+      </div>
+      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">What are the main advantages of Coda AI?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">The top strengths of Coda AI based on our testing: AI that works across your doc&#x27;s data — not just generic text generation; Doc-as-app paradigm: one document can be wiki, tracker, CRM, and workflow; 600+ integrations via Packs with built-in automations. It earns 8.1/10 overall.</p>
+      </div>
+      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">What are the downsides of Coda AI?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Key limitations we found: Steeper learning curve than Notion — blank canvas overwhelms new users; Per-doc-maker pricing gets expensive for larger teams; Mobile experience is poor for complex docs with tables and automations. Despite these, Coda AI scores 8.1/10 overall in our review.</p>
+      </div>
+      <div class="faq-item" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--ink);">How does Coda AI compare to alternatives?</h3>
+        <p style="font-size:.9rem;color:rgba(232,230,225,.7);line-height:1.7;margin:0;">Coda AI scores 8.1/10 in the ai productivity category. Top alternatives include Notion AI, Microsoft Copilot, and Perplexity AI. See our full comparison chart at aipulsechecker.com/compare.html for a detailed breakdown.</p>
+      </div>
     </div>
 
 <footer class="footer">

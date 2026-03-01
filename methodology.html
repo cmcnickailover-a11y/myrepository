@@ -17,14 +17,50 @@
 <link rel="canonical" href="https://aipulsechecker.com/methodology.html">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23d94832'/></svg>">
 <style>
-:root{--ink:#e8e6e1;--paper:#0d0f12;--cream:#161921;--card:rgba(22,25,33,.7);--card-solid:#161921;--border:rgba(255,255,255,.08);--accent:#e05a47;--accent-glow:rgba(224,90,71,.25);--sage:#4ade80;--muted:rgba(255,255,255,.5);--font-display:'Playfair Display',Georgia,serif;--font-body:'Outfit',sans-serif;--font-mono:'JetBrains Mono',monospace;}
+:root{
+  --ink:#e8edf5;
+  --paper:#06080d;
+  --cream:#0c1018;
+  --card:rgba(12,18,32,.65);
+  --card-solid:#0c1220;
+  --border:rgba(100,180,255,.08);
+  --accent:#00d4ff;
+  --accent-glow:rgba(0,212,255,.2);
+  --accent-dark:#00a8cc;
+  --accent2:#a855f7;
+  --accent2-glow:rgba(168,85,247,.2);
+  --sage:#00ff88;
+  --sage-glow:rgba(0,255,136,.15);
+  --sage-light:rgba(0,255,136,.06);
+  --muted:rgba(180,200,230,.5);
+  --font-display:'Outfit',sans-serif;
+  --font-body:'Outfit',sans-serif;
+  --font-mono:'JetBrains Mono',monospace;
+  --glow-sm:0 0 20px rgba(0,212,255,.12);
+  --glow-md:0 0 40px rgba(0,212,255,.15);
+}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:var(--font-body);background:var(--paper);color:var(--ink);line-height:1.7;}
-body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;z-index:-1;background:radial-gradient(ellipse 80% 50% at 20% 20%,rgba(224,90,71,.06) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 80% 80%,rgba(74,222,128,.04) 0%,transparent 60%);}
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;z-index:-1;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 20%, rgba(0,212,255,.05) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 70%, rgba(168,85,247,.04) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 30% at 50% 90%, rgba(0,255,136,.03) 0%, transparent 50%);
+  pointer-events:none;
+}
+body::after{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;z-index:-2;
+  background-image:radial-gradient(rgba(100,180,255,.07) 1px, transparent 1px);
+  background-size:32px 32px;
+  pointer-events:none;
+  mask-image:radial-gradient(ellipse 80% 60% at 50% 50%, black 20%, transparent 70%);
+  -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 50%, black 20%, transparent 70%);
+}
 a{color:var(--accent);text-decoration:none;}a:hover{text-decoration:underline;}
 .navbar{background:rgba(13,15,18,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200;}
 .nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;}
-.logo{font-family:var(--font-display);font-size:1.5rem;font-weight:700;display:flex;align-items:center;gap:8px;color:var(--ink);}
+.logo{font-family:var(--font-body);font-size:1.5rem;font-weight:700;letter-spacing:-.02em;display:flex;align-items:center;gap:8px;color:var(--ink);}
 .back-link{font-size:.85rem;color:var(--muted);font-weight:500;}.back-link:hover{color:var(--ink);text-decoration:none;}
 
 .content{max-width:740px;margin:0 auto;padding:56px 24px 80px;}
@@ -47,7 +83,7 @@ a{color:var(--accent);text-decoration:none;}a:hover{text-decoration:underline;}
 .scale-item{flex:1;min-width:100px;text-align:center;padding:16px 8px;border-radius:12px;border:1px solid var(--border);}
 .scale-item .sc-range{font-family:var(--font-mono);font-size:1rem;font-weight:600;display:block;margin-bottom:4px;}
 .scale-item .sc-label{font-size:.78rem;color:var(--muted);}
-.sc-green .sc-range{color:#4ade80;}
+.sc-green .sc-range{color:#00ff88;}
 .sc-yellow .sc-range{color:#fbbf24;}
 .sc-red .sc-range{color:#f87171;}
 
@@ -66,10 +102,20 @@ a{color:var(--accent);text-decoration:none;}a:hover{text-decoration:underline;}
   .score-grid{grid-template-columns:1fr;}
   .scale{flex-direction:column;}
 }
+
+/* === AI Futuristic Effects === */
+@keyframes scanline{0%{transform:translateY(-100%);}100%{transform:translateY(100vh);}}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+@keyframes pulseGlow{0%,100%{opacity:.6;}50%{opacity:1;}}
+@keyframes borderGlow{0%,100%{border-color:rgba(0,212,255,.1);}50%{border-color:rgba(0,212,255,.25);}}
+.tool-card::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(100,180,255,.03),transparent);transition:left .6s ease;pointer-events:none;}
+.tool-card:hover::after{left:100%;}
+.score-badge,.card-score{position:relative;}
+.card-score::after{content:'';position:absolute;inset:-2px;border-radius:10px;background:inherit;filter:blur(8px);opacity:.4;z-index:-1;}
 </style>
 </head>
 <body>
-<nav class="navbar"><div class="nav-inner"><a class="logo" href="index.html"><svg width="28" height="28" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#d94832"/><path d="M20 55 Q30 30, 50 50 Q70 70, 80 45" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/></svg> AI Pulse Checker</a><a href="index.html" class="back-link">← All Reviews</a></div></nav>
+<nav class="navbar"><div class="nav-inner"><a class="logo" href="index.html"><svg width="28" height="28" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#00d4ff"/><path d="M20 55 Q30 30, 50 50 Q70 70, 80 45" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/></svg> AI Pulse Checker</a><a href="index.html" class="back-link">← All Reviews</a></div></nav>
 
 <div class="content">
   <h1>How We Score AI Tools</h1>

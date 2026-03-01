@@ -18,14 +18,50 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23d94832'/></svg>">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-:root{--ink:#e8e6e1;--paper:#0d0f12;--cream:#161921;--card:rgba(22,25,33,.7);--card-solid:#161921;--border:rgba(255,255,255,.08);--accent:#e05a47;--accent-glow:rgba(224,90,71,.25);--sage:#4ade80;--sage-glow:rgba(74,222,128,.2);--muted:rgba(255,255,255,.5);--font-display:'Playfair Display',Georgia,serif;--font-body:'Outfit',sans-serif;--font-mono:'JetBrains Mono',monospace;}
+:root{
+  --ink:#e8edf5;
+  --paper:#06080d;
+  --cream:#0c1018;
+  --card:rgba(12,18,32,.65);
+  --card-solid:#0c1220;
+  --border:rgba(100,180,255,.08);
+  --accent:#00d4ff;
+  --accent-glow:rgba(0,212,255,.2);
+  --accent-dark:#00a8cc;
+  --accent2:#a855f7;
+  --accent2-glow:rgba(168,85,247,.2);
+  --sage:#00ff88;
+  --sage-glow:rgba(0,255,136,.15);
+  --sage-light:rgba(0,255,136,.06);
+  --muted:rgba(180,200,230,.5);
+  --font-display:'Outfit',sans-serif;
+  --font-body:'Outfit',sans-serif;
+  --font-mono:'JetBrains Mono',monospace;
+  --glow-sm:0 0 20px rgba(0,212,255,.12);
+  --glow-md:0 0 40px rgba(0,212,255,.15);
+}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:var(--font-body);background:var(--paper);color:var(--ink);line-height:1.6;overflow-x:hidden;}
-body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;z-index:-1;background:radial-gradient(ellipse 80% 50% at 20% 20%,rgba(224,90,71,.06) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 80% 80%,rgba(74,222,128,.04) 0%,transparent 60%);}
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;z-index:-1;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 20%, rgba(0,212,255,.05) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 70%, rgba(168,85,247,.04) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 30% at 50% 90%, rgba(0,255,136,.03) 0%, transparent 50%);
+  pointer-events:none;
+}
+body::after{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;z-index:-2;
+  background-image:radial-gradient(rgba(100,180,255,.07) 1px, transparent 1px);
+  background-size:32px 32px;
+  pointer-events:none;
+  mask-image:radial-gradient(ellipse 80% 60% at 50% 50%, black 20%, transparent 70%);
+  -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 50%, black 20%, transparent 70%);
+}
 a{color:inherit;text-decoration:none;}
 .navbar{background:rgba(13,15,18,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200;}
 .nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;}
-.logo{font-family:var(--font-display);font-size:1.5rem;font-weight:700;display:flex;align-items:center;gap:8px;}
+.logo{font-family:var(--font-body);font-size:1.5rem;font-weight:700;letter-spacing:-.02em;display:flex;align-items:center;gap:8px;}
 .back-link{font-size:.85rem;color:var(--muted);font-weight:500;}.back-link:hover{color:var(--ink);}
 
 .page-wrap{max-width:1100px;margin:0 auto;padding:48px 24px 80px;}
@@ -77,10 +113,20 @@ canvas{display:block;}
   #chart{height:350px;}
   .leaderboard{grid-template-columns:1fr;}
 }
+
+/* === AI Futuristic Effects === */
+@keyframes scanline{0%{transform:translateY(-100%);}100%{transform:translateY(100vh);}}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+@keyframes pulseGlow{0%,100%{opacity:.6;}50%{opacity:1;}}
+@keyframes borderGlow{0%,100%{border-color:rgba(0,212,255,.1);}50%{border-color:rgba(0,212,255,.25);}}
+.tool-card::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(100,180,255,.03),transparent);transition:left .6s ease;pointer-events:none;}
+.tool-card:hover::after{left:100%;}
+.score-badge,.card-score{position:relative;}
+.card-score::after{content:'';position:absolute;inset:-2px;border-radius:10px;background:inherit;filter:blur(8px);opacity:.4;z-index:-1;}
 </style>
 </head>
 <body>
-<nav class="navbar"><div class="nav-inner"><a class="logo" href="index.html"><svg width="28" height="28" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#d94832"/><path d="M20 55 Q30 30, 50 50 Q70 70, 80 45" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/></svg> AI Pulse Checker</a><a href="index.html" class="back-link">← All Reviews</a></div></nav>
+<nav class="navbar"><div class="nav-inner"><a class="logo" href="index.html"><svg width="28" height="28" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#00d4ff"/><path d="M20 55 Q30 30, 50 50 Q70 70, 80 45" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/></svg> AI Pulse Checker</a><a href="index.html" class="back-link">← All Reviews</a></div></nav>
 
 <div class="page-wrap">
   <div class="page-header">
@@ -114,7 +160,7 @@ canvas{display:block;}
 <script>
 const TOOLS=[{href:'pomelli.html',cat:'AI Marketing',icon:'🎯',score:8.9,name:'Pomelli',price:'Free'},{href:'moda.html',cat:'AI Design',icon:'🎨',score:9.3,name:'Moda',price:'Free / $30/mo'},{href:'google-gemini.html',cat:'AI Writing',icon:'💎',score:9.1,name:'Google Gemini',price:'Free / $19.99/mo'},{href:'claude-pro.html',cat:'AI Writing',icon:'🧠',score:9.5,name:'Claude Pro',price:'$20/mo'},{href:'elevenlabs.html',cat:'AI Audio',icon:'🎙️',score:9.4,name:'ElevenLabs',price:'$5/mo'},{href:'cursor.html',cat:'AI Coding',icon:'⚡',score:9.3,name:'Cursor',price:'$20/mo'},{href:'midjourney.html',cat:'AI Design',icon:'🎭',score:9.2,name:'Midjourney',price:'$10/mo'},{href:'semrush-ai.html',cat:'AI Marketing',icon:'📈',score:9.2,name:'Semrush AI',price:'$130/mo'},{href:'chatgpt-plus.html',cat:'AI Writing',icon:'💬',score:9.0,name:'ChatGPT Plus',price:'$20/mo'},{href:'grammarly.html',cat:'AI Writing',icon:'📝',score:9.0,name:'Grammarly',price:'$12/mo'},{href:'github-copilot.html',cat:'AI Coding',icon:'🐙',score:9.0,name:'GitHub Copilot',price:'$10/mo'},{href:'synthesia.html',cat:'AI Video',icon:'👤',score:9.0,name:'Synthesia',price:'$22/mo'},{href:'seedance.html',cat:'AI Video',icon:'🎬',score:9.2,name:'Seedance 2.0',price:'Free / $18/mo'},{href:'sora.html',cat:'AI Video',icon:'🌀',score:9.0,name:'Sora',price:'$200/mo'},{href:'surfer-seo.html',cat:'AI Marketing',icon:'🏄',score:9.0,name:'Surfer SEO',price:'$89/mo'},{href:'hubspot-ai.html',cat:'AI Marketing',icon:'🟠',score:9.0,name:'HubSpot AI',price:'Free / $18/mo'},{href:'claude-code.html',cat:'AI Coding',icon:'🖥️',score:8.8,name:'Claude Code',price:'$20/mo'},{href:'runway-ml.html',cat:'AI Video',icon:'🎥',score:8.8,name:'Runway ML',price:'$12/mo'},{href:'capcut.html',cat:'AI Video',icon:'🎬',score:8.8,name:'CapCut',price:'Free / $19.99/mo'},{href:'n8n.html',cat:'AI Productivity',icon:'⚡',score:8.9,name:'n8n',price:'Free / €24/mo'},{href:'notebooklm.html',cat:'AI Productivity',icon:'📓',score:9.0,name:'NotebookLM',price:'Free / $19.99/mo'},{href:'perplexity-ai.html',cat:'AI Productivity',icon:'🔍',score:8.8,name:'Perplexity AI',price:'$20/mo'},{href:'microsoft-copilot.html',cat:'AI Productivity',icon:'🧠',score:8.7,name:'Microsoft Copilot',price:'Free / $20/mo'},{href:'frase.html',cat:'AI Writing',icon:'🔍',score:8.7,name:'Frase',price:'$15/mo'},{href:'murf-ai.html',cat:'AI Audio',icon:'🔊',score:8.7,name:'Murf AI',price:'$19/mo'},{href:'windsurf.html',cat:'AI Coding',icon:'🏄',score:8.6,name:'Windsurf',price:'Free / $15/mo'},{href:'adcreative-ai.html',cat:'AI Marketing',icon:'📢',score:8.6,name:'AdCreative.ai',price:'$21/mo'},{href:'deepseek.html',cat:'AI Writing',icon:'🔬',score:8.5,name:'DeepSeek',price:'Free'},{href:'copy-ai.html',cat:'AI Writing',icon:'📋',score:8.5,name:'Copy.ai',price:'$36/mo'},{href:'quillbot.html',cat:'AI Writing',icon:'🪶',score:8.5,name:'QuillBot',price:'$10/mo'},{href:'devin.html',cat:'AI Coding',icon:'🤖',score:8.5,name:'Devin',price:'$500/mo'},{href:'dall-e-3.html',cat:'AI Design',icon:'🖌️',score:8.5,name:'DALL-E 3',price:'$20/mo'},{href:'canva-ai.html',cat:'AI Design',icon:'🖼️',score:8.5,name:'Canva AI',price:'Free / $13/mo'},{href:'descript.html',cat:'AI Video',icon:'📝',score:8.5,name:'Descript',price:'$24/mo'},{href:'invideo-ai.html',cat:'AI Video',icon:'🎞️',score:8.5,name:'InVideo AI',price:'$15/mo'},{href:'colossyan.html',cat:'AI Video',icon:'🎭',score:8.5,name:'Colossyan',price:'$19/mo'},{href:'veo.html',cat:'AI Video',icon:'🔮',score:8.5,name:'Veo',price:'$50/mo'},{href:'speechify.html',cat:'AI Audio',icon:'📖',score:8.5,name:'Speechify',price:'$12/mo'},{href:'suno.html',cat:'AI Audio',icon:'🎤',score:8.5,name:'Suno',price:'$8/mo'},{href:'intercom-fin.html',cat:'AI Chatbots',icon:'💬',score:8.5,name:'Intercom Fin',price:'$99/mo'},{href:'customgpt.html',cat:'AI Chatbots',icon:'🔧',score:8.5,name:'CustomGPT',price:'$49/mo'},{href:'datarobot.html',cat:'AI Data',icon:'🤖',score:8.5,name:'DataRobot',price:'$200/mo'},{href:'figr-ai.html',cat:'AI Design',icon:'🎨',score:8.7,name:'Figr AI',price:'Free / $12/mo'},{href:'mistral-vibe.html',cat:'AI Coding',icon:'⚡',score:8.7,name:'Mistral Vibe',price:'Free / $14.99/mo'},{href:'grok.html',cat:'AI Chatbots',icon:'⚡',score:7.9,name:'Grok',price:'Free / $30/mo'},{href:'hex.html',cat:'AI Data',icon:'⬡',score:8.0,name:'Hex',price:'Free / $28/mo'},{href:'tableau-ai.html',cat:'AI Data',icon:'📊',score:8.3,name:'Tableau AI',price:'$15/mo'},{href:'julius-ai.html',cat:'AI Data',icon:'📈',score:7.5,name:'Julius AI',price:'$20/mo'},{href:'obviously-ai.html',cat:'AI Data',icon:'📊',score:7.5,name:'Obviously AI',price:'$75/mo'},{href:'napkin-ai.html',cat:'AI Design',icon:'✏️',score:8.4,name:'Napkin AI',price:'Free / $12/mo'},{href:'opus-clip.html',cat:'AI Video',icon:'✂️',score:8.1,name:'Opus Clip',price:'Free / $15/mo'}];
 
-const CAT_COLORS={'AI Writing':'#e05a47','AI Coding':'#6366f1','AI Design':'#f59e0b','AI Video':'#ec4899','AI Marketing':'#14b8a6','AI Audio':'#8b5cf6','AI Productivity':'#22c55e','AI Chatbots':'#06b6d4','AI Data':'#f97316'};
+const CAT_COLORS={'AI Writing':'#00d4ff','AI Coding':'#6366f1','AI Design':'#f59e0b','AI Video':'#ec4899','AI Marketing':'#14b8a6','AI Audio':'#8b5cf6','AI Productivity':'#22c55e','AI Chatbots':'#06b6d4','AI Data':'#f97316'};
 const CATS = [...new Set(TOOLS.map(t=>t.cat))].sort();
 let activeCat = 'all';
 

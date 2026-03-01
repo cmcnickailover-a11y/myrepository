@@ -18,29 +18,55 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Runway ML vs InVideo AI: Head-to-Head Comparison (8.8 vs 8.5)", "description": "Detailed comparison of Runway ML and InVideo AI \u2014 two leading AI Video tools. Side-by-side scores, pros, cons, pricing, and our verdict.", "author": {"@type": "Organization", "name": "AI Pulse Checker"}, "publisher": {"@type": "Organization", "name": "AI Pulse Checker"}, "datePublished": "2026-02-17", "dateModified": "2026-02-17"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is Runway ML better than InVideo AI?", "acceptedAnswer": {"@type": "Answer", "text": "Runway ML scores 8.8/10 while InVideo AI scores 8.5/10 in our testing. Runway ML has a slight edge overall. The best choice depends on your specific needs and budget."}}, {"@type": "Question", "name": "Which is cheaper, Runway ML or InVideo AI?", "acceptedAnswer": {"@type": "Answer", "text": "Runway ML costs $12/mo while InVideo AI costs $15/mo. Consider the value each provides relative to its price point rather than just the sticker price."}}, {"@type": "Question", "name": "Can I use Runway ML and InVideo AI together?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, many professionals use multiple AI Video tools for different tasks. Runway ML and InVideo AI can complement each other depending on your workflow."}}, {"@type": "Question", "name": "What are the main differences between Runway ML and InVideo AI?", "acceptedAnswer": {"@type": "Answer", "text": "The key differences lie in their approach and strengths. Runway ML excels at core ai video capabilities are best-in-class and consistently impressive, while InVideo AI stands out for core ai video capabilities are best-in-class and consistently impressive. Read our full comparison above for a detailed breakdown."}}]}</script>
 <style>
 :root{
-  --ink:#e8e6e1;--paper:#0d0f12;--cream:#161921;
-  --card:rgba(22,25,33,.7);--card-solid:#161921;
-  --border:rgba(255,255,255,.08);
-  --accent:#e05a47;--accent-glow:rgba(224,90,71,.25);
-  --sage:#4ade80;--sage-glow:rgba(74,222,128,.2);--sage-light:rgba(74,222,128,.08);
-  --muted:rgba(255,255,255,.5);
-  --font-display:'Playfair Display',Georgia,serif;
+  --ink:#e8edf5;
+  --paper:#06080d;
+  --cream:#0c1018;
+  --card:rgba(12,18,32,.65);
+  --card-solid:#0c1220;
+  --border:rgba(100,180,255,.08);
+  --accent:#00d4ff;
+  --accent-glow:rgba(0,212,255,.2);
+  --accent-dark:#00a8cc;
+  --accent2:#a855f7;
+  --accent2-glow:rgba(168,85,247,.2);
+  --sage:#00ff88;
+  --sage-glow:rgba(0,255,136,.15);
+  --sage-light:rgba(0,255,136,.06);
+  --muted:rgba(180,200,230,.5);
+  --font-display:'Outfit',sans-serif;
   --font-body:'Outfit',sans-serif;
   --font-mono:'JetBrains Mono',monospace;
+  --glow-sm:0 0 20px rgba(0,212,255,.12);
+  --glow-md:0 0 40px rgba(0,212,255,.15);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{font-family:var(--font-body);background:var(--paper);color:var(--ink);line-height:1.6;overflow-x:hidden;}
-body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;z-index:-1;background:radial-gradient(ellipse 80% 50% at 20% 20%, rgba(224,90,71,.06) 0%, transparent 60%),radial-gradient(ellipse 60% 40% at 80% 80%, rgba(74,222,128,.04) 0%, transparent 60%);pointer-events:none;}
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;z-index:-1;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 20%, rgba(0,212,255,.05) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 70%, rgba(168,85,247,.04) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 30% at 50% 90%, rgba(0,255,136,.03) 0%, transparent 50%);
+  pointer-events:none;
+}
+body::after{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;z-index:-2;
+  background-image:radial-gradient(rgba(100,180,255,.07) 1px, transparent 1px);
+  background-size:32px 32px;
+  pointer-events:none;
+  mask-image:radial-gradient(ellipse 80% 60% at 50% 50%, black 20%, transparent 70%);
+  -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 50%, black 20%, transparent 70%);
+}
 a{color:inherit;text-decoration:none;}
-.navbar{background:rgba(13,15,18,.85);backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200;}
+.navbar{background:rgba(6,8,13,.8);backdrop-filter:blur(24px) saturate(1.8);border-bottom:1px solid rgba(100,180,255,.06);position:sticky;top:0;z-index:200;box-shadow:0 4px 30px rgba(0,0,0,.3), inset 0 -1px 0 rgba(100,180,255,.05);}
 .nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;}
-.logo{font-family:var(--font-display);font-size:1.5rem;font-weight:700;display:flex;align-items:center;gap:8px;}
+.logo{font-family:var(--font-body);font-size:1.5rem;font-weight:700;letter-spacing:-.02em;display:flex;align-items:center;gap:8px;}
 .logo:hover{opacity:.8;}
 .dark-toggle{background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:10px;padding:7px 14px;cursor:pointer;font-size:.85rem;transition:all .3s;color:var(--muted);font-family:var(--font-body);}
 .dark-toggle:hover{border-color:rgba(255,255,255,.2);color:var(--ink);}
@@ -48,7 +74,7 @@ a{color:inherit;text-decoration:none;}
 /* Hero */
 .compare-hero{max-width:900px;margin:0 auto;padding:50px 24px 40px;text-align:center;}
 .compare-hero .vs-badge{display:inline-block;background:var(--accent);color:#fff;font-family:var(--font-mono);font-size:.75rem;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:16px;letter-spacing:.05em;}
-.compare-hero h1{font-family:var(--font-display);font-size:2.2rem;font-weight:700;margin-bottom:12px;background:linear-gradient(135deg, var(--ink) 0%, rgba(232,230,225,.7) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.compare-hero h1{font-family:var(--font-display);font-size:2.2rem;font-weight:700;margin-bottom:12px;background:linear-gradient(135deg, #fff 0%, rgba(0,212,255,.7) 60%, rgba(168,85,247,.5) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .compare-hero p{color:var(--muted);font-size:1rem;max-width:600px;margin:0 auto;}
 
 /* Score cards */
@@ -85,7 +111,7 @@ a{color:inherit;text-decoration:none;}
 
 /* Verdict */
 .verdict-section{max-width:800px;margin:0 auto 40px;padding:0 24px;}
-.verdict-box{background:linear-gradient(135deg, rgba(224,90,71,.08) 0%, rgba(224,90,71,.02) 100%);border-left:4px solid var(--accent);border-radius:0 14px 14px 0;padding:24px 28px;}
+.verdict-box{background:linear-gradient(135deg, rgba(0,212,255,.08) 0%, rgba(0,212,255,.02) 100%);border-left:4px solid var(--accent);border-radius:0 14px 14px 0;padding:24px 28px;}
 .verdict-box h3{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin-bottom:10px;font-weight:700;}
 .verdict-box p{font-size:.95rem;color:var(--ink);line-height:1.85;}
 
@@ -93,7 +119,7 @@ a{color:inherit;text-decoration:none;}
 .cta-row{display:flex;gap:16px;justify-content:center;max-width:800px;margin:0 auto 40px;padding:0 24px;flex-wrap:wrap;}
 .cta-btn{display:inline-block;padding:12px 28px;border-radius:10px;font-weight:600;font-size:.9rem;transition:all .3s;text-align:center;}
 .cta-btn-a{background:linear-gradient(135deg,var(--sage),#22c55e);color:#000;}
-.cta-btn-b{background:linear-gradient(135deg,var(--accent),#c44433);color:#fff;}
+.cta-btn-b{background:linear-gradient(135deg,var(--accent),#00a8cc);color:#fff;}
 .cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.3);}
 
 /* FAQ */
@@ -112,13 +138,13 @@ a{color:inherit;text-decoration:none;}
 
 /* Footer */
 .footer{background:rgba(13,15,18,.8);border-top:1px solid var(--border);color:var(--muted);padding:48px 0 28px;position:relative;}
-.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg, transparent 0%, var(--accent) 50%, transparent 100%);opacity:.4;}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg, transparent 0%, var(--accent) 30%, var(--accent2) 70%, transparent 100%);opacity:.4;}
 .footer-inner{max-width:1200px;margin:0 auto;padding:0 24px;text-align:center;font-size:.82rem;}
 .footer a{color:var(--muted);margin:0 10px;transition:color .2s;}
 .footer a:hover{color:var(--ink);}
 
 /* Light mode */
-.light-mode{--ink:#0c0c0c;--paper:#f5f2ec;--cream:#eae6dd;--card:rgba(255,255,255,.9);--card-solid:#fff;--border:rgba(0,0,0,.08);--muted:#7a756c;--accent-glow:rgba(224,90,71,.15);--sage-light:rgba(61,107,69,.08);}
+.light-mode{--ink:#0c0c0c;--paper:#f5f2ec;--cream:#eae6dd;--card:rgba(255,255,255,.9);--card-solid:#fff;--border:rgba(0,0,0,.08);--muted:#7a756c;--accent-glow:rgba(0,212,255,.15);--sage-light:rgba(61,107,69,.08);}
 .light-mode body::before{display:none;}
 .light-mode .navbar{background:rgba(245,242,236,.92);}
 .light-mode .compare-hero h1{background:linear-gradient(135deg, #0c0c0c 0%, #333 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
@@ -136,6 +162,16 @@ a{color:inherit;text-decoration:none;}
   .read-reviews{grid-template-columns:1fr;}
   .cta-row{flex-direction:column;align-items:center;}
 }
+
+/* === AI Futuristic Effects === */
+@keyframes scanline{0%{transform:translateY(-100%);}100%{transform:translateY(100vh);}}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+@keyframes pulseGlow{0%,100%{opacity:.6;}50%{opacity:1;}}
+@keyframes borderGlow{0%,100%{border-color:rgba(0,212,255,.1);}50%{border-color:rgba(0,212,255,.25);}}
+.tool-card::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(100,180,255,.03),transparent);transition:left .6s ease;pointer-events:none;}
+.tool-card:hover::after{left:100%;}
+.score-badge,.card-score{position:relative;}
+.card-score::after{content:'';position:absolute;inset:-2px;border-radius:10px;background:inherit;filter:blur(8px);opacity:.4;z-index:-1;}
 </style>
 <meta name="robots" content="noindex, follow">
 </head>
@@ -143,7 +179,7 @@ a{color:inherit;text-decoration:none;}
 <nav class="navbar">
   <div class="nav-inner">
     <a class="logo" href="index.html">
-      <svg width="28" height="28" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#d94832"/><path d="M20 55 Q30 30, 50 50 Q70 70, 80 45" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/></svg>
+      <svg width="28" height="28" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#00d4ff"/><path d="M20 55 Q30 30, 50 50 Q70 70, 80 45" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/></svg>
       AI Pulse Checker
     </a>
     <div style="display:flex;align-items:center;gap:10px;">
@@ -164,7 +200,7 @@ a{color:inherit;text-decoration:none;}
     <div class="icon">🎥</div>
     <div class="name">Runway ML</div>
     <div class="cat">AI Video</div>
-    <div class="big-score" style="color:#4ade80">8.8</div>
+    <div class="big-score" style="color:#00ff88">8.8</div>
     <div class="price">$12/mo</div>
   </div>
   <div class="vs-divider">VS</div>
@@ -172,7 +208,7 @@ a{color:inherit;text-decoration:none;}
     <div class="icon">🎞️</div>
     <div class="name">InVideo AI</div>
     <div class="cat">AI Video</div>
-    <div class="big-score" style="color:#4ade80">8.5</div>
+    <div class="big-score" style="color:#00ff88">8.5</div>
     <div class="price">$15/mo</div>
   </div>
 </div>

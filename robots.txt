@@ -30,3 +30,4 @@ User-agent: cohere-ai
 Allow: /
 
 Sitemap: https://aipulsechecker.com/sitemap.xml
+RSS: https://aipulsechecker.com/rss.xml

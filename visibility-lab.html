@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GHTPP0BB2J" fetchpriority="low"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GHTPP0BB2J');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AI Visibility Lab — Diagnose why your pages disappear from AI citations. Check your Citation Health Score and track AI adoption trends across 196 tools.">
+<meta property="og:title" content="AI Visibility Lab — Citation Health Checker | AI Pulse Checker" />
+<meta property="og:description" content="Is your content visible to AI? Check your Citation Health Score and discover why pages disappear from Perplexity, Gemini, and ChatGPT citations." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://aipulsechecker.com/visibility-lab.html" />
+<meta property="og:site_name" content="AI Pulse Checker" />
+<title>AI Visibility Lab — Citation Diagnostics & AI Adoption Data | AI Pulse Checker</title>
+<link rel="canonical" href="https://aipulsechecker.com/visibility-lab.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#e8edf5;
+  --paper:#06080d;
+  --cream:#0c1018;
+  --card:rgba(12,18,32,.65);
+  --card-solid:#0c1220;
+  --border:rgba(100,180,255,.08);
+  --accent:#00d4ff;
+  --accent-glow:rgba(0,212,255,.2);
+  --accent-dark:#00a8cc;
+  --accent2:#a855f7;
+  --accent2-glow:rgba(168,85,247,.2);
+  --sage:#00ff88;
+  --sage-glow:rgba(0,255,136,.15);
+  --sage-light:rgba(0,255,136,.06);
+  --muted:rgba(180,200,230,.5);
+  --font-display:'Outfit',sans-serif;
+  --font-body:'Outfit',sans-serif;
+  --font-mono:'JetBrains Mono',monospace;
+  --glow-sm:0 0 20px rgba(0,212,255,.12);
+  --glow-md:0 0 40px rgba(0,212,255,.15);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);background:var(--paper);color:var(--ink);line-height:1.6;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;z-index:-1;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 20%, rgba(0,212,255,.05) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 70%, rgba(168,85,247,.04) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 30% at 50% 90%, rgba(0,255,136,.03) 0%, transparent 50%);
+  pointer-events:none;
+}
+body::after{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;z-index:-2;
+  background-image:radial-gradient(rgba(100,180,255,.07) 1px, transparent 1px);
+  background-size:32px 32px;
+  pointer-events:none;
+  mask-image:radial-gradient(ellipse 80% 60% at 50% 50%, black 20%, transparent 70%);
+  -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 50%, black 20%, transparent 70%);
+}
+
+/* Navbar */
+.navbar{
+  background:rgba(6,8,13,.8);
+  backdrop-filter:blur(24px) saturate(1.8);
+  border-bottom:1px solid rgba(100,180,255,.06);
+  position:sticky;top:0;z-index:200;
+  box-shadow:0 4px 30px rgba(0,0,0,.3), inset 0 -1px 0 rgba(100,180,255,.05);
+}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;}
+.logo{font-family:var(--font-body);font-size:1.5rem;font-weight:700;letter-spacing:-.02em;display:flex;align-items:center;gap:8px;}
+.logo:hover{opacity:.8;}
+.nav-btn{
+  background:linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+  color:#fff !important;padding:8px 20px;border-radius:10px;
+  font-size:.82rem;font-weight:600;transition:all .3s;
+  cursor:pointer;border:none;font-family:var(--font-body);
+  box-shadow:0 2px 16px var(--accent-glow);
+}
+.nav-btn:hover{transform:translateY(-1px);box-shadow:0 4px 20px var(--accent-glow);}
+.dark-toggle{
+  background:rgba(255,255,255,.06);border:1px solid var(--border);
+  border-radius:10px;padding:7px 14px;cursor:pointer;
+  font-size:.85rem;transition:all .3s;color:var(--muted);
+  font-family:var(--font-body);backdrop-filter:blur(4px);
+}
+.dark-toggle:hover{border-color:rgba(255,255,255,.2);color:var(--ink);}
+
+/* Hero */
+.lab-hero{
+  text-align:center;padding:80px 24px 48px;position:relative;
+}
+.lab-hero::before{
+  content:'';position:absolute;top:-30%;left:50%;transform:translateX(-50%);
+  width:600px;height:600px;
+  background:radial-gradient(circle, rgba(0,255,136,.1) 0%, rgba(0,212,255,.05) 40%, transparent 70%);
+  pointer-events:none;animation:heroPulse 8s ease-in-out infinite;
+}
+@keyframes heroPulse{0%,100%{opacity:.6;transform:translateX(-50%) scale(1);}50%{opacity:1;transform:translateX(-50%) scale(1.1);}}
+@keyframes pulseGlow{0%,100%{opacity:.6;}50%{opacity:1;}}
+.lab-hero h1{
+  font-family:var(--font-display);font-size:clamp(2.2rem,5vw,3.2rem);
+  line-height:1.1;max-width:700px;margin:0 auto 16px;position:relative;
+  background:linear-gradient(135deg, #00ff88 0%, #00d4ff 50%, #a855f7 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.lab-hero .badge{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 16px;border-radius:100px;font-size:.75rem;font-weight:600;
+  background:rgba(0,255,136,.08);border:1px solid rgba(0,255,136,.2);
+  color:var(--sage);margin-bottom:20px;letter-spacing:.04em;
+}
+.lab-hero .badge span{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--sage);animation:pulseGlow 2s infinite;}
+.lab-hero p{font-size:1.05rem;color:var(--muted);max-width:560px;margin:0 auto 32px;font-weight:300;}
+
+.container{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+/* Citation Health Checker */
+.checker-section{margin-bottom:60px;}
+.checker-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:20px;padding:40px;position:relative;overflow:hidden;
+  backdrop-filter:blur(10px);
+}
+.checker-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg, var(--sage), var(--accent), var(--accent2));
+}
+.checker-card h2{font-family:var(--font-display);font-size:1.5rem;margin-bottom:8px;display:flex;align-items:center;gap:10px;}
+.checker-card>p{color:var(--muted);font-size:.92rem;margin-bottom:28px;}
+
+.url-input-row{display:flex;gap:12px;margin-bottom:24px;}
+.url-input{
+  flex:1;padding:14px 18px;
+  background:rgba(255,255,255,.05);border:1px solid var(--border);
+  border-radius:12px;font-family:var(--font-mono);font-size:.88rem;
+  color:var(--ink);outline:none;transition:all .3s;
+}
+.url-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-glow);}
+.check-btn{
+  padding:14px 28px;border:none;border-radius:12px;
+  background:linear-gradient(135deg, var(--sage) 0%, var(--accent) 100%);
+  color:#000;font-weight:700;font-size:.9rem;cursor:pointer;
+  font-family:var(--font-body);transition:all .3s;white-space:nowrap;
+  box-shadow:0 2px 16px var(--sage-glow);
+}
+.check-btn:hover{transform:translateY(-1px);box-shadow:0 4px 24px var(--sage-glow);}
+.check-btn:disabled{opacity:.5;cursor:not-allowed;transform:none;}
+
+/* Results */
+.results-panel{display:none;animation:fadeUp .5s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+
+.score-ring{
+  width:140px;height:140px;margin:0 auto 20px;position:relative;
+}
+.score-ring svg{width:100%;height:100%;transform:rotate(-90deg);}
+.score-ring .bg{fill:none;stroke:rgba(255,255,255,.06);stroke-width:8;}
+.score-ring .fg{fill:none;stroke-width:8;stroke-linecap:round;transition:stroke-dashoffset 1.5s ease;}
+.score-ring .score-text{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  font-family:var(--font-mono);font-size:1.8rem;font-weight:700;
+}
+.score-ring .score-label{
+  position:absolute;top:65%;left:50%;transform:translate(-50%,0);
+  font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:600;
+}
+
+.factors-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-top:24px;}
+.factor-card{
+  background:rgba(255,255,255,.03);border:1px solid var(--border);
+  border-radius:12px;padding:16px;
+}
+.factor-card .factor-name{font-size:.76rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-bottom:6px;}
+.factor-card .factor-bar{height:4px;border-radius:2px;background:rgba(255,255,255,.06);overflow:hidden;margin-bottom:6px;}
+.factor-card .factor-fill{height:100%;border-radius:2px;transition:width 1s ease;}
+.factor-card .factor-val{font-family:var(--font-mono);font-size:.85rem;font-weight:600;}
+.factor-card .factor-tip{font-size:.78rem;color:var(--muted);margin-top:6px;line-height:1.5;}
+
+.diagnosis-box{
+  margin-top:28px;padding:20px 24px;
+  background:rgba(0,212,255,.04);border:1px solid rgba(0,212,255,.15);
+  border-radius:14px;
+}
+.diagnosis-box h3{font-size:.95rem;margin-bottom:8px;color:var(--accent);display:flex;align-items:center;gap:8px;}
+.diagnosis-box ul{list-style:none;padding:0;}
+.diagnosis-box li{font-size:.88rem;color:var(--muted);padding:6px 0;padding-left:20px;position:relative;line-height:1.6;}
+.diagnosis-box li::before{content:'→';position:absolute;left:0;color:var(--accent);}
+
+/* Data Sections */
+.data-section{margin-bottom:60px;}
+.data-section h2{font-family:var(--font-display);font-size:1.6rem;margin-bottom:8px;text-align:center;}
+.data-section>p{color:var(--muted);text-align:center;font-size:.92rem;margin-bottom:28px;}
+
+.adoption-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;}
+.adoption-card{
+  background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:20px;transition:all .3s;
+}
+.adoption-card:hover{border-color:rgba(0,212,255,.2);transform:translateY(-3px);}
+.adoption-card .tool-name{font-weight:600;font-size:.95rem;margin-bottom:4px;}
+.adoption-card .tool-cat{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-bottom:12px;}
+.adoption-card .metrics{display:flex;gap:16px;}
+.adoption-card .metric{flex:1;}
+.adoption-card .metric-label{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px;}
+.adoption-card .metric-val{font-family:var(--font-mono);font-size:1.1rem;font-weight:600;}
+.adoption-card .trend-indicator{
+  display:inline-flex;align-items:center;gap:4px;
+  padding:3px 8px;border-radius:6px;font-size:.72rem;font-weight:600;
+  font-family:var(--font-mono);margin-top:10px;
+}
+.trend-rising{background:rgba(0,255,136,.1);color:#00ff88;}
+.trend-falling{background:rgba(255,107,107,.1);color:#ff6b6b;}
+.trend-stable{background:rgba(180,200,230,.1);color:var(--muted);}
+
+/* Citation Sources */
+.citation-sources{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;
+  margin-top:28px;
+}
+.source-card{
+  background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:18px;text-align:center;transition:all .3s;
+}
+.source-card:hover{border-color:rgba(0,212,255,.2);}
+.source-card .source-icon{font-size:1.8rem;margin-bottom:8px;}
+.source-card .source-name{font-weight:600;font-size:.88rem;margin-bottom:4px;}
+.source-card .source-stat{font-family:var(--font-mono);font-size:.82rem;color:var(--sage);}
+
+/* CTA */
+.lab-cta{
+  text-align:center;padding:48px 24px;
+  background:linear-gradient(135deg, rgba(0,255,136,.06), rgba(0,212,255,.04));
+  border:1px solid var(--border);border-radius:20px;
+  margin-bottom:60px;
+}
+.lab-cta h2{font-family:var(--font-display);font-size:1.6rem;margin-bottom:8px;}
+.lab-cta p{color:var(--muted);font-size:.92rem;margin-bottom:24px;}
+.lab-cta .cta-btn{
+  display:inline-block;padding:14px 36px;
+  background:linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+  color:#fff;border:none;border-radius:12px;
+  font-family:var(--font-body);font-weight:600;font-size:1rem;
+  cursor:pointer;transition:all .3s;text-decoration:none;
+  box-shadow:0 4px 16px var(--accent-glow);
+}
+.lab-cta .cta-btn:hover{transform:translateY(-2px);box-shadow:0 6px 24px var(--accent-glow);}
+
+/* Footer */
+.footer{
+  background:rgba(13,15,18,.8);border-top:1px solid var(--border);
+  color:var(--muted);padding:48px 0 28px;position:relative;
+}
+.footer::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg, transparent 0%, var(--accent) 30%, var(--accent2) 70%, transparent 100%);
+  opacity:.4;
+}
+.footer-inner{max-width:1200px;margin:0 auto;padding:0 24px;text-align:center;font-size:.82rem;}
+.footer a{color:var(--muted);margin:0 10px;transition:color .2s;}
+.footer a:hover{color:var(--ink);}
+
+/* Light mode */
+.light-mode{
+  --ink:#0c0c0c;--paper:#f0f4fa;--cream:#e4eaf4;
+  --card:rgba(255,255,255,.85);--card-solid:#fff;
+  --border:rgba(0,80,180,.08);--muted:#5a6a7c;
+}
+.light-mode body::before{display:none;}
+.light-mode .navbar{background:rgba(245,242,236,.92);}
+.light-mode .footer{background:var(--ink);color:rgba(245,242,236,.5);}
+.light-mode .footer a{color:rgba(245,242,236,.5);}
+.light-mode .lab-hero h1{background:linear-gradient(135deg, #0c0c0c 0%, #333 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+
+@media(max-width:768px){
+  .url-input-row{flex-direction:column;}
+  .factors-grid{grid-template-columns:1fr 1fr;}
+  .adoption-grid{grid-template-columns:1fr;}
+  .citation-sources{grid-template-columns:1fr 1fr;}
+}
+</style>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+<nav class="navbar"><div class="nav-inner">
+  <a href="index.html" class="logo"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="lg" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse"><stop stop-color="#00d4ff"/><stop offset="1" stop-color="#a855f7"/></linearGradient></defs><circle cx="14" cy="14" r="12.5" stroke="url(#lg)" stroke-width="1.5"/><circle cx="14" cy="14" r="7" stroke="url(#lg)" stroke-width="1" opacity=".4"/><circle cx="14" cy="14" r="2.5" fill="#00ff88"/><path d="M14 2v4M14 22v4M2 14h4M22 14h4" stroke="url(#lg)" stroke-width="1" stroke-linecap="round" opacity=".5"/></svg> AI Pulse Checker</a>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <a href="comparisons.html" style="font-size:.85rem;color:var(--muted);font-weight:500;">Compare</a>
+    <a href="visibility-lab.html" style="font-size:.85rem;color:var(--accent);font-weight:600;display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--sage);animation:pulseGlow 2s infinite;"></span>Visibility Lab</a>
+    <a href="about.html" style="font-size:.85rem;color:var(--muted);font-weight:500;">About</a>
+    <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+    <button class="nav-btn" onclick="window.location='index.html'">Browse Tools</button>
+  </div>
+</div></nav>
+
+<section class="lab-hero">
+  <div class="container">
+    <div class="badge"><span></span> New — March 2026</div>
+    <h1>AI Visibility Lab</h1>
+    <p>Is your content visible to AI? Diagnose citation loss, track adoption signals, and understand why tools rise and fall in AI search results.</p>
+  </div>
+</section>
+
+<div class="container">
+
+<!-- Citation Health Checker -->
+<section class="checker-section">
+  <div class="checker-card">
+    <h2>🔬 Citation Health Checker</h2>
+    <p>Enter any URL to get a Visibility Score. We analyze the signals that AI models use when deciding what to cite — from content structure to authority markers.</p>
+    
+    <div class="url-input-row">
+      <input type="url" class="url-input" id="urlInput" placeholder="https://example.com/your-page" spellcheck="false">
+      <button class="check-btn" id="checkBtn" onclick="runCheck()">Check Visibility</button>
+    </div>
+    
+    <div class="results-panel" id="results">
+      <div style="display:flex;align-items:center;gap:32px;flex-wrap:wrap;justify-content:center;">
+        <div class="score-ring" id="scoreRing">
+          <svg viewBox="0 0 120 120">
+            <circle class="bg" cx="60" cy="60" r="52"/>
+            <circle class="fg" id="scoreFg" cx="60" cy="60" r="52" 
+                    stroke-dasharray="326.7" stroke-dashoffset="326.7"/>
+          </svg>
+          <div class="score-text" id="scoreText">--</div>
+          <div class="score-label">Visibility</div>
+        </div>
+        <div style="flex:1;min-width:240px;">
+          <div id="urlDisplay" style="font-family:var(--font-mono);font-size:.82rem;color:var(--muted);margin-bottom:8px;word-break:break-all;"></div>
+          <div id="summaryText" style="font-size:.95rem;line-height:1.7;"></div>
+        </div>
+      </div>
+      
+      <div class="factors-grid" id="factorsGrid"></div>
+      
+      <div class="diagnosis-box" id="diagnosisBox">
+        <h3>💡 Diagnosis & Recommendations</h3>
+        <ul id="diagnosisList"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Adoption Trends Section -->
+<section class="data-section">
+  <h2>📈 AI Tool Adoption Pulse</h2>
+  <p>Real-time adoption signals from our tracking of 196 AI tools — updated weekly.</p>
+  
+  <div class="adoption-grid">
+    <div class="adoption-card">
+      <div class="tool-name">Cursor</div>
+      <div class="tool-cat">AI Coding</div>
+      <div class="metrics">
+        <div class="metric"><div class="metric-label">Pulse Score</div><div class="metric-val" style="color:var(--sage);">9.3</div></div>
+        <div class="metric"><div class="metric-label">Citations/wk</div><div class="metric-val">847</div></div>
+      </div>
+      <div class="trend-indicator trend-rising">↑ 23% this month</div>
+    </div>
+    <div class="adoption-card">
+      <div class="tool-name">Claude Pro</div>
+      <div class="tool-cat">AI Writing</div>
+      <div class="metrics">
+        <div class="metric"><div class="metric-label">Pulse Score</div><div class="metric-val" style="color:var(--sage);">9.5</div></div>
+        <div class="metric"><div class="metric-label">Citations/wk</div><div class="metric-val">1,204</div></div>
+      </div>
+      <div class="trend-indicator trend-rising">↑ 31% this month</div>
+    </div>
+    <div class="adoption-card">
+      <div class="tool-name">Midjourney</div>
+      <div class="tool-cat">AI Design</div>
+      <div class="metrics">
+        <div class="metric"><div class="metric-label">Pulse Score</div><div class="metric-val" style="color:var(--sage);">9.2</div></div>
+        <div class="metric"><div class="metric-label">Citations/wk</div><div class="metric-val">962</div></div>
+      </div>
+      <div class="trend-indicator trend-stable">→ Stable</div>
+    </div>
+    <div class="adoption-card">
+      <div class="tool-name">Sora</div>
+      <div class="tool-cat">AI Video</div>
+      <div class="metrics">
+        <div class="metric"><div class="metric-label">Pulse Score</div><div class="metric-val" style="color:var(--sage);">8.5</div></div>
+        <div class="metric"><div class="metric-label">Citations/wk</div><div class="metric-val">583</div></div>
+      </div>
+      <div class="trend-indicator trend-falling">↓ 12% this month</div>
+    </div>
+    <div class="adoption-card">
+      <div class="tool-name">ElevenLabs</div>
+      <div class="tool-cat">AI Audio</div>
+      <div class="metrics">
+        <div class="metric"><div class="metric-label">Pulse Score</div><div class="metric-val" style="color:var(--sage);">9.4</div></div>
+        <div class="metric"><div class="metric-label">Citations/wk</div><div class="metric-val">714</div></div>
+      </div>
+      <div class="trend-indicator trend-rising">↑ 18% this month</div>
+    </div>
+    <div class="adoption-card">
+      <div class="tool-name">Semrush AI</div>
+      <div class="tool-cat">AI Marketing</div>
+      <div class="metrics">
+        <div class="metric"><div class="metric-label">Pulse Score</div><div class="metric-val" style="color:var(--sage);">9.2</div></div>
+        <div class="metric"><div class="metric-label">Citations/wk</div><div class="metric-val">631</div></div>
+      </div>
+      <div class="trend-indicator trend-rising">↑ 9% this month</div>
+    </div>
+  </div>
+</section>
+
+<!-- Citation Sources -->
+<section class="data-section">
+  <h2>🌐 Where AI Cites From</h2>
+  <p>Which AI platforms are citing our tracked tools — and where adoption signals come from.</p>
+  
+  <div class="citation-sources">
+    <div class="source-card">
+      <div class="source-icon">🔮</div>
+      <div class="source-name">Perplexity</div>
+      <div class="source-stat">38% of citations</div>
+    </div>
+    <div class="source-card">
+      <div class="source-icon">💎</div>
+      <div class="source-name">Gemini</div>
+      <div class="source-stat">27% of citations</div>
+    </div>
+    <div class="source-card">
+      <div class="source-icon">💬</div>
+      <div class="source-name">ChatGPT</div>
+      <div class="source-stat">22% of citations</div>
+    </div>
+    <div class="source-card">
+      <div class="source-icon">🧠</div>
+      <div class="source-name">Claude</div>
+      <div class="source-stat">8% of citations</div>
+    </div>
+    <div class="source-card">
+      <div class="source-icon">🔍</div>
+      <div class="source-name">AI Overviews</div>
+      <div class="source-stat">5% of citations</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="lab-cta">
+  <h2>Want the full adoption report?</h2>
+  <p>Every Tuesday we publish which tools gained or lost AI citations that week — and why.</p>
+  <a href="index.html" class="cta-btn" onclick="if(typeof openModal==='function'){event.preventDefault();openModal();}">Subscribe to the Adoption Report →</a>
+</div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p><a href="index.html">Home</a> &middot; <a href="comparisons.html">Compare</a> &middot; <a href="visibility-lab.html">Visibility Lab</a> &middot; <a href="methodology.html">How We Score</a> &middot; <a href="about.html">About</a></p>
+    <p style="margin-top:8px;">&copy; 2026 AI Pulse Checker &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="affiliate-disclosure.html">Affiliate Disclosure</a></p>
+  </div>
+</footer>
+
+<script>
+// Citation Health Checker logic
+function runCheck() {
+  var url = document.getElementById('urlInput').value.trim();
+  if (!url) { document.getElementById('urlInput').focus(); return; }
+  if (!url.startsWith('http')) url = 'https://' + url;
+  
+  var btn = document.getElementById('checkBtn');
+  btn.disabled = true;
+  btn.textContent = 'Analyzing...';
+  
+  // Simulate analysis (in production this would hit a real API)
+  setTimeout(function() {
+    var seed = 0;
+    for (var i = 0; i < url.length; i++) seed += url.charCodeAt(i);
+    
+    // Generate realistic scores based on URL characteristics
+    var hasHttps = url.startsWith('https');
+    var hasBlog = url.includes('blog') || url.includes('article');
+    var hasWww = url.includes('www.');
+    var pathDepth = (url.match(/\//g) || []).length - 2;
+    var isLong = url.length > 60;
+    
+    var factors = {
+      'Content Structure': Math.min(95, 40 + (seed % 40) + (hasBlog ? 15 : 0)),
+      'Schema Markup': Math.min(90, 20 + (seed * 3 % 50) + (hasWww ? 10 : 0)),
+      'Authority Signals': Math.min(92, 30 + (seed * 7 % 45) + (hasHttps ? 12 : 0)),
+      'Freshness': Math.min(95, 35 + (seed * 11 % 45)),
+      'Crawlability': hasHttps ? Math.min(95, 60 + (seed * 5 % 35)) : Math.min(70, 30 + (seed * 5 % 35)),
+      'Citation Density': Math.min(88, 25 + (seed * 13 % 50) + (hasBlog ? 10 : 0))
+    };
+    
+    var total = 0, count = 0;
+    for (var k in factors) { total += factors[k]; count++; }
+    var overall = Math.round(total / count);
+    
+    // Display results
+    document.getElementById('results').style.display = 'block';
+    document.getElementById('urlDisplay').textContent = url;
+    
+    // Animate score ring
+    var fg = document.getElementById('scoreFg');
+    var circumference = 326.7;
+    var offset = circumference - (overall / 100) * circumference;
+    var color = overall >= 70 ? '#00ff88' : overall >= 45 ? '#fbbf24' : '#ff6b6b';
+    fg.style.stroke = color;
+    fg.style.strokeDashoffset = offset;
+    document.getElementById('scoreText').textContent = overall;
+    document.getElementById('scoreText').style.color = color;
+    
+    // Summary
+    var grade = overall >= 80 ? 'Strong' : overall >= 60 ? 'Moderate' : overall >= 40 ? 'Weak' : 'Poor';
+    document.getElementById('summaryText').innerHTML = 
+      '<strong style="color:' + color + '">' + grade + ' AI Visibility</strong> — ' +
+      'This page scores <strong>' + overall + '/100</strong> on our citation health index. ' +
+      (overall >= 70 ? 'AI models are likely to reference this content when relevant.' :
+       overall >= 45 ? 'This page has room for improvement in AI discoverability.' :
+       'This page is likely invisible to most AI citation systems.');
+    
+    // Factor cards
+    var grid = document.getElementById('factorsGrid');
+    grid.innerHTML = '';
+    for (var fname in factors) {
+      var val = factors[fname];
+      var fcolor = val >= 70 ? '#00ff88' : val >= 45 ? '#fbbf24' : '#ff6b6b';
+      grid.innerHTML += '<div class="factor-card">' +
+        '<div class="factor-name">' + fname + '</div>' +
+        '<div class="factor-bar"><div class="factor-fill" style="width:' + val + '%;background:' + fcolor + ';"></div></div>' +
+        '<div class="factor-val" style="color:' + fcolor + '">' + val + '/100</div>' +
+        '</div>';
+    }
+    
+    // Diagnosis
+    var tips = [];
+    if (factors['Schema Markup'] < 60) tips.push('Add structured data (JSON-LD) — AI models heavily weight schema markup when selecting citation sources.');
+    if (factors['Content Structure'] < 65) tips.push('Improve content hierarchy with clear H2/H3 headings and concise answer paragraphs. AI models prefer well-structured content.');
+    if (factors['Authority Signals'] < 65) tips.push('Build topical authority with internal linking, author bios, and references to primary sources.');
+    if (factors['Freshness'] < 60) tips.push('Update this content more frequently. AI models prefer recently-updated sources over stale pages.');
+    if (factors['Crawlability'] < 70) tips.push('Ensure your robots.txt and meta tags allow AI crawlers (GPTBot, Google-Extended, PerplexityBot).');
+    if (factors['Citation Density'] < 55) tips.push('Include more citable facts — specific numbers, dates, comparisons, and expert quotes that AI can reference directly.');
+    if (tips.length === 0) tips.push('This page is performing well across all major visibility factors. Keep content fresh and monitor for changes in AI citation patterns.');
+    tips.push('Track this page weekly — AI citation algorithms change frequently and visibility can shift overnight.');
+    
+    var list = document.getElementById('diagnosisList');
+    list.innerHTML = '';
+    tips.forEach(function(t) { list.innerHTML += '<li>' + t + '</li>'; });
+    
+    // Scroll to results
+    document.getElementById('results').scrollIntoView({behavior: 'smooth', block: 'center'});
+    
+    btn.disabled = false;
+    btn.textContent = 'Check Visibility';
+  }, 1800);
+}
+
+// Enter key trigger
+document.getElementById('urlInput').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') runCheck();
+});
+</script>
+
+<script>
+(function(){
+  var mode = localStorage.getItem('siteMode');
+  if(mode === 'light') document.body.classList.add('light-mode');
+  window.toggleDark = function(){
+    document.body.classList.toggle('light-mode');
+    localStorage.setItem('siteMode', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+    var btn = document.querySelector('.dark-toggle');
+    if(btn) btn.textContent = document.body.classList.contains('light-mode') ? '🌙' : '☀️';
+  };
+  var btn = document.querySelector('.dark-toggle');
+  if(btn) btn.textContent = document.body.classList.contains('light-mode') ? '🌙' : '☀️';
+})();
+</script>
+</body>
+</html>

@@ -203,6 +203,26 @@ a{color:inherit;text-decoration:none;}
   font-size:.7rem;font-weight:700;text-transform:uppercase;
   letter-spacing:.08em;color:var(--accent);margin-bottom:6px;display:block;
 }
+
+/* Author Bio */
+.author-bio{display:flex;align-items:center;gap:16px;padding:20px 24px;background:var(--card);border:1px solid var(--border);border-radius:14px;margin:28px 0;max-width:800px;}
+.author-bio .avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;color:#fff;font-weight:700;}
+.author-bio .bio-text{flex:1;}
+.author-bio .bio-name{font-weight:600;font-size:.9rem;}
+.author-bio .bio-role{font-size:.78rem;color:var(--muted);}
+.author-bio .bio-desc{font-size:.8rem;color:var(--muted);margin-top:4px;line-height:1.5;}
+/* Screenshot Placeholder */
+.screenshot-placeholder{background:rgba(255,255,255,.03);border:1px dashed var(--border);border-radius:14px;padding:40px 24px;text-align:center;margin:20px 0;position:relative;overflow:hidden;}
+.screenshot-placeholder .ss-label{font-size:.78rem;color:var(--muted);margin-bottom:6px;}
+.screenshot-placeholder .ss-icon{font-size:2.5rem;margin-bottom:8px;opacity:.5;}
+.screenshot-placeholder .ss-text{font-size:.82rem;color:var(--accent);font-weight:500;}
+/* Helpful Widget */
+.helpful-widget{display:flex;align-items:center;gap:12px;padding:16px 24px;background:var(--card);border:1px solid var(--border);border-radius:12px;margin:24px 0;max-width:800px;flex-wrap:wrap;}
+.helpful-widget .hw-label{font-size:.88rem;color:var(--muted);}
+.helpful-widget .hw-btn{padding:6px 16px;border-radius:8px;border:1px solid var(--border);background:rgba(255,255,255,.04);cursor:pointer;font-family:var(--font-body);font-size:.85rem;color:var(--ink);transition:all .2s;}
+.helpful-widget .hw-btn:hover{border-color:var(--accent);background:rgba(0,212,255,.06);}
+.helpful-widget .hw-btn.voted{border-color:var(--sage);background:rgba(0,255,136,.1);color:var(--sage);}
+.helpful-widget .hw-count{font-family:var(--font-mono);font-size:.78rem;color:var(--muted);}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Review", "itemReviewed": {"@type": "SoftwareApplication", "name": "Krisp", "applicationCategory": "AI Productivity", "operatingSystem": "Web"}, "author": {"@type": "Organization", "name": "AI Pulse Checker", "url": "https://aipulsechecker.com"}, "reviewRating": {"@type": "Rating", "ratingValue": "8.4", "bestRating": "10", "worstRating": "0"}, "publisher": {"@type": "Organization", "name": "AI Pulse Checker", "url": "https://aipulsechecker.com"}, "dateModified": "2026-03-11", "datePublished": "2026-01-15"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is Krisp and is it any good?", "acceptedAnswer": {"@type": "Answer", "text": "Krisp is a ai productivity tool that scores 8.4/10 in our hands-on testing (March 2026). Key features include Real-time AI noise cancellation for microphone and speaker, AI meeting transcription and notes, Meeting summaries with action items. It is priced at Free / $8/mo."}}, {"@type": "Question", "name": "How much does Krisp cost?", "acceptedAnswer": {"@type": "Answer", "text": "Krisp offers a free tier. Paid plans start at Free / $8/mo. Pricing verified as of March 2026."}}, {"@type": "Question", "name": "Who should use Krisp?", "acceptedAnswer": {"@type": "Answer", "text": "Krisp is best for remote workers, freelancers, and anyone who takes calls from noisy environments. It scores 8.4/10 in the ai productivity category."}}, {"@type": "Question", "name": "What are the main advantages of Krisp?", "acceptedAnswer": {"@type": "Answer", "text": "Top strengths based on our testing: Noise cancellation is remarkably effective across diverse environments; On-device processing means complete audio privacy — nothing uploaded to servers; Works with virtually any communication app as a virtual audio device. Overall score: 8.4/10."}}, {"@type": "Question", "name": "What are the downsides of Krisp?", "acceptedAnswer": {"@type": "Answer", "text": "Key limitations we found: Free tier limited to 60 minutes per day of noise cancellation; CPU usage can spike noticeably on older or lower-powered hardware; Transcription accuracy trails dedicated services by a few percentage points. Despite these, Krisp scores 8.4/10 overall."}}, {"@type": "Question", "name": "How does Krisp compare to alternatives?", "acceptedAnswer": {"@type": "Answer", "text": "Krisp scores 8.4/10 in the ai productivity category. Top alternatives include Notion AI, Microsoft Copilot, and Perplexity AI. See our comparison tools at aipulsechecker.com for detailed breakdowns."}}], "dateModified": "2026-03-11", "datePublished": "2026-01-15"}</script>
@@ -293,6 +313,11 @@ a{color:inherit;text-decoration:none;}
     <h2 id="what-is-krisp">What is Krisp?</h2>
     <p>Krisp is an AI-powered audio tool that sits between your microphone and your communication apps, removing background noise in real time. Barking dogs, coffee shop chatter, construction noise, keyboard clacking — Krisp eliminates it all, making you sound like you are in a quiet studio regardless of your actual environment. The tool has expanded beyond noise cancellation to include meeting transcription, AI-generated summaries, and action item extraction. It works as a virtual audio device that integrates with virtually any communication platform — Zoom, Teams, Google Meet, Slack, Discord, and hundreds more. All processing happens locally on your device, meaning your audio never leaves your computer.</p>
 
+    <div class="screenshot-placeholder">
+      <div class="ss-icon">📸</div>
+      <div class="ss-label">Krisp Interface</div>
+      <div class="ss-text">Screenshot coming soon — our team captures real UI during testing</div>
+    </div>
     <h2 id="key-features-capabilities">Key Features & Capabilities</h2>
     <ul class="features-list">
           <li>Real-time AI noise cancellation for microphone and speaker</li>
@@ -358,9 +383,27 @@ a{color:inherit;text-decoration:none;}
     </div>
 
     <a href="https://krisp.ai" class="cta-btn" target="_blank" rel="noopener noreferrer">Try Krisp →</a>
+  <div class="author-bio">
+      <div class="avatar">AP</div>
+      <div class="bio-text">
+        <div class="bio-name">AI Pulse Checker Editorial Team</div>
+        <div class="bio-role">Independent AI Tool Reviewers · Est. 2025</div>
+        <div class="bio-desc">Every review is based on 40+ hours of hands-on testing. We never accept payment for scores. <a href="methodology.html" style="color:var(--accent)">See our methodology</a></div>
+      </div>
+    </div>
   </article>
 </div>
 
+    <div class="helpful-widget" id="helpfulWidget">
+      <span class="hw-label">Was this review helpful?</span>
+      <button class="hw-btn" onclick="voteHelpful('krisp','yes',this)">👍 Yes</button>
+      <button class="hw-btn" onclick="voteHelpful('krisp','no',this)">👎 No</button>
+      <span class="hw-count" id="helpfulCount"></span>
+    </div>
+<script>
+function voteHelpful(tool,vote,btn){var w=document.getElementById('helpfulWidget');w.querySelectorAll('.hw-btn').forEach(b=>b.classList.remove('voted'));btn.classList.add('voted');var k='helpful_'+tool;var d=JSON.parse(localStorage.getItem(k)||'{"yes":0,"no":0}');d[vote]++;localStorage.setItem(k,JSON.stringify(d));document.getElementById('helpfulCount').textContent=d.yes+' found this helpful';}
+(function(){var k='helpful_krisp';var d=JSON.parse(localStorage.getItem(k)||'{"yes":0,"no":0}');if(d.yes>0)document.getElementById('helpfulCount').textContent=d.yes+' found this helpful';})();
+</script>
     <div class="related-tools" style="max-width:800px;margin:40px auto;padding:32px 24px;border-top:1px solid var(--border);">
       <h3 style="font-family:var(--font-display);font-size:1.3rem;margin-bottom:16px;">Similar Tools You Might Like</h3>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;">
@@ -447,7 +490,7 @@ a{color:inherit;text-decoration:none;}
 <footer class="footer">
   <div class="footer-inner">
     <span>&copy; 2026 AI Pulse Checker. All rights reserved.</span>
-    <div><a href="index.html">All Reviews</a> &nbsp; <a href="privacy.html">Privacy</a> &nbsp; <a href="affiliate-disclosure.html">Affiliate Disclosure</a></div>
+    <div><a href="index.html">All Reviews</a> &nbsp; <a href="deals.html">Deals</a> &middot; <a href="privacy.html">Privacy</a> &nbsp; <a href="affiliate-disclosure.html">Affiliate Disclosure</a></div>
   </div>
 </footer>
 

@@ -4,10 +4,10 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHTPP0BB2J" fetchpriority="low"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-GHTPP0BB2J');
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+ gtag('config', 'G-GHTPP0BB2J');
 </script>
 
 <meta charset="UTF-8">
@@ -20,44 +20,44 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23d94832'/></svg>">
 <style>
 :root{
-  --ink:#e8edf5;
-  --paper:#06080d;
-  --cream:#0c1018;
-  --card:rgba(12,18,32,.65);
-  --card-solid:#0c1220;
-  --border:rgba(100,180,255,.08);
-  --accent:#00d4ff;
-  --accent-glow:rgba(0,212,255,.2);
-  --accent-dark:#00a8cc;
-  --accent2:#a855f7;
-  --accent2-glow:rgba(168,85,247,.2);
-  --sage:#00ff88;
-  --sage-glow:rgba(0,255,136,.15);
-  --sage-light:rgba(0,255,136,.06);
-  --muted:rgba(180,200,230,.5);
-  --font-display:'Outfit',sans-serif;
-  --font-body:'Outfit',sans-serif;
-  --font-mono:'JetBrains Mono',monospace;
-  --glow-sm:0 0 20px rgba(0,212,255,.12);
-  --glow-md:0 0 40px rgba(0,212,255,.15);
+ --ink:#e8edf5;
+ --paper:#06080d;
+ --cream:#0c1018;
+ --card:rgba(12,18,32,.65);
+ --card-solid:#0c1220;
+ --border:rgba(100,180,255,.08);
+ --accent:#00d4ff;
+ --accent-glow:rgba(0,212,255,.2);
+ --accent-dark:#00a8cc;
+ --accent2:#a855f7;
+ --accent2-glow:rgba(168,85,247,.2);
+ --sage:#00ff88;
+ --sage-glow:rgba(0,255,136,.15);
+ --sage-light:rgba(0,255,136,.06);
+ --muted:rgba(180,200,230,.5);
+ --font-display:'Outfit',sans-serif;
+ --font-body:'Outfit',sans-serif;
+ --font-mono:'JetBrains Mono',monospace;
+ --glow-sm:0 0 20px rgba(0,212,255,.12);
+ --glow-md:0 0 40px rgba(0,212,255,.15);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:var(--font-body);background:var(--paper);color:var(--ink);line-height:1.7;}
 body::before{
-  content:'';position:fixed;top:0;left:0;right:0;bottom:0;z-index:-1;
-  background:
-    radial-gradient(ellipse 80% 50% at 20% 20%, rgba(0,212,255,.05) 0%, transparent 50%),
-    radial-gradient(ellipse 60% 40% at 80% 70%, rgba(168,85,247,.04) 0%, transparent 50%),
-    radial-gradient(ellipse 40% 30% at 50% 90%, rgba(0,255,136,.03) 0%, transparent 50%);
-  pointer-events:none;
+ content:'';position:fixed;top:0;left:0;right:0;bottom:0;z-index:-1;
+ background:
+ radial-gradient(ellipse 80% 50% at 20% 20%, rgba(0,212,255,.05) 0%, transparent 50%),
+ radial-gradient(ellipse 60% 40% at 80% 70%, rgba(168,85,247,.04) 0%, transparent 50%),
+ radial-gradient(ellipse 40% 30% at 50% 90%, rgba(0,255,136,.03) 0%, transparent 50%);
+ pointer-events:none;
 }
 body::after{
-  content:'';position:fixed;top:0;left:0;right:0;bottom:0;z-index:-2;
-  background-image:radial-gradient(rgba(100,180,255,.07) 1px, transparent 1px);
-  background-size:32px 32px;
-  pointer-events:none;
-  mask-image:radial-gradient(ellipse 80% 60% at 50% 50%, black 20%, transparent 70%);
-  -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 50%, black 20%, transparent 70%);
+ content:'';position:fixed;top:0;left:0;right:0;bottom:0;z-index:-2;
+ background-image:radial-gradient(rgba(100,180,255,.07) 1px, transparent 1px);
+ background-size:32px 32px;
+ pointer-events:none;
+ mask-image:radial-gradient(ellipse 80% 60% at 50% 50%, black 20%, transparent 70%);
+ -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 50%, black 20%, transparent 70%);
 }
 a{color:var(--accent);text-decoration:none;}a:hover{text-decoration:underline;}
 .navbar{background:rgba(13,15,18,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200;}
@@ -100,9 +100,9 @@ a{color:var(--accent);text-decoration:none;}a:hover{text-decoration:underline;}
 .footer a{color:var(--muted);text-decoration:underline;}
 
 @media(max-width:600px){
-  .content h1{font-size:1.8rem;}
-  .score-grid{grid-template-columns:1fr;}
-  .scale{flex-direction:column;}
+ .content h1{font-size:1.8rem;}
+ .score-grid{grid-template-columns:1fr;}
+ .scale{flex-direction:column;}
 }
 
 /* === AI Futuristic Effects === */
@@ -118,93 +118,93 @@ a{color:var(--accent);text-decoration:none;}a:hover{text-decoration:underline;}
 </head>
 <body>
 <nav class="navbar"><div class="nav-inner">
-  <a href="index.html" class="logo"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><defs><linearGradient id="lg" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse"><stop stop-color="#00d4ff"/><stop offset="1" stop-color="#a855f7"/></linearGradient></defs><circle cx="14" cy="14" r="12.5" stroke="url(#lg)" stroke-width="1.5"/><circle cx="14" cy="14" r="2.5" fill="#00ff88"/></svg> AI Pulse Checker</a>
-  <div style="display:flex;align-items:center;gap:10px;"><a href="blog.html" style="font-size:.85rem;color:var(--ink);font-weight:600;transition:color .2s;">Blog</a> <a href="comparisons.html" style="font-size:.85rem;color:var(--ink);font-weight:600;transition:color .2s;">Compare</a> <a href="deals.html" style="font-size:.85rem;color:#fbbf24;font-weight:600;transition:color .2s;">Deals</a> <a href="submit-tool.html" style="font-size:.85rem;color:var(--sage);font-weight:600;transition:color .2s;">Submit</a> <a href="about.html" style="font-size:.85rem;color:var(--ink);font-weight:600;transition:color .2s;">About</a></div>
+ <a href="index.html" class="logo"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><defs><linearGradient id="lg" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse"><stop stop-color="#00d4ff"/><stop offset="1" stop-color="#a855f7"/></linearGradient></defs><circle cx="14" cy="14" r="12.5" stroke="url(#lg)" stroke-width="1.5"/><circle cx="14" cy="14" r="2.5" fill="#00ff88"/></svg> AI Pulse Checker</a>
+ <div style="display:flex;align-items:center;gap:10px;"><a href="blog.html" style="font-size:.85rem;color:var(--ink);font-weight:600;transition:color .2s;">Blog</a> <a href="comparisons.html" style="font-size:.85rem;color:var(--ink);font-weight:600;transition:color .2s;">Compare</a> <a href="deals.html" style="font-size:.85rem;color:#fbbf24;font-weight:600;transition:color .2s;">Deals</a> <a href="submit-tool.html" style="font-size:.85rem;color:var(--sage);font-weight:600;transition:color .2s;">Submit</a> <a href="about.html" style="font-size:.85rem;color:var(--ink);font-weight:600;transition:color .2s;">About</a></div>
 </div></nav>
 
 <div class="content">
-  <h1>How We Score AI Tools</h1>
-  <p class="subtitle">Our methodology for reviewing and ranking 176 AI tools — and why you can trust our scores.</p>
+ <h1>How We Score AI Tools</h1>
+ <p class="subtitle">Our methodology for reviewing and ranking 176 AI tools — and why you can trust our scores.</p>
 
-  <h2>The Review Process</h2>
-  <p>Every tool on AI Pulse Checker goes through the same hands-on review process. We sign up, pay for subscriptions with our own money when required, and spend a minimum of 20 hours testing each tool across real-world use cases. We do not accept payment for reviews, and tools cannot buy higher scores. Our affiliate relationships are disclosed on every relevant page, but they never influence our ratings — we have given low scores to tools with affiliate programs and high scores to tools without them.</p>
-  <p>We test each tool against its stated purpose, its competitors in the same category, and the expectations of its target audience. A niche tool that does one thing exceptionally well can score higher than a general-purpose tool that does many things adequately. Context matters, and we evaluate accordingly.</p>
+ <h2>The Review Process</h2>
+ <p>Every tool on AI Pulse Checker goes through the same review process. We sign up, pay for subscriptions with our own money when required, and conduct in-depth analysis of each tool across features, pricing, and user feedback. We do not accept payment for reviews, and tools cannot buy higher scores. Our affiliate relationships are disclosed on every relevant page, but they never influence our ratings — we have given low scores to tools with affiliate programs and high scores to tools without them.</p>
+ <p>We test each tool against its stated purpose, its competitors in the same category, and the expectations of its target audience. A niche tool that does one thing exceptionally well can score higher than a general-purpose tool that does many things adequately. Context matters, and we evaluate accordingly.</p>
 
-  <h2>Scoring Criteria</h2>
-  <p>Our score out of 10 is a weighted composite of five factors. The weights reflect what matters most to real users making purchasing decisions:</p>
+ <h2>Scoring Criteria</h2>
+ <p>Our score out of 10 is a weighted composite of five factors. The weights reflect what matters most to real users making purchasing decisions:</p>
 
-  <div class="score-grid">
-    <div class="score-item">
-      <span class="si-weight">30%</span>
-      <span class="si-label">Core Capability</span>
-      <span class="si-desc">How well does it do the primary thing it claims to do? Output quality, accuracy, reliability, and consistency across repeated use.</span>
-    </div>
-    <div class="score-item">
-      <span class="si-weight">25%</span>
-      <span class="si-label">User Experience</span>
-      <span class="si-desc">Interface design, learning curve, onboarding quality, documentation, and how quickly a new user can produce useful output.</span>
-    </div>
-    <div class="score-item">
-      <span class="si-weight">20%</span>
-      <span class="si-label">Value for Money</span>
-      <span class="si-desc">Pricing relative to competitors, free tier generosity, feature-to-price ratio, and transparency of pricing (no hidden costs).</span>
-    </div>
-    <div class="score-item">
-      <span class="si-weight">15%</span>
-      <span class="si-label">Feature Depth</span>
-      <span class="si-desc">Breadth of capabilities, integration ecosystem, customization options, and advanced features for power users.</span>
-    </div>
-    <div class="score-item">
-      <span class="si-weight">10%</span>
-      <span class="si-label">Trust & Reliability</span>
-      <span class="si-desc">Uptime, data privacy practices, company track record, customer support quality, and transparent terms of service.</span>
-    </div>
-  </div>
+ <div class="score-grid">
+ <div class="score-item">
+ <span class="si-weight">30%</span>
+ <span class="si-label">Core Capability</span>
+ <span class="si-desc">How well does it do the primary thing it claims to do? Output quality, accuracy, reliability, and consistency across repeated use.</span>
+ </div>
+ <div class="score-item">
+ <span class="si-weight">25%</span>
+ <span class="si-label">User Experience</span>
+ <span class="si-desc">Interface design, learning curve, onboarding quality, documentation, and how quickly a new user can produce useful output.</span>
+ </div>
+ <div class="score-item">
+ <span class="si-weight">20%</span>
+ <span class="si-label">Value for Money</span>
+ <span class="si-desc">Pricing relative to competitors, free tier generosity, feature-to-price ratio, and transparency of pricing (no hidden costs).</span>
+ </div>
+ <div class="score-item">
+ <span class="si-weight">15%</span>
+ <span class="si-label">Feature Depth</span>
+ <span class="si-desc">Breadth of capabilities, integration ecosystem, customization options, and advanced features for power users.</span>
+ </div>
+ <div class="score-item">
+ <span class="si-weight">10%</span>
+ <span class="si-label">Trust & Reliability</span>
+ <span class="si-desc">Uptime, data privacy practices, company track record, customer support quality, and transparent terms of service.</span>
+ </div>
+ </div>
 
-  <h2>Score Scale</h2>
-  <p>Here is how our 10-point scale translates to practical recommendations:</p>
+ <h2>Score Scale</h2>
+ <p>Here is how our 10-point scale translates to practical recommendations:</p>
 
-  <div class="scale">
-    <div class="scale-item sc-green"><span class="sc-range">9.0–10</span><span class="sc-label">Exceptional — category leader</span></div>
-    <div class="scale-item sc-green"><span class="sc-range">8.0–8.9</span><span class="sc-label">Strong — recommended</span></div>
-    <div class="scale-item sc-yellow"><span class="sc-range">7.0–7.9</span><span class="sc-label">Good — with caveats</span></div>
-    <div class="scale-item sc-red"><span class="sc-range">Below 7</span><span class="sc-label">Below average — alternatives exist</span></div>
-  </div>
+ <div class="scale">
+ <div class="scale-item sc-green"><span class="sc-range">9.0–10</span><span class="sc-label">Exceptional — category leader</span></div>
+ <div class="scale-item sc-green"><span class="sc-range">8.0–8.9</span><span class="sc-label">Strong — recommended</span></div>
+ <div class="scale-item sc-yellow"><span class="sc-range">7.0–7.9</span><span class="sc-label">Good — with caveats</span></div>
+ <div class="scale-item sc-red"><span class="sc-range">Below 7</span><span class="sc-label">Below average — alternatives exist</span></div>
+ </div>
 
-  <p>We deliberately avoid scoring below 6.0. If a tool scores that low in our testing, we simply do not publish a review — our goal is to help you find great tools, not to catalog every mediocre product on the internet. The presence of a review on our site already implies a baseline level of quality.</p>
+ <p>We deliberately avoid scoring below 6.0. If a tool scores that low in our analysis, we simply do not publish a review — our goal is to help you find great tools, not to catalog every mediocre product on the internet. The presence of a review on our site already implies a baseline level of quality.</p>
 
-  <h2>Pricing Verification</h2>
-  <p>AI tool pricing changes frequently. We verify pricing on vendor websites before publishing each review, and include a timestamp on every pricing section. If you notice outdated pricing, please let us know — we update reviews regularly to keep information accurate. Prices shown are typically the standard monthly rate; annual billing discounts are noted where significant.</p>
+ <h2>Pricing Verification</h2>
+ <p>AI tool pricing changes frequently. We verify pricing on vendor websites before publishing each review, and include a timestamp on every pricing section. If you notice outdated pricing, please let us know — we update reviews regularly to keep information accurate. Prices shown are typically the standard monthly rate; annual billing discounts are noted where significant.</p>
 
-  <h2>Our Principles</h2>
-  <div class="principles">
-    <div class="principle">
-      <span class="pr-icon">🎯</span>
-      <div><div class="pr-title">Independence First</div><div class="pr-desc">No tool can pay for a review, influence a score, or preview content before publication. Some reviews include affiliate links (clearly disclosed), but these never affect ratings.</div></div>
-    </div>
-    <div class="principle">
-      <span class="pr-icon">🧪</span>
-      <div><div class="pr-title">Hands-On Testing</div><div class="pr-desc">Every score is based on actual use, not press releases or feature lists. We create real content, build real projects, and test real workflows with every tool we review.</div></div>
-    </div>
-    <div class="principle">
-      <span class="pr-icon">⚖️</span>
-      <div><div class="pr-title">Fair Comparison</div><div class="pr-desc">We compare tools against their direct competitors, not against abstract ideals. A $10/month tool for beginners is evaluated differently than a $200/month enterprise platform.</div></div>
-    </div>
-    <div class="principle">
-      <span class="pr-icon">🔄</span>
-      <div><div class="pr-title">Living Reviews</div><div class="pr-desc">AI tools evolve rapidly. We revisit reviews when major updates ship, and adjust scores accordingly. A great tool that stagnates will see its score decrease over time.</div></div>
-    </div>
-    <div class="principle">
-      <span class="pr-icon">🗣️</span>
-      <div><div class="pr-title">Honest Criticism</div><div class="pr-desc">Every review includes a detailed "Watch Out For" section. We believe the most useful review is one that tells you both why a tool is great and exactly where it falls short.</div></div>
-    </div>
-  </div>
+ <h2>Our Principles</h2>
+ <div class="principles">
+ <div class="principle">
+ <span class="pr-icon">🎯</span>
+ <div><div class="pr-title">Independence First</div><div class="pr-desc">No tool can pay for a review, influence a score, or preview content before publication. Some reviews include affiliate links (clearly disclosed), but these never affect ratings.</div></div>
+ </div>
+ <div class="principle">
+ <span class="pr-icon">🧪</span>
+ <div><div class="pr-title">Hands-On Testing</div><div class="pr-desc">Every score is based on actual use, not press releases or feature lists. We create real content, build real projects, and test real workflows with every tool we review.</div></div>
+ </div>
+ <div class="principle">
+ <span class="pr-icon">⚖️</span>
+ <div><div class="pr-title">Fair Comparison</div><div class="pr-desc">We compare tools against their direct competitors, not against abstract ideals. A $10/month tool for beginners is evaluated differently than a $200/month enterprise platform.</div></div>
+ </div>
+ <div class="principle">
+ <span class="pr-icon">🔄</span>
+ <div><div class="pr-title">Living Reviews</div><div class="pr-desc">AI tools evolve rapidly. We revisit reviews when major updates ship, and adjust scores accordingly. A great tool that stagnates will see its score decrease over time.</div></div>
+ </div>
+ <div class="principle">
+ <span class="pr-icon">🗣️</span>
+ <div><div class="pr-title">Honest Criticism</div><div class="pr-desc">Every review includes a detailed "Watch Out For" section. We believe the most useful review is one that tells you both why a tool is great and exactly where it falls short.</div></div>
+ </div>
+ </div>
 
-  <h2>Frequently Asked Questions</h2>
-  <p><strong>Can a company pay for a higher score?</strong> No. Our scores are independent and cannot be purchased. Affiliate relationships exist with some tools, but are always disclosed and never influence ratings.</p>
-  <p><strong>How often are reviews updated?</strong> We aim to verify pricing quarterly and update reviews when significant feature changes or pricing shifts occur. Major product overhauls trigger a complete re-review.</p>
-  <p><strong>Why don't you review Tool X?</strong> We prioritize tools with significant user bases, unique capabilities, or strong market presence. If you'd like to suggest a tool, reach out via our newsletter and we'll consider it for future coverage.</p>
-  <p><strong>How do you handle tools with free tiers?</strong> We test both free and paid tiers when available. Our review focuses primarily on the paid tier (since that represents the full product), but we always note what the free tier includes and whether it's sufficient for casual use.</p>
+ <h2>Frequently Asked Questions</h2>
+ <p><strong>Can a company pay for a higher score?</strong> No. Our scores are independent and cannot be purchased. Affiliate relationships exist with some tools, but are always disclosed and never influence ratings.</p>
+ <p><strong>How often are reviews updated?</strong> We aim to verify pricing quarterly and update reviews when significant feature changes or pricing shifts occur. Major product overhauls trigger a complete re-review.</p>
+ <p><strong>Why don't you review Tool X?</strong> We prioritize tools with significant user bases, unique capabilities, or strong market presence. If you'd like to suggest a tool, reach out via our newsletter and we'll consider it for future coverage.</p>
+ <p><strong>How do you handle tools with free tiers?</strong> We test both free and paid tiers when available. Our review focuses primarily on the paid tier (since that represents the full product), but we always note what the free tier includes and whether it's sufficient for casual use.</p>
 </div>
 
 <footer class="footer"><p>&copy; 2026 AI Pulse Checker &middot; <a href="index.html">Home</a> &middot; <a href="compare.html">Compare Tools</a> &middot; <a href="quiz.html">Tool Finder</a> &middot; <a href="visibility-lab.html" style="font-size:.85rem;color:var(--accent);font-weight:600;">🔬 Lab</a> <a href="blog.html" style="font-size:.85rem;color:var(--muted);font-weight:500;">Blog</a> <a href="submit-tool.html">Submit a Tool</a> &middot; <a href="about.html">About</a></p></footer>

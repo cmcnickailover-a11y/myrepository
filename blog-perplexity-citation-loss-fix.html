@@ -53,59 +53,59 @@ h1{font-family:var(--font-display);font-size:clamp(1.8rem,4vw,2.4rem);line-heigh
 </head>
 <body>
 <nav class="navbar"><div class="nav-inner">
-  <a href="index.html" class="logo"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><defs><linearGradient id="lg" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse"><stop stop-color="#00d4ff"/><stop offset="1" stop-color="#a855f7"/></linearGradient></defs><circle cx="14" cy="14" r="12.5" stroke="url(#lg)" stroke-width="1.5"/><circle cx="14" cy="14" r="2.5" fill="#00ff88"/></svg> AI Pulse Checker</a>
-  <div style="display:flex;align-items:center;gap:10px;"><a href="blog.html" style="font-size:.85rem;color:var(--ink);font-weight:600;transition:color .2s;">Blog</a> <a href="comparisons.html" style="font-size:.85rem;color:var(--ink);font-weight:600;transition:color .2s;">Compare</a> <a href="deals.html" style="font-size:.85rem;color:#fbbf24;font-weight:600;transition:color .2s;">Deals</a> <a href="submit-tool.html" style="font-size:.85rem;color:var(--sage);font-weight:600;transition:color .2s;">Submit</a> <a href="about.html" style="font-size:.85rem;color:var(--ink);font-weight:600;transition:color .2s;">About</a></div>
+ <a href="index.html" class="logo"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><defs><linearGradient id="lg" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse"><stop stop-color="#00d4ff"/><stop offset="1" stop-color="#a855f7"/></linearGradient></defs><circle cx="14" cy="14" r="12.5" stroke="url(#lg)" stroke-width="1.5"/><circle cx="14" cy="14" r="2.5" fill="#00ff88"/></svg> AI Pulse Checker</a>
+ <div style="display:flex;align-items:center;gap:10px;"><a href="blog.html" style="font-size:.85rem;color:var(--ink);font-weight:600;transition:color .2s;">Blog</a> <a href="comparisons.html" style="font-size:.85rem;color:var(--ink);font-weight:600;transition:color .2s;">Compare</a> <a href="deals.html" style="font-size:.85rem;color:#fbbf24;font-weight:600;transition:color .2s;">Deals</a> <a href="submit-tool.html" style="font-size:.85rem;color:var(--sage);font-weight:600;transition:color .2s;">Submit</a> <a href="about.html" style="font-size:.85rem;color:var(--ink);font-weight:600;transition:color .2s;">About</a></div>
 </div></nav>
 
 <div class="article-wrap">
-  <a href="blog.html" class="back-link">← Back to Blog</a>
-  <span class="post-tag tag-analysis">Visibility Lab</span>
-  <h1>Why Your Page Disappeared from Perplexity Citations (And How to Get It Back)</h1>
-  <div class="post-meta">
-    <div class="author"><div class="avatar">AP</div> AI Pulse Checker</div>
-    <span>Feb 24, 2026</span>
-    <span>5 min read</span>
-  </div>
-  <div class="article-body">
+ <a href="blog.html" class="back-link">← Back to Blog</a>
+ <span class="post-tag tag-analysis">Visibility Lab</span>
+ <h1>Why Your Page Disappeared from Perplexity Citations (And How to Get It Back)</h1>
+ <div class="post-meta">
+ <div class="author"><div class="avatar">AP</div> AI Pulse Checker</div>
+ <span>Feb 24, 2026</span>
+ <span>5 min read</span>
+ </div>
+ <div class="article-body">
 
-    <p>In February 2026, we tracked 500 pages that lost their AI citation placement across Perplexity, Gemini, and ChatGPT. The results were surprising: the number one reason wasn't content quality — it was a technical issue most sites can fix in under an hour.</p>
+ <p>In February 2026, we tracked 500 pages that lost their AI citation placement across Perplexity, Gemini, and ChatGPT. The results were surprising: the number one reason wasn't content quality — it was a technical issue most sites can fix in under an hour.</p>
 
-    <h2>The #1 Reason: Missing or Blocking AI Crawlers</h2>
-    <p>43% of pages that lost citations had one thing in common: their robots.txt file was either blocking AI crawlers (GPTBot, PerplexityBot, ClaudeBot) or they had no explicit allow rules. Many sites inherited restrictive robots.txt rules from older SEO configurations.</p>
+ <h2>The #1 Reason: Missing or Blocking AI Crawlers</h2>
+ <p>43% of pages that lost citations had one thing in common: their robots.txt file was either blocking AI crawlers (GPTBot, PerplexityBot, ClaudeBot) or they had no explicit allow rules. Many sites inherited restrictive robots.txt rules from older SEO configurations.</p>
 
-    <h3>The Fix</h3>
-    <p>Add explicit allow rules for AI crawlers in your robots.txt. Here's what we recommend:</p>
-    <blockquote>User-agent: GPTBot<br>Allow: /<br><br>User-agent: PerplexityBot<br>Allow: /<br><br>User-agent: ClaudeBot<br>Allow: /</blockquote>
+ <h3>The Fix</h3>
+ <p>Add explicit allow rules for AI crawlers in your robots.txt. Here's what we recommend:</p>
+ <blockquote>User-agent: GPTBot<br>Allow: /<br><br>User-agent: PerplexityBot<br>Allow: /<br><br>User-agent: ClaudeBot<br>Allow: /</blockquote>
 
-    <h2>Other Top Reasons for Citation Loss</h2>
-    <ul>
-      <li><strong>Stale content (27%)</strong> — Pages not updated in 90+ days dropped out of citations. AI models prefer fresh sources.</li>
-      <li><strong>Missing structured data (18%)</strong> — Pages without JSON-LD schema were cited 3x less than those with it.</li>
-      <li><strong>Poor content hierarchy (12%)</strong> — Pages without clear H2/H3 structure and concise answer paragraphs were harder for AI to extract from.</li>
-    </ul>
+ <h2>Other Top Reasons for Citation Loss</h2>
+ <ul>
+ <li><strong>Stale content (27%)</strong> — Pages not updated in 90+ days dropped out of citations. AI models prefer fresh sources.</li>
+ <li><strong>Missing structured data (18%)</strong> — Pages without JSON-LD schema were cited 3x less than those with it.</li>
+ <li><strong>Poor content hierarchy (12%)</strong> — Pages without clear H2/H3 structure and concise answer paragraphs were harder for AI to extract from.</li>
+ </ul>
 
-    <div class="highlight-box">
-      <strong>Action items:</strong> Check your <a href="visibility-lab.html">Citation Health Score</a> in our Visibility Lab. Then verify your robots.txt allows AI crawlers, add dateModified to your JSON-LD, and make sure your content has clear headings with concise answer paragraphs near the top.
-    </div>
+ <div class="highlight-box">
+ <strong>Action items:</strong> Check your <a href="visibility-lab.html">Citation Health Score</a> in our Visibility Lab. Then verify your robots.txt allows AI crawlers, add dateModified to your JSON-LD, and make sure your content has clear headings with concise answer paragraphs near the top.
+ </div>
 
-  </div>
+ </div>
 
-  <div class="cta-box">
-    <h3>Get the Adoption Report every Tuesday</h3>
-    <p>Which tools are actually being used? Citation winners and adoption trends.</p>
-    <a href="index.html" class="btn">Subscribe Free →</a>
-  </div>
+ <div class="cta-box">
+ <h3>Get the Adoption Report every Tuesday</h3>
+ <p>Which tools are actually being used? Citation winners and adoption trends.</p>
+ <a href="index.html" class="btn">Subscribe Free →</a>
+ </div>
 
-  <div class="share-row">
-    <a href="https://twitter.com/intent/tweet?text=Why%20Your%20Page%20Disappeared%20from%20Perplexity%20Citations%20(And%20How%20to%20Get%20It%20Back)&url=https://aipulsechecker.com/blog/perplexity-citation-loss-fix.html" target="_blank" style="background:#1DA1F2;">𝕏 Share</a>
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://aipulsechecker.com/blog/perplexity-citation-loss-fix.html" target="_blank" style="background:#0077B5;">LinkedIn</a>
-    <a href="https://www.reddit.com/submit?url=https://aipulsechecker.com/blog/perplexity-citation-loss-fix.html&title=Why%20Your%20Page%20Disappeared%20from%20Perplexity%20Citations%20(And%20How%20to%20Get%20It%20Back)" target="_blank" style="background:#FF4500;">Reddit</a>
-  </div>
+ <div class="share-row">
+ <a href="https://twitter.com/intent/tweet?text=Why%20Your%20Page%20Disappeared%20from%20Perplexity%20Citations%20(And%20How%20to%20Get%20It%20Back)&url=https://aipulsechecker.com/blog/perplexity-citation-loss-fix.html" target="_blank" style="background:#1DA1F2;">𝕏 Share</a>
+ <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://aipulsechecker.com/blog/perplexity-citation-loss-fix.html" target="_blank" style="background:#0077B5;">LinkedIn</a>
+ <a href="https://www.reddit.com/submit?url=https://aipulsechecker.com/blog/perplexity-citation-loss-fix.html&title=Why%20Your%20Page%20Disappeared%20from%20Perplexity%20Citations%20(And%20How%20to%20Get%20It%20Back)" target="_blank" style="background:#FF4500;">Reddit</a>
+ </div>
 </div>
 
 <footer class="footer"><div class="footer-inner">
-  <p><a href="index.html">Home</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="deals.html">Deals</a> &middot; <a href="submit-tool.html">Submit a Tool</a> &middot; <a href="about.html">About</a></p>
-  <p style="margin-top:8px;">&copy; 2026 AI Pulse Checker</p>
+ <p><a href="index.html">Home</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="deals.html">Deals</a> &middot; <a href="submit-tool.html">Submit a Tool</a> &middot; <a href="about.html">About</a></p>
+ <p style="margin-top:8px;">&copy; 2026 AI Pulse Checker</p>
 </div></footer>
 <script>(function(){if(localStorage.getItem('siteMode')==='light')document.body.classList.add('light-mode');})();</script>
 </body>

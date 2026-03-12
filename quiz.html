@@ -4,10 +4,10 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHTPP0BB2J" fetchpriority="low"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-GHTPP0BB2J');
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+ gtag('config', 'G-GHTPP0BB2J');
 </script>
 
 <meta charset="UTF-8">
@@ -20,45 +20,45 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23d94832'/></svg>">
 <style>
 :root{
-  --ink:#e8edf5;
-  --paper:#06080d;
-  --cream:#0c1018;
-  --card:rgba(12,18,32,.65);
-  --card-solid:#0c1220;
-  --border:rgba(100,180,255,.08);
-  --accent:#00d4ff;
-  --accent-glow:rgba(0,212,255,.2);
-  --accent-dark:#00a8cc;
-  --accent2:#a855f7;
-  --accent2-glow:rgba(168,85,247,.2);
-  --sage:#00ff88;
-  --sage-glow:rgba(0,255,136,.15);
-  --sage-light:rgba(0,255,136,.06);
-  --muted:rgba(180,200,230,.5);
-  --font-display:'Outfit',sans-serif;
-  --font-body:'Outfit',sans-serif;
-  --font-mono:'JetBrains Mono',monospace;
-  --glow-sm:0 0 20px rgba(0,212,255,.12);
-  --glow-md:0 0 40px rgba(0,212,255,.15);
+ --ink:#e8edf5;
+ --paper:#06080d;
+ --cream:#0c1018;
+ --card:rgba(12,18,32,.65);
+ --card-solid:#0c1220;
+ --border:rgba(100,180,255,.08);
+ --accent:#00d4ff;
+ --accent-glow:rgba(0,212,255,.2);
+ --accent-dark:#00a8cc;
+ --accent2:#a855f7;
+ --accent2-glow:rgba(168,85,247,.2);
+ --sage:#00ff88;
+ --sage-glow:rgba(0,255,136,.15);
+ --sage-light:rgba(0,255,136,.06);
+ --muted:rgba(180,200,230,.5);
+ --font-display:'Outfit',sans-serif;
+ --font-body:'Outfit',sans-serif;
+ --font-mono:'JetBrains Mono',monospace;
+ --glow-sm:0 0 20px rgba(0,212,255,.12);
+ --glow-md:0 0 40px rgba(0,212,255,.15);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{font-family:var(--font-body);background:var(--paper);color:var(--ink);line-height:1.6;overflow-x:hidden;min-height:100vh;}
 body::before{
-  content:'';position:fixed;top:0;left:0;right:0;bottom:0;z-index:-1;
-  background:
-    radial-gradient(ellipse 80% 50% at 20% 20%, rgba(0,212,255,.05) 0%, transparent 50%),
-    radial-gradient(ellipse 60% 40% at 80% 70%, rgba(168,85,247,.04) 0%, transparent 50%),
-    radial-gradient(ellipse 40% 30% at 50% 90%, rgba(0,255,136,.03) 0%, transparent 50%);
-  pointer-events:none;
+ content:'';position:fixed;top:0;left:0;right:0;bottom:0;z-index:-1;
+ background:
+ radial-gradient(ellipse 80% 50% at 20% 20%, rgba(0,212,255,.05) 0%, transparent 50%),
+ radial-gradient(ellipse 60% 40% at 80% 70%, rgba(168,85,247,.04) 0%, transparent 50%),
+ radial-gradient(ellipse 40% 30% at 50% 90%, rgba(0,255,136,.03) 0%, transparent 50%);
+ pointer-events:none;
 }
 body::after{
-  content:'';position:fixed;top:0;left:0;right:0;bottom:0;z-index:-2;
-  background-image:radial-gradient(rgba(100,180,255,.07) 1px, transparent 1px);
-  background-size:32px 32px;
-  pointer-events:none;
-  mask-image:radial-gradient(ellipse 80% 60% at 50% 50%, black 20%, transparent 70%);
-  -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 50%, black 20%, transparent 70%);
+ content:'';position:fixed;top:0;left:0;right:0;bottom:0;z-index:-2;
+ background-image:radial-gradient(rgba(100,180,255,.07) 1px, transparent 1px);
+ background-size:32px 32px;
+ pointer-events:none;
+ mask-image:radial-gradient(ellipse 80% 60% at 50% 50%, black 20%, transparent 70%);
+ -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 50%, black 20%, transparent 70%);
 }
 a{color:inherit;text-decoration:none;}
 .navbar{background:rgba(13,15,18,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200;}
@@ -149,11 +149,11 @@ a{color:inherit;text-decoration:none;}
 .footer a{color:var(--muted);text-decoration:underline;}
 
 @media(max-width:600px){
-  .quiz-header h1{font-size:1.8rem;}
-  .options{grid-template-columns:1fr 1fr;}
-  .budget-options{grid-template-columns:1fr;}
-  .priority-options{grid-template-columns:1fr;}
-  .result-card{flex-direction:column;gap:12px;}
+ .quiz-header h1{font-size:1.8rem;}
+ .options{grid-template-columns:1fr 1fr;}
+ .budget-options{grid-template-columns:1fr;}
+ .priority-options{grid-template-columns:1fr;}
+ .result-card{flex-direction:column;gap:12px;}
 }
 
 /* === AI Futuristic Effects === */
@@ -169,67 +169,67 @@ a{color:inherit;text-decoration:none;}
 </head>
 <body>
 <nav class="navbar"><div class="nav-inner">
-  <a href="index.html" class="logo"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><defs><linearGradient id="lg" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse"><stop stop-color="#00d4ff"/><stop offset="1" stop-color="#a855f7"/></linearGradient></defs><circle cx="14" cy="14" r="12.5" stroke="url(#lg)" stroke-width="1.5"/><circle cx="14" cy="14" r="2.5" fill="#00ff88"/></svg> AI Pulse Checker</a>
-  <div style="display:flex;align-items:center;gap:10px;"><a href="blog.html" style="font-size:.85rem;color:var(--ink);font-weight:600;transition:color .2s;">Blog</a> <a href="comparisons.html" style="font-size:.85rem;color:var(--ink);font-weight:600;transition:color .2s;">Compare</a> <a href="deals.html" style="font-size:.85rem;color:#fbbf24;font-weight:600;transition:color .2s;">Deals</a> <a href="submit-tool.html" style="font-size:.85rem;color:var(--sage);font-weight:600;transition:color .2s;">Submit</a> <a href="about.html" style="font-size:.85rem;color:var(--ink);font-weight:600;transition:color .2s;">About</a></div>
+ <a href="index.html" class="logo"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><defs><linearGradient id="lg" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse"><stop stop-color="#00d4ff"/><stop offset="1" stop-color="#a855f7"/></linearGradient></defs><circle cx="14" cy="14" r="12.5" stroke="url(#lg)" stroke-width="1.5"/><circle cx="14" cy="14" r="2.5" fill="#00ff88"/></svg> AI Pulse Checker</a>
+ <div style="display:flex;align-items:center;gap:10px;"><a href="blog.html" style="font-size:.85rem;color:var(--ink);font-weight:600;transition:color .2s;">Blog</a> <a href="comparisons.html" style="font-size:.85rem;color:var(--ink);font-weight:600;transition:color .2s;">Compare</a> <a href="deals.html" style="font-size:.85rem;color:#fbbf24;font-weight:600;transition:color .2s;">Deals</a> <a href="submit-tool.html" style="font-size:.85rem;color:var(--sage);font-weight:600;transition:color .2s;">Submit</a> <a href="about.html" style="font-size:.85rem;color:var(--ink);font-weight:600;transition:color .2s;">About</a></div>
 </div></nav>
 
 <div class="quiz-wrapper">
-  <div class="quiz-header">
-    <h1>Find Your Perfect AI Tool</h1>
-    <p>Answer 3 quick questions. Get personalized recommendations from 176 expert-reviewed tools.</p>
-  </div>
+ <div class="quiz-header">
+ <h1>Find Your Perfect AI Tool</h1>
+ <p>Answer 3 quick questions. Get personalized recommendations from 176 expert-reviewed tools.</p>
+ </div>
 
-  <div class="progress-bar"><div class="progress-fill" id="progress" style="width:0%"></div></div>
+ <div class="progress-bar"><div class="progress-fill" id="progress" style="width:0%"></div></div>
 
-  <!-- Step 1: Category -->
-  <div class="step active" id="step1">
-    <span class="step-label">Step 1 of 3</span>
-    <h2>What do you need AI for?</h2>
-    <div class="options" id="catOptions">
-      <div class="option" data-val="AI Writing" onclick="selectOption(this,'cat')"><span class="opt-icon">✍️</span><span class="opt-label">Writing</span><span class="opt-desc">Content, copy, blogs, emails</span></div>
-      <div class="option" data-val="AI Coding" onclick="selectOption(this,'cat')"><span class="opt-icon">💻</span><span class="opt-label">Coding</span><span class="opt-desc">Code generation, debugging, IDEs</span></div>
-      <div class="option" data-val="AI Design" onclick="selectOption(this,'cat')"><span class="opt-icon">🎨</span><span class="opt-label">Design</span><span class="opt-desc">Images, logos, UI, graphics</span></div>
-      <div class="option" data-val="AI Video" onclick="selectOption(this,'cat')"><span class="opt-icon">🎬</span><span class="opt-label">Video</span><span class="opt-desc">Editing, generation, avatars</span></div>
-      <div class="option" data-val="AI Marketing" onclick="selectOption(this,'cat')"><span class="opt-icon">📈</span><span class="opt-label">Marketing</span><span class="opt-desc">SEO, ads, social, analytics</span></div>
-      <div class="option" data-val="AI Audio" onclick="selectOption(this,'cat')"><span class="opt-icon">🎵</span><span class="opt-label">Audio</span><span class="opt-desc">Voice, music, podcasts, TTS</span></div>
-      <div class="option" data-val="AI Productivity" onclick="selectOption(this,'cat')"><span class="opt-icon">⚡</span><span class="opt-label">Productivity</span><span class="opt-desc">Notes, scheduling, research</span></div>
-      <div class="option" data-val="AI Chatbots" onclick="selectOption(this,'cat')"><span class="opt-icon">🤖</span><span class="opt-label">Chatbots</span><span class="opt-desc">Customer support, assistants</span></div>
-      <div class="option" data-val="AI Data" onclick="selectOption(this,'cat')"><span class="opt-icon">📊</span><span class="opt-label">Data</span><span class="opt-desc">Analytics, ML, predictions</span></div>
-    </div>
-    <div class="quiz-nav"><div></div><button class="btn-next" id="next1" disabled onclick="goStep(2)">Next →</button></div>
-  </div>
+ <!-- Step 1: Category -->
+ <div class="step active" id="step1">
+ <span class="step-label">Step 1 of 3</span>
+ <h2>What do you need AI for?</h2>
+ <div class="options" id="catOptions">
+ <div class="option" data-val="AI Writing" onclick="selectOption(this,'cat')"><span class="opt-icon">✍️</span><span class="opt-label">Writing</span><span class="opt-desc">Content, copy, blogs, emails</span></div>
+ <div class="option" data-val="AI Coding" onclick="selectOption(this,'cat')"><span class="opt-icon">💻</span><span class="opt-label">Coding</span><span class="opt-desc">Code generation, debugging, IDEs</span></div>
+ <div class="option" data-val="AI Design" onclick="selectOption(this,'cat')"><span class="opt-icon">🎨</span><span class="opt-label">Design</span><span class="opt-desc">Images, logos, UI, graphics</span></div>
+ <div class="option" data-val="AI Video" onclick="selectOption(this,'cat')"><span class="opt-icon">🎬</span><span class="opt-label">Video</span><span class="opt-desc">Editing, generation, avatars</span></div>
+ <div class="option" data-val="AI Marketing" onclick="selectOption(this,'cat')"><span class="opt-icon">📈</span><span class="opt-label">Marketing</span><span class="opt-desc">SEO, ads, social, analytics</span></div>
+ <div class="option" data-val="AI Audio" onclick="selectOption(this,'cat')"><span class="opt-icon">🎵</span><span class="opt-label">Audio</span><span class="opt-desc">Voice, music, podcasts, TTS</span></div>
+ <div class="option" data-val="AI Productivity" onclick="selectOption(this,'cat')"><span class="opt-icon">⚡</span><span class="opt-label">Productivity</span><span class="opt-desc">Notes, scheduling, research</span></div>
+ <div class="option" data-val="AI Chatbots" onclick="selectOption(this,'cat')"><span class="opt-icon">🤖</span><span class="opt-label">Chatbots</span><span class="opt-desc">Customer support, assistants</span></div>
+ <div class="option" data-val="AI Data" onclick="selectOption(this,'cat')"><span class="opt-icon">📊</span><span class="opt-label">Data</span><span class="opt-desc">Analytics, ML, predictions</span></div>
+ </div>
+ <div class="quiz-nav"><div></div><button class="btn-next" id="next1" disabled onclick="goStep(2)">Next →</button></div>
+ </div>
 
-  <!-- Step 2: Budget -->
-  <div class="step" id="step2">
-    <span class="step-label">Step 2 of 3</span>
-    <h2>What's your budget?</h2>
-    <div class="budget-options" id="budgetOptions">
-      <div class="budget-opt" data-val="free" onclick="selectOption(this,'budget')"><span class="budget-amount">Free</span><span class="budget-desc">No money, just vibes</span></div>
-      <div class="budget-opt" data-val="mid" onclick="selectOption(this,'budget')"><span class="budget-amount">Under $25/mo</span><span class="budget-desc">Individual / freelancer</span></div>
-      <div class="budget-opt" data-val="high" onclick="selectOption(this,'budget')"><span class="budget-amount">$25+/mo</span><span class="budget-desc">Team / business</span></div>
-    </div>
-    <div class="quiz-nav"><button class="btn-back" onclick="goStep(1)">← Back</button><button class="btn-next" id="next2" disabled onclick="goStep(3)">Next →</button></div>
-  </div>
+ <!-- Step 2: Budget -->
+ <div class="step" id="step2">
+ <span class="step-label">Step 2 of 3</span>
+ <h2>What's your budget?</h2>
+ <div class="budget-options" id="budgetOptions">
+ <div class="budget-opt" data-val="free" onclick="selectOption(this,'budget')"><span class="budget-amount">Free</span><span class="budget-desc">No money, just vibes</span></div>
+ <div class="budget-opt" data-val="mid" onclick="selectOption(this,'budget')"><span class="budget-amount">Under $25/mo</span><span class="budget-desc">Individual / freelancer</span></div>
+ <div class="budget-opt" data-val="high" onclick="selectOption(this,'budget')"><span class="budget-amount">$25+/mo</span><span class="budget-desc">Team / business</span></div>
+ </div>
+ <div class="quiz-nav"><button class="btn-back" onclick="goStep(1)">← Back</button><button class="btn-next" id="next2" disabled onclick="goStep(3)">Next →</button></div>
+ </div>
 
-  <!-- Step 3: Priority -->
-  <div class="step" id="step3">
-    <span class="step-label">Step 3 of 3</span>
-    <h2>What matters most to you?</h2>
-    <div class="priority-options" id="priorityOptions">
-      <div class="priority-opt" data-val="quality" onclick="selectOption(this,'priority')"><span class="pri-label">🏆 Best Quality</span><span class="pri-desc">Highest-rated tool regardless of price</span></div>
-      <div class="priority-opt" data-val="value" onclick="selectOption(this,'priority')"><span class="pri-label">💰 Best Value</span><span class="pri-desc">Great quality at a reasonable price</span></div>
-      <div class="priority-opt" data-val="easy" onclick="selectOption(this,'priority')"><span class="pri-label">🚀 Easiest to Use</span><span class="pri-desc">Low learning curve, works immediately</span></div>
-      <div class="priority-opt" data-val="power" onclick="selectOption(this,'priority')"><span class="pri-label">⚡ Most Powerful</span><span class="pri-desc">Advanced features for pros</span></div>
-    </div>
-    <div class="quiz-nav"><button class="btn-back" onclick="goStep(2)">← Back</button><button class="btn-next" id="next3" disabled onclick="showResults()">See My Matches →</button></div>
-  </div>
+ <!-- Step 3: Priority -->
+ <div class="step" id="step3">
+ <span class="step-label">Step 3 of 3</span>
+ <h2>What matters most to you?</h2>
+ <div class="priority-options" id="priorityOptions">
+ <div class="priority-opt" data-val="quality" onclick="selectOption(this,'priority')"><span class="pri-label">🏆 Best Quality</span><span class="pri-desc">Highest-rated tool regardless of price</span></div>
+ <div class="priority-opt" data-val="value" onclick="selectOption(this,'priority')"><span class="pri-label">💰 Best Value</span><span class="pri-desc">Great quality at a reasonable price</span></div>
+ <div class="priority-opt" data-val="easy" onclick="selectOption(this,'priority')"><span class="pri-label">🚀 Easiest to Use</span><span class="pri-desc">Low learning curve, works immediately</span></div>
+ <div class="priority-opt" data-val="power" onclick="selectOption(this,'priority')"><span class="pri-label">⚡ Most Powerful</span><span class="pri-desc">Advanced features for pros</span></div>
+ </div>
+ <div class="quiz-nav"><button class="btn-back" onclick="goStep(2)">← Back</button><button class="btn-next" id="next3" disabled onclick="showResults()">See My Matches →</button></div>
+ </div>
 
-  <!-- Results -->
-  <div class="results" id="results"></div>
+ <!-- Results -->
+ <div class="results" id="results"></div>
 </div>
 
 <footer class="footer">
-  <p>&copy; 2026 AI Pulse Checker &middot; <a href="index.html">Home</a> &middot; <a href="visibility-lab.html">Visibility Lab</a> &middot; <a href="deals.html">Deals</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></p>
+ <p>&copy; 2026 AI Pulse Checker &middot; <a href="index.html">Home</a> &middot; <a href="visibility-lab.html">Visibility Lab</a> &middot; <a href="deals.html">Deals</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></p>
 </footer>
 
 <script>
@@ -238,94 +238,94 @@ const TOOLS=[{href:'pomelli.html',cat:'AI Marketing',icon:'🎯',score:8.9,name:
 let answers = {cat:null, budget:null, priority:null};
 
 function selectOption(el, key) {
-  const parent = el.parentElement;
-  parent.querySelectorAll('.option,.budget-opt,.priority-opt').forEach(o => o.classList.remove('selected'));
-  el.classList.add('selected');
-  answers[key] = el.dataset.val;
-  const stepNum = key === 'cat' ? 1 : key === 'budget' ? 2 : 3;
-  document.getElementById('next' + stepNum).disabled = false;
+ const parent = el.parentElement;
+ parent.querySelectorAll('.option,.budget-opt,.priority-opt').forEach(o => o.classList.remove('selected'));
+ el.classList.add('selected');
+ answers[key] = el.dataset.val;
+ const stepNum = key === 'cat' ? 1 : key === 'budget' ? 2 : 3;
+ document.getElementById('next' + stepNum).disabled = false;
 }
 
 function goStep(n) {
-  document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
-  document.getElementById('step' + n).classList.add('active');
-  document.getElementById('progress').style.width = ((n - 1) / 3 * 100) + '%';
+ document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+ document.getElementById('step' + n).classList.add('active');
+ document.getElementById('progress').style.width = ((n - 1) / 3 * 100) + '%';
 }
 
 function extractPrice(priceStr) {
-  const m = priceStr.match(/\$([0-9,.]+)/);
-  return m ? parseFloat(m[1].replace(',', '')) : 0;
+ const m = priceStr.match(/\$([0-9,.]+)/);
+ return m ? parseFloat(m[1].replace(',', '')) : 0;
 }
 
 function showResults() {
-  document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
-  document.getElementById('progress').style.width = '100%';
+ document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+ document.getElementById('progress').style.width = '100%';
 
-  let filtered = TOOLS.filter(t => t.cat === answers.cat);
+ let filtered = TOOLS.filter(t => t.cat === answers.cat);
 
-  // Budget filter
-  if (answers.budget === 'free') {
-    filtered = filtered.filter(t => t.price.toLowerCase().includes('free') || extractPrice(t.price) === 0);
-  } else if (answers.budget === 'mid') {
-    filtered = filtered.filter(t => extractPrice(t.price) <= 25 || t.price.toLowerCase().includes('free'));
-  }
-  // 'high' = no filter
+ // Budget filter
+ if (answers.budget === 'free') {
+ filtered = filtered.filter(t => t.price.toLowerCase().includes('free') || extractPrice(t.price) === 0);
+ } else if (answers.budget === 'mid') {
+ filtered = filtered.filter(t => extractPrice(t.price) <= 25 || t.price.toLowerCase().includes('free'));
+ }
+ // 'high' = no filter
 
-  // Sort by priority
-  if (answers.priority === 'quality' || answers.priority === 'power') {
-    filtered.sort((a, b) => b.score - a.score);
-  } else if (answers.priority === 'value') {
-    filtered.sort((a, b) => {
-      const pa = extractPrice(a.price) || 0.5;
-      const pb = extractPrice(b.price) || 0.5;
-      return (b.score / pb) - (a.score / pa);
-    });
-  } else { // easy
-    filtered.sort((a, b) => {
-      const freeA = a.price.toLowerCase().includes('free') ? 1 : 0;
-      const freeB = b.price.toLowerCase().includes('free') ? 1 : 0;
-      return (freeB - freeA) || (b.score - a.score);
-    });
-  }
+ // Sort by priority
+ if (answers.priority === 'quality' || answers.priority === 'power') {
+ filtered.sort((a, b) => b.score - a.score);
+ } else if (answers.priority === 'value') {
+ filtered.sort((a, b) => {
+ const pa = extractPrice(a.price) || 0.5;
+ const pb = extractPrice(b.price) || 0.5;
+ return (b.score / pb) - (a.score / pa);
+ });
+ } else { // easy
+ filtered.sort((a, b) => {
+ const freeA = a.price.toLowerCase().includes('free') ? 1 : 0;
+ const freeB = b.price.toLowerCase().includes('free') ? 1 : 0;
+ return (freeB - freeA) || (b.score - a.score);
+ });
+ }
 
-  const top = filtered.slice(0, 5);
-  const catLabel = answers.cat.replace('AI ', '');
+ const top = filtered.slice(0, 5);
+ const catLabel = answers.cat.replace('AI ', '');
 
-  let html = `<div class="results-header"><h2>Your Top ${catLabel} Tools</h2><p>Based on your preferences — ${answers.budget === 'free' ? 'free tools' : answers.budget === 'mid' ? 'under $25/mo' : 'any budget'}, prioritizing ${answers.priority === 'quality' ? 'quality' : answers.priority === 'value' ? 'value' : answers.priority === 'easy' ? 'ease of use' : 'power'}</p></div>`;
+ let html = `<div class="results-header"><h2>Your Top ${catLabel} Tools</h2><p>Based on your preferences — ${answers.budget === 'free' ? 'free tools' : answers.budget === 'mid' ? 'under $25/mo' : 'any budget'}, prioritizing ${answers.priority === 'quality' ? 'quality' : answers.priority === 'value' ? 'value' : answers.priority === 'easy' ? 'ease of use' : 'power'}</p></div>`;
 
-  if (top.length === 0) {
-    html += '<p style="text-align:center;color:var(--muted);padding:40px 0;">No exact matches found. Try adjusting your budget or <a href="index.html" style="color:var(--accent);">browse all tools</a>.</p>';
-  } else {
-    top.forEach((t, i) => {
-      html += `<a href="${t.href}" class="result-card" style="text-decoration:none;color:inherit;">
-        <span class="result-rank ${i === 0 ? 'top' : ''}">#${i + 1}</span>
-        <span class="result-icon">${t.icon}</span>
-        <div class="result-info">
-          <h3>${t.name}</h3>
-          <div class="result-meta"><span>${t.cat}</span><span>${t.price}</span></div>
-          <p>${t.desc}</p>
-          <span class="result-link">Read full review →</span>
-        </div>
-        <span class="result-score">${t.score}/10</span>
-      </a>`;
-    });
-  }
+ if (top.length === 0) {
+ html += '<p style="text-align:center;color:var(--muted);padding:40px 0;">No exact matches found. Try adjusting your budget or <a href="index.html" style="color:var(--accent);">browse all tools</a>.</p>';
+ } else {
+ top.forEach((t, i) => {
+ html += `<a href="${t.href}" class="result-card" style="text-decoration:none;color:inherit;">
+ <span class="result-rank ${i === 0 ? 'top' : ''}">#${i + 1}</span>
+ <span class="result-icon">${t.icon}</span>
+ <div class="result-info">
+ <h3>${t.name}</h3>
+ <div class="result-meta"><span>${t.cat}</span><span>${t.price}</span></div>
+ <p>${t.desc}</p>
+ <span class="result-link">Read full review →</span>
+ </div>
+ <span class="result-score">${t.score}/10</span>
+ </a>`;
+ });
+ }
 
-  html += '<button class="restart-btn" onclick="restart()">↻ Start Over</button>';
-  const el = document.getElementById('results');
-  el.innerHTML = html;
-  el.classList.add('active');
-  el.scrollIntoView({behavior:'smooth',block:'start'});
+ html += '<button class="restart-btn" onclick="restart()">↻ Start Over</button>';
+ const el = document.getElementById('results');
+ el.innerHTML = html;
+ el.classList.add('active');
+ el.scrollIntoView({behavior:'smooth',block:'start'});
 }
 
 function restart() {
-  answers = {cat:null, budget:null, priority:null};
-  document.querySelectorAll('.option,.budget-opt,.priority-opt').forEach(o => o.classList.remove('selected'));
-  document.querySelectorAll('.btn-next').forEach(b => b.disabled = true);
-  document.getElementById('results').classList.remove('active');
-  document.getElementById('results').innerHTML = '';
-  goStep(1);
-  window.scrollTo({top:0,behavior:'smooth'});
+ answers = {cat:null, budget:null, priority:null};
+ document.querySelectorAll('.option,.budget-opt,.priority-opt').forEach(o => o.classList.remove('selected'));
+ document.querySelectorAll('.btn-next').forEach(b => b.disabled = true);
+ document.getElementById('results').classList.remove('active');
+ document.getElementById('results').innerHTML = '';
+ goStep(1);
+ window.scrollTo({top:0,behavior:'smooth'});
 }
 </script>
 </body>

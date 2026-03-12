@@ -324,6 +324,7 @@ body::after{
 .ntw-card .ntw-score{font-family:var(--font-mono);font-size:.82rem;color:var(--sage);font-weight:600;}
 .ntw-card .ntw-new{font-size:.65rem;color:var(--sage);font-weight:600;border:1px solid rgba(0,255,136,.2);padding:2px 6px;border-radius:4px;}
 
+.tool-tag{display:inline-block;padding:2px 6px;border-radius:4px;font-size:.62rem;font-weight:600;background:rgba(0,212,255,.08);color:var(--accent);margin-right:3px;margin-top:4px;}
 /* Back to top */
 #backToTop{
   display:none;position:fixed;bottom:30px;right:30px;
@@ -435,7 +436,10 @@ body::after{
   <a href="visibility-lab.html" style="display:flex;align-items:center;gap:8px;padding:10px 20px;background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.3);border-radius:12px;font-size:.85rem;font-weight:600;transition:all .25s;color:var(--accent);text-decoration:none;" onmouseover="this.style.borderColor='rgba(0,212,255,.5)';this.style.background='rgba(0,212,255,.15)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(0,212,255,.3)';this.style.background='rgba(0,212,255,.08)';this.style.transform='none'"><span>🔬</span> AI Visibility Lab</a>
   <a href="leaderboard.html" style="display:flex;align-items:center;gap:8px;padding:10px 20px;background:rgba(251,191,36,.06);border:1px solid rgba(251,191,36,.25);border-radius:12px;font-size:.85rem;font-weight:600;transition:all .25s;color:#fbbf24;text-decoration:none;" onmouseover="this.style.borderColor='rgba(251,191,36,.5)';this.style.background='rgba(251,191,36,.12)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(251,191,36,.25)';this.style.background='rgba(251,191,36,.06)';this.style.transform='none'"><span>🏆</span> Top 20</a>
   <a href="free-ai-tools.html" style="display:flex;align-items:center;gap:8px;padding:10px 20px;background:rgba(251,191,36,.06);border:1px solid rgba(251,191,36,.25);border-radius:12px;font-size:.85rem;font-weight:600;transition:all .25s;color:var(--sage);text-decoration:none;" onmouseover="this.style.borderColor='rgba(0,255,136,.4)';this.style.background='rgba(0,255,136,.08)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(251,191,36,.25)';this.style.background='rgba(251,191,36,.06)';this.style.transform='none'"><span>🆓</span> Free Tools</a>
-  <a href="glossary.html" style="display:flex;align-items:center;gap:8px;padding:10px 20px;background:rgba(251,191,36,.06);border:1px solid rgba(251,191,36,.25);border-radius:12px;font-size:.85rem;font-weight:600;transition:all .25s;color:var(--ink);text-decoration:none;" onmouseover="this.style.borderColor='rgba(251,191,36,.5)';this.style.background='rgba(251,191,36,.12)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(251,191,36,.25)';this.style.background='rgba(251,191,36,.06)';this.style.transform='none'"><span>📖</span> Glossary</a>
+  <a href="prompt-library.html" style="padding:10px 20px;background:var(--card);border:1px solid var(--border);border-radius:12px;font-size:.85rem;font-weight:600;color:var(--ink);transition:all .2s;text-decoration:none;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">📋 Prompts</a>
+    <a href="faq.html" style="padding:10px 20px;background:var(--card);border:1px solid var(--border);border-radius:12px;font-size:.85rem;font-weight:600;color:var(--ink);transition:all .2s;text-decoration:none;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">❓ FAQ</a>
+    <a href="timeline.html" style="padding:10px 20px;background:var(--card);border:1px solid var(--border);border-radius:12px;font-size:.85rem;font-weight:600;color:var(--ink);transition:all .2s;text-decoration:none;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">📅 Timeline</a>
+    <a href="glossary.html" style="display:flex;align-items:center;gap:8px;padding:10px 20px;background:rgba(251,191,36,.06);border:1px solid rgba(251,191,36,.25);border-radius:12px;font-size:.85rem;font-weight:600;transition:all .25s;color:var(--ink);text-decoration:none;" onmouseover="this.style.borderColor='rgba(251,191,36,.5)';this.style.background='rgba(251,191,36,.12)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(251,191,36,.25)';this.style.background='rgba(251,191,36,.06)';this.style.transform='none'"><span>📖</span> Glossary</a>
 </div>
 </div>
 
@@ -2114,5 +2118,28 @@ window.addEventListener('scroll', function() {
 });
 </script>
 
+
+<script>
+// Add keyword tags to tool cards
+document.addEventListener('DOMContentLoaded', function() {
+  var tagMap = {"AI Writing": ["writing", "content", "blog", "copy"], "AI Coding": ["code", "developer", "IDE", "vibe coding"], "AI Design": ["image", "design", "illustration", "UI"], "AI Video": ["video", "animation", "avatar", "clips"], "AI Audio": ["voice", "TTS", "music", "transcription"], "AI Marketing": ["SEO", "ads", "campaign", "social"], "AI Chatbots": ["chatbot", "support", "conversation", "agent"], "AI Data": ["analytics", "data", "visualization", "ML"], "AI Productivity": ["workflow", "automation", "notes", "calendar"]};
+  document.querySelectorAll('.tool-card').forEach(function(card) {
+    var cat = card.getAttribute('data-cat');
+    var tags = tagMap[cat];
+    if (!tags || card.querySelector('.tool-tag')) return;
+    var priceEl = card.querySelector('.card-price');
+    if (!priceEl) return;
+    var wrap = document.createElement('div');
+    wrap.style.marginTop = '4px';
+    tags.slice(0, 3).forEach(function(t) {
+      var span = document.createElement('span');
+      span.className = 'tool-tag';
+      span.textContent = t;
+      wrap.appendChild(span);
+    });
+    priceEl.parentNode.insertBefore(wrap, priceEl.nextSibling);
+  });
+});
+</script>
 </body>
 </html><!-- deploy test -->

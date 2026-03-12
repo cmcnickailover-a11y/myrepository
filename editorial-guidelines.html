@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GHTPP0BB2J" fetchpriority="low"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-GHTPP0BB2J');</script>
+<meta charset="UTF-8"><meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Our editorial guidelines: how we test AI tools for 40+ hours, our scoring methodology, independence policy, and corrections process.">
+<meta property="article:modified_time" content="2026-03-11T00:00:00Z" />
+<title>Editorial Guidelines — How We Review AI Tools | AI Pulse Checker</title>
+<link rel="canonical" href="https://aipulsechecker.com/editorial-guidelines.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#e8edf5;--paper:#06080d;--cream:#0c1018;--card:rgba(12,18,32,.65);--card-solid:#0c1220;--border:rgba(100,180,255,.08);--accent:#00d4ff;--accent-glow:rgba(0,212,255,.2);--accent2:#a855f7;--sage:#00ff88;--muted:rgba(180,200,230,.5);--font-display:'Outfit',sans-serif;--font-body:'Outfit',sans-serif;--font-mono:'JetBrains Mono',monospace;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{font-family:var(--font-body);background:var(--paper);color:var(--ink);line-height:1.7;overflow-x:hidden;}a{color:inherit;text-decoration:none;}
+body::before{content:'';position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse 80% 50% at 20% 20%,rgba(0,212,255,.05) 0%,transparent 50%),radial-gradient(ellipse 60% 40% at 80% 70%,rgba(168,85,247,.04) 0%,transparent 50%);pointer-events:none;}
+.navbar{background:rgba(6,8,13,.8);backdrop-filter:blur(24px) saturate(1.8);border-bottom:1px solid rgba(100,180,255,.06);position:sticky;top:0;z-index:200;}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;}
+.logo{font-size:1.5rem;font-weight:700;letter-spacing:-.02em;display:flex;align-items:center;gap:8px;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;}
+.hero{text-align:center;padding:70px 24px 40px;}.hero h1{font-family:var(--font-display);font-size:clamp(1.8rem,4.5vw,2.6rem);line-height:1.15;margin-bottom:12px;}.hero p{color:var(--muted);font-size:1rem;max-width:560px;margin:0 auto;}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;margin-bottom:14px;transition:all .3s;}.card:hover{border-color:rgba(0,212,255,.2);}
+.section{margin-bottom:50px;}.section h2{font-family:var(--font-display);font-size:1.4rem;margin-bottom:16px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;}
+.tag{display:inline-block;padding:3px 10px;border-radius:6px;font-size:.72rem;font-weight:600;margin:2px;}
+.tag-blue{background:rgba(0,212,255,.1);color:var(--accent);}.tag-green{background:rgba(0,255,136,.1);color:var(--sage);}.tag-purple{background:rgba(168,85,247,.1);color:var(--accent2);}.tag-gold{background:rgba(251,191,36,.1);color:#fbbf24;}
+.prompt-box{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:12px;position:relative;}
+.prompt-box h3{font-size:.92rem;font-weight:600;margin-bottom:8px;color:var(--accent);}.prompt-box p{font-size:.88rem;color:var(--muted);line-height:1.7;}.prompt-box code{display:block;background:rgba(0,0,0,.3);border:1px solid var(--border);border-radius:10px;padding:14px 16px;font-family:var(--font-mono);font-size:.82rem;color:var(--ink);line-height:1.6;margin-top:10px;white-space:pre-wrap;word-wrap:break-word;}
+.prompt-box .copy-btn{position:absolute;top:16px;right:16px;padding:4px 12px;background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:6px;font-size:.72rem;color:var(--muted);cursor:pointer;font-family:var(--font-body);transition:all .2s;}.prompt-box .copy-btn:hover{color:var(--ink);border-color:var(--accent);}
+.faq-item{padding:20px 24px;background:var(--card);border:1px solid var(--border);border-radius:14px;margin-bottom:10px;}.faq-item h3{font-size:1rem;font-weight:600;margin-bottom:8px;}.faq-item p{font-size:.9rem;color:var(--muted);line-height:1.7;}
+.timeline-item{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--border);}.timeline-item .tl-date{font-family:var(--font-mono);font-size:.78rem;color:var(--accent);min-width:90px;flex-shrink:0;}.timeline-item .tl-tools{flex:1;}
+.footer{background:rgba(13,15,18,.8);border-top:1px solid var(--border);color:var(--muted);padding:48px 0 28px;}.footer-inner{max-width:1200px;margin:0 auto;padding:0 24px;text-align:center;font-size:.82rem;}.footer a{color:var(--muted);margin:0 10px;}
+.light-mode{--ink:#0c0c0c;--paper:#f0f4fa;--card:rgba(255,255,255,.85);--border:rgba(0,80,180,.08);--muted:#5a6a7c;}.light-mode body::before{display:none;}
+.price-tier{display:inline-block;padding:14px 28px;background:var(--card);border:1px solid var(--border);border-radius:16px;text-align:center;min-width:200px;margin:8px;}.price-tier h3{font-size:1.1rem;margin-bottom:4px;}.price-tier .price{font-family:var(--font-mono);font-size:1.4rem;font-weight:700;color:var(--sage);margin:8px 0;}.price-tier p{font-size:.82rem;color:var(--muted);}
+@media(max-width:768px){.grid{grid-template-columns:1fr;}.price-tier{min-width:auto;width:100%;}}
+
+</style>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+<nav class="navbar"><div class="nav-inner">
+  <a href="index.html" class="logo"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><defs><linearGradient id="lg" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse"><stop stop-color="#00d4ff"/><stop offset="1" stop-color="#a855f7"/></linearGradient></defs><circle cx="14" cy="14" r="12.5" stroke="url(#lg)" stroke-width="1.5"/><circle cx="14" cy="14" r="2.5" fill="#00ff88"/></svg> AI Pulse Checker</a>
+  <div style="display:flex;align-items:center;gap:10px;"><a href="blog.html" style="font-size:.85rem;color:var(--ink);font-weight:600;">Blog</a> <a href="comparisons.html" style="font-size:.85rem;color:var(--ink);font-weight:600;">Compare</a> <a href="deals.html" style="font-size:.85rem;color:#fbbf24;font-weight:600;">Deals</a> <a href="submit-tool.html" style="font-size:.85rem;color:var(--sage);font-weight:600;">Submit</a> <a href="about.html" style="font-size:.85rem;color:var(--ink);font-weight:600;">About</a></div>
+</div></nav>
+<section class="hero"><h1>📜 Editorial Guidelines</h1><p>How we review, score, and maintain independence.</p></section>
+<div class="container" style="max-width:750px;margin-bottom:60px;">
+<div class="section"><h2>Our Review Process</h2>
+<p style="color:var(--muted);line-height:1.8;">Every tool in our directory undergoes a minimum of 40 hours of hands-on testing by our editorial team. We don't rely on press releases, vendor demos, or marketing materials. We sign up, pay for subscriptions ourselves, and use each tool the way a real user would — across multiple real-world scenarios.</p>
+</div>
+
+<div class="section"><h2>Scoring Methodology</h2>
+<p style="color:var(--muted);line-height:1.8;">Our 1-10 score reflects five weighted factors: core feature quality (35%), ease of use (20%), value for price (20%), reliability and performance (15%), and integration ecosystem (10%). Scores are re-evaluated quarterly or whenever a major update ships. <a href="methodology.html" style="color:var(--accent)">See detailed methodology →</a></p>
+</div>
+
+<div class="section"><h2>Independence & Conflicts</h2>
+<p style="color:var(--muted);line-height:1.8;">Our scores are never influenced by advertising, sponsorship, or affiliate relationships. Some tool links are affiliate links (marked with 💰) — this means we earn a commission if you sign up, at no cost to you. This never changes the score or ranking. Sponsored content is always clearly labeled with a "Sponsored" badge.</p>
+</div>
+
+<div class="section"><h2>Corrections Policy</h2>
+<p style="color:var(--muted);line-height:1.8;">If we get something wrong, we fix it. Tool makers and readers can contact us with corrections. When we update a review, we note the change date. Pricing is re-verified monthly — if a price changes between verifications, we update within one business day of being notified.</p>
+</div>
+
+<div class="section"><h2>Content Standards</h2>
+<p style="color:var(--muted);line-height:1.8;">We write for clarity, not word count. Every review includes specific pros and cons, real testing observations, and honest limitations. We never use stock phrases like "game-changing" or "revolutionary" without evidence. We never fabricate benchmarks or user testimonials. If we haven't tested a feature, we say so.</p>
+</div>
+
+<div style="text-align:center;padding:20px 0;"><p style="font-size:.85rem;color:var(--muted);">Questions about our editorial process? <a href="mailto:editorial@aipulsechecker.com" style="color:var(--accent);">Contact our editorial team →</a></p></div>
+</div>
+<footer class="footer"><div class="footer-inner">
+  <p><a href="index.html">Home</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="leaderboard.html">Top 20</a> &middot; <a href="prompt-library.html">Prompts</a> &middot; <a href="deals.html">Deals</a> &middot; <a href="glossary.html">Glossary</a> &middot; <a href="partner.html">Partner</a> &middot; <a href="about.html">About</a></p>
+  <p style="margin-top:8px;">&copy; 2026 AI Pulse Checker &middot; <a href="privacy.html">Privacy</a> &middot; <a href="editorial-guidelines.html">Editorial Guidelines</a></p>
+</div></footer>
+<script>(function(){if(localStorage.getItem('siteMode')==='light')document.body.classList.add('light-mode');})();</script>
+</body></html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GHTPP0BB2J" fetchpriority="low"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-GHTPP0BB2J');</script>
+<meta charset="UTF-8">
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Plain-English definitions of 30 AI terms — LLM, RAG, hallucination, vibe coding, and more. The AI glossary for non-technical people.">
+<meta property="article:modified_time" content="2026-03-11T00:00:00Z" />
+<title>AI Glossary: 30 AI Terms Explained Simply (2026)</title>
+<link rel="canonical" href="https://aipulsechecker.com/glossary.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#e8edf5;--paper:#06080d;--cream:#0c1018;--card:rgba(12,18,32,.65);--card-solid:#0c1220;--border:rgba(100,180,255,.08);--accent:#00d4ff;--accent-glow:rgba(0,212,255,.2);--accent2:#a855f7;--sage:#00ff88;--sage-glow:rgba(0,255,136,.15);--muted:rgba(180,200,230,.5);--font-display:'Outfit',sans-serif;--font-body:'Outfit',sans-serif;--font-mono:'JetBrains Mono',monospace;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{font-family:var(--font-body);background:var(--paper);color:var(--ink);line-height:1.6;overflow-x:hidden;}a{color:inherit;text-decoration:none;}
+body::before{content:'';position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse 80% 50% at 20% 20%,rgba(0,212,255,.05) 0%,transparent 50%),radial-gradient(ellipse 60% 40% at 80% 70%,rgba(168,85,247,.04) 0%,transparent 50%);pointer-events:none;}
+.navbar{background:rgba(6,8,13,.8);backdrop-filter:blur(24px) saturate(1.8);border-bottom:1px solid rgba(100,180,255,.06);position:sticky;top:0;z-index:200;box-shadow:0 4px 30px rgba(0,0,0,.3);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;}
+.logo{font-size:1.5rem;font-weight:700;letter-spacing:-.02em;display:flex;align-items:center;gap:8px;}.logo:hover{opacity:.8;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;}
+.page-hero{text-align:center;padding:70px 24px 40px;}
+.page-hero h1{font-family:var(--font-display);font-size:clamp(1.8rem,4.5vw,2.6rem);line-height:1.15;margin-bottom:12px;}
+.page-hero p{color:var(--muted);font-size:1rem;max-width:560px;margin:0 auto;}
+.tool-row{display:flex;align-items:center;gap:16px;padding:16px 20px;background:var(--card);border:1px solid var(--border);border-radius:14px;margin-bottom:10px;transition:all .3s;text-decoration:none;color:inherit;}
+.tool-row:hover{border-color:rgba(0,212,255,.2);transform:translateY(-2px);}
+.tool-rank{font-family:var(--font-mono);font-size:1.1rem;font-weight:700;color:var(--muted);width:32px;text-align:center;flex-shrink:0;}
+.tool-rank.gold{color:#fbbf24;}.tool-rank.silver{color:#94a3b8;}.tool-rank.bronze{color:#cd7f32;}
+.tool-icon{font-size:1.5rem;flex-shrink:0;}
+.tool-info{flex:1;min-width:0;}
+.tool-name{font-weight:600;font-size:.95rem;}.tool-cat{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;}
+.tool-score{font-family:var(--font-mono);font-size:1rem;font-weight:700;color:var(--sage);flex-shrink:0;}
+.tool-price{font-family:var(--font-mono);font-size:.78rem;color:var(--muted);flex-shrink:0;min-width:80px;text-align:right;}
+.section-title{font-family:var(--font-display);font-size:1.4rem;margin:40px 0 16px;}
+.grid-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-bottom:40px;}
+.grid-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;transition:all .3s;text-decoration:none;color:inherit;display:block;}
+.grid-card:hover{border-color:rgba(0,212,255,.2);transform:translateY(-3px);}
+.grid-card h3{font-size:.95rem;font-weight:600;margin-bottom:4px;}.grid-card p{font-size:.82rem;color:var(--muted);line-height:1.5;}
+.grid-card .card-meta{display:flex;justify-content:space-between;align-items:center;margin-top:10px;}
+.grid-card .card-score{font-family:var(--font-mono);font-size:.85rem;color:var(--sage);font-weight:600;}
+.grid-card .card-price{font-size:.75rem;color:var(--muted);}
+.tag-pill{display:inline-block;padding:4px 12px;border-radius:100px;font-size:.72rem;font-weight:600;background:rgba(0,212,255,.1);color:var(--accent);margin:2px;}
+.glossary-item{padding:20px 24px;background:var(--card);border:1px solid var(--border);border-radius:14px;margin-bottom:10px;}
+.glossary-item h3{font-size:1rem;font-weight:600;margin-bottom:6px;color:var(--accent);}.glossary-item p{font-size:.9rem;color:var(--muted);line-height:1.7;}
+.footer{background:rgba(13,15,18,.8);border-top:1px solid var(--border);color:var(--muted);padding:48px 0 28px;}
+.footer-inner{max-width:1200px;margin:0 auto;padding:0 24px;text-align:center;font-size:.82rem;}
+.footer a{color:var(--muted);margin:0 10px;}.footer a:hover{color:var(--ink);}
+.light-mode{--ink:#0c0c0c;--paper:#f0f4fa;--card:rgba(255,255,255,.85);--border:rgba(0,80,180,.08);--muted:#5a6a7c;}
+.light-mode body::before{display:none;}.light-mode .navbar{background:rgba(245,242,236,.92);}
+@media(max-width:768px){.tool-row{flex-wrap:wrap;}.tool-price{min-width:auto;text-align:left;}}
+
+</style>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+<nav class="navbar"><div class="nav-inner">
+  <a href="index.html" class="logo"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><defs><linearGradient id="lg" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse"><stop stop-color="#00d4ff"/><stop offset="1" stop-color="#a855f7"/></linearGradient></defs><circle cx="14" cy="14" r="12.5" stroke="url(#lg)" stroke-width="1.5"/><circle cx="14" cy="14" r="2.5" fill="#00ff88"/></svg> AI Pulse Checker</a>
+  <div style="display:flex;align-items:center;gap:10px;"><a href="blog.html" style="font-size:.85rem;color:var(--ink);font-weight:600;transition:color .2s;">Blog</a> <a href="comparisons.html" style="font-size:.85rem;color:var(--ink);font-weight:600;transition:color .2s;">Compare</a> <a href="deals.html" style="font-size:.85rem;color:#fbbf24;font-weight:600;transition:color .2s;">Deals</a> <a href="submit-tool.html" style="font-size:.85rem;color:var(--sage);font-weight:600;transition:color .2s;">Submit</a> <a href="about.html" style="font-size:.85rem;color:var(--ink);font-weight:600;transition:color .2s;">About</a></div>
+</div></nav>
+<section class="page-hero"><h1>📖 AI Glossary — 30 Terms Explained</h1><p>Every AI term you need to know, explained in plain English. From LLMs to vibe coding.</p></section>
+<div class="container" style="margin-bottom:60px;"><div class="glossary-item" id="llm"><h3>LLM (Large Language Model)</h3><p>A type of AI model trained on massive amounts of text data that can generate, summarize, translate, and reason about language. Examples include GPT-4, Claude, and Gemini.</p></div>
+<div class="glossary-item" id="prompt"><h3>Prompt</h3><p>The text input you give to an AI model to get a response. Better prompts lead to better outputs — prompt engineering is the skill of crafting effective instructions.</p></div>
+<div class="glossary-item" id="hallucination"><h3>Hallucination</h3><p>When an AI model generates information that sounds plausible but is factually incorrect. All current LLMs can hallucinate, which is why fact-checking AI output matters.</p></div>
+<div class="glossary-item" id="fine-tuning"><h3>Fine-tuning</h3><p>The process of training a pre-existing AI model on your own specific data to make it better at a particular task or to match your brand's voice.</p></div>
+<div class="glossary-item" id="rag"><h3>RAG (Retrieval-Augmented Generation)</h3><p>A technique where an AI model retrieves relevant documents from a database before generating a response, reducing hallucinations and grounding answers in real data.</p></div>
+<div class="glossary-item" id="token"><h3>Token</h3><p>The basic unit of text that AI models process. Roughly 1 token = ¾ of a word. When tools mention 'context window' or 'token limits,' they're referring to how much text the model can handle at once.</p></div>
+<div class="glossary-item" id="context-window"><h3>Context Window</h3><p>The maximum amount of text an AI model can process in a single conversation. Claude has 200K tokens (~150K words), while GPT-4 Turbo has 128K tokens.</p></div>
+<div class="glossary-item" id="multimodal"><h3>Multimodal</h3><p>An AI model that can understand and generate multiple types of content — text, images, audio, video — not just text. GPT-4o and Gemini are multimodal models.</p></div>
+<div class="glossary-item" id="agentic-ai"><h3>Agentic AI</h3><p>AI systems that can autonomously plan, execute multi-step tasks, use tools, and make decisions without constant human input. Claude Code and Devin are examples of agentic AI.</p></div>
+<div class="glossary-item" id="vibe-coding"><h3>Vibe Coding</h3><p>A 2025/2026 trend where people describe what they want to build in plain English, and AI generates working code. Popularized by tools like Cursor, Lovable, and Bolt.new.</p></div>
+<div class="glossary-item" id="api"><h3>API (Application Programming Interface)</h3><p>A way for developers to access AI capabilities programmatically. Most AI tools offer APIs so you can build custom integrations into your own products.</p></div>
+<div class="glossary-item" id="embedding"><h3>Embedding</h3><p>A numerical representation of text (or images/audio) that captures its meaning. Used for semantic search, recommendations, and finding similar content.</p></div>
+<div class="glossary-item" id="inference"><h3>Inference</h3><p>The process of running a trained AI model to generate predictions or outputs. When you chat with ChatGPT, you're running inference on OpenAI's servers.</p></div>
+<div class="glossary-item" id="transformer"><h3>Transformer</h3><p>The neural network architecture behind modern AI models like GPT, Claude, and Gemini. Introduced in 2017, transformers use 'attention' mechanisms to process language.</p></div>
+<div class="glossary-item" id="open-source-ai"><h3>Open Source AI</h3><p>AI models whose code and weights are publicly available. Examples include Llama (Meta), Mistral, and Stable Diffusion. Anyone can run, modify, or build on them.</p></div>
+<div class="glossary-item" id="mcp"><h3>MCP (Model Context Protocol)</h3><p>An open standard created by Anthropic that lets AI assistants connect to external tools and data sources. Think of it as USB-C for AI integrations.</p></div>
+<div class="glossary-item" id="ai-agent"><h3>AI Agent</h3><p>An AI system that can independently perform tasks by planning steps, using tools, browsing the web, or executing code. More autonomous than a chatbot.</p></div>
+<div class="glossary-item" id="diffusion-model"><h3>Diffusion Model</h3><p>The AI architecture behind image generators like Midjourney, DALL-E, and Stable Diffusion. Works by learning to remove noise from images, generating new images in reverse.</p></div>
+<div class="glossary-item" id="text-to-speech"><h3>Text-to-Speech (TTS)</h3><p>AI technology that converts written text into spoken audio. Modern TTS from ElevenLabs and Play.ht produces voices nearly indistinguishable from humans.</p></div>
+<div class="glossary-item" id="voice-cloning"><h3>Voice Cloning</h3><p>Using AI to replicate a specific person's voice from a short audio sample. The cloned voice can then speak any text. Raises both exciting possibilities and ethical concerns.</p></div>
+<div class="glossary-item" id="prompt-injection"><h3>Prompt Injection</h3><p>A security vulnerability where malicious instructions are embedded in input to trick an AI model into ignoring its original instructions or revealing private data.</p></div>
+<div class="glossary-item" id="benchmark"><h3>Benchmark</h3><p>A standardized test used to evaluate and compare AI models. Examples include MMLU (knowledge), HumanEval (coding), and MT-Bench (conversation quality).</p></div>
+<div class="glossary-item" id="temperature"><h3>Temperature</h3><p>A setting that controls how creative or random an AI model's output is. Low temperature (0.0) = predictable and focused. High temperature (1.0+) = creative and varied.</p></div>
+<div class="glossary-item" id="zero-shot-/-few-shot"><h3>Zero-shot / Few-shot</h3><p>Zero-shot means asking an AI to do a task with no examples. Few-shot means providing a few examples first. Few-shot prompting usually gets much better results.</p></div>
+<div class="glossary-item" id="rlhf"><h3>RLHF (Reinforcement Learning from Human Feedback)</h3><p>A training technique where humans rate AI outputs, and the model learns to produce responses humans prefer. Key to making ChatGPT and Claude helpful and safe.</p></div>
+<div class="glossary-item" id="latent-space"><h3>Latent Space</h3><p>The internal representation where AI models store compressed understanding of data. When you ask Midjourney for 'a sunset over mountains,' it navigates latent space to generate the image.</p></div>
+<div class="glossary-item" id="quantization"><h3>Quantization</h3><p>A technique to make AI models smaller and faster by reducing the precision of their numerical weights. Allows large models to run on consumer hardware.</p></div>
+<div class="glossary-item" id="ai-guardrails"><h3>AI Guardrails</h3><p>Safety mechanisms built into AI systems to prevent harmful outputs. Includes content filters, usage policies, and technical constraints on model behavior.</p></div>
+<div class="glossary-item" id="synthetic-data"><h3>Synthetic Data</h3><p>Data generated by AI rather than collected from the real world. Used to train other AI models when real data is scarce, expensive, or privacy-sensitive.</p></div>
+<div class="glossary-item" id="edge-ai"><h3>Edge AI</h3><p>Running AI models directly on a device (phone, laptop, car) rather than in the cloud. Enables offline use, lower latency, and better privacy.</p></div></div>
+<footer class="footer"><div class="footer-inner">
+  <p><a href="index.html">Home</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="leaderboard.html">Top 20</a> &middot; <a href="deals.html">Deals</a> &middot; <a href="glossary.html">Glossary</a> &middot; <a href="submit-tool.html">Submit a Tool</a> &middot; <a href="about.html">About</a></p>
+  <p style="margin-top:8px;">&copy; 2026 AI Pulse Checker &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></p>
+</div></footer>
+<script>(function(){if(localStorage.getItem('siteMode')==='light')document.body.classList.add('light-mode');})();</script>
+</body></html>

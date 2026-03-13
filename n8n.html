@@ -494,7 +494,7 @@ a{color:inherit;text-decoration:none;}
  <ol class="toc-list">
  <li><a href="#what-is-n8n">What is n8n?</a></li>
  <li><a href="#key-features-capabilities">Key Features & Capabilities</a></li>
- <li><a href="#performance-quality-analysis">Performance Performance & Quality in Real-World Testing Quality Analysis</a></li>
+ <li>Performance & Quality Analysis</a></li>
  <li><a href="#where-it-falls-short">Where It Falls Short</a></li>
  <li><a href="#pricing-value-analysis">Pricing & Value Analysis</a></li>
  <li><a href="#pros-cons">Pros & Cons</a></li>
@@ -526,7 +526,7 @@ a{color:inherit;text-decoration:none;}
  <p>The AI Agent nodes deserve special attention. n8n lets you drop an AI agent into any workflow that can reason through multi-step tasks, call external tools, and make decisions based on context. You can wire in human-in-the-loop checkpoints so that an agent pauses for approval before taking high-stakes actions. Combined with MCP (Model Context Protocol) support — which lets external AI tools like Claude and Lovable call your n8n workflows directly — the platform becomes a backbone for agentic infrastructure rather than just a simple automation tool.</p>
  <p>The HTTP Request node is the Swiss Army knife that makes n8n effectively unlimited in scope. Any service with an API can be integrated, whether or not n8n has a pre-built connector for it. We analyzed this extensively with niche SaaS platforms and internal tools, and it worked flawlessly every time. For teams that rely on custom internal systems, this is transformative.</p>
 
- <h2 id="performance-quality-analysis">Performance Performance & Quality in Real-World Testing Quality Analysis</h2>
+ <h2 id="performance-quality-analysis">Performance & Quality Analysis</h2>
  <p>We built and ran workflows across three categories: simple CRM-to-email automations, mid-complexity data enrichment pipelines with conditional branching, and advanced AI agent workflows that chained multiple LLM calls with tool use. Performance was strong across the board, with some important nuances.</p>
  <p>Simple workflows executed reliably and fast. A five-node automation pulling Salesforce data, enriching it via API, and posting to Slack ran in under two seconds consistently. Mid-complexity workflows with 10–15 nodes, including loops and error handling, performed well but required more careful configuration — n8n's error handling is rule-based rather than intelligent, so you need to think through failure modes yourself. This is a trade-off of the platform's flexibility: it gives you full control, but that control comes with responsibility.</p>
  <p>AI agent workflows were the most impressive and the most fragile. We built a customer support routing agent that used GPT-4o to classify incoming tickets, retrieved relevant documentation, and drafted responses for human review. When it worked, it was remarkable — a genuinely autonomous workflow that handled 80% of routine tickets without intervention. But long reasoning chains occasionally hit token limits, causing context loss. n8n's error handling does not yet account gracefully for LLM-specific failure modes like hallucination or context overflow, which means production AI workflows still require careful monitoring.</p>

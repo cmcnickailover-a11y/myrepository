@@ -248,7 +248,7 @@ body::after{
  <ol class="toc-list">
  <li><a href="#what-is-deepseek">What is DeepSeek?</a></li>
  <li><a href="#key-features-capabilities">Key Features & Capabilities</a></li>
- <li><a href="#performance-quality-analysis">Performance Performance & Quality in Real-World Testing Quality Analysis</a></li>
+ <li>Performance & Quality Analysis</a></li>
  <li><a href="#where-it-falls-short">Where It Falls Short</a></li>
  <li><a href="#pricing-value-analysis">Pricing & Value Analysis</a></li>
  <li><a href="#pros-cons">Pros & Cons</a></li>
@@ -280,7 +280,7 @@ body::after{
  <p>DeepSeek V3.2 unified the previously separate chat and reasoning models into a single endpoint. It handles general conversation, writing, analysis, and coding at quality levels competitive with GPT-4o, while its API pricing starts at just $0.28 per million input tokens (cache miss) and $0.42 per million output tokens. With automatic context caching, repeated prompts with the same prefix cost just $0.028 per million tokens — a 90% reduction that makes DeepSeek extraordinarily cost-effective for production applications.</p>
  <p>The open-source strategy deserves emphasis. Unlike OpenAI, Anthropic, and Google, which keep their model weights proprietary, DeepSeek releases full weights under the MIT license. This means you can run DeepSeek locally on your own hardware, eliminating data privacy concerns entirely. Distilled versions (like R1 Distill Llama 70B and Qwen 32B) run on consumer-grade GPUs, making frontier-class reasoning accessible to individual developers and small teams.</p>
 
- <h2 id="performance-quality-analysis">Performance Performance & Quality in Real-World Testing Quality Analysis</h2>
+ <h2 id="performance-quality-analysis">Performance & Quality Analysis</h2>
  <p>We analyzed DeepSeek across four categories: mathematical and logical reasoning, coding, general knowledge and writing, and creative tasks. Results were strong across the board with clear strengths and limitations.</p>
  <p>Reasoning is where DeepSeek R1 earns its reputation. We fed it complex multi-step math problems, logic puzzles, and algorithm design challenges. Performance was excellent — comparable to what we see from OpenAI o1 and significantly better than standard GPT-4o or Claude Sonnet on these tasks. The chain-of-thought reasoning is visible and often illuminating, showing the step-by-step logic that leads to the answer. For developers and researchers who need a reasoning model, R1 delivers frontier quality at budget pricing.</p>
  <p>Coding performance is similarly strong. DeepSeek V3.2 generates clean, functional code across Python, JavaScript, TypeScript, and other popular languages. For competitive programming and algorithmic challenges, R1 in reasoning mode is exceptional. For practical software development — building features, debugging, writing tests — V3.2 is competitive with GPT-4o and Claude Sonnet, though it occasionally produces less idiomatic code in frameworks it has less training data for.</p>

@@ -48,6 +48,21 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:radial-grad
 .light-mode{--ink:#0c0c0c;--paper:#f0f4fa;--card:rgba(255,255,255,.85);--border:rgba(0,80,180,.08);--muted:#5a6a7c;}
 .light-mode body::before{display:none;}.light-mode .navbar{background:rgba(245,242,236,.92);}
 @media(max-width:768px){.deals-grid{grid-template-columns:1fr;}}
+/* mobile-overflow-fix */
+html,body{overflow-x:hidden;max-width:100vw;}
+*{box-sizing:border-box;}
+img,video,iframe,table,pre{max-width:100%;}
+@media(max-width:768px){
+  .nav-inner{flex-wrap:wrap;gap:8px;padding:10px 16px;}
+  .nav-inner>div{flex-wrap:wrap;gap:6px;justify-content:center;width:100%;}
+  .nav-inner>div>a{font-size:.75rem!important;}
+  .nav-inner .nav-btn{font-size:.72rem!important;padding:6px 10px!important;}
+  .container{padding:0 16px;}
+  .hero{padding:40px 16px 24px;}
+  .hero h1{font-size:1.6rem!important;}
+  pre{overflow-x:auto;}
+  table{display:block;overflow-x:auto;}
+}
 </style>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>

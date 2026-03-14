@@ -58,6 +58,21 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:radial-grad
 .light-mode .footer{background:var(--ink);color:rgba(245,242,236,.5);}.light-mode .footer a{color:rgba(245,242,236,.5);}
 .success-msg{display:none;text-align:center;padding:40px 20px;}.success-msg .check{font-size:3rem;margin-bottom:12px;}.success-msg h3{font-size:1.3rem;margin-bottom:8px;}.success-msg p{color:var(--muted);}
 @media(max-width:768px){.stats-row{flex-direction:column;align-items:center;}.form-section{padding:28px 20px;}}
+/* mobile-overflow-fix */
+html,body{overflow-x:hidden;max-width:100vw;}
+*{box-sizing:border-box;}
+img,video,iframe,table,pre{max-width:100%;}
+@media(max-width:768px){
+  .nav-inner{flex-wrap:wrap;gap:8px;padding:10px 16px;}
+  .nav-inner>div{flex-wrap:wrap;gap:6px;justify-content:center;width:100%;}
+  .nav-inner>div>a{font-size:.75rem!important;}
+  .nav-inner .nav-btn{font-size:.72rem!important;padding:6px 10px!important;}
+  .container{padding:0 16px;}
+  .hero{padding:40px 16px 24px;}
+  .hero h1{font-size:1.6rem!important;}
+  pre{overflow-x:auto;}
+  table{display:block;overflow-x:auto;}
+}
 </style>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>

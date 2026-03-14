@@ -406,6 +406,21 @@ a{color:inherit;text-decoration:none;}
 .helpful-widget .hw-btn:hover{border-color:var(--accent);background:rgba(0,212,255,.06);}
 .helpful-widget .hw-btn.voted{border-color:var(--sage);background:rgba(0,255,136,.1);color:var(--sage);}
 .helpful-widget .hw-count{font-family:var(--font-mono);font-size:.78rem;color:var(--muted);}
+/* mobile-overflow-fix */
+html,body{overflow-x:hidden;max-width:100vw;}
+*{box-sizing:border-box;}
+img,video,iframe,table,pre{max-width:100%;}
+@media(max-width:768px){
+  .nav-inner{flex-wrap:wrap;gap:8px;padding:10px 16px;}
+  .nav-inner>div{flex-wrap:wrap;gap:6px;justify-content:center;width:100%;}
+  .nav-inner>div>a{font-size:.75rem!important;}
+  .nav-inner .nav-btn{font-size:.72rem!important;padding:6px 10px!important;}
+  .container{padding:0 16px;}
+  .hero{padding:40px 16px 24px;}
+  .hero h1{font-size:1.6rem!important;}
+  pre{overflow-x:auto;}
+  table{display:block;overflow-x:auto;}
+}
 </style>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Review", "itemReviewed": {"@type": "SoftwareApplication", "name": "Motion", "applicationCategory": "AI Tool", "offers": {"@type": "Offer", "price": "19", "priceCurrency": "USD"}}, "reviewRating": {"@type": "Rating", "ratingValue": "8.1", "bestRating": "10", "worstRating": "1"}, "author": {"@type": "Person", "name": "AI Pulse Checker Editorial Team"}, "publisher": {"@type": "Organization", "name": "AI Pulse Checker", "url": "https://aipulsechecker.com"}, "dateModified": "2026-03-11", "datePublished": "2026-01-15", "name": "Motion Review 2026", "reviewBody": "Motion scores 8.1/10 in our comprehensive analysis of features, pricing, and user feedback."}</script>

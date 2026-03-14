@@ -406,6 +406,21 @@ a{color:inherit;text-decoration:none;}
 .helpful-widget .hw-btn:hover{border-color:var(--accent);background:rgba(0,212,255,.06);}
 .helpful-widget .hw-btn.voted{border-color:var(--sage);background:rgba(0,255,136,.1);color:var(--sage);}
 .helpful-widget .hw-count{font-family:var(--font-mono);font-size:.78rem;color:var(--muted);}
+/* mobile-overflow-fix */
+html,body{overflow-x:hidden;max-width:100vw;}
+*{box-sizing:border-box;}
+img,video,iframe,table,pre{max-width:100%;}
+@media(max-width:768px){
+  .nav-inner{flex-wrap:wrap;gap:8px;padding:10px 16px;}
+  .nav-inner>div{flex-wrap:wrap;gap:6px;justify-content:center;width:100%;}
+  .nav-inner>div>a{font-size:.75rem!important;}
+  .nav-inner .nav-btn{font-size:.72rem!important;padding:6px 10px!important;}
+  .container{padding:0 16px;}
+  .hero{padding:40px 16px 24px;}
+  .hero h1{font-size:1.6rem!important;}
+  pre{overflow-x:auto;}
+  table{display:block;overflow-x:auto;}
+}
 </style>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is Mistral Vibe?", "acceptedAnswer": {"@type": "Answer", "text": "Mistral Vibe is a AI Coding tool that is the open-source terminal coding agent that actually understands your entire codebase. It scores 8.7/10 in our analysis and costs Free / $14.99/mo."}}, {"@type": "Question", "name": "Is Mistral Vibe worth the price?", "acceptedAnswer": {"@type": "Answer", "text": "At Free / $14.99/mo, Mistral Vibe scores 8.7/10 in our analysis. This represents excellent value for the quality delivered."}}, {"@type": "Question", "name": "How does Mistral Vibe compare to Cursor?", "acceptedAnswer": {"@type": "Answer", "text": "Cursor scores 9.3/10 at $20/mo. Mistral Vibe is terminal-native, open-source, and cheaper at Free / $14.99/mo — ideal for terminal-first developers."}}, {"@type": "Question", "name": "Is Mistral Vibe open source?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — Apache 2.0 licence. Full source on GitHub, self-hostable on your own infrastructure."}}], "dateModified": "2026-03-11", "datePublished": "2026-01-15"}</script>

@@ -125,6 +125,21 @@ canvas{display:block;}
 .tool-card:hover::after{left:100%;}
 .score-badge,.card-score{position:relative;}
 .card-score::after{content:'';position:absolute;inset:-2px;border-radius:10px;background:inherit;filter:blur(8px);opacity:.4;z-index:-1;}
+/* mobile-overflow-fix */
+html,body{overflow-x:hidden;max-width:100vw;}
+*{box-sizing:border-box;}
+img,video,iframe,table,pre{max-width:100%;}
+@media(max-width:768px){
+  .nav-inner{flex-wrap:wrap;gap:8px;padding:10px 16px;}
+  .nav-inner>div{flex-wrap:wrap;gap:6px;justify-content:center;width:100%;}
+  .nav-inner>div>a{font-size:.75rem!important;}
+  .nav-inner .nav-btn{font-size:.72rem!important;padding:6px 10px!important;}
+  .container{padding:0 16px;}
+  .hero{padding:40px 16px 24px;}
+  .hero h1{font-size:1.6rem!important;}
+  pre{overflow-x:auto;}
+  table{display:block;overflow-x:auto;}
+}
 </style>
 </head>
 <body>
